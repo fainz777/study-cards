@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- ЭТОТ ТЕГ ИСПРАВЛЯЕТ ПРОБЛЕМУ С ОБРЕЗАНИЕМ НА МОБИЛЬНЫХ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Полный справочник по тригонометрии</title>
+    <style>
+        /* СБРОС ОТСТУПОВ, ЧТОБЫ НИЧЕГО НЕ ОБРЕЗАЛОСЬ */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+            width: 100%;
+            min-height: 100vh;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #eef2f7;
+            padding: 10px; /* Уменьшил отступы для мобильных */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            padding: 15px 15px 30px 15px; /* Уменьшил боковые отступы */
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            /* Защита от вылезания за края */
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            color: #1a2639;
+            font-weight: 300;
+            letter-spacing: 1px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #eef2f7;
+            font-size: clamp(20px, 5vw, 32px); /* Адаптивный размер шрифта */
+            word-wrap: break-word;
+        }
+        h1 span {
+            font-size: clamp(14px, 3vw, 18px);
+        }
+        h2 {
+            color: #1a2a5e;
+            margin: 30px 0 15px 0;
+            padding-left: 10px;
+            border-left: 6px solid #2c3e7a;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: clamp(16px, 4vw, 24px);
+        }
+        .badge {
+            background: #2c3e7a;
+            color: white;
+            font-size: 11px;
+            border-radius: 30px;
+            padding: 2px 12px;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+        .badge-green { background: #27ae60; }
+        .badge-purple { background: #8e44ad; }
+        .badge-orange { background: #e67e22; }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 15px 0 20px 0;
+        }
+        .card {
+            background: #f8faff;
+            border-radius: 20px;
+            padding: 15px;
+            flex: 1 1 200px;
+            min-width: 160px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e9edf4;
+            transition: 0.2s;
+        }
+        .card:hover {
+            border-color: #b0c4de;
+        }
+        .card h3 {
+            color: #1e2a4a;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: clamp(15px, 3vw, 20px);
+        }
+        .circle-container {
+            position: relative;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        canvas {
+            display: block;
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1/1;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px #e0e7f0;
+            max-width: 100%;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 13px;
+            margin: 8px 0 5px;
+            flex-wrap: wrap;
+        }
+        .legend span::before { content: "● "; font-size: 14px; }
+        .cos-c { color: #e74c3c; }
+        .sin-c { color: #2980b9; }
+        .tan-c { color: #27ae60; }
+
+        .graph-box {
+            background: #f8faff;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        .graph-box canvas {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 16/4;
+            border-radius: 16px;
+            background: white;
+            box-shadow: inset 0 0 0 1px #e0e7f0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin: 15px 0;
+        }
+        .formula-box {
+            background: #f0f5fe;
+            padding: 15px 10px;
+            border-radius: 16px;
+            border-left: 6px solid #2c3e7a;
+            font-size: clamp(15px, 2.5vw, 18px);
+            text-align: center;
+            word-break: break-word;
+        }
+        .formula-box small {
+            display: block;
+            color: #4a5a7a;
+            font-size: 12px;
+            margin-top: 4px;
+            font-weight: 400;
+        }
+        .formula-box.purple { border-left-color: #8e44ad; background: #f4ecf7; }
+        .formula-box.green { border-left-color: #27ae60; background: #eafaf1; }
+        .formula-box.orange { border-left-color: #e67e22; background: #fef9f0; }
+        
+        .table-wrap {
+            overflow-x: auto;
+            margin: 10px 0;
+            -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
+        }
+        table {
+            width: 100%;
+            min-width: 480px; /* Чтобы таблица не сжималась в кашу */
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            font-size: clamp(12px, 2vw, 15px);
+        }
+        th {
+            background: #1a2a5e;
+            color: white;
+            padding: 10px 6px;
+            font-weight: 500;
+        }
+        td {
+            padding: 10px 6px;
+            text-align: center;
+            border-bottom: 1px solid #edf2f9;
+        }
+        tr:last-child td { border-bottom: none; }
+        
+        .highlight-box {
+            background: #fffbe6;
+            border: 2px dashed #f1c40f;
+            border-radius: 16px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .highlight-box.blue {
+            background: #f0f5fe;
+            border-color: #2980b9;
+        }
+        .highlight-box.green-box {
+            background: #eafaf1;
+            border-color: #27ae60;
+        }
+        .highlight-box h3 {
+            font-size: clamp(15px, 3vw, 20px);
+            margin: 0 0 10px 0;
+            color: #1a2a5e;
+        }
+        .highlight-box p {
+            font-size: clamp(14px, 2.2vw, 17px);
+            line-height: 1.6;
+            word-wrap: break-word;
+        }
+        
+        .def-block {
+            background: #eaf0fa;
+            border-radius: 16px;
+            padding: 14px 16px;
+            margin-bottom: 15px;
+            border-left: 6px solid #1a2a5e;
+        }
+        .def-block p {
+            font-size: clamp(15px, 2.2vw, 17px);
+            line-height: 1.8;
+            margin: 0;
+            word-wrap: break-word;
+        }
+        .def-block.orange { border-left-color: #e67e22; background: #fef9f0; }
+        
+        .step {
+            background: white;
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin: 6px 0;
+            border: 1px solid #e9edf4;
+            font-size: clamp(14px, 2vw, 16px);
+            word-wrap: break-word;
+        }
+        .step b { color: #1a2a5e; }
+        .formula-inline {
+            background: #f0f5fe;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: clamp(14px, 2vw, 16px);
+            word-break: break-all;
+        }
+        .triangle-ascii {
+            background: #f8faff;
+            padding: 10px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: clamp(13px, 2vw, 16px);
+            line-height: 1.3;
+            text-align: center;
+            border: 1px solid #e9edf4;
+            margin: 8px 0;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        /* Адаптация для узких экранов */
+        @media (max-width: 700px) {
+            .grid-2, .grid-3 { 
+                grid-template-columns: 1fr; 
+            }
+            .container { 
+                padding: 10px 10px 20px 10px; 
+                border-radius: 16px;
+            }
+            body {
+                padding: 5px;
+            }
+            .card {
+                flex: 1 1 100%;
+                min-width: 0;
+            }
+            .row {
+                gap: 10px;
+            }
+            .def-block {
+                padding: 10px 12px;
+            }
+            .highlight-box {
+                padding: 12px;
+            }
+            .formula-box {
+                padding: 12px 8px;
+            }
+            .step {
+                padding: 8px 10px;
+            }
+            .legend {
+                gap: 10px;
+                font-size: 12px;
+            }
+        }
+        /* Для очень маленьких экранов */
+        @media (max-width: 400px) {
+            .container {
+                padding: 6px 6px 15px 6px;
+                border-radius: 12px;
+            }
+            body {
+                padding: 3px;
+            }
+            .badge {
+                font-size: 9px;
+                padding: 1px 8px;
+            }
+            h2 {
+                padding-left: 6px;
+                border-left-width: 4px;
+                margin: 20px 0 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>📐 Полный справочник по тригонометрии <br><span style="font-weight:400; color:#5a6b8a;">Для школьников и студентов</span></h1>
+
+    <!-- ========================================================= -->
+    <!-- 1. ОПРЕДЕЛЕНИЯ В ПРЯМОУГОЛЬНОМ ТРЕУГОЛЬНИКЕ              -->
+    <!-- ========================================================= -->
+    <h2>1️⃣ Определения в прямоугольном треугольнике <span class="badge">Геометрия</span></h2>
+
+    <div class="def-block">
+        <p>
+            <strong>📌 Для острого угла α в прямоугольном треугольнике:</strong><br>
+            <span style="color:#e74c3c; font-weight:600;">Синус (sin)</span> — отношение <b>противолежащего катета</b> к <b>гипотенузе</b>.<br>
+            <span style="color:#2980b9; font-weight:600;">Косинус (cos)</span> — отношение <b>прилежащего катета</b> к <b>гипотенузе</b>.<br>
+            <span style="color:#27ae60; font-weight:600;">Тангенс (tg)</span> — отношение <b>противолежащего катета</b> к <b>прилежащему</b>.<br>
+            <span style="color:#8e44ad; font-weight:600;">Котангенс (ctg)</span> — отношение <b>прилежащего катета</b> к <b>противолежащему</b>.
+        </p>
+    </div>
+
+    <div class="def-block orange">
+        <p>
+            <strong>📌 Три главные формулы (их нужно знать наизусть!):</strong><br>
+            <span class="formula-inline">sin α = противолежащий / гипотенуза</span><br>
+            <span class="formula-inline">cos α = прилежащий / гипотенуза</span><br>
+            <span class="formula-inline">tg α = противолежащий / прилежащий</span>
+        </p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 2. ОПРЕДЕЛЕНИЯ НА ОКРУЖНОСТИ                              -->
+    <!-- ========================================================= -->
+    <h2>2️⃣ Определения на единичной окружности <span class="badge">Алгебра</span></h2>
+
+    <div class="def-block" style="border-left-color: #e67e22; background: #fef9f0;">
+        <p>
+            <strong>📌 На единичной окружности:</strong><br>
+            <span style="color:#e74c3c; font-weight:600;">Косинус (cos)</span> — это <b>горизонтальная координата</b> точки на окружности.<br>
+            <span style="color:#2980b9; font-weight:600;">Синус (sin)</span> — это <b>вертикальная координата</b> точки на окружности.<br>
+            <span style="color:#27ae60; font-weight:600;">Тангенс (tg)</span> — это отношение sin к cos (длина касательной к окружности).<br>
+            <span style="color:#8e44ad; font-weight:600;">Котангенс (ctg)</span> — это отношение cos к sin.
+        </p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 3. ИНТЕРАКТИВНАЯ ОКРУЖНОСТЬ                               -->
+    <!-- ========================================================= -->
+    <h2>3️⃣ Единичная окружность <span class="badge">Анимация</span></h2>
+
+    <div class="row">
+        <div class="card">
+            <h3>🧭 Точка на круге</h3>
+            <div class="circle-container">
+                <canvas id="unitCircle" width="400" height="400"></canvas>
+            </div>
+            <div class="legend">
+                <span class="cos-c">Cos (X)</span>
+                <span class="sin-c">Sin (Y)</span>
+                <span class="tan-c">Tg</span>
+            </div>
+            <div style="text-align:center; margin-top:4px; font-size:clamp(13px, 2vw, 15px);">
+                Угол: <b id="angleDisplay">0°</b> &nbsp;|&nbsp; 
+                <span class="cos-c">cos <span id="cosDisplay">1.00</span></span> &nbsp; 
+                <span class="sin-c">sin <span id="sinDisplay">0.00</span></span>
+            </div>
+            <input type="range" id="angleSlider" min="0" max="360" value="0" style="width:100%; margin-top:8px;">
+        </div>
+        <div class="card" style="flex: 1 1 200px; background: #f0f5fe;">
+            <h3>📌 Тангенс и Котангенс</h3>
+            <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.6;">
+                <b style="color:#27ae60;">Тангенс (tg)</b> — это отношение синуса к косинусу. 
+                На окружности это <b>длина касательной</b> (зелёная линия) от точки до оси X.
+            </p>
+            <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.6; margin-top:8px;">
+                <b style="color:#8e44ad;">Котангенс (ctg)</b> — это обратное отношение (косинус / синус). 
+                Это длина касательной к оси Y.
+            </p>
+            <div style="background:white; padding:10px; border-radius:12px; margin-top:8px; text-align:center; font-size:clamp(14px, 2vw, 16px);">
+                <b>tg α =</b> sin α / cos α &nbsp;&nbsp;|&nbsp;&nbsp; <b>ctg α =</b> cos α / sin α
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 4. ГРАФИКИ                                                  -->
+    <!-- ========================================================= -->
+    <h2>4️⃣ Графики волн <span class="badge">Sin / Cos / Tg</span></h2>
+    <div class="graph-box">
+        <canvas id="waveGraph" width="800" height="200"></canvas>
+        <div style="display:flex; justify-content:center; gap:clamp(12px, 3vw, 25px); font-size:clamp(12px, 1.8vw, 14px); margin-top:6px; flex-wrap:wrap;">
+            <span><span style="color:#2980b9; font-weight:bold;">——</span> Синус</span>
+            <span><span style="color:#e74c3c; font-weight:bold;">——</span> Косинус</span>
+            <span><span style="color:#27ae60; font-weight:bold;">——</span> Тангенс</span>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 5. ОСНОВНЫЕ ФОРМУЛЫ                                        -->
+    <!-- ========================================================= -->
+    <h2>5️⃣ Основные формулы <span class="badge">Шпаргалка</span></h2>
+    <div class="grid-2">
+        <div class="formula-box">
+            <b>sin² α + cos² α = 1</b>
+            <small>Основное тригонометрическое тождество</small>
+        </div>
+        <div class="formula-box">
+            <b>tg α = sin α / cos α</b> &nbsp;&nbsp; <b>ctg α = cos α / sin α</b>
+            <small>Определение тангенса и котангенса</small>
+        </div>
+        <div class="formula-box">
+            <b>sin(2α) = 2·sin α·cos α</b>
+            <small>Синус двойного угла</small>
+        </div>
+        <div class="formula-box">
+            <b>cos(2α) = cos²α − sin²α</b>
+            <small>Косинус двойного угла</small>
+        </div>
+        <div class="formula-box">
+            <b>sin(α ± β) = sinα·cosβ ± cosα·sinβ</b>
+            <small>Синус суммы / разности</small>
+        </div>
+        <div class="formula-box">
+            <b>cos(α ± β) = cosα·cosβ ∓ sinα·sinβ</b>
+            <small>Косинус суммы / разности</small>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 6. ЗНАЧЕНИЯ ДЛЯ БАЗОВЫХ УГЛОВ                             -->
+    <!-- ========================================================= -->
+    <h2>6️⃣ Значения для базовых углов <span class="badge">Наизусть</span></h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Угол (α)</th>
+                    <th>0°</th>
+                    <th>30°</th>
+                    <th>45°</th>
+                    <th>60°</th>
+                    <th>90°</th>
+                    <th>180°</th>
+                    <th>270°</th>
+                    <th>360°</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>sin α</b></td>
+                    <td>0</td>
+                    <td>½</td>
+                    <td>√2/2</td>
+                    <td>√3/2</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>−1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td><b>cos α</b></td>
+                    <td>1</td>
+                    <td>√3/2</td>
+                    <td>√2/2</td>
+                    <td>½</td>
+                    <td>0</td>
+                    <td>−1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><b>tg α</b></td>
+                    <td>0</td>
+                    <td>√3/3</td>
+                    <td>1</td>
+                    <td>√3</td>
+                    <td>∞</td>
+                    <td>0</td>
+                    <td>∞</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td><b>ctg α</b></td>
+                    <td>∞</td>
+                    <td>√3</td>
+                    <td>1</td>
+                    <td>√3/3</td>
+                    <td>0</td>
+                    <td>∞</td>
+                    <td>0</td>
+                    <td>∞</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p style="font-size:clamp(12px, 1.6vw, 14px); color:#5a6a8a; text-align:center;">∞ (бесконечность) означает, что функция не определена (деление на ноль).</p>
+
+    <!-- ========================================================= -->
+    <!-- 7. АРКСИНУСЫ, АРККОСИНУСЫ, АРКТАНГЕНСЫ, АРККОТАНГЕНСЫ   -->
+    <!-- ========================================================= -->
+    <h2>7️⃣ Обратные тригонометрические функции <span class="badge badge-purple">Арк-функции</span></h2>
+
+    <div class="def-block" style="border-left-color: #e67e22; background: #fef9f0;">
+        <p style="font-size: clamp(15px, 2.2vw, 17px); line-height: 1.8;">
+            <strong>📌 Что это?</strong><br>
+            <b>Арксинус, арккосинус, арктангенс, арккотангенс</b> — это <b>обратные</b> тригонометрические функции.<br>
+            Если <b>синус</b> превращает <b>угол</b> в <b>число</b> (sin 30° = 0.5), то <b>арксинус</b> превращает <b>число</b> в <b>угол</b> (arcsin 0.5 = 30°).
+        </p>
+    </div>
+
+    <div class="grid-3">
+        <div class="formula-box orange">
+            <b style="color:#e67e22;">arcsin x = α</b><br>
+            <span style="font-size:clamp(13px, 1.8vw, 16px);">если sin α = x</span>
+            <small>Область определения: x ∈ [−1; 1]</small>
+        </div>
+        <div class="formula-box" style="border-left-color: #d35400; background: #fdf0ea;">
+            <b style="color:#d35400;">arccos x = α</b><br>
+            <span style="font-size:clamp(13px, 1.8vw, 16px);">если cos α = x</span>
+            <small>Область определения: x ∈ [−1; 1]</small>
+        </div>
+        <div class="formula-box green">
+            <b style="color:#16a085;">arctg x = α</b><br>
+            <span style="font-size:clamp(13px, 1.8vw, 16px);">если tg α = x</span>
+            <small>Область определения: x ∈ (−∞; +∞)</small>
+        </div>
+        <div class="formula-box purple">
+            <b style="color:#8e44ad;">arcctg x = α</b><br>
+            <span style="font-size:clamp(13px, 1.8vw, 16px);">если ctg α = x</span>
+            <small>Область определения: x ∈ (−∞; +∞)</small>
+        </div>
+        <div class="formula-box orange">
+            <b style="color:#e67e22;">arcsin x + arccos x = 90°</b>
+            <small>Связь между арксинусом и арккосинусом</small>
+        </div>
+        <div class="formula-box green">
+            <b style="color:#16a085;">arctg x + arcctg x = 90°</b>
+            <small>Связь между арктангенсом и арккотангенсом</small>
+        </div>
+    </div>
+
+    <div style="background: #fff5f5; border-radius: 16px; padding: 12px 16px; margin: 12px 0; border: 1px solid #f5c6c6;">
+        <p style="margin: 0; font-size: clamp(13px, 1.8vw, 15px);">
+            <b>⚠️ Важно:</b> Арксинус и арккосинус <b>существуют только для чисел от −1 до 1</b>.
+            Например, arcsin 2 — ошибка, такого угла нет.
+            Арктангенс и арккотангенс существуют для <b>любых</b> чисел.
+        </p>
+    </div>
+
+    <!-- Таблица арк-значений -->
+    <div class="table-wrap" style="margin-top: 12px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Число x</th>
+                    <th>arcsin x</th>
+                    <th>arccos x</th>
+                    <th>arctg x</th>
+                    <th>arcctg x</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>0</b></td>
+                    <td>0°</td>
+                    <td>90°</td>
+                    <td>0°</td>
+                    <td>90°</td>
+                </tr>
+                <tr>
+                    <td><b>1/2</b></td>
+                    <td>30°</td>
+                    <td>60°</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><b>√2/2</b></td>
+                    <td>45°</td>
+                    <td>45°</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><b>√3/2</b></td>
+                    <td>60°</td>
+                    <td>30°</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><b>1</b></td>
+                    <td>90°</td>
+                    <td>0°</td>
+                    <td>45°</td>
+                    <td>45°</td>
+                </tr>
+                <tr>
+                    <td><b>−1</b></td>
+                    <td>−90°</td>
+                    <td>180°</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><b>√3</b></td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>60°</td>
+                    <td>30°</td>
+                </tr>
+                <tr>
+                    <td><b>1/√3</b></td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>30°</td>
+                    <td>60°</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 8. ЗНАКИ ПО ЧЕТВЕРТЯМ                                     -->
+    <!-- ========================================================= -->
+    <h2>8️⃣ Знаки по четвертям <span class="badge">Запомнить</span></h2>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap:10px; margin:12px 0;">
+        <div style="background:#ffe6e6; padding:12px; border-radius:16px; text-align:center; font-size:clamp(13px, 1.8vw, 15px);">
+            <b>I (0°–90°)</b><br>
+            <span style="color:#27ae60;">+</span> sin<br>
+            <span style="color:#27ae60;">+</span> cos<br>
+            <span style="color:#27ae60;">+</span> tg / ctg
+        </div>
+        <div style="background:#fff4e6; padding:12px; border-radius:16px; text-align:center; font-size:clamp(13px, 1.8vw, 15px);">
+            <b>II (90°–180°)</b><br>
+            <span style="color:#27ae60;">+</span> sin<br>
+            <span style="color:#e74c3c;">−</span> cos<br>
+            <span style="color:#e74c3c;">−</span> tg / ctg
+        </div>
+        <div style="background:#e6f0ff; padding:12px; border-radius:16px; text-align:center; font-size:clamp(13px, 1.8vw, 15px);">
+            <b>III (180°–270°)</b><br>
+            <span style="color:#e74c3c;">−</span> sin<br>
+            <span style="color:#e74c3c;">−</span> cos<br>
+            <span style="color:#27ae60;">+</span> tg / ctg
+        </div>
+        <div style="background:#e6ffe6; padding:12px; border-radius:16px; text-align:center; font-size:clamp(13px, 1.8vw, 15px);">
+            <b>IV (270°–360°)</b><br>
+            <span style="color:#e74c3c;">−</span> sin<br>
+            <span style="color:#27ae60;">+</span> cos<br>
+            <span style="color:#e74c3c;">−</span> tg / ctg
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 9. ПРИМЕР 1: ФОРМУЛА ДВОЙНОГО УГЛА                       -->
+    <!-- ========================================================= -->
+    <div class="highlight-box">
+        <h3>🧩 Пример 1: формула двойного угла</h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            Найдите: <b>30 · sin 79° · cos 79° / sin 158°</b>
+        </p>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b> Замечаем, что 158° = 2 · 79°.<br>
+            Используем формулу <b>sin 2α = 2 sin α cos α</b>.<br>
+            Числитель: 30 · sin79°·cos79° = 15 · (2 sin79°·cos79°) = 15 · sin158°.<br>
+            Дробь: (15 · sin158°) / sin158° = <b>15</b>.
+        </p>
+        <p style="color:#3a4a6b; font-size:clamp(12px, 1.6vw, 14px); margin-top:6px;">✅ <b>Лайфхак:</b> Если в задаче угол, которого нет в таблице — ищите формулу двойного угла или приведения!</p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 10. ПРИМЕР 2: ПРЯМОУГОЛЬНЫЙ ТРЕУГОЛЬНИК                   -->
+    <!-- ========================================================= -->
+    <div class="highlight-box blue">
+        <h3>🧩 Пример 2: прямоугольный треугольник <span class="badge badge-orange">Самый важный</span></h3>
+        
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            В треугольнике ABC угол A = 90°, tg B = √3, AC = 8. Найдите BC.
+        </p>
+
+        <div style="background:white; border-radius:12px; padding:12px; margin:8px 0;">
+            <p style="font-weight:600; margin-bottom:4px; font-size:clamp(14px, 2vw, 16px);">📐 Рисунок:</p>
+            <div class="triangle-ascii">
+   B
+   |\ 
+   | \
+   |  \   BC — ?
+   |   \
+   |    \
+   A-----C
+      8
+            </div>
+            <div style="font-size:clamp(12px, 1.6vw, 14px); color:#4a5a7a; text-align:center; margin-top:4px;">
+                ∠A = 90° &nbsp;|&nbsp; AC = 8 &nbsp;|&nbsp; ∠B — острый
+            </div>
+        </div>
+
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.8; font-weight:600; color:#1a2a5e;">Пошаговое решение:</p>
+
+        <div class="step">
+            <b>Шаг 1.</b> Находим угол B через арктангенс.<br>
+            Дано: tg B = √3.<br>
+            Вспоминаем таблицу: tg 60° = √3.<br>
+            Значит: <span class="formula-inline">B = arctg(√3) = 60°</span>
+        </div>
+
+        <div class="step">
+            <b>Шаг 2.</b> Используем формулу катета через синус.<br>
+            <b>Правило:</b> <i>«Катет равен произведению гипотенузы на синус противолежащего угла»</i>.<br>
+            В треугольнике: катет <b>AC</b> лежит напротив угла <b>B</b>.<br>
+            Значит: <span class="formula-inline">AC = BC · sin B</span>
+        </div>
+
+        <div class="step">
+            <b>Шаг 3.</b> Подставляем числа.<br>
+            AC = 8, B = 60°, sin 60° = √3/2.<br>
+            <span class="formula-inline">8 = BC · √3/2</span>
+        </div>
+
+        <div class="step">
+            <b>Шаг 4.</b> Выражаем BC.<br>
+            <span class="formula-inline">BC = 8 · 2 / √3 = 16/√3 ≈ 9.24</span>
+        </div>
+
+        <p style="font-size:clamp(16px, 2.5vw, 20px); text-align:center; margin-top:10px; color:#1a2a5e;">
+            ✅ <b>Ответ: BC ≈ 9.24</b>
+        </p>
+
+        <div style="background:#eafaf1; border-radius:12px; padding:10px 14px; margin-top:10px; border-left:4px solid #27ae60;">
+            <p style="margin:0; font-size:clamp(13px, 1.8vw, 15px);">
+                <b>💡 Важно!</b> Эту задачу можно решить и через тангенс + теорему Пифагора.<br>
+                Но способ через <b>арктангенс</b> и <b>синус</b> — короче и не требует дополнительных вычислений.
+            </p>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 11. ПРИМЕР 3: С АРКСИНУСОМ                               -->
+    <!-- ========================================================= -->
+    <div class="highlight-box green-box">
+        <h3>🧩 Пример 3: с арксинусом</h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            Найдите: <b>arcsin(√3/2) + arccos(1/2)</b>
+        </p>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b><br>
+            arcsin(√3/2) = 60° (потому что sin 60° = √3/2).<br>
+            arccos(1/2) = 60° (потому что cos 60° = 1/2).<br>
+            Сумма: 60° + 60° = <b>120°</b>.
+        </p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 12. АЛГОРИТМ РЕШЕНИЯ ЗАДАЧ                                -->
+    <!-- ========================================================= -->
+    <h2>9️⃣ Алгоритм решения задач с треугольником <span class="badge badge-green">Пошагово</span></h2>
+
+    <div style="background:#f8faff; border-radius:16px; padding:15px; border:1px solid #e9edf4;">
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:2;">
+            <b>1.</b> Нарисуйте прямоугольный треугольник, отметьте прямой угол.<br>
+            <b>2.</b> Обозначьте все известные стороны и углы.<br>
+            <b>3.</b> Выберите нужную тригонометрическую функцию:<br>
+            &nbsp;&nbsp;• Если известны <b>противолежащий катет</b> и <b>гипотенуза</b> → <span class="formula-inline">sin</span><br>
+            &nbsp;&nbsp;• Если известны <b>прилежащий катет</b> и <b>гипотенуза</b> → <span class="formula-inline">cos</span><br>
+            &nbsp;&nbsp;• Если известны <b>оба катета</b> → <span class="formula-inline">tg</span> или <span class="formula-inline">ctg</span><br>
+            <b>4.</b> Запишите формулу и подставьте числа.<br>
+            <b>5.</b> Если нужно найти угол — используйте <b>арк-функцию</b> (arcsin, arccos, arctg).<br>
+            <b>6.</b> Если нужно найти гипотенузу — используйте <b>теорему Пифагора</b>.
+        </p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 13. ПРИМЕР 4: ФОРМУЛЫ ПРИВЕДЕНИЯ                          -->
+    <!-- ========================================================= -->
+    <div class="highlight-box" style="background: #fef9f0; border-color: #e67e22;">
+        <h3>🧩 Пример 4: формулы приведения</h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            Найдите: <b>8cos(2π + β) + 10sin(π/2 + β)</b>, если cos β = −1/9
+        </p>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b><br>
+            <b>Шаг 1.</b> Упрощаем первое слагаемое:<br>
+            cos(2π + β) = cos β (периодичность, период 2π)<br>
+            → 8cos(2π + β) = 8cos β<br><br>
+            <b>Шаг 2.</b> Упрощаем второе слагаемое:<br>
+            sin(π/2 + β) = cos β (формула приведения)<br>
+            → 10sin(π/2 + β) = 10cos β<br><br>
+            <b>Шаг 3.</b> Складываем:<br>
+            8cos β + 10cos β = 18cos β<br><br>
+            <b>Шаг 4.</b> Подставляем cos β = −1/9:<br>
+            18 · (−1/9) = <b>−2</b>
+        </p>
+        <div style="background:#eafaf1; border-radius:12px; padding:10px 14px; margin-top:10px; border-left:4px solid #27ae60;">
+            <p style="margin:0; font-size:clamp(13px, 1.8vw, 15px);">
+                <b>📌 Использованные формулы:</b><br>
+                • Периодичность: cos(2π + α) = cos α<br>
+                • Приведение: sin(π/2 + α) = cos α
+            </p>
+        </div>
+    </div>
+
+    <p style="text-align:center; color:#7a8aa0; font-size:clamp(12px, 1.6vw, 14px); margin-top:25px;">⚡ Покрутите ползунок, чтобы увидеть, как меняются все функции одновременно!</p>
+</div>
+
+<script>
+// ========== ИНИЦИАЛИЗАЦИЯ ==========
+// Адаптация canvas под размер экрана
+function setupCanvas(canvas) {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    const size = Math.min(rect.width, 400);
+    canvas.width = 400;
+    canvas.height = 400;
+    canvas.style.width = size + 'px';
+    canvas.style.height = size + 'px';
+}
+
+const canvas = document.getElementById('unitCircle');
+const ctx = canvas.getContext('2d');
+const waveCanvas = document.getElementById('waveGraph');
+const waveCtx = waveCanvas.getContext('2d');
+const slider = document.getElementById('angleSlider');
+const angleDisplay = document.getElementById('angleDisplay');
+const cosDisplay = document.getElementById('cosDisplay');
+const sinDisplay = document.getElementById('sinDisplay');
+
+function drawCircle(deg) {
+    const w = canvas.width, h = canvas.height;
+    const cx = w/2, cy = h/2, r = 160;
+    ctx.clearRect(0, 0, w, h);
+
+    // оси
+    ctx.strokeStyle = "#d0d8e8";
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(20, cy); ctx.lineTo(w-20, cy); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx, 20); ctx.lineTo(cx, h-20); ctx.stroke();
+
+    ctx.fillStyle = "#888"; ctx.font = "13px Arial";
+    ctx.fillText("X", w-25, cy-8);
+    ctx.fillText("Y", cx+10, 22);
+
+    // окружность
+    ctx.strokeStyle = "#1a2a5e";
+    ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, 2*Math.PI); ctx.stroke();
+
+    const rad = deg * Math.PI / 180;
+    const x = cx + r * Math.cos(rad);
+    const y = cy - r * Math.sin(rad);
+
+    // радиус (пунктир)
+    ctx.strokeStyle = "#aab";
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 6]);
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x, y); ctx.stroke();
+    ctx.setLineDash([]);
+
+    // КОСИНУС (красный)
+    ctx.strokeStyle = "#e74c3c";
+    ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x, cy); ctx.stroke();
+    ctx.fillStyle = "#e74c3c";
+    ctx.beginPath(); ctx.arc(x, cy, 6, 0, 2*Math.PI); ctx.fill();
+
+    // СИНУС (синий)
+    ctx.strokeStyle = "#2980b9";
+    ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(x, cy); ctx.lineTo(x, y); ctx.stroke();
+    ctx.fillStyle = "#2980b9";
+    ctx.beginPath(); ctx.arc(x, y, 6, 0, 2*Math.PI); ctx.fill();
+
+    // ТАНГЕНС (зелёный)
+    if (Math.abs(Math.cos(rad)) > 0.01) {
+        const tanLen = Math.tan(rad);
+        const tanX = cx + r;
+        const tanY = cy - r * tanLen;
+        ctx.strokeStyle = "#27ae60";
+        ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(tanX, tanY); ctx.stroke();
+        ctx.fillStyle = "#27ae60";
+        ctx.beginPath(); ctx.arc(tanX, tanY, 5, 0, 2*Math.PI); ctx.fill();
+    }
+
+    // точка на окружности
+    ctx.fillStyle = "#1a2639";
+    ctx.beginPath(); ctx.arc(x, y, 8, 0, 2*Math.PI); ctx.fill();
+    ctx.fillStyle = "white";
+    ctx.beginPath(); ctx.arc(x, y, 3, 0, 2*Math.PI); ctx.fill();
+
+    const cosV = Math.cos(rad), sinV = Math.sin(rad);
+    cosDisplay.textContent = cosV.toFixed(2);
+    sinDisplay.textContent = sinV.toFixed(2);
+    angleDisplay.textContent = deg + "°";
+}
+
+function drawWave(deg) {
+    const w = waveCanvas.width, h = waveCanvas.height;
+    waveCtx.clearRect(0, 0, w, h);
+
+    waveCtx.strokeStyle = "#eef2f7";
+    waveCtx.lineWidth = 1;
+    for (let i=0; i<10; i++) { waveCtx.beginPath(); waveCtx.moveTo(0, i*h/10); waveCtx.lineTo(w, i*h/10); waveCtx.stroke(); }
+    waveCtx.strokeStyle = "#333";
+    waveCtx.lineWidth = 2;
+    waveCtx.beginPath(); waveCtx.moveTo(0, h/2); waveCtx.lineTo(w, h/2); waveCtx.stroke();
+
+    const startDeg = -360, endDeg = 720, steps = 400;
+
+    waveCtx.strokeStyle = "#2980b9"; waveCtx.lineWidth = 2.5;
+    waveCtx.beginPath();
+    for (let i=0; i<=steps; i++) {
+        let d = startDeg + (endDeg - startDeg) * (i/steps);
+        let r = d * Math.PI / 180;
+        let x = (i/steps)*w;
+        let y = h/2 - (h/2 - 20) * Math.sin(r);
+        i===0 ? waveCtx.moveTo(x,y) : waveCtx.lineTo(x,y);
+    }
+    waveCtx.stroke();
+
+    waveCtx.strokeStyle = "#e74c3c"; waveCtx.lineWidth = 2.5;
+    waveCtx.beginPath();
+    for (let i=0; i<=steps; i++) {
+        let d = startDeg + (endDeg - startDeg) * (i/steps);
+        let r = d * Math.PI / 180;
+        let x = (i/steps)*w;
+        let y = h/2 - (h/2 - 20) * Math.cos(r);
+        i===0 ? waveCtx.moveTo(x,y) : waveCtx.lineTo(x,y);
+    }
+    waveCtx.stroke();
+
+    waveCtx.strokeStyle = "#27ae60"; waveCtx.lineWidth = 2;
+    waveCtx.beginPath();
+    for (let i=0; i<=steps; i++) {
+        let d = startDeg + (endDeg - startDeg) * (i/steps);
+        let r = d * Math.PI / 180;
+        let x = (i/steps)*w;
+        let tanVal = Math.tan(r);
+        if (Math.abs(tanVal) > 5) tanVal = (tanVal > 0 ? 5 : -5);
+        let y = h/2 - (h/2 - 20) * tanVal;
+        if (i===0 || Math.abs(Math.cos(r)) < 0.01) waveCtx.moveTo(x, y);
+        else waveCtx.lineTo(x, y);
+    }
+    waveCtx.stroke();
+
+    const normDeg = ((deg % 360) + 360) % 360;
+    const graphX = ((normDeg + 360) / (endDeg - startDeg)) * w;
+    waveCtx.strokeStyle = "rgba(0,0,0,0.2)";
+    waveCtx.lineWidth = 2;
+    waveCtx.setLineDash([4, 6]);
+    waveCtx.beginPath(); waveCtx.moveTo(graphX, 10); waveCtx.lineTo(graphX, h-10); waveCtx.stroke();
+    waveCtx.setLineDash([]);
+
+    waveCtx.fillStyle = "#999"; waveCtx.font = "11px Arial";
+    waveCtx.fillText("−360°", 5, h-8);
+    waveCtx.fillText("0°", w/3 - 15, h-8);
+    waveCtx.fillText("360°", 2*w/3 - 20, h-8);
+    waveCtx.fillText("720°", w-45, h-8);
+}
+
+function update() {
+    const deg = parseFloat(slider.value);
+    drawCircle(deg);
+    drawWave(deg);
+}
+
+// Адаптируем canvas под размер экрана
+function resizeCanvases() {
+    const container = document.querySelector('.container');
+    const maxWidth = container.clientWidth - 40;
+    const circleSize = Math.min(maxWidth, 400);
+    const waveWidth = Math.min(maxWidth, 800);
+    
+    // unitCircle
+    const circleCanvas = document.getElementById('unitCircle');
+    circleCanvas.style.width = circleSize + 'px';
+    circleCanvas.style.height = circleSize + 'px';
+    
+    // waveGraph
+    const waveCanvasEl = document.getElementById('waveGraph');
+    const waveHeight = Math.max(100, waveWidth / 4);
+    waveCanvasEl.style.width = waveWidth + 'px';
+    waveCanvasEl.style.height = waveHeight + 'px';
+    waveCanvas.width = 800;
+    waveCanvas.height = 200;
+}
+
+window.addEventListener('resize', () => {
+    resizeCanvases();
+    update();
+});
+
+slider.addEventListener('input', update);
+
+// Запуск
+setTimeout(() => {
+    resizeCanvases();
+    update();
+}, 50);
+</script>
+</body>
+</html>
