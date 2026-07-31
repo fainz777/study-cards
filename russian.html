@@ -79,7 +79,8 @@
         .rule-block p {
             margin: 6px 0 8px;
         }
-        .rule-block ul, .rule-block ol {
+        .rule-block ul,
+        .rule-block ol {
             margin: 6px 0 8px 18px;
             padding-left: 6px;
         }
@@ -219,1080 +220,1145 @@
         .punkt-scheme li {
             margin-bottom: 2px;
         }
+        .def-block {
+            background: #f0f7ff;
+            border-radius: 12px;
+            padding: 8px 14px;
+            margin: 6px 0;
+            border-left: 3px solid #3b82f6;
+        }
+        .def-block strong {
+            color: #1e4a8b;
+        }
         @media (max-width: 700px) {
-            .two-col { grid-template-columns: 1fr; }
-            .three-col { grid-template-columns: 1fr; }
-            .table-mini { grid-template-columns: 1fr; }
-            .morph-grid { grid-template-columns: 1fr; }
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .three-col {
+                grid-template-columns: 1fr;
+            }
+            .table-mini {
+                grid-template-columns: 1fr;
+            }
+            .morph-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>📘 Русский язык · Вступительные испытания 2025</h1>
-    <p style="margin-top: -10px; color: #475569; font-size: 1rem; border-bottom: 1px solid #dce2ec; padding-bottom: 16px;">
-        Схемы и алгоритмы по орфографии, пунктуации, культуре речи (на основе пособия ТУСУР)
-    </p>
-    <div class="grid">
+    <div class="container">
+        <h1>📘 Русский язык · Вступительные испытания 2025</h1>
+        <p style="margin-top: -10px; color: #475569; font-size: 1rem; border-bottom: 1px solid #dce2ec; padding-bottom: 16px;">
+            Схемы и алгоритмы по орфографии, пунктуации, культуре речи (на основе пособия ТУСУР)
+        </p>
+        <div class="grid">
 
-        <!-- КАРТОЧКА: Части речи, склонение, спряжение -->
-        <div class="card">
-            <div class="card-header"><h2>🧩 Части речи · склонение / спряжение</h2><span class="badge">морфология</span></div>
-            <div class="rule-block">
-                <div class="three-col">
-                    <div>
-                        <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem;">
-                            <strong>Имя существительное</strong> — склонение · род · число · падеж
+            <!-- КАРТОЧКА: Части речи, склонение, спряжение — С ОПРЕДЕЛЕНИЯМИ -->
+            <div class="card">
+                <div class="card-header"><h2>🧩 Части речи · склонение / спряжение</h2><span class="badge">морфология</span></div>
+                <div class="rule-block">
+                    <div class="three-col">
+                        <!-- КОЛОНКА 1: СУЩЕСТВИТЕЛЬНОЕ, ПРИЛАГАТЕЛЬНОЕ, ЧИСЛИТЕЛЬНОЕ -->
+                        <div class="col">
+                            <div class="def-block">
+                                <strong>Имя существительное</strong> — часть речи, которая обозначает <strong>предмет</strong> и отвечает на вопросы <strong>кто? что?</strong>
+                            </div>
+                            <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem; margin-top: 4px;">
+                                <strong>Склонение</strong> · род · число · падеж
+                            </div>
+                            <div class="morph-grid" style="grid-template-columns: 1fr;">
+                                <div class="morph-item"><span class="tag-sm">1 скл.</span> м.р., ж.р. на -а/-я: <i>папа, земля</i></div>
+                                <div class="morph-item"><span class="tag-sm">2 скл.</span> м.р. (нул. оконч.), ср.р. на -о/-е: <i>стол, поле</i></div>
+                                <div class="morph-item"><span class="tag-sm">3 скл.</span> ж.р. с нул. оконч., ь: <i>ночь, мышь</i></div>
+                                <div class="morph-item"><span class="tag-sm">Разноскл.</span> <i>время, путь, дитя</i> (на -мя + путь)</div>
+                            </div>
+                            <hr>
+                            <div class="def-block">
+                                <strong>Имя прилагательное</strong> — часть речи, которая обозначает <strong>признак предмета</strong> и отвечает на вопросы <strong>какой? чей?</strong>
+                            </div>
+                            <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem; margin-top: 4px;">
+                                <strong>Согласуется</strong> с сущ. в роде, числе, падеже
+                            </div>
+                            <div class="morph-grid" style="grid-template-columns: 1fr;">
+                                <div class="morph-item"><span class="tag-sm">Качеств.</span> степени сравнения: <i>красивый — красивее</i></div>
+                                <div class="morph-item"><span class="tag-sm">Относит.</span> материал, время, место: <i>деревянный, вчерашний</i></div>
+                                <div class="morph-item"><span class="tag-sm">Притяж.</span> принадлежность: <i>лисий, мамин</i></div>
+                            </div>
+                            <hr>
+                            <div class="def-block">
+                                <strong>Имя числительное</strong> — часть речи, которая обозначает <strong>количество</strong> или <strong>порядок при счёте</strong> и отвечает на вопросы <strong>сколько? который?</strong>
+                            </div>
+                            <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem; margin-top: 4px;">
+                                <strong>Количественные</strong> · <strong>порядковые</strong> · <strong>собирательные</strong>
+                            </div>
+                            <div class="example" style="margin-top: 0;"><i>Склонение 50–80, 200–900: обе части изменяются. Полтора, полтораста — особые формы.</i></div>
                         </div>
-                        <div class="morph-grid" style="grid-template-columns: 1fr;">
-                            <div class="morph-item"><span class="tag-sm">1 скл.</span> м.р., ж.р. на -а/-я: <i>папа, земля</i></div>
-                            <div class="morph-item"><span class="tag-sm">2 скл.</span> м.р. (нул. оконч.), ср.р. на -о/-е: <i>стол, поле</i></div>
-                            <div class="morph-item"><span class="tag-sm">3 скл.</span> ж.р. с нул. оконч., ь: <i>ночь, мышь</i></div>
-                            <div class="morph-item"><span class="tag-sm">Разноскл.</span> <i>время, путь, дитя</i> (на -мя + путь)</div>
-                        </div>
-                        <hr>
-                        <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem;">
-                            <strong>Имя прилагательное</strong> — согласуется с сущ.
-                        </div>
-                        <div class="morph-grid" style="grid-template-columns: 1fr;">
-                            <div class="morph-item"><span class="tag-sm">Качеств.</span> степени сравнения: <i>красивый — красивее</i></div>
-                            <div class="morph-item"><span class="tag-sm">Относит.</span> материал, время, место: <i>деревянный, вчерашний</i></div>
-                            <div class="morph-item"><span class="tag-sm">Притяж.</span> принадлежность: <i>лисий, мамин</i></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem;">
-                            <strong>Глагол</strong> — спряжение (I / II) · вид · время · наклонение · лицо · число
-                        </div>
-                        <div class="two-col" style="grid-template-columns: 1fr; background: #f2f8ff;">
-                            <div style="border-left: none; padding-left: 0;"><span class="tag">I спр.</span> все гл. на -еть, -ать, -ять, -оть, -уть, -ть, -чь + брить, стелить, зиждиться. <br> <i>читать → читаешь</i></div>
-                            <div style="border-left: none; padding-left: 0;"><span class="tag">II спр.</span> все гл. на -ить + 11 гл.-исключений: <i>гнать, держать, смотреть, видеть, дышать, слышать, ненавидеть, обидеть, вертеть, зависеть, терпеть</i>. <br> <i>говорить → говоришь</i></div>
-                        </div>
-                        <div class="highlight" style="margin-top: 6px;">⚡ <strong>Разноспрягаемые:</strong> <i>хотеть, бежать, чтить</i> (окончания I и II спр.).</div>
-                        <hr>
-                        <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem;">
-                            <strong>Наречие</strong> — неизменяемая часть речи (обстоятельство)
-                        </div>
-                        <div class="example" style="margin-top: 0;"><i>быстро, вчера, везде, по-дружески</i> <br> Степени сравнения: <i>быстро — быстрее — быстрее всех</i>.</div>
-                        <hr>
-                        <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem;">
-                            <strong>Служебные части речи</strong> — предлог, союз, частица; <strong>междометие</strong>
-                        </div>
-                        <div class="morph-grid" style="grid-template-columns: 1fr 1fr;">
-                            <div class="morph-item"><span class="tag-sm">Предлог</span> <i>в, на, под, благодаря</i></div>
-                            <div class="morph-item"><span class="tag-sm">Союз</span> <i>и, а, но, потому что</i></div>
-                            <div class="morph-item"><span class="tag-sm">Частица</span> <i>бы, же, не, лишь</i></div>
-                            <div class="morph-item"><span class="tag-sm">Междом.</span> <i>ах, увы, ой</i></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem;">
-                            <strong>Причастие</strong> — особая форма глагола (признак предмета по действию)
-                        </div>
-                        <div class="morph-grid" style="grid-template-columns: 1fr;">
-                            <div class="morph-item"><span class="tag-sm">Действит. наст.</span> -ущ-/-ющ- (I), -ащ-/-ящ- (II): <i>читающий, любящий</i></div>
-                            <div class="morph-item"><span class="tag-sm">Действит. прош.</span> -вш-, -ш-: <i>прочитавший, нёсший</i></div>
-                            <div class="morph-item"><span class="tag-sm">Страдат. наст.</span> -ом-/-ем- (I), -им- (II): <i>читаемый, любимый</i></div>
-                            <div class="morph-item"><span class="tag-sm">Страдат. прош.</span> -нн-, -енн-, -т-: <i>прочитанный, увиденный, занятый</i></div>
-                        </div>
-                        <div class="highlight" style="margin-top: 4px;">📌 <strong>Краткие причастия</strong> — <i>прочитана, закрыт</i> (всегда одна Н).<br> <strong>Полные</strong> — Н/НН по правилам (1.10).</div>
-                        <hr>
-                        <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem;">
-                            <strong>Деепричастие</strong> — неизменяемая форма (добавочное действие)
-                        </div>
-                        <div class="morph-grid" style="grid-template-columns: 1fr;">
-                            <div class="morph-item"><span class="tag-sm">Несов. вида</span> -а/-я (одновременность): <i>читая, стоя</i></div>
-                            <div class="morph-item"><span class="tag-sm">Сов. вида</span> -в/-вши/-ши (предшествование): <i>прочитав, сказав, уйдя</i></div>
-                        </div>
-                        <div class="example" style="margin-top: 0;">⚡ <strong>Обособляются</strong> запятыми, если обозначают добавочное действие (кроме фразеологизмов: <i>спустя рукава</i>).</div>
-                        <hr>
-                        <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem;">
-                            <strong>Местоимение</strong> — разряды
-                        </div>
-                        <div class="morph-grid" style="grid-template-columns: 1fr;">
-                            <div class="morph-item"><span class="tag-sm">Личн.</span> я, ты, он, мы, вы, они</div>
-                            <div class="morph-item"><span class="tag-sm">Притяж.</span> мой, твой, наш, ваш, свой</div>
-                            <div class="morph-item"><span class="tag-sm">Указат.</span> этот, тот, такой</div>
-                            <div class="morph-item"><span class="tag-sm">Определит.</span> сам, самый, весь, всякий, каждый</div>
-                            <div class="morph-item"><span class="tag-sm">Вопр./относ.</span> кто, что, какой, чей, который</div>
-                            <div class="morph-item"><span class="tag-sm">Отриц./неопр.</span> никто, нечто, кое-кто</div>
-                        </div>
-                        <hr>
-                        <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem;">
-                            <strong>Имя числительное</strong> — количественные, порядковые, собирательные
-                        </div>
-                        <div class="example" style="margin-top: 0;"><i>Склонение 50–80, 200–900: обе части изменяются. Полтора, полтораста — особые формы.</i></div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- 1.1 Безударная гласная -->
-        <div class="card">
-            <div class="card-header"><h2>🔤 1.1 Безударная гласная</h2><span class="badge">корень</span></div>
-            <div class="rule-block">
-                <p><strong>Проверяемая</strong> → подбираем однокоренное слово, где гласная под ударением.</p>
-                <div class="example"><i>дрожать — дрожь, запевать — петь</i></div>
-                <p><strong>Непроверяемая</strong> → запомнить (словарные слова).</p>
-                <div class="highlight">⚡ Алгоритм: <br>1. Поставь ударение. <br>2. Если гласная без ударения → ищи однокоренное с ударением. <br>3. Если нет → запоминай (обоняние, оптимист).</div>
-            </div>
-        </div>
-
-        <!-- 1.2 Чередующиеся гласные -->
-        <div class="card">
-            <div class="card-header"><h2>🔄 1.2 Чередование в корне</h2><span class="badge">корень</span></div>
-            <div class="rule-block">
-                <div class="scheme">✔️ <strong>Зависит от:</strong> ударения · конечной согласной · суффикса -а- · значения</div>
-                <div class="three-col">
-                    <div class="col">
-                        <p><strong>От ударения:</strong></p>
-                        <div><span class="tag">О (без удар.)</span> <br><strong>-гор-/-гар-</strong> (загорать, но загар) <br><strong>-клон-/-клан-</strong> (поклониться) <br><strong>-твор-/-твар-</strong> (творить, утварь)</div>
-                        <div style="margin-top: 6px;"><span class="tag">А (без удар.)</span> <br><strong>-зар-/-зор-</strong> (заря, озарить, но зори)</div>
-                        <div class="highlight" style="margin-top: 4px;">Исключения: <strong>пригарь, выгарки, изгарь</strong></div>
-                        <hr>
-                        <p><strong>От значения корня:</strong></p>
-                        <div><span class="tag">-мак- / -мок-</span> <br><strong>мак-</strong> 'погружать в жидкость' (макать) <br><strong>мок-</strong> 'пропускать влагу' (промокает) <br>запомнить: <strong>промокашка</strong></div>
-                        <div style="margin-top: 6px;"><span class="tag">-равн- / -ровн-</span> <br><strong>равн-</strong> 'равный, одинаковый' (уравнять) <br><strong>ровн-</strong> 'ровный, гладкий' (подровнять) <br>искл. <strong>равнина, поровну, уровень, ровесник</strong></div>
-                    </div>
-                    <div class="col">
-                        <p><strong>От конечной согласной корня:</strong></p>
-                        <div><span class="tag">-лаг- / -лож-</span> <br>полагать — положение <br>искл. <strong>полог</strong></div>
-                        <div style="margin-top: 6px;"><span class="tag">-раст- / -ращ- / -рос-</span> <br>растить, выращивать, вырос <br>искл. <strong>росток, ростовщик, Ростислав, Ростов, подростковый, отрасль, на вырост, выросток, выростковый</strong></div>
-                        <div style="margin-top: 6px;"><span class="tag">-скак- / -скоч-</span> <br>скакать, выскочить <br>искл. <strong>скачок, скачу</strong></div>
-                        <hr>
-                        <p><strong>Корень -плав-:</strong> всегда А (<i>плавучий, плавник</i>), искл. <strong>пловец, пловчиха, плывуны</strong>.</p>
-                    </div>
-                    <div class="col">
-                        <p><strong>От суффикса -а- после корня:</strong></p>
-                        <div style="display: grid; grid-template-columns: 1fr; gap: 2px; font-size: 0.9rem;">
-                            <div><span class="tag">-кас-/-кос-</span> (касаться — коснуться)</div>
-                            <div><span class="tag">-дир-/-дер-</span> (сдирать — выдеру)</div>
-                            <div><span class="tag">-бир-/-бер-</span> (собирать — соберусь)</div>
-                            <div><span class="tag">-мир-/-мер-</span> (замирать — замереть)</div>
-                            <div><span class="tag">-пир-/-пер-</span> (напирать — напереть)</div>
-                            <div><span class="tag">-жиг-/-жег-</span> (выжигать — выжег)</div>
-                            <div><span class="tag">-блист-/-блест-</span> (блистать — блестеть)</div>
-                            <div><span class="tag">-стил-/-стел-</span> (застилать — застелить)</div>
-                            <div><span class="tag">-чит-/-чет-</span> (вычитать — вычет)</div>
+                        <!-- КОЛОНКА 2: ГЛАГОЛ, НАРЕЧИЕ, МЕСТОИМЕНИЕ -->
+                        <div class="col">
+                            <div class="def-block">
+                                <strong>Глагол</strong> — часть речи, которая обозначает <strong>действие</strong> и отвечает на вопросы <strong>что делать? что сделать?</strong>
+                            </div>
+                            <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem; margin-top: 4px;">
+                                <strong>Спряжение (I / II)</strong> · вид · время · наклонение · лицо · число
+                            </div>
+                            <div class="two-col" style="grid-template-columns: 1fr; background: #f2f8ff;">
+                                <div style="border-left: none; padding-left: 0;"><span class="tag">I спр.</span> все гл. на -еть, -ать, -ять, -оть, -уть, -ть, -чь + брить, стелить, зиждиться. <br> <i>читать → читаешь</i></div>
+                                <div style="border-left: none; padding-left: 0;"><span class="tag">II спр.</span> все гл. на -ить + 11 гл.-исключений: <i>гнать, держать, смотреть, видеть, дышать, слышать, ненавидеть, обидеть, вертеть, зависеть, терпеть</i>. <br> <i>говорить → говоришь</i></div>
+                            </div>
+                            <div class="highlight" style="margin-top: 6px;">⚡ <strong>Разноспрягаемые:</strong> <i>хотеть, бежать, чтить</i> (окончания I и II спр.).</div>
+                            <hr>
+                            <div class="def-block">
+                                <strong>Наречие</strong> — часть речи, которая обозначает <strong>признак действия</strong> или <strong>признак признака</strong> и отвечает на вопросы <strong>где? когда? куда? откуда? почему? зачем? как?</strong>
+                            </div>
+                            <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem; margin-top: 4px;">
+                                <strong>Неизменяемая</strong> часть речи (обстоятельство)
+                            </div>
+                            <div class="example" style="margin-top: 0;"><i>быстро, вчера, везде, по-дружески</i> <br> Степени сравнения: <i>быстро — быстрее — быстрее всех</i>.</div>
+                            <hr>
+                            <div class="def-block">
+                                <strong>Местоимение</strong> — часть речи, которая указывает на <strong>предмет, признак, количество</strong>, но не называет их.
+                            </div>
+                            <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem; margin-top: 4px;">
+                                <strong>Разряды</strong>
+                            </div>
+                            <div class="morph-grid" style="grid-template-columns: 1fr;">
+                                <div class="morph-item"><span class="tag-sm">Личн.</span> я, ты, он, мы, вы, они</div>
+                                <div class="morph-item"><span class="tag-sm">Притяж.</span> мой, твой, наш, ваш, свой</div>
+                                <div class="morph-item"><span class="tag-sm">Указат.</span> этот, тот, такой</div>
+                                <div class="morph-item"><span class="tag-sm">Определит.</span> сам, самый, весь, всякий, каждый</div>
+                                <div class="morph-item"><span class="tag-sm">Вопр./относ.</span> кто, что, какой, чей, который</div>
+                                <div class="morph-item"><span class="tag-sm">Отриц./неопр.</span> никто, нечто, кое-кто</div>
+                            </div>
                         </div>
-                        <div class="highlight" style="margin-top: 4px;">Исключение: <strong>сочетание</strong> и производные (сочетать, бракосочетание, чета).</div>
-                        <hr>
-                        <p><strong>Чередования им(ин)//а(я):</strong></p>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-size: 0.9rem;">
-                            <div><span class="tag">-жим-</span> зажимать — зажать</div>
-                            <div><span class="tag">-мин-</span> разминать — размять</div>
-                            <div><span class="tag">-жин-</span> пожинать — пожать</div>
-                            <div><span class="tag">-ним-</span> занимать — занять</div>
-                            <div><span class="tag">-клин-</span> заклинать — клясть</div>
-                            <div><span class="tag">-пин-</span> распинать — распять</div>
-                            <div><span class="tag">-чин-</span> начинать — начать</div>
+
+                        <!-- КОЛОНКА 3: ПРИЧАСТИЕ, ДЕЕПРИЧАСТИЕ, СЛУЖЕБНЫЕ -->
+                        <div class="col">
+                            <div class="def-block">
+                                <strong>Причастие</strong> — особая форма глагола, которая обозначает <strong>признак предмета по действию</strong> и отвечает на вопросы <strong>какой? что делающий? что сделавший?</strong>
+                            </div>
+                            <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem; margin-top: 4px;">
+                                <strong>Действительные</strong> · <strong>страдательные</strong> · время
+                            </div>
+                            <div class="morph-grid" style="grid-template-columns: 1fr;">
+                                <div class="morph-item"><span class="tag-sm">Действит. наст.</span> -ущ-/-ющ- (I), -ащ-/-ящ- (II): <i>читающий, любящий</i></div>
+                                <div class="morph-item"><span class="tag-sm">Действит. прош.</span> -вш-, -ш-: <i>прочитавший, нёсший</i></div>
+                                <div class="morph-item"><span class="tag-sm">Страдат. наст.</span> -ом-/-ем- (I), -им- (II): <i>читаемый, любимый</i></div>
+                                <div class="morph-item"><span class="tag-sm">Страдат. прош.</span> -нн-, -енн-, -т-: <i>прочитанный, увиденный, занятый</i></div>
+                            </div>
+                            <div class="highlight" style="margin-top: 4px;">📌 <strong>Краткие причастия</strong> — <i>прочитана, закрыт</i> (всегда одна Н).<br> <strong>Полные</strong> — Н/НН по правилам (1.10).</div>
+                            <hr>
+                            <div class="def-block">
+                                <strong>Деепричастие</strong> — особая форма глагола, которая обозначает <strong>добавочное действие</strong> и отвечает на вопросы <strong>что делая? что сделав?</strong>
+                            </div>
+                            <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem; margin-top: 4px;">
+                                <strong>Неизменяемая</strong> форма
+                            </div>
+                            <div class="morph-grid" style="grid-template-columns: 1fr;">
+                                <div class="morph-item"><span class="tag-sm">Несов. вида</span> -а/-я (одновременность): <i>читая, стоя</i></div>
+                                <div class="morph-item"><span class="tag-sm">Сов. вида</span> -в/-вши/-ши (предшествование): <i>прочитав, сказав, уйдя</i></div>
+                            </div>
+                            <div class="example" style="margin-top: 0;">⚡ <strong>Обособляются</strong> запятыми, если обозначают добавочное действие (кроме фразеологизмов: <i>спустя рукава</i>).</div>
+                            <hr>
+                            <div class="def-block">
+                                <strong>Служебные части речи</strong> — не называют предметов, признаков, действий; служат для связи слов.
+                            </div>
+                            <div class="scheme" style="background: #eaf3ff; border-color: #3b82f6; font-size: 0.95rem; margin-top: 4px;">
+                                <strong>Предлог</strong> · <strong>союз</strong> · <strong>частица</strong>; <strong>междометие</strong>
+                            </div>
+                            <div class="morph-grid" style="grid-template-columns: 1fr 1fr;">
+                                <div class="morph-item"><span class="tag-sm">Предлог</span> <i>в, на, под, благодаря</i></div>
+                                <div class="morph-item"><span class="tag-sm">Союз</span> <i>и, а, но, потому что</i></div>
+                                <div class="morph-item"><span class="tag-sm">Частица</span> <i>бы, же, не, лишь</i></div>
+                                <div class="morph-item"><span class="tag-sm">Междом.</span> <i>ах, увы, ой</i></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 1.3 З/С на конце приставки -->
-        <div class="card">
-            <div class="card-header"><h2>🔊 1.3 З / С в приставках</h2><span class="badge">приставка</span></div>
-            <div class="rule-block">
-                <div class="table-mini">
-                    <div class="item"><span class="label">З</span> перед гласной или звонкой согласной: <i>бездонный, возглас</i></div>
-                    <div class="item"><span class="label">С</span> перед глухой согласной: <i>бескомпромиссный, восходящий</i></div>
-                </div>
-                <p><strong>Приставка С-</strong> всегда неизменна: <i>сделать, спилить</i>.</p>
-                <p><strong>Запомнить:</strong> <i>здесь, здание, здоровье</i> (з — часть корня).</p>
-                <div class="highlight">⚡ В приставках <strong>раз-/рас-</strong> и <strong>роз-/рос-</strong>: под ударением О, без ударения А: <i>раздать — розданный</i>.</div>
-            </div>
-        </div>
-
-        <!-- 1.4 ПРЕ/ПРИ -->
-        <div class="card">
-            <div class="card-header"><h2>⚖️ 1.4 ПРЕ / ПРИ</h2><span class="badge">приставка</span></div>
-            <div class="rule-block">
-                <div class="two-col">
-                    <div class="col"><span class="tag">ПРИ-</span> приближение, присоединение, близость, неполнота действия: <i>прибрежный, приоткрыть</i></div>
-                    <div class="col"><span class="tag">ПРЕ-</span> ≈ очень, ≈ пере-: <i>прекрасный, преломить</i></div>
-                </div>
-                <div class="highlight">📌 <strong>Омофоны:</strong> прибывать (куда) — пребывать (находиться); притворить (дверь) — претворить (осуществить).</div>
-                <p><span class="tag">Запомнить</span> привилегия, президент, претензия, приоритет, камень преткновения.</p>
-            </div>
-        </div>
-
-        <!-- 1.5 Ы/И после приставок -->
-        <div class="card">
-            <div class="card-header"><h2>🔁 1.5 Ы / И после приставок</h2><span class="badge">приставка</span></div>
-            <div class="rule-block">
-                <p>После русских приставок на согласную → <strong>Ы</strong>: <i>разыграть, подыскать</i>.</p>
-                <p>После <strong>меж-, сверх-, дез-, контр-, суб-, транс-, пан-</strong> → <strong>И</strong>: <i>межинститутский, субинспектор</i>.</p>
-                <div class="example">Исключение: <strong>взимать</strong> (пишется И).</div>
-            </div>
-        </div>
-
-        <!-- 1.6 О/А в приставках -->
-        <div class="card">
-            <div class="card-header"><h2>🔠 1.6 О / А в приставках</h2><span class="badge">приставка</span></div>
-            <div class="rule-block">
-                <div class="table-mini">
-                    <div class="item"><span class="label">А</span> приставки <strong>НА-, НАД-, ЗА-</strong></div>
-                    <div class="item"><span class="label">О</span> приставки <strong>ДО-, О-, ОБ-, ПО-, ПОД-, СО-, ОТ-, ПРО-</strong></div>
-                </div>
-                <p><strong>Раз-/рас-</strong> и <strong>роз-/рос-</strong>: без ударения <strong>А</strong>, под ударением <strong>О</strong>: <i>распускать — роспуск</i>.</p>
-                <p><strong>ПРО-</strong> (много значений) / <strong>ПРА-</strong> (древность): <i>прадедушка, праславянский</i>.</p>
-            </div>
-        </div>
-
-        <!-- 1.7 Ъ/Ь -->
-        <div class="card">
-            <div class="card-header"><h2>🔤 1.7 Ъ / Ь</h2><span class="badge">разделительные</span></div>
-            <div class="rule-block">
-                <div class="two-col">
-                    <div class="col"><span class="tag">Ъ</span> после приставки на согласную перед Е, Ё, Ю, Я: <i>подъём, объявление</i>; иноязычные: <i>адъютант, субъект</i>.</div>
-                    <div class="col"><span class="tag">Ь</span> внутри слова (не после приставки): <i>вьюга, ручьи, барьер</i>; иноязычные перед О: <i>бульон, павильон</i>.</div>
-                </div>
-                <div class="highlight">📌 Сложные слова: <strong>двухъярусный, четырёхъязычный</strong> (Ъ).</div>
-            </div>
-        </div>
-
-        <!-- 1.8+1.9 СУФФИКСЫ -->
-        <div class="card">
-            <div class="card-header"><h2>🧩 Правописание суффиксов (1.8 + 1.9)</h2><span class="badge">суффиксы</span></div>
-            <div class="rule-block">
-                <div class="scheme" style="margin-top: 0;">
-                    <strong>Группировка по частям речи и схожести правил</strong>
-                </div>
-                <div class="three-col">
-                    <div class="col">
-                        <p><strong>Имена существительные</strong></p>
-                        <ul>
-                            <li><strong>-ЕК- / -ИК-:</strong> <br><span class="tag">-ЕК-</span> гласная выпадает при склонении: <i>замочек — замочка</i><br><span class="tag">-ИК-</span> гласная сохраняется: <i>ключик — ключика</i></li>
-                            <li><strong>-ЧИК- / -ЩИК-:</strong> <br><span class="tag">-ЧИК-</span> после <strong>т, д, с, з, ж</strong>: <i>наводчик</i><br><span class="tag">-ЩИК-</span> в остальных случаях: <i>каменщик</i></li>
-                            <li><strong>-ЕЦ- / -ИЦ-:</strong> <br><span class="tag">-ЕЦ-</span> в сущ. м.р. и ср.р. (перед ударением): <i>братец, письмецо</i><br><span class="tag">-ИЦ-</span> в сущ. ж.р. и ср.р. (после ударения): <i>мастерица, платьице</i></li>
-                            <li><strong>-ИНК- / -ЕНК-:</strong> <br><span class="tag">-ИНК-</span> от слов на <strong>-ИНА</strong>: <i>бисеринки (бисерина)</i><br><span class="tag">-ЕНК-</span> в остальных случаях: <i>беженка</i> (искл. <i>горлинка</i>)</li>
-                            <li><strong>-ТЕЛЬ-:</strong> всегда <strong>Е</strong>: <i>строитель, водитель</i></li>
-                        </ul>
-                        <hr>
-                        <p><strong>Имена прилагательные</strong></p>
-                        <ul>
-                            <li><strong>-ЕВ- / -ИВ-:</strong> <br><span class="tag">-ЕВ-</span> без ударения (относительные): <i>сиреневый, фасолевый</i><br><span class="tag">-ИВ-</span> под ударением (качественные, имеют краткую форму): <i>красивый (красив)</i></li>
-                            <li><strong>-ЛИВ- / -ЧИВ-:</strong> только <strong>И</strong> (нет -лев-/-чев-): <i>заботливый, доверчивый</i></li>
-                            <li><strong>-ЕН- в кратких формах:</strong> <i>случаен (случайный), спокоен (спокойный)</i> (искл. <i>достоин</i>)</li>
-                            <li><strong>-ИСТ-:</strong> только <strong>И</strong>: <i>лучистый</i></li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>О/Ё после шипящих в суффиксах:</strong><br>
-                            <span class="tag">Ё</span> если образовано от глагола: <i>ночЁвка (ночевать)</i><br>
-                            <span class="tag">О</span> если не от глагола: <i>девчОнка</i><br>
-                            <span class="tag">ЁР</span> в сущ.: <i>стажЁр, ухажЁр</i>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <p><strong>Глаголы (суффиксы инфинитива)</strong></p>
-                        <ul>
-                            <li><strong>-ОВА- / -ЕВА-:</strong> <br>в 1-м лице ед.ч. на <strong>-ую, -юю</strong>: <i>пробовать — пробую</i></li>
-                            <li><strong>-ЫВА- / -ИВА-:</strong> <br>в 1-м лице ед.ч. на <strong>-ываю, -иваю</strong>: <i>отгадывать — отгадываю</i></li>
-                            <li><strong>Перед ударным -ВА-:</strong> проверяй ударением: <i>издавать — издать</i></li>
-                            <li><strong>С корнем -ВЕД-:</strong> <i>заведовать, проповедовать, исповедовать</i> (в остальных -<strong>ыва</strong>-)</li>
-                            <li><strong>Запомнить:</strong> <i>застревать, расплевать, продлевать, обуревать, затмевать</i></li>
-                        </ul>
-                        <hr>
-                        <p><strong>Глагольные формы (личные окончания)</strong></p>
-                        <ul>
-                            <li><strong>I спряжение:</strong> <i>прыгаешь, прыгает, прыгают</i></li>
-                            <li><strong>II спряжение:</strong> <i>грузишь, грузит, грузят</i></li>
-                            <li><span class="tag">Исключения:</span> <i>гнать, держать, смотреть, видеть, дышать, слышать, ненавидеть, обидеть, вертеть, зависеть, терпеть</i> (II)</li>
-                        </ul>
-                        <hr>
-                        <p><strong>Деепричастия</strong></p>
-                        <ul>
-                            <li>Сохраняют суффикс инфинитива перед <strong>-в, -вши</strong>: <i>прочитав (прочитать)</i></li>
-                            <li><strong>-а/-я</strong> (несов. вид): <i>читая</i><br>
-                            <strong>-в/-вши</strong> (сов. вид): <i>прочитав</i></li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p><strong>Причастия (суффиксы настоящего времени)</strong></p>
-                        <ul>
-                            <li><strong>Действительные:</strong> <br><span class="tag">-ущ-/-ющ-</span> (I спр.): <i>прыгающий</i><br><span class="tag">-ащ-/-ящ-</span> (II спр.): <i>курящий, любящий</i></li>
-                            <li><strong>Страдательные:</strong> <br><span class="tag">-ом-/-ем-</span> (I спр.): <i>потребляемый</i><br><span class="tag">-им-</span> (II спр.): <i>любимый</i></li>
-                        </ul>
-                        <hr>
-                        <p><strong>Причастия (суффиксы прошедшего времени)</strong></p>
-                        <ul>
-                            <li><strong>Действительные:</strong> <br><span class="tag">-вш-</span> (от гл. на гласную): <i>прочитавший</i><br><span class="tag">-ш-</span> (от гл. на согласную): <i>нёсший</i></li>
-                            <li><strong>Страдательные:</strong> <br><span class="tag">-енн-</span> (от гл. на -ить, -еть): <i>напоенный</i><br><span class="tag">-анн-/-янн-</span> (от гл. на -ать, -ять): <i>посеянный, разрисованный</i><br><span class="tag">-т-</span> (от гл. на -нуть, -ереть): <i>занятый, открытый</i></li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>Важно!</strong><br>
-                            Перед -л- и -вш- та же гласная, что в инфинитиве: <br>
-                            <i>строил, строивший — строить</i>
-                        </div>
-                        <hr>
-                        <p><strong>Наречия</strong></p>
-                        <ul>
-                            <li><strong>-О / -Е</strong> (от прилагательных): <i>красиво, певуче</i></li>
-                            <li><strong>-А / -О</strong> (от приставок): <i>досуха, засветло</i></li>
-                            <li><span class="tag">Запомнить:</span> <i>вовремя, вмиг</i> (слитно)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="margin-top: 12px; background: #eef2f8; border-radius: 14px; padding: 10px 16px;">
-                    <p><strong>📌 Общее правило для глаголов и причастий:</strong><br>
-                    Гласная перед суффиксами <strong>-л-, -вш-, -нн-</strong> определяется по инфинитиву:<br>
-                    <i>заклеил → заклеить (на -ить)</i> · <i>выращенный → вырастить (на -ить)</i><br>
-                    <i>посеянный → посеять (на -ять)</i> · <i>растаявший → растаять (на -ять)</i></p>
+            <!-- 1.1 Безударная гласная -->
+            <div class="card">
+                <div class="card-header"><h2>🔤 1.1 Безударная гласная</h2><span class="badge">корень</span></div>
+                <div class="rule-block">
+                    <p><strong>Проверяемая</strong> → подбираем однокоренное слово, где гласная под ударением.</p>
+                    <div class="example"><i>дрожать — дрожь, запевать — петь</i></div>
+                    <p><strong>Непроверяемая</strong> → запомнить (словарные слова).</p>
+                    <div class="highlight">⚡ Алгоритм: <br>1. Поставь ударение. <br>2. Если гласная без ударения → ищи однокоренное с ударением. <br>3. Если нет → запоминай (обоняние, оптимист).</div>
                 </div>
             </div>
-        </div>
 
-        <!-- 1.10 Н/НН -->
-        <div class="card">
-            <div class="card-header"><h2>📝 1.10 Н / НН в суффиксах</h2><span class="badge">прилагательные, причастия</span></div>
-            <div class="rule-block">
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>В именах прилагательных (не от глаголов):</strong></p>
-                        <div><span class="tag">НН</span> <br>• основа на <strong>Н</strong> + суффикс -н-: <i>машинный, каменный</i> <br>• суффиксы <strong>-онн-, -енн-</strong>: <i>лекционный, утренний</i> <br>искл. <strong>ветреный</strong> (но: безветренный)</div>
-                        <div style="margin-top: 4px;"><span class="tag">Н</span> <br>• первообразные (без суффикса): <i>юный, синий</i> <br>• суффиксы <strong>-ин-, -ан-, -ян-</strong>: <i>орлиный, кожаный</i> <br>искл. <strong>стеклянный, оловянный, деревянный</strong> <br>запомнить: <i>бараний, павлиний, сазаний, свиной, фазаний, румяный, пряный, пьяный, рдяный, рьяный, юный</i></div>
-                        <hr>
-                        <p><strong>В отглагольных прилагательных и причастиях:</strong></p>
-                        <div><span class="tag">НН</span> <br>• от глаголов <strong>СВ</strong> (с приставкой, кроме НЕ-): <i>исписанный</i> <br>• от бесприставочных глаголов СВ: <i>решённая</i> <br>• с <strong>-ова-, -ёва-, -ирова-</strong>: <i>образованный, корчёванный</i> <br>• с <strong>зависимыми словами</strong>: <i>жаренный в масле</i></div>
-                        <div style="margin-top: 4px;"><span class="tag">Н</span> <br>• от глаголов <strong>НСВ</strong> без приставок (или с НЕ-): <i>писаный, неписаный, жареный, некошеный, кованый, жёваный, непрошеный</i> <br>• <strong>краткие причастия</strong>: <i>лицо заплакано, платье поношено</i></div>
-                    </div>
-                    <div class="col">
-                        <div class="highlight" style="margin-top: 0;">
-                            <strong>Исключения (НСВ → НН):</strong> медленный, желанный, жеманный, священный, чванный, чеканный, читанный, считанный, деланный, данный, нежданный, негаданный, нечаянный, невиданный, (не)виденный, неслыханный, недрёманный, ставленный, долгожданный, неожиданный, нетленный, бороненный, смолённый, искренний, медленный, обещанный, обиженный, окаянный, отчаянный, подлинный, штукатуренный.
+            <!-- 1.2 Чередующиеся гласные -->
+            <div class="card">
+                <div class="card-header"><h2>🔄 1.2 Чередование в корне</h2><span class="badge">корень</span></div>
+                <div class="rule-block">
+                    <div class="scheme">✔️ <strong>Зависит от:</strong> ударения · конечной согласной · суффикса -а- · значения</div>
+                    <div class="three-col">
+                        <div class="col">
+                            <p><strong>От ударения:</strong></p>
+                            <div><span class="tag">О (без удар.)</span> <br><strong>-гор-/-гар-</strong> (загорать, но загар) <br><strong>-клон-/-клан-</strong> (поклониться) <br><strong>-твор-/-твар-</strong> (творить, утварь)</div>
+                            <div style="margin-top: 6px;"><span class="tag">А (без удар.)</span> <br><strong>-зар-/-зор-</strong> (заря, озарить, но зори)</div>
+                            <div class="highlight" style="margin-top: 4px;">Исключения: <strong>пригарь, выгарки, изгарь</strong></div>
+                            <hr>
+                            <p><strong>От значения корня:</strong></p>
+                            <div><span class="tag">-мак- / -мок-</span> <br><strong>мак-</strong> 'погружать в жидкость' (макать) <br><strong>мок-</strong> 'пропускать влагу' (промокает) <br>запомнить: <strong>промокашка</strong></div>
+                            <div style="margin-top: 6px;"><span class="tag">-равн- / -ровн-</span> <br><strong>равн-</strong> 'равный, одинаковый' (уравнять) <br><strong>ровн-</strong> 'ровный, гладкий' (подровнять) <br>искл. <strong>равнина, поровну, уровень, ровесник</strong></div>
                         </div>
-                        <p><strong>Краткие прилагательные:</strong> столько же Н, сколько в полной форме: <i>лица юны, поле пустынно</i>.</p>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; background: #f2f6fe; border-radius: 14px; padding: 8px 12px; margin: 4px 0; font-size: 0.9rem;">
-                            <div><span class="tag">Следует различать</span> <br><strong>масляный</strong> (из масла) — <strong>масленый</strong> (от маслить) <br><strong>ветряной</strong> (движимый ветром) — <strong>ветреный</strong> (с ветром, легкомысленный)</div>
-                            <div><span class="tag">Сложные прилагательные</span> <br><i>свежезамороженные / свежемороженые, малохоженые тропинки</i></div>
+                        <div class="col">
+                            <p><strong>От конечной согласной корня:</strong></p>
+                            <div><span class="tag">-лаг- / -лож-</span> <br>полагать — положение <br>искл. <strong>полог</strong></div>
+                            <div style="margin-top: 6px;"><span class="tag">-раст- / -ращ- / -рос-</span> <br>растить, выращивать, вырос <br>искл. <strong>росток, ростовщик, Ростислав, Ростов, подростковый, отрасль, на вырост, выросток, выростковый</strong></div>
+                            <div style="margin-top: 6px;"><span class="tag">-скак- / -скоч-</span> <br>скакать, выскочить <br>искл. <strong>скачок, скачу</strong></div>
+                            <hr>
+                            <p><strong>Корень -плав-:</strong> всегда А (<i>плавучий, плавник</i>), искл. <strong>пловец, пловчиха, плывуны</strong>.</p>
                         </div>
-                        <div style="background: #fef9e7; border-radius: 14px; padding: 6px 12px; margin: 4px 0; font-size: 0.9rem;">
-                            <strong>Запомнить написание:</strong> бесприданница, трезвенник, ставленник, священник, поклонник, путешественник, дружинник, именинник, пустынник, воспитанник, дарственная, звонница, лиственница, племянник, поверенный, подлинник, избранник, родственник, мошенник, гривенник, окаянный, сребреник, бессребреник, труженик, мученик, нефтяник.
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; font-size: 0.9rem; background: #f2f6fe; border-radius: 14px; padding: 6px 12px; margin: 4px 0;">
-                            <div><span class="tag">С Н</span> <br><i>прощёное воскресенье, посажёный отец, названый брат, приданое, суженый, конченый человек, смышлёный</i></div>
-                            <div><span class="tag">С НН</span> <br><i>прощённый ученик, посаженный в кресло, названный по имени, приданный взводу, суженный рукав, конченное дело, вымышленный</i></div>
-                        </div>
-                        <div class="example">Наречия: <i>путано</i> (от путный), <i>медленно</i> (от медленный).</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 1.11 НЕ с разными частями речи -->
-        <div class="card">
-            <div class="card-header"><h2>🚫 1.11 НЕ с разными частями речи</h2><span class="badge">слитно / раздельно</span></div>
-            <div class="rule-block">
-                <div class="scheme">
-                    <strong>Алгоритм:</strong> <br>
-                    1. Без НЕ не употребляется? → <strong>слитно</strong> (<i>ненавидеть, невзрачный</i>) <br>
-                    2. Можно заменить синонимом без НЕ? → <strong>слитно</strong> (<i>неправда = ложь</i>) <br>
-                    3. Есть противопоставление с союзом <strong>А</strong>? → <strong>раздельно</strong> (<i>не правда, а ложь</i>) <br>
-                    4. Есть слова <strong>далеко не, вовсе не, ничуть не</strong>? → <strong>раздельно</strong> (<i>далеко не красивый</i>)
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Имена существительные:</strong></p>
-                        <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>невежда, неряха</i> <br>• синоним: <i>неправда (= ложь)</i></div>
-                        <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• противопоставление с «а»: <i>не правда, а ложь</i></div>
-                        <hr>
-                        <p><strong>Прилагательные и наречия на -О/-Е:</strong></p>
-                        <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>ненастный</i> <br>• синоним: <i>некрасивый (= уродливый)</i></div>
-                        <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• противопоставление с «а»: <i>не красивый, а уродливый</i> <br>• слова <i>далеко не, вовсе не, ничуть не</i>: <i>вовсе не красивый</i> <br>• краткие формы: <i>не рад, не должен, не готов</i></div>
-                        <hr>
-                        <p><strong>Причастия:</strong></p>
-                        <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>недоумевающий</i> <br>• нет зависимого слова: <i>нерешённый пример</i></div>
-                        <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• зависимое слово: <i>не решённый мной пример</i> <br>• противопоставление: <i>не решённый, а списанный</i> <br>• <strong>краткие причастия всегда раздельно</strong>: <i>задача не решена</i></div>
-                    </div>
-                    <div class="col">
-                        <p><strong>Глаголы и деепричастия:</strong></p>
-                        <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>ненавидеть, негодуя</i> <br>• <strong>НЕДО-</strong> (меньше нормы): <i>недобрать баллов, недостаёт красок</i></div>
-                        <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• глаголы без НЕ: <i>не читал, не мог</i> <br>• <strong>НЕ ДО-</strong> (действие не закончено): <i>не доел суп</i></div>
-                        <hr>
-                        <p><strong>Местоимения:</strong></p>
-                        <div><span class="tag">Слитно</span> <br>• отрицательные и неопределённые: <i>нечто, несколько</i></div>
-                        <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• с предлогом: <i>не с кем, ни у кого</i></div>
-                        <hr>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>Важно!</strong> <br>
-                            • <strong>НЕДО-</strong> = недостаточно, меньше нормы: <i>недоварить, недосолить</i> <br>
-                            • <strong>НЕ ДО-</strong> = действие не доведено до конца: <i>не дочитать книгу, не досмотреть фильм</i> <br>
-                            • <strong>Никем непобедимая</strong> страна (слитно, так как без НЕ не употребляется в данном значении)
-                        </div>
-                        <div class="example" style="margin-top: 4px;">
-                            <strong>Примеры:</strong> <br>
-                            <i>небольшой, но уютный дом</i> (слитно, нет противопоставления) <br>
-                            <i>не большой, а маленький дом</i> (раздельно, противопоставление) <br>
-                            <i>ещё не прочитанная мной книга</i> (раздельно, зависимое слово) <br>
-                            <i>непрочитанная книга лежала на столе</i> (слитно, нет зависимых слов)
+                        <div class="col">
+                            <p><strong>От суффикса -а- после корня:</strong></p>
+                            <div style="display: grid; grid-template-columns: 1fr; gap: 2px; font-size: 0.9rem;">
+                                <div><span class="tag">-кас-/-кос-</span> (касаться — коснуться)</div>
+                                <div><span class="tag">-дир-/-дер-</span> (сдирать — выдеру)</div>
+                                <div><span class="tag">-бир-/-бер-</span> (собирать — соберусь)</div>
+                                <div><span class="tag">-мир-/-мер-</span> (замирать — замереть)</div>
+                                <div><span class="tag">-пир-/-пер-</span> (напирать — напереть)</div>
+                                <div><span class="tag">-жиг-/-жег-</span> (выжигать — выжег)</div>
+                                <div><span class="tag">-блист-/-блест-</span> (блистать — блестеть)</div>
+                                <div><span class="tag">-стил-/-стел-</span> (застилать — застелить)</div>
+                                <div><span class="tag">-чит-/-чет-</span> (вычитать — вычет)</div>
+                            </div>
+                            <div class="highlight" style="margin-top: 4px;">Исключение: <strong>сочетание</strong> и производные (сочетать, бракосочетание, чета).</div>
+                            <hr>
+                            <p><strong>Чередования им(ин)//а(я):</strong></p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-size: 0.9rem;">
+                                <div><span class="tag">-жим-</span> зажимать — зажать</div>
+                                <div><span class="tag">-мин-</span> разминать — размять</div>
+                                <div><span class="tag">-жин-</span> пожинать — пожать</div>
+                                <div><span class="tag">-ним-</span> занимать — занять</div>
+                                <div><span class="tag">-клин-</span> заклинать — клясть</div>
+                                <div><span class="tag">-пин-</span> распинать — распять</div>
+                                <div><span class="tag">-чин-</span> начинать — начать</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 2.1 Тире между подлежащим и сказуемым -->
-        <div class="card">
-            <div class="card-header"><h2>➖ 2.1 Тире между подлежащим и сказуемым</h2><span class="badge">пунктуация</span></div>
-            <div class="rule-block">
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>СТАВИТСЯ:</strong></p>
-                        <ul>
-                            <li>сущ. И.п. + сущ. И.п.: <i>Астраханский заповедник — жемчужина Понизовья.</i></li>
-                            <li>числит. + числит.: <i>Пятью пять — двадцать пять.</i></li>
-                            <li>инфинитив + инфинитив: <i>Жить — родине служить.</i></li>
-                            <li>сущ. + инфинитив: <i>Доброе дело — правду говорить смело.</i></li>
-                            <li>инфинитив + сущ.: <i>Хорошо учиться — наша задача.</i></li>
-                            <li>перед <i>это, вот, значит</i>: <i>Чтение — вот лучшее учение.</i></li>
-                            <li>сущ. + числит., числит. + сущ.</li>
-                            <li>если сказуемое — фразеологизм: <i>Наш кот — ни рыба ни мясо.</i></li>
-                        </ul>
+            <!-- 1.3 З/С на конце приставки -->
+            <div class="card">
+                <div class="card-header"><h2>🔊 1.3 З / С в приставках</h2><span class="badge">приставка</span></div>
+                <div class="rule-block">
+                    <div class="table-mini">
+                        <div class="item"><span class="label">З</span> перед гласной или звонкой согласной: <i>бездонный, возглас</i></div>
+                        <div class="item"><span class="label">С</span> перед глухой согласной: <i>бескомпромиссный, восходящий</i></div>
                     </div>
-                    <div class="col">
-                        <p><strong>НЕ СТАВИТСЯ:</strong></p>
-                        <ul>
-                            <li>если есть <i>как, словно, точно, будто</i>: <i>Наш двор точно сад.</i></li>
-                            <li>вводное слово между подлежащим и сказуемым: <i>Собака, известно, друг человека.</i></li>
-                            <li>частица <i>не</i>: <i>Сердце не камень.</i></li>
-                            <li>личное местоимение + сущ.: <i>Мы преподаватели университета.</i></li>
-                            <li>сущ. + наречие / союз / частица: <i>Июнь лишь начало лета.</i></li>
-                            <li>сущ. + <i>был, есть</i>: <i>Человек есть кузнец своего счастья.</i></li>
-                            <li>сущ. в роли члена предложения: <i>Вася нам сосед.</i></li>
-                            <li>сказуемое — фразеологизм: <i>Грош цена этой теории.</i></li>
-                        </ul>
-                    </div>
+                    <p><strong>Приставка С-</strong> всегда неизменна: <i>сделать, спилить</i>.</p>
+                    <p><strong>Запомнить:</strong> <i>здесь, здание, здоровье</i> (з — часть корня).</p>
+                    <div class="highlight">⚡ В приставках <strong>раз-/рас-</strong> и <strong>роз-/рос-</strong>: под ударением О, без ударения А: <i>раздать — розданный</i>.</div>
                 </div>
-                <div class="example"><i>Чтение — вот лучшее учение.</i> (ставится) <br> <i>Сердце не камень.</i> (не ставится)</div>
             </div>
-        </div>
 
-        <!-- 2.2 Тире и двоеточие в БСП -->
-        <div class="card">
-            <div class="card-header"><h2>➖ 2.2 : и — в БСП</h2><span class="badge">бессоюзное</span></div>
-            <div class="rule-block">
-                <div class="two-col">
-                    <div class="col"><span class="tag">Двоеточие</span> <br>• причина (потому что) <br>• пояснение (а именно) <br>• дополнение (что)</div>
-                    <div class="col"><span class="tag">Тире</span> <br>• противопоставление (а, но) <br>• время / условие (когда, если) <br>• следствие (так что) <br>• быстрая смена событий</div>
-                </div>
-                <div class="example"><i>Я не мог заснуть: передо мной вертелся мальчик.</i> (причина) <br> <i>Справитесь быстрее — сможете уйти раньше.</i> (условие)</div>
-            </div>
-        </div>
-
-        <!-- 2.3 Однородные члены -->
-        <div class="card">
-            <div class="card-header"><h2>📋 2.3 Пунктуация при однородных членах</h2><span class="badge">пунктуация</span></div>
-            <div class="rule-block">
-                <div class="scheme">
-                    <strong>Однородные члены:</strong> отвечают на один вопрос, связаны с одним словом, соединены сочинительной связью, обычно одна часть речи.
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Запятая СТАВИТСЯ:</strong></p>
-                        <ul>
-                            <li><strong>Бессоюзная связь:</strong> <i>Потекла густая, пёстрая, странная жизнь.</i></li>
-                            <li><strong>Повторяющиеся союзы:</strong> <i>и… и, ни… ни, то… то, не то… не то</i>: <br><i>То грозил, то уговаривал, то начинал просить.</i></li>
-                            <li><strong>Противительные союзы:</strong> <i>а, но, зато, да (=но), однако (=но)</i>: <br><i>Мелкие у хорька зубы, да острые.</i></li>
-                            <li><strong>Двойные и парные союзы:</strong> <i>не только… но и, как… так и, не столько… сколько, если не… то</i>: <br><i>Не только над центром, но и далеко вокруг.</i></li>
-                        </ul>
+            <!-- 1.4 ПРЕ/ПРИ -->
+            <div class="card">
+                <div class="card-header"><h2>⚖️ 1.4 ПРЕ / ПРИ</h2><span class="badge">приставка</span></div>
+                <div class="rule-block">
+                    <div class="two-col">
+                        <div class="col"><span class="tag">ПРИ-</span> приближение, присоединение, близость, неполнота действия: <i>прибрежный, приоткрыть</i></div>
+                        <div class="col"><span class="tag">ПРЕ-</span> ≈ очень, ≈ пере-: <i>прекрасный, преломить</i></div>
                     </div>
-                    <div class="col">
-                        <p><strong>Запятая НЕ СТАВИТСЯ:</strong></p>
-                        <ul>
-                            <li><strong>Одиночные союзы:</strong> <i>и, да (=и), или, либо</i>: <br><i>Он плакал и топал ногами.</i></li>
-                            <li><strong>Внутри фразеологизмов:</strong> <i>и день и ночь, ни жив ни мёртв, ни рыба ни мясо, ни пуха ни пера</i>.</li>
-                            <li><strong>В цельных выражениях:</strong> <i>и смех и горе, и стар и млад, ни больше ни меньше</i>.</li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>С двойными союзами</strong> запятая ставится <strong>только перед второй частью</strong>.<br>
-                            <i>не только …, но и …</i> → запятая перед <i>но и</i>.
+                    <div class="highlight">📌 <strong>Омофоны:</strong> прибывать (куда) — пребывать (находиться); притворить (дверь) — претворить (осуществить).</div>
+                    <p><span class="tag">Запомнить</span> привилегия, президент, претензия, приоритет, камень преткновения.</p>
+                </div>
+            </div>
+
+            <!-- 1.5 Ы/И после приставок -->
+            <div class="card">
+                <div class="card-header"><h2>🔁 1.5 Ы / И после приставок</h2><span class="badge">приставка</span></div>
+                <div class="rule-block">
+                    <p>После русских приставок на согласную → <strong>Ы</strong>: <i>разыграть, подыскать</i>.</p>
+                    <p>После <strong>меж-, сверх-, дез-, контр-, суб-, транс-, пан-</strong> → <strong>И</strong>: <i>межинститутский, субинспектор</i>.</p>
+                    <div class="example">Исключение: <strong>взимать</strong> (пишется И).</div>
+                </div>
+            </div>
+
+            <!-- 1.6 О/А в приставках -->
+            <div class="card">
+                <div class="card-header"><h2>🔠 1.6 О / А в приставках</h2><span class="badge">приставка</span></div>
+                <div class="rule-block">
+                    <div class="table-mini">
+                        <div class="item"><span class="label">А</span> приставки <strong>НА-, НАД-, ЗА-</strong></div>
+                        <div class="item"><span class="label">О</span> приставки <strong>ДО-, О-, ОБ-, ПО-, ПОД-, СО-, ОТ-, ПРО-</strong></div>
+                    </div>
+                    <p><strong>Раз-/рас-</strong> и <strong>роз-/рос-</strong>: без ударения <strong>А</strong>, под ударением <strong>О</strong>: <i>распускать — роспуск</i>.</p>
+                    <p><strong>ПРО-</strong> (много значений) / <strong>ПРА-</strong> (древность): <i>прадедушка, праславянский</i>.</p>
+                </div>
+            </div>
+
+            <!-- 1.7 Ъ/Ь -->
+            <div class="card">
+                <div class="card-header"><h2>🔤 1.7 Ъ / Ь</h2><span class="badge">разделительные</span></div>
+                <div class="rule-block">
+                    <div class="two-col">
+                        <div class="col"><span class="tag">Ъ</span> после приставки на согласную перед Е, Ё, Ю, Я: <i>подъём, объявление</i>; иноязычные: <i>адъютант, субъект</i>.</div>
+                        <div class="col"><span class="tag">Ь</span> внутри слова (не после приставки): <i>вьюга, ручьи, барьер</i>; иноязычные перед О: <i>бульон, павильон</i>.</div>
+                    </div>
+                    <div class="highlight">📌 Сложные слова: <strong>двухъярусный, четырёхъязычный</strong> (Ъ).</div>
+                </div>
+            </div>
+
+            <!-- 1.8+1.9 СУФФИКСЫ -->
+            <div class="card">
+                <div class="card-header"><h2>🧩 Правописание суффиксов (1.8 + 1.9)</h2><span class="badge">суффиксы</span></div>
+                <div class="rule-block">
+                    <div class="scheme" style="margin-top: 0;">
+                        <strong>Группировка по частям речи и схожести правил</strong>
+                    </div>
+                    <div class="three-col">
+                        <!-- КОЛОНКА 1: ИМЕНА СУЩЕСТВИТЕЛЬНЫЕ -->
+                        <div class="col">
+                            <p><strong>Имена существительные</strong></p>
+                            <ul>
+                                <li><strong>-ЕК- / -ИК-:</strong> <br><span class="tag">-ЕК-</span> гласная выпадает при склонении: <i>замочек — замочка</i><br><span class="tag">-ИК-</span> гласная сохраняется: <i>ключик — ключика</i></li>
+                                <li><strong>-ЧИК- / -ЩИК-:</strong> <br><span class="tag">-ЧИК-</span> после <strong>т, д, с, з, ж</strong>: <i>наводчик</i><br><span class="tag">-ЩИК-</span> в остальных случаях: <i>каменщик</i></li>
+                                <li><strong>-ЕЦ- / -ИЦ-:</strong> <br><span class="tag">-ЕЦ-</span> в сущ. м.р. и ср.р. (перед ударением): <i>братец, письмецо</i><br><span class="tag">-ИЦ-</span> в сущ. ж.р. и ср.р. (после ударения): <i>мастерица, платьице</i></li>
+                                <li><strong>-ИНК- / -ЕНК-:</strong> <br><span class="tag">-ИНК-</span> от слов на <strong>-ИНА</strong>: <i>бисеринки (бисерина)</i><br><span class="tag">-ЕНК-</span> в остальных случаях: <i>беженка</i> (искл. <i>горлинка</i>)</li>
+                                <li><strong>-ТЕЛЬ-:</strong> всегда <strong>Е</strong>: <i>строитель, водитель</i></li>
+                                <li><strong>-ЫШК- / -УШК- / -ЮШК-:</strong> <br><span class="tag">-ЫШК-</span> в сущ. ср.р. (ударение на основе): <i>гнёздышко</i><br><span class="tag">-УШК-</span> в сущ. м.р. и ж.р.: <i>дедушка, головушка</i><br><span class="tag">-ЮШК-</span> в сущ. всех родов после мягких: <i>полюшко, долюшка</i></li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>О/Ё после шипящих в суффиксах:</strong><br>
+                                <span class="tag">Ё</span> если образовано от глагола: <i>ночЁвка (ночевать)</i><br>
+                                <span class="tag">О</span> если не от глагола: <i>девчОнка</i><br>
+                                <span class="tag">ЁР</span> в сущ.: <i>стажЁр, ухажЁр</i>
+                            </div>
                         </div>
-                        <div class="example" style="margin-top: 4px;">
-                            <strong>Однородные и неоднородные определения:</strong><br>
-                            <i>круглый, деревянный стол</i> (однородные, запятая) <br>
-                            <i>красный деревянный стол</i> (неоднородные, без запятой)
+                        <!-- КОЛОНКА 2: ИМЕНА ПРИЛАГАТЕЛЬНЫЕ и ГЛАГОЛЫ -->
+                        <div class="col">
+                            <p><strong>Имена прилагательные</strong></p>
+                            <ul>
+                                <li><strong>-ЕВ- / -ИВ-:</strong> <br><span class="tag">-ЕВ-</span> без ударения (относительные): <i>сиреневый, фасолевый</i><br><span class="tag">-ИВ-</span> под ударением (качественные, имеют краткую форму): <i>красивый (красив)</i></li>
+                                <li><strong>-ЛИВ- / -ЧИВ-:</strong> только <strong>И</strong> (нет -лев-/-чев-): <i>заботливый, доверчивый</i></li>
+                                <li><strong>-ЕН- в кратких формах:</strong> <i>случаен (случайный), спокоен (спокойный)</i> (искл. <i>достоин</i>)</li>
+                                <li><strong>-ИСТ-:</strong> только <strong>И</strong>: <i>лучистый</i></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Глаголы (суффиксы инфинитива)</strong></p>
+                            <ul>
+                                <li><strong>-ОВА- / -ЕВА-:</strong> <br>в 1-м лице ед.ч. на <strong>-ую, -юю</strong>: <i>пробовать — пробую</i></li>
+                                <li><strong>-ЫВА- / -ИВА-:</strong> <br>в 1-м лице ед.ч. на <strong>-ываю, -иваю</strong>: <i>отгадывать — отгадываю</i></li>
+                                <li><strong>Перед ударным -ВА-:</strong> проверяй ударением: <i>издавать — издать</i></li>
+                                <li><strong>С корнем -ВЕД-:</strong> <i>заведовать, проповедовать, исповедовать</i> (в остальных -<strong>ыва</strong>-)</li>
+                                <li><strong>Запомнить:</strong> <i>застревать, расплевать, продлевать, обуревать, затмевать</i></li>
+                            </ul>
+                        </div>
+                        <!-- КОЛОНКА 3: ПРИЧАСТИЯ, ДЕЕПРИЧАСТИЯ и НАРЕЧИЯ -->
+                        <div class="col">
+                            <p><strong>Глагольные формы (личные окончания)</strong></p>
+                            <ul>
+                                <li><strong>I спряжение:</strong> <i>прыгаешь, прыгает, прыгают</i></li>
+                                <li><strong>II спряжение:</strong> <i>грузишь, грузит, грузят</i></li>
+                                <li><span class="tag">Исключения:</span> <i>гнать, держать, смотреть, видеть, дышать, слышать, ненавидеть, обидеть, вертеть, зависеть, терпеть</i> (II)</li>
+                            </ul>
+                            <hr>
+                            <p><strong>Причастия (суффиксы)</strong></p>
+                            <ul>
+                                <li><strong>Настоящего времени:</strong> <br><span class="tag">-ущ-/-ющ-</span> (I спр.): <i>прыгающий</i><br><span class="tag">-ащ-/-ящ-</span> (II спр.): <i>курящий, любящий</i><br><span class="tag">-ом-/-ем-</span> (I спр.): <i>потребляемый</i><br><span class="tag">-им-</span> (II спр.): <i>любимый</i></li>
+                                <li><strong>Прошедшего времени:</strong> <br><span class="tag">-вш-</span> (от гл. на гласную): <i>прочитавший</i><br><span class="tag">-ш-</span> (от гл. на согласную): <i>нёсший</i><br><span class="tag">-енн-</span> (от гл. на -ить, -еть): <i>напоенный</i><br><span class="tag">-анн-/-янн-</span> (от гл. на -ать, -ять): <i>посеянный, разрисованный</i><br><span class="tag">-т-</span> (от гл. на -нуть, -ереть): <i>занятый, открытый</i></li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Важно!</strong><br>
+                                Перед -л- и -вш- та же гласная, что в инфинитиве: <br>
+                                <i>строил, строивший — строить</i>
+                            </div>
+                            <hr>
+                            <p><strong>Деепричастия</strong></p>
+                            <ul>
+                                <li>Сохраняют суффикс инфинитива перед <strong>-в, -вши</strong>: <i>прочитав (прочитать)</i></li>
+                                <li><strong>-а/-я</strong> (несов. вид): <i>читая</i><br>
+                                    <strong>-в/-вши</strong> (сов. вид): <i>прочитав</i></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Наречия</strong></p>
+                            <ul>
+                                <li><strong>-О / -Е</strong> (от прилагательных): <i>красиво, певуче</i></li>
+                                <li><strong>-А / -О</strong> (от приставок): <i>досуха, засветло</i></li>
+                                <li><span class="tag">Запомнить:</span> <i>вовремя, вмиг</i> (слитно)</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <div class="example" style="margin-top: 6px;">
-                    <strong>Примеры:</strong><br>
-                    <i>Серьёзность он вывел не столько из слов, сколько из лиц врачей.</i> (запятая перед <i>сколько</i>) <br>
-                    <i>Молодые люди замолчали и стали слушать и смотреть.</i> (без запятых, одиночный союз <i>и</i>) <br>
-                    <i>Листья и травы и цветы были полны влаги.</i> (запятые при повторяющемся союзе)
+                    <div style="margin-top: 12px; background: #eef2f8; border-radius: 14px; padding: 10px 16px;">
+                        <p><strong>📌 Общее правило для глаголов и причастий:</strong><br>
+                            Гласная перед суффиксами <strong>-л-, -вш-, -нн-</strong> определяется по инфинитиву:<br>
+                            <i>заклеил → заклеить (на -ить)</i> · <i>выращенный → вырастить (на -ить)</i><br>
+                            <i>посеянный → посеять (на -ять)</i> · <i>растаявший → растаять (на -ять)</i></p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 2.4 Обособление определений и обстоятельств -->
-        <div class="card">
-            <div class="card-header"><h2>✂️ 2.4 Обособление определений и обстоятельств</h2><span class="badge">пунктуация</span></div>
-            <div class="rule-block">
-                <div class="scheme">
-                    <strong>Определение</strong> — второстепенный член, отвечает на вопросы <i>какой? чей?</i>, относится к существительному.
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Определения обособляются:</strong></p>
-                        <ul>
-                            <li><strong>Если относятся к личному местоимению</strong> (всегда): <br><i>Усталые, мы сели передохнуть.</i> <br><i>Он, бледный от страха, ничего не отвечал.</i></li>
-                            <li><strong>Распространённое определение в постпозиции</strong> (после определяемого слова): <br><i>Здесь есть много ягод, пригодных для еды.</i></li>
-                            <li><strong>Два и более одиночных определения в постпозиции</strong>: <br><i>Отец, бледный и сутулый, сидел за столом.</i></li>
-                            <li><strong>Дистантно расположенное определение</strong> (отделено от определяемого слова): <br><i>Дети покидали стадион и, воодушевлённые победой, громко обсуждали матч.</i></li>
-                            <li><strong>Приложение, относящееся к имени собственному</strong> (в постпозиции): <br><i>А.И. Попов, русский учёный, изобрёл радиоприёмник.</i></li>
-                            <li><strong>Определение и приложение, имеющие обстоятельственное значение</strong> (причина, уступка): <br><i>Хорошо отдохнувший, брат теперь мог нам помочь.</i> (потому что отдохнул) <br><i>Опытный охотник, Сергей на этот раз промахнулся.</i> (хотя и был опытным)</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p><strong>Обстоятельства обособляются:</strong></p>
-                        <ul>
-                            <li><strong>Одиночное деепричастие или деепричастный оборот</strong> (если выражает добавочное действие): <br><i>Она тихо ответила, посмотрев в окно.</i> (= ответила и посмотрела)</li>
-                            <li><strong>Существительное с предлогами</strong> <i>благодаря, в силу, вследствие, согласно, вопреки, несмотря на</i> (при распространённости и препозиции): <br><i>Благодаря лёгкому ветру, мы смогли высушить одежду.</i> <br><i>Вопреки прогнозу, май оказался холодным.</i></li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>НЕ обособляются:</strong>
+            <!-- 1.10 Н/НН — ДОБАВЛЕНО ПРАВИЛО ДЛЯ НАРЕЧИЙ -->
+            <div class="card">
+                <div class="card-header"><h2>📝 1.10 Н / НН в суффиксах</h2><span class="badge">прилагательные, причастия, наречия</span></div>
+                <div class="rule-block">
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>В именах прилагательных (не от глаголов):</strong></p>
+                            <div><span class="tag">НН</span> <br>• основа на <strong>Н</strong> + суффикс -н-: <i>машинный, каменный</i> <br>• суффиксы <strong>-онн-, -енн-</strong>: <i>лекционный, утренний</i> <br>искл. <strong>ветреный</strong> (но: безветренный)</div>
+                            <div style="margin-top: 4px;"><span class="tag">Н</span> <br>• первообразные (без суффикса): <i>юный, синий</i> <br>• суффиксы <strong>-ин-, -ан-, -ян-</strong>: <i>орлиный, кожаный</i> <br>искл. <strong>стеклянный, оловянный, деревянный</strong> <br>запомнить: <i>бараний, павлиний, сазаний, свиной, фазаний, румяный, пряный, пьяный, рдяный, рьяный, юный</i></div>
+                            <hr>
+                            <p><strong>В отглагольных прилагательных и причастиях:</strong></p>
+                            <div><span class="tag">НН</span> <br>• от глаголов <strong>СВ</strong> (с приставкой, кроме НЕ-): <i>исписанный</i> <br>• от бесприставочных глаголов СВ: <i>решённая</i> <br>• с <strong>-ова-, -ёва-, -ирова-</strong>: <i>образованный, корчёванный</i> <br>• с <strong>зависимыми словами</strong>: <i>жаренный в масле</i></div>
+                            <div style="margin-top: 4px;"><span class="tag">Н</span> <br>• от глаголов <strong>НСВ</strong> без приставок (или с НЕ-): <i>писаный, неписаный, жареный, некошеный, кованый, жёваный, непрошеный</i> <br>• <strong>краткие причастия</strong>: <i>лицо заплакано, платье поношено</i></div>
+                        </div>
+                        <div class="col">
+                            <div class="highlight" style="margin-top: 0;">
+                                <strong>Исключения (НСВ → НН):</strong> медленный, желанный, жеманный, священный, чванный, чеканный, читанный, считанный, деланный, данный, нежданный, негаданный, нечаянный, невиданный, (не)виденный, неслыханный, недрёманный, ставленный, долгожданный, неожиданный, нетленный, бороненный, смолённый, искренний, медленный, обещанный, обиженный, окаянный, отчаянный, подлинный, штукатуренный.
+                            </div>
+                            <p><strong>Краткие прилагательные:</strong> столько же Н, сколько в полной форме: <i>лица юны, поле пустынно</i>.</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; background: #f2f6fe; border-radius: 14px; padding: 8px 12px; margin: 4px 0; font-size: 0.9rem;">
+                                <div><span class="tag">Следует различать</span> <br><strong>масляный</strong> (из масла) — <strong>масленый</strong> (от маслить) <br><strong>ветряной</strong> (движимый ветром) — <strong>ветреный</strong> (с ветром, легкомысленный)</div>
+                                <div><span class="tag">Сложные прилагательные</span> <br><i>свежезамороженные / свежемороженые, малохоженые тропинки</i></div>
+                            </div>
+                            <div style="background: #fef9e7; border-radius: 14px; padding: 6px 12px; margin: 4px 0; font-size: 0.9rem;">
+                                <strong>Запомнить написание:</strong> бесприданница, трезвенник, ставленник, священник, поклонник, путешественник, дружинник, именинник, пустынник, воспитанник, дарственная, звонница, лиственница, племянник, поверенный, подлинник, избранник, родственник, мошенник, гривенник, окаянный, сребреник, бессребреник, труженик, мученик, нефтяник.
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; font-size: 0.9rem; background: #f2f6fe; border-radius: 14px; padding: 6px 12px; margin: 4px 0;">
+                                <div><span class="tag">С Н</span> <br><i>прощёное воскресенье, посажёный отец, названый брат, приданое, суженый, конченый человек, смышлёный</i></div>
+                                <div><span class="tag">С НН</span> <br><i>прощённый ученик, посаженный в кресло, названный по имени, приданный взводу, суженный рукав, конченное дело, вымышленный</i></div>
+                            </div>
+                            <hr>
+                            <p><strong>Н / НН в наречиях на -О / -Е:</strong></p>
+                            <div style="background: #f2f6fe; border-radius: 14px; padding: 10px 14px; margin: 4px 0; font-size: 0.95rem;">
+                                <span class="tag">Правило</span> В наречиях пишется столько же <strong>Н</strong>, сколько в <strong>прилагательном</strong> или <strong>причастии</strong>, от которого оно образовано.
+                            </div>
                             <ul style="margin: 4px 0 4px 18px;">
-                                <li>деепричастия, утратившие глагольное значение (стали наречиями): <br><i>Он молча кивнул.</i> (молча = не говоря, наречие)</li>
-                                <li>деепричастные обороты-фразеологизмы: <br><i>работать спустя рукава, бежать сломя голову, сидеть сложа руки</i></li>
-                                <li>существительные с предлогами, тесно связанные со сказуемым: <br><i>Мы смогли быстро просохнуть благодаря ветру.</i> <br><i>Сестра вернулась спустя месяц.</i></li>
+                                <li><strong>НН</strong> если в производящем слове было НН: <br><i>медленный → медленно</i> · <i>искренний → искренне</i> · <i>взволнованный → взволнованно</i></li>
+                                <li><strong>Н</strong> если в производящем слове было Н: <br><i>интересный → интересно</i> · <i>путаный → путано</i> · <i>ветреный → ветрено</i></li>
                             </ul>
-                        </div>
-                        <div class="example" style="margin-top: 4px;">
-                            <strong>Примеры:</strong><br>
-                            <i>Ипполит Матвеевич, томясь стыдом, стоял под акацией.</i> (обособляется) <br>
-                            <i>Он ходил согнув спину.</i> (не обособляется, фразеологизм) <br>
-                            <i>Смета составлена исходя из ваших расчётов.</i> (не обособляется, предлог)
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2.5–2.6 ССП, СПП, смешанные -->
-        <div class="card">
-            <div class="card-header"><h2>🔗 2.5–2.6 ССП, СПП и смешанные</h2><span class="badge">сложные предложения</span></div>
-            <div class="rule-block">
-                <div class="scheme">
-                    <strong>ССП</strong> — сложные предложения с сочинительной связью (равноправные части).
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Запятая в ССП ставится:</strong></p>
-                        <ul>
-                            <li>с соединительными союзами (<i>и, да=и, ни… ни, тоже, также, не только… но и</i>): <br><i>Наступило утро, и наш пароход подошёл к Астрахани.</i></li>
-                            <li>с разделительными союзами (<i>то… то, не то… не то, или, либо</i>): <br><i>То раздавались удары, то заунывно пели колёса.</i></li>
-                            <li>с противительными союзами (<i>а, но, да=но, однако, зато, только, же</i>): <br><i>Одни помогали на кухне, а другие накрывали на столы.</i></li>
-                        </ul>
-                        <p><strong>Запятая НЕ ставится (общий член):</strong></p>
-                        <ul>
-                            <li>общий второстепенный член: <i>В эту ночь на море дул ветер и шёл снег.</i></li>
-                            <li>общая придаточная часть: <i>Когда мы поднялись, туман исчез и первый луч солнца осветил лицо.</i></li>
-                            <li>общее вводное слово: <i>Возможно, прошло время и информация появится.</i></li>
-                            <li>общий обособленный член: <i>Вопреки прогнозам, небо прояснилось и дождь перестал.</i></li>
-                            <li>общая частица в побудительных предложениях: <i>Только бодрствовали двое часовых да шагал взад-вперёд вахтенный.</i></li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p><strong>Запятая НЕ ставится также в случаях:</strong></p>
-                        <ul>
-                            <li>два назывных: <i>Зной и свет...</i></li>
-                            <li>два безличных: <i>Светло и жарко.</i></li>
-                            <li>два неопределённо-личных: <i>Зрителей разместили вокруг арены и на арену вывели участников.</i></li>
-                            <li>два вопросительных: <i>Кем налит стакан и почему нет розы?</i></li>
-                            <li>два побудительных: <i>Пусть светит солнце и птицы поют!</i></li>
-                            <li>два восклицательных: <i>Как хороша сирень и память хороша!</i></li>
-                        </ul>
-                        <hr>
-                        <p><strong>Стык союзов (в смешанных конструкциях):</strong></p>
-                        <div class="highlight">
-                            <strong>Запятая ставится</strong>, если придаточное можно изъять без нарушения структуры: <br>
-                            <i>Дела мои улажены, и, если тебе нужно, я приеду.</i>
-                        </div>
-                        <div class="highlight" style="margin-top: 4px; border-left-color: #ef4444;">
-                            <strong>Запятая НЕ ставится</strong>, если есть вторая часть (то, так, но): <br>
-                            <i>Дела мои улажены, и если тебе нужно, то я приеду.</i>
-                        </div>
-                        <div style="margin-top: 6px;">
-                            <span class="tag">Сложные синтаксические конструкции</span> — не менее 3 частей с разными видами связи (сочинительной, подчинительной, бессоюзной).
-                        </div>
-                        <div class="example" style="margin-top: 4px;">
-                            <i>Надвигалась зима, и, когда ударили морозы, жить стало тяжело.</i> (запятая есть) <br>
-                            <i>… и когда ударили морозы, то жить стало тяжело.</i> (запятой нет)
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2.7 Вводные слова и обращения -->
-        <div class="card">
-            <div class="card-header"><h2>💬 2.7 Вводные слова и обращения</h2><span class="badge">пунктуация</span></div>
-            <div class="rule-block">
-                <div class="scheme">
-                    <strong>Вводные слова, словосочетания, вставные конструкции</strong> — не являются членами предложения, выделяются запятыми.
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Группы вводных слов по значению:</strong></p>
-                        <ul>
-                            <li><strong>Степень уверенности:</strong> <i>конечно, бесспорно, кажется, вероятно, возможно, по-видимому</i></li>
-                            <li><strong>Чувства:</strong> <i>к счастью, к сожалению, к удивлению, чего доброго</i></li>
-                            <li><strong>Источник информации:</strong> <i>по-моему, по словам, по слухам, как известно</i></li>
-                            <li><strong>Привлечение внимания:</strong> <i>видишь, знаешь, представьте, согласитесь</i></li>
-                            <li><strong>Оценка стиля:</strong> <i>словом, иначе говоря, грубо говоря, так сказать</i></li>
-                            <li><strong>Оценка меры:</strong> <i>по меньшей мере, по крайней мере, как водится</i></li>
-                            <li><strong>Порядок мыслей:</strong> <i>во-первых, итак, следовательно, например, напротив</i></li>
-                            <li><strong>Экспрессивность:</strong> <i>по правде, по совести, смешно сказать, честно говоря</i></li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p><strong>Слова, которые НЕ являются вводными:</strong></p>
-                        <ul>
-                            <li><i>авось, будто, буквально, вдобавок, вдруг, ведь, вряд ли, всё-таки, даже, едва ли, именно, как будто, как раз, к тому же, между тем, небось, почти, примерно, просто, решительно, якобы</i></li>
-                        </ul>
-                        <p style="margin-top: 8px;"><strong>Сложные случаи:</strong></p>
-                        <ul>
-                            <li><strong>наконец</strong> — вводное (= и ещё) / не вводное (= напоследок)</li>
-                            <li><strong>вообще</strong> — вводное (= вообще говоря) / не вводное (= обычно, совсем)</li>
-                            <li><strong>однако</strong> — вводное (в середине/конце) / союз (=но) в начале</li>
-                            <li><strong>значит</strong> — вводное (= следовательно) / не вводное (= означает)</li>
-                            <li><strong>в конце концов</strong> — вводное (= наконец) / не вводное (= напоследок)</li>
-                            <li><strong>во всяком случае</strong> — вводное (оценочное) / не вводное (= при любых обстоятельствах)</li>
-                            <li><strong>главным образом</strong> — вводное (= самое главное) / не вводное (= преимущественно)</li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>Союз А (или НО) + вводное слово:</strong> запятая после союза не ставится, если образует одно целое:<br>
-                            <i>… а напротив, … а значит, … а впрочем, … но стало быть</i>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="scheme" style="margin-top: 6px;">
-                    <strong>Обращение</strong> — слово (сочетание слов), называющее того, к кому обращаются с речью.
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Запятые при обращении СТАВЯТСЯ:</strong></p>
-                        <ul>
-                            <li>при звательной интонации: <i>О Волга! Как хорошо ты, о море ночное!</i></li>
-                            <li>одиночные: <i>Милая, ты услышь меня.</i></li>
-                            <li>распространённые: <i>Низкий дом с голубыми ставнями, не забыть мне тебя никогда.</i></li>
-                            <li>разделённые членами предложения: <i>Отколе, умная, бредешь ты, голова?</i></li>
-                            <li>несколько обращений: <i>Услышь меня, хорошая, услышь меня, красивая.</i></li>
-                            <li>повторяющиеся: <i>Девушки, гляньте, девушки, утрите слёзы.</i></li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p><strong>Запятые НЕ СТАВЯТСЯ:</strong></p>
-                        <ul>
-                            <li>при глаголе в повелительном наклонении (в значении пожелания): <br><i>Приходи к нему лечиться и корова, и волчица.</i> (обращение отсутствует)</li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>Различайте!</strong><br>
-                            <strong>Обращение:</strong> <i>Ветер, ветер, ты могуч...</i><br>
-                            <strong>Член предложения:</strong> <i>Ветер по морю гуляет и кораблик подгоняет.</i>
-                        </div>
-                        <div class="example" style="margin-top: 4px;">
-                            <strong>Примеры:</strong><br>
-                            <i>Взыграйте, ветры, взройте воды!</i> (обращение) <br>
-                            <i>Прочь, ветер, прочь, вокруг ещё светло.</i> (обращение)
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- НОВЫЙ РАЗДЕЛ: Пунктуация в схемах — ПОЛНЫЙ С ПРИМЕРАМИ -->
-        <div class="card">
-            <div class="card-header"><h2>📌 Пунктуация в схемах</h2><span class="badge">простые правила</span></div>
-            <div class="rule-block">
-                <!-- 1. ТИРЕ -->
-                <div class="punkt-scheme">
-                    <div class="rule-title">➖ 1. Тире между подлежащим и сказуемым</div>
-                    <div class="two-col" style="background: transparent; padding: 4px 0;">
-                        <div class="col" style="border-left: none; padding-left: 0;">
-                            <span class="tag">СТАВИТСЯ</span>
-                            <ul>
-                                <li><strong>сущ. + сущ.:</strong> <i>Лес — наше богатство.</i></li>
-                                <li><strong>числит. + числит.:</strong> <i>Пять — нечетное число.</i></li>
-                                <li><strong>инфинитив + инфинитив:</strong> <i>Жить — родине служить.</i></li>
-                                <li><strong>перед <i>это, вот, значит</i>:</strong> <i>Чтение — вот лучшее учение.</i></li>
-                            </ul>
-                        </div>
-                        <div class="col" style="padding-left: 12px;">
-                            <span class="tag">НЕ СТАВИТСЯ</span>
-                            <ul>
-                                <li><strong>есть <i>как, словно, будто</i>:</strong> <i>Наш двор точно сад.</i></li>
-                                <li><strong>вводное слово:</strong> <i>Собака, известно, друг человека.</i></li>
-                                <li><strong>частица <i>не</i>:</strong> <i>Сердце не камень.</i></li>
-                                <li><strong>личное местоимение:</strong> <i>Мы учителя.</i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. БСП -->
-                <div class="punkt-scheme">
-                    <div class="rule-title">➖ 2. Двоеточие и тире в БСП</div>
-                    <div class="two-col" style="background: transparent; padding: 4px 0;">
-                        <div class="col" style="border-left: none; padding-left: 0;">
-                            <span class="tag">ДВОЕТОЧИЕ</span>
-                            <ul>
-                                <li><strong>причина</strong> (потому что): <i>Я не спал: мешала боль.</i></li>
-                                <li><strong>пояснение</strong> (а именно): <i>Я понял одно: надо бежать.</i></li>
-                                <li><strong>дополнение</strong> (что): <i>Он знал: битва будет трудной.</i></li>
-                            </ul>
-                        </div>
-                        <div class="col" style="padding-left: 12px;">
-                            <span class="tag">ТИРЕ</span>
-                            <ul>
-                                <li><strong>противопоставление</strong> (а, но): <i>Весна сеет — осень собирает.</i></li>
-                                <li><strong>время/условие</strong> (когда, если): <i>Сделаешь — молодец.</i></li>
-                                <li><strong>следствие</strong> (так что): <i>Дождь пошёл — мы промокли.</i></li>
-                                <li><strong>быстрая смена</strong>: <i>Он выглянул — никого не было.</i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Однородные -->
-                <div class="punkt-scheme">
-                    <div class="rule-title">📋 3. Запятая при однородных членах</div>
-                    <div class="two-col" style="background: transparent; padding: 4px 0;">
-                        <div class="col" style="border-left: none; padding-left: 0;">
-                            <span class="tag">СТАВИТСЯ</span>
-                            <ul>
-                                <li><strong>без союзов:</strong> <i>Густой, частый лес.</i></li>
-                                <li><strong>повторяющиеся союзы (<i>и… и, то… то</i>):</strong> <i>То грозил, то уговаривал, то начинал просить.</i></li>
-                                <li><strong>противительные (<i>а, но, зато</i>):</strong> <i>Мелкие у хорька зубы, да острые.</i></li>
-                                <li><strong>двойные (<i>не только…, но и</i>):</strong> <i>Не только над центром, но и далеко вокруг.</i></li>
-                            </ul>
-                        </div>
-                        <div class="col" style="padding-left: 12px;">
-                            <span class="tag">НЕ СТАВИТСЯ</span>
-                            <ul>
-                                <li><strong>одиночные <i>и, или</i>:</strong> <i>Он пел и плясал.</i></li>
-                                <li><strong>фразеологизмы:</strong> <i>ни жив ни мёртв</i></li>
-                            </ul>
-                            <div style="margin-top: 4px; background: #eef2f8; border-radius: 8px; padding: 4px 10px; font-size: 0.9rem;">
-                                <span class="tag">Важно</span> перед <i>но и</i> в двойных союзах.
+                            <div class="example" style="margin-top: 4px;">
+                                <strong>Примеры:</strong><br>
+                                <i>говорить путано</i> (от <i>путаный</i> — Н) <br>
+                                <i>отвечать медленно</i> (от <i>медленный</i> — НН) <br>
+                                <i>смотреть взволнованно</i> (от <i>взволнованный</i> — НН)
+                            </div>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Важно!</strong> Наречия <i>нечаянно, отчаянно</i> пишутся с <strong>НН</strong>, так как образованы от прилагательных с НН (исключения).
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- 4. Обособление -->
-                <div class="punkt-scheme">
-                    <div class="rule-title">✂️ 4. Обособление определений и обстоятельств</div>
-                    <div class="two-col" style="background: transparent; padding: 4px 0;">
-                        <div class="col" style="border-left: none; padding-left: 0;">
-                            <span class="tag">ОПРЕДЕЛЕНИЯ</span>
-                            <ul>
-                                <li><strong>после определяемого слова:</strong> <i>Здесь есть много ягод, пригодных для еды.</i></li>
-                                <li><strong>при личном местоимении:</strong> <i>Он, бледный от страха, ничего не отвечал.</i></li>
-                                <li><strong>с обстоятельственным значением:</strong> <i>Опытный охотник, Сергей на этот раз промахнулся.</i></li>
-                            </ul>
-                            <span class="tag">ПРИЛОЖЕНИЯ</span>
-                            <ul>
-                                <li><strong>с именем собственным в постпозиции:</strong> <i>А.И. Попов, русский учёный, изобрёл радиоприёмник.</i></li>
-                            </ul>
+            <!-- 1.11 НЕ с разными частями речи -->
+            <div class="card">
+                <div class="card-header"><h2>🚫 1.11 НЕ с разными частями речи</h2><span class="badge">слитно / раздельно</span></div>
+                <div class="rule-block">
+                    <div class="scheme">
+                        <strong>Алгоритм:</strong> <br>
+                        1. Без НЕ не употребляется? → <strong>слитно</strong> (<i>ненавидеть, невзрачный</i>) <br>
+                        2. Можно заменить синонимом без НЕ? → <strong>слитно</strong> (<i>неправда = ложь</i>) <br>
+                        3. Есть противопоставление с союзом <strong>А</strong>? → <strong>раздельно</strong> (<i>не правда, а ложь</i>) <br>
+                        4. Есть слова <strong>далеко не, вовсе не, ничуть не</strong>? → <strong>раздельно</strong> (<i>далеко не красивый</i>)
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Имена существительные:</strong></p>
+                            <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>невежда, неряха</i> <br>• синоним: <i>неправда (= ложь)</i></div>
+                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• противопоставление с «а»: <i>не правда, а ложь</i></div>
+                            <hr>
+                            <p><strong>Прилагательные и наречия на -О/-Е:</strong></p>
+                            <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>ненастный</i> <br>• синоним: <i>некрасивый (= уродливый)</i></div>
+                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• противопоставление с «а»: <i>не красивый, а уродливый</i> <br>• слова <i>далеко не, вовсе не, ничуть не</i>: <i>вовсе не красивый</i> <br>• краткие формы: <i>не рад, не должен, не готов</i></div>
+                            <hr>
+                            <p><strong>Причастия:</strong></p>
+                            <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>недоумевающий</i> <br>• нет зависимого слова: <i>нерешённый пример</i></div>
+                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• зависимое слово: <i>не решённый мной пример</i> <br>• противопоставление: <i>не решённый, а списанный</i> <br>• <strong>краткие причастия всегда раздельно</strong>: <i>задача не решена</i></div>
                         </div>
-                        <div class="col" style="padding-left: 12px;">
-                            <span class="tag">ОБСТОЯТЕЛЬСТВА</span>
-                            <ul>
-                                <li><strong>деепричастия и обороты:</strong> <i>Она тихо ответила, посмотрев в окно.</i></li>
-                                <li><strong>с предлогами <i>благодаря, вопреки, несмотря на</i>:</strong> <i>Благодаря лёгкому ветру, мы смогли высушить одежду.</i></li>
-                            </ul>
-                            <div style="margin-top: 4px; background: #fef9e7; border-radius: 8px; padding: 4px 10px; font-size: 0.9rem;">
-                                <span class="tag">Не обособляются</span> фразеологизмы: <i>спустя рукава</i>
+                        <div class="col">
+                            <p><strong>Глаголы и деепричастия:</strong></p>
+                            <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>ненавидеть, негодуя</i> <br>• <strong>НЕДО-</strong> (меньше нормы): <i>недобрать баллов, недостаёт красок</i></div>
+                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• глаголы без НЕ: <i>не читал, не мог</i> <br>• <strong>НЕ ДО-</strong> (действие не закончено): <i>не доел суп</i></div>
+                            <hr>
+                            <p><strong>Местоимения:</strong></p>
+                            <div><span class="tag">Слитно</span> <br>• отрицательные и неопределённые: <i>нечто, несколько</i></div>
+                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• с предлогом: <i>не с кем, ни у кого</i></div>
+                            <hr>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Важно!</strong> <br>
+                                • <strong>НЕДО-</strong> = недостаточно, меньше нормы: <i>недоварить, недосолить</i> <br>
+                                • <strong>НЕ ДО-</strong> = действие не доведено до конца: <i>не дочитать книгу, не досмотреть фильм</i> <br>
+                                • <strong>Никем непобедимая</strong> страна (слитно, так как без НЕ не употребляется в данном значении)
+                            </div>
+                            <div class="example" style="margin-top: 4px;">
+                                <strong>Примеры:</strong> <br>
+                                <i>небольшой, но уютный дом</i> (слитно, нет противопоставления) <br>
+                                <i>не большой, а маленький дом</i> (раздельно, противопоставление) <br>
+                                <i>ещё не прочитанная мной книга</i> (раздельно, зависимое слово) <br>
+                                <i>непрочитанная книга лежала на столе</i> (слитно, нет зависимых слов)
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- 5. ССП и СПП -->
-                <div class="punkt-scheme">
-                    <div class="rule-title">🔗 5. Запятая в ССП и СПП</div>
-                    <div class="two-col" style="background: transparent; padding: 4px 0;">
-                        <div class="col" style="border-left: none; padding-left: 0;">
-                            <span class="tag">ССП</span>
+            <!-- 2.1 Тире между подлежащим и сказуемым -->
+            <div class="card">
+                <div class="card-header"><h2>➖ 2.1 Тире между подлежащим и сказуемым</h2><span class="badge">пунктуация</span></div>
+                <div class="rule-block">
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>СТАВИТСЯ:</strong></p>
                             <ul>
-                                <li><strong>запятая между частями:</strong> <i>Наступило утро, и наш пароход подошёл к Астрахани.</i></li>
-                                <li><span class="tag">НЕ ставится</span> при общем члене: <i>Ночью ветер дул и шёл снег.</i></li>
+                                <li>сущ. И.п. + сущ. И.п.: <i>Астраханский заповедник — жемчужина Понизовья.</i></li>
+                                <li>числит. + числит.: <i>Пятью пять — двадцать пять.</i></li>
+                                <li>инфинитив + инфинитив: <i>Жить — родине служить.</i></li>
+                                <li>сущ. + инфинитив: <i>Доброе дело — правду говорить смело.</i></li>
+                                <li>инфинитив + сущ.: <i>Хорошо учиться — наша задача.</i></li>
+                                <li>перед <i>это, вот, значит</i>: <i>Чтение — вот лучшее учение.</i></li>
+                                <li>сущ. + числит., числит. + сущ.</li>
+                                <li>если сказуемое — фразеологизм: <i>Наш кот — ни рыба ни мясо.</i></li>
                             </ul>
                         </div>
-                        <div class="col" style="padding-left: 12px;">
-                            <span class="tag">Стык союзов</span>
+                        <div class="col">
+                            <p><strong>НЕ СТАВИТСЯ:</strong></p>
                             <ul>
-                                <li><strong>запятая есть</strong>, если придаточное можно убрать: <br><i>… и, если хочешь, я приду.</i></li>
-                                <li><strong>запятой нет</strong>, если есть <i>то, так, но</i>: <br><i>… и если хочешь, то я приду.</i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Вводные и обращения -->
-                <div class="punkt-scheme">
-                    <div class="rule-title">💬 6. Вводные слова и обращения</div>
-                    <div class="two-col" style="background: transparent; padding: 4px 0;">
-                        <div class="col" style="border-left: none; padding-left: 0;">
-                            <span class="tag">ВВОДНЫЕ СЛОВА</span>
-                            <ul>
-                                <li><strong>всегда выделяются запятыми:</strong> <i>конечно, кажется, по-моему</i></li>
-                                <li><span class="tag">Не вводные</span> (без запятых): <i>вдруг, ведь, будто</i></li>
-                            </ul>
-                        </div>
-                        <div class="col" style="padding-left: 12px;">
-                            <span class="tag">ОБРАЩЕНИЯ</span>
-                            <ul>
-                                <li><strong>выделяются запятыми:</strong> <i>Петя, принеси книгу.</i></li>
-                                <li><strong>частица <i>О</i> не отделяется:</strong> <i>О Волга!</i></li>
+                                <li>если есть <i>как, словно, точно, будто</i>: <i>Наш двор точно сад.</i></li>
+                                <li>вводное слово между подлежащим и сказуемым: <i>Собака, известно, друг человека.</i></li>
+                                <li>частица <i>не</i>: <i>Сердце не камень.</i></li>
+                                <li>личное местоимение + сущ.: <i>Мы преподаватели университета.</i></li>
+                                <li>сущ. + наречие / союз / частица: <i>Июнь лишь начало лета.</i></li>
+                                <li>сущ. + <i>был, есть</i>: <i>Человек есть кузнец своего счастья.</i></li>
+                                <li>сущ. в роли члена предложения: <i>Вася нам сосед.</i></li>
+                                <li>сказуемое — фразеологизм: <i>Грош цена этой теории.</i></li>
                             </ul>
                         </div>
                     </div>
-                    <div style="margin-top: 4px; background: #eef2f8; border-radius: 8px; padding: 4px 10px; font-size: 0.9rem;">
-                        <span class="tag">Сложные случаи</span> <i>однако</i> — вводное в середине / союз (=но) в начале.
+                    <div class="example"><i>Чтение — вот лучшее учение.</i> (ставится) <br> <i>Сердце не камень.</i> (не ставится)</div>
+                </div>
+            </div>
+
+            <!-- 2.2 Тире и двоеточие в БСП -->
+            <div class="card">
+                <div class="card-header"><h2>➖ 2.2 : и — в БСП</h2><span class="badge">бессоюзное</span></div>
+                <div class="rule-block">
+                    <div class="two-col">
+                        <div class="col"><span class="tag">Двоеточие</span> <br>• причина (потому что) <br>• пояснение (а именно) <br>• дополнение (что)</div>
+                        <div class="col"><span class="tag">Тире</span> <br>• противопоставление (а, но) <br>• время / условие (когда, если) <br>• следствие (так что) <br>• быстрая смена событий</div>
                     </div>
+                    <div class="example"><i>Я не мог заснуть: передо мной вертелся мальчик.</i> (причина) <br> <i>Справитесь быстрее — сможете уйти раньше.</i> (условие)</div>
+                </div>
+            </div>
+
+            <!-- 2.3 Однородные члены -->
+            <div class="card">
+                <div class="card-header"><h2>📋 2.3 Пунктуация при однородных членах</h2><span class="badge">пунктуация</span></div>
+                <div class="rule-block">
+                    <div class="scheme">
+                        <strong>Однородные члены:</strong> отвечают на один вопрос, связаны с одним словом, соединены сочинительной связью, обычно одна часть речи.
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Запятая СТАВИТСЯ:</strong></p>
+                            <ul>
+                                <li><strong>Бессоюзная связь:</strong> <i>Потекла густая, пёстрая, странная жизнь.</i></li>
+                                <li><strong>Повторяющиеся союзы:</strong> <i>и… и, ни… ни, то… то, не то… не то</i>: <br><i>То грозил, то уговаривал, то начинал просить.</i></li>
+                                <li><strong>Противительные союзы:</strong> <i>а, но, зато, да (=но), однако (=но)</i>: <br><i>Мелкие у хорька зубы, да острые.</i></li>
+                                <li><strong>Двойные и парные союзы:</strong> <i>не только… но и, как… так и, не столько… сколько, если не… то</i>: <br><i>Не только над центром, но и далеко вокруг.</i></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p><strong>Запятая НЕ СТАВИТСЯ:</strong></p>
+                            <ul>
+                                <li><strong>Одиночные союзы:</strong> <i>и, да (=и), или, либо</i>: <br><i>Он плакал и топал ногами.</i></li>
+                                <li><strong>Внутри фразеологизмов:</strong> <i>и день и ночь, ни жив ни мёртв, ни рыба ни мясо, ни пуха ни пера</i>.</li>
+                                <li><strong>В цельных выражениях:</strong> <i>и смех и горе, и стар и млад, ни больше ни меньше</i>.</li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>С двойными союзами</strong> запятая ставится <strong>только перед второй частью</strong>.<br>
+                                <i>не только …, но и …</i> → запятая перед <i>но и</i>.
+                            </div>
+                            <div class="example" style="margin-top: 4px;">
+                                <strong>Однородные и неоднородные определения:</strong><br>
+                                <i>круглый, деревянный стол</i> (однородные, запятая) <br>
+                                <i>красный деревянный стол</i> (неоднородные, без запятой)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="example" style="margin-top: 6px;">
+                        <strong>Примеры:</strong><br>
+                        <i>Серьёзность он вывел не столько из слов, сколько из лиц врачей.</i> (запятая перед <i>сколько</i>) <br>
+                        <i>Молодые люди замолчали и стали слушать и смотреть.</i> (без запятых, одиночный союз <i>и</i>) <br>
+                        <i>Листья и травы и цветы были полны влаги.</i> (запятые при повторяющемся союзе)
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.4 Обособление определений и обстоятельств -->
+            <div class="card">
+                <div class="card-header"><h2>✂️ 2.4 Обособление определений и обстоятельств</h2><span class="badge">пунктуация</span></div>
+                <div class="rule-block">
+                    <div class="scheme">
+                        <strong>Определение</strong> — второстепенный член, отвечает на вопросы <i>какой? чей?</i>, относится к существительному.
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Определения обособляются:</strong></p>
+                            <ul>
+                                <li><strong>Если относятся к личному местоимению</strong> (всегда): <br><i>Усталые, мы сели передохнуть.</i> <br><i>Он, бледный от страха, ничего не отвечал.</i></li>
+                                <li><strong>Распространённое определение в постпозиции</strong> (после определяемого слова): <br><i>Здесь есть много ягод, пригодных для еды.</i></li>
+                                <li><strong>Два и более одиночных определения в постпозиции</strong>: <br><i>Отец, бледный и сутулый, сидел за столом.</i></li>
+                                <li><strong>Дистантно расположенное определение</strong> (отделено от определяемого слова): <br><i>Дети покидали стадион и, воодушевлённые победой, громко обсуждали матч.</i></li>
+                                <li><strong>Приложение, относящееся к имени собственному</strong> (в постпозиции): <br><i>А.И. Попов, русский учёный, изобрёл радиоприёмник.</i></li>
+                                <li><strong>Определение и приложение, имеющие обстоятельственное значение</strong> (причина, уступка): <br><i>Хорошо отдохнувший, брат теперь мог нам помочь.</i> (потому что отдохнул) <br><i>Опытный охотник, Сергей на этот раз промахнулся.</i> (хотя и был опытным)</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p><strong>Обстоятельства обособляются:</strong></p>
+                            <ul>
+                                <li><strong>Одиночное деепричастие или деепричастный оборот</strong> (если выражает добавочное действие): <br><i>Она тихо ответила, посмотрев в окно.</i> (= ответила и посмотрела)</li>
+                                <li><strong>Существительное с предлогами</strong> <i>благодаря, в силу, вследствие, согласно, вопреки, несмотря на</i> (при распространённости и препозиции): <br><i>Благодаря лёгкому ветру, мы смогли высушить одежду.</i> <br><i>Вопреки прогнозу, май оказался холодным.</i></li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>НЕ обособляются:</strong>
+                                <ul style="margin: 4px 0 4px 18px;">
+                                    <li>деепричастия, утратившие глагольное значение (стали наречиями): <br><i>Он молча кивнул.</i> (молча = не говоря, наречие)</li>
+                                    <li>деепричастные обороты-фразеологизмы: <br><i>работать спустя рукава, бежать сломя голову, сидеть сложа руки</i></li>
+                                    <li>существительные с предлогами, тесно связанные со сказуемым: <br><i>Мы смогли быстро просохнуть благодаря ветру.</i> <br><i>Сестра вернулась спустя месяц.</i></li>
+                                </ul>
+                            </div>
+                            <div class="example" style="margin-top: 4px;">
+                                <strong>Примеры:</strong><br>
+                                <i>Ипполит Матвеевич, томясь стыдом, стоял под акацией.</i> (обособляется) <br>
+                                <i>Он ходил согнув спину.</i> (не обособляется, фразеологизм) <br>
+                                <i>Смета составлена исходя из ваших расчётов.</i> (не обособляется, предлог)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.5–2.6 ССП, СПП, смешанные -->
+            <div class="card">
+                <div class="card-header"><h2>🔗 2.5–2.6 ССП, СПП и смешанные</h2><span class="badge">сложные предложения</span></div>
+                <div class="rule-block">
+                    <div class="scheme">
+                        <strong>ССП</strong> — сложные предложения с сочинительной связью (равноправные части).
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Запятая в ССП ставится:</strong></p>
+                            <ul>
+                                <li>с соединительными союзами (<i>и, да=и, ни… ни, тоже, также, не только… но и</i>): <br><i>Наступило утро, и наш пароход подошёл к Астрахани.</i></li>
+                                <li>с разделительными союзами (<i>то… то, не то… не то, или, либо</i>): <br><i>То раздавались удары, то заунывно пели колёса.</i></li>
+                                <li>с противительными союзами (<i>а, но, да=но, однако, зато, только, же</i>): <br><i>Одни помогали на кухне, а другие накрывали на столы.</i></li>
+                            </ul>
+                            <p><strong>Запятая НЕ ставится (общий член):</strong></p>
+                            <ul>
+                                <li>общий второстепенный член: <i>В эту ночь на море дул ветер и шёл снег.</i></li>
+                                <li>общая придаточная часть: <i>Когда мы поднялись, туман исчез и первый луч солнца осветил лицо.</i></li>
+                                <li>общее вводное слово: <i>Возможно, прошло время и информация появится.</i></li>
+                                <li>общий обособленный член: <i>Вопреки прогнозам, небо прояснилось и дождь перестал.</i></li>
+                                <li>общая частица в побудительных предложениях: <i>Только бодрствовали двое часовых да шагал взад-вперёд вахтенный.</i></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p><strong>Запятая НЕ ставится также в случаях:</strong></p>
+                            <ul>
+                                <li>два назывных: <i>Зной и свет...</i></li>
+                                <li>два безличных: <i>Светло и жарко.</i></li>
+                                <li>два неопределённо-личных: <i>Зрителей разместили вокруг арены и на арену вывели участников.</i></li>
+                                <li>два вопросительных: <i>Кем налит стакан и почему нет розы?</i></li>
+                                <li>два побудительных: <i>Пусть светит солнце и птицы поют!</i></li>
+                                <li>два восклицательных: <i>Как хороша сирень и память хороша!</i></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Стык союзов (в смешанных конструкциях):</strong></p>
+                            <div class="highlight">
+                                <strong>Запятая ставится</strong>, если придаточное можно изъять без нарушения структуры: <br>
+                                <i>Дела мои улажены, и, если тебе нужно, я приеду.</i>
+                            </div>
+                            <div class="highlight" style="margin-top: 4px; border-left-color: #ef4444;">
+                                <strong>Запятая НЕ ставится</strong>, если есть вторая часть (то, так, но): <br>
+                                <i>Дела мои улажены, и если тебе нужно, то я приеду.</i>
+                            </div>
+                            <div style="margin-top: 6px;">
+                                <span class="tag">Сложные синтаксические конструкции</span> — не менее 3 частей с разными видами связи (сочинительной, подчинительной, бессоюзной).
+                            </div>
+                            <div class="example" style="margin-top: 4px;">
+                                <i>Надвигалась зима, и, когда ударили морозы, жить стало тяжело.</i> (запятая есть) <br>
+                                <i>… и когда ударили морозы, то жить стало тяжело.</i> (запятой нет)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.7 Вводные слова и обращения -->
+            <div class="card">
+                <div class="card-header"><h2>💬 2.7 Вводные слова и обращения</h2><span class="badge">пунктуация</span></div>
+                <div class="rule-block">
+                    <div class="scheme">
+                        <strong>Вводные слова, словосочетания, вставные конструкции</strong> — не являются членами предложения, выделяются запятыми.
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Группы вводных слов по значению:</strong></p>
+                            <ul>
+                                <li><strong>Степень уверенности:</strong> <i>конечно, бесспорно, кажется, вероятно, возможно, по-видимому</i></li>
+                                <li><strong>Чувства:</strong> <i>к счастью, к сожалению, к удивлению, чего доброго</i></li>
+                                <li><strong>Источник информации:</strong> <i>по-моему, по словам, по слухам, как известно</i></li>
+                                <li><strong>Привлечение внимания:</strong> <i>видишь, знаешь, представьте, согласитесь</i></li>
+                                <li><strong>Оценка стиля:</strong> <i>словом, иначе говоря, грубо говоря, так сказать</i></li>
+                                <li><strong>Оценка меры:</strong> <i>по меньшей мере, по крайней мере, как водится</i></li>
+                                <li><strong>Порядок мыслей:</strong> <i>во-первых, итак, следовательно, например, напротив</i></li>
+                                <li><strong>Экспрессивность:</strong> <i>по правде, по совести, смешно сказать, честно говоря</i></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p><strong>Слова, которые НЕ являются вводными:</strong></p>
+                            <ul>
+                                <li><i>авось, будто, буквально, вдобавок, вдруг, ведь, вряд ли, всё-таки, даже, едва ли, именно, как будто, как раз, к тому же, между тем, небось, почти, примерно, просто, решительно, якобы</i></li>
+                            </ul>
+                            <p style="margin-top: 8px;"><strong>Сложные случаи:</strong></p>
+                            <ul>
+                                <li><strong>наконец</strong> — вводное (= и ещё) / не вводное (= напоследок)</li>
+                                <li><strong>вообще</strong> — вводное (= вообще говоря) / не вводное (= обычно, совсем)</li>
+                                <li><strong>однако</strong> — вводное (в середине/конце) / союз (=но) в начале</li>
+                                <li><strong>значит</strong> — вводное (= следовательно) / не вводное (= означает)</li>
+                                <li><strong>в конце концов</strong> — вводное (= наконец) / не вводное (= напоследок)</li>
+                                <li><strong>во всяком случае</strong> — вводное (оценочное) / не вводное (= при любых обстоятельствах)</li>
+                                <li><strong>главным образом</strong> — вводное (= самое главное) / не вводное (= преимущественно)</li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Союз А (или НО) + вводное слово:</strong> запятая после союза не ставится, если образует одно целое:<br>
+                                <i>… а напротив, … а значит, … а впрочем, … но стало быть</i>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="scheme" style="margin-top: 6px;">
+                        <strong>Обращение</strong> — слово (сочетание слов), называющее того, к кому обращаются с речью.
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Запятые при обращении СТАВЯТСЯ:</strong></p>
+                            <ul>
+                                <li>при звательной интонации: <i>О Волга! Как хорошо ты, о море ночное!</i></li>
+                                <li>одиночные: <i>Милая, ты услышь меня.</i></li>
+                                <li>распространённые: <i>Низкий дом с голубыми ставнями, не забыть мне тебя никогда.</i></li>
+                                <li>разделённые членами предложения: <i>Отколе, умная, бредешь ты, голова?</i></li>
+                                <li>несколько обращений: <i>Услышь меня, хорошая, услышь меня, красивая.</i></li>
+                                <li>повторяющиеся: <i>Девушки, гляньте, девушки, утрите слёзы.</i></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p><strong>Запятые НЕ СТАВЯТСЯ:</strong></p>
+                            <ul>
+                                <li>при глаголе в повелительном наклонении (в значении пожелания): <br><i>Приходи к нему лечиться и корова, и волчица.</i> (обращение отсутствует)</li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Различайте!</strong><br>
+                                <strong>Обращение:</strong> <i>Ветер, ветер, ты могуч...</i><br>
+                                <strong>Член предложения:</strong> <i>Ветер по морю гуляет и кораблик подгоняет.</i>
+                            </div>
+                            <div class="example" style="margin-top: 4px;">
+                                <strong>Примеры:</strong><br>
+                                <i>Взыграйте, ветры, взройте воды!</i> (обращение) <br>
+                                <i>Прочь, ветер, прочь, вокруг ещё светло.</i> (обращение)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- НОВЫЙ РАЗДЕЛ: Пунктуация в схемах — ПОЛНЫЙ С ПРИМЕРАМИ -->
+            <div class="card">
+                <div class="card-header"><h2>📌 Пунктуация в схемах</h2><span class="badge">простые правила</span></div>
+                <div class="rule-block">
+                    <!-- 1. ТИРЕ -->
+                    <div class="punkt-scheme">
+                        <div class="rule-title">➖ 1. Тире между подлежащим и сказуемым</div>
+                        <div class="two-col" style="background: transparent; padding: 4px 0;">
+                            <div class="col" style="border-left: none; padding-left: 0;">
+                                <span class="tag">СТАВИТСЯ</span>
+                                <ul>
+                                    <li><strong>сущ. + сущ.:</strong> <i>Лес — наше богатство.</i></li>
+                                    <li><strong>числит. + числит.:</strong> <i>Пять — нечетное число.</i></li>
+                                    <li><strong>инфинитив + инфинитив:</strong> <i>Жить — родине служить.</i></li>
+                                    <li><strong>перед <i>это, вот, значит</i>:</strong> <i>Чтение — вот лучшее учение.</i></li>
+                                </ul>
+                            </div>
+                            <div class="col" style="padding-left: 12px;">
+                                <span class="tag">НЕ СТАВИТСЯ</span>
+                                <ul>
+                                    <li><strong>есть <i>как, словно, будто</i>:</strong> <i>Наш двор точно сад.</i></li>
+                                    <li><strong>вводное слово:</strong> <i>Собака, известно, друг человека.</i></li>
+                                    <li><strong>частица <i>не</i>:</strong> <i>Сердце не камень.</i></li>
+                                    <li><strong>личное местоимение:</strong> <i>Мы учителя.</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. БСП -->
+                    <div class="punkt-scheme">
+                        <div class="rule-title">➖ 2. Двоеточие и тире в БСП</div>
+                        <div class="two-col" style="background: transparent; padding: 4px 0;">
+                            <div class="col" style="border-left: none; padding-left: 0;">
+                                <span class="tag">ДВОЕТОЧИЕ</span>
+                                <ul>
+                                    <li><strong>причина</strong> (потому что): <i>Я не спал: мешала боль.</i></li>
+                                    <li><strong>пояснение</strong> (а именно): <i>Я понял одно: надо бежать.</i></li>
+                                    <li><strong>дополнение</strong> (что): <i>Он знал: битва будет трудной.</i></li>
+                                </ul>
+                            </div>
+                            <div class="col" style="padding-left: 12px;">
+                                <span class="tag">ТИРЕ</span>
+                                <ul>
+                                    <li><strong>противопоставление</strong> (а, но): <i>Весна сеет — осень собирает.</i></li>
+                                    <li><strong>время/условие</strong> (когда, если): <i>Сделаешь — молодец.</i></li>
+                                    <li><strong>следствие</strong> (так что): <i>Дождь пошёл — мы промокли.</i></li>
+                                    <li><strong>быстрая смена</strong>: <i>Он выглянул — никого не было.</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Однородные -->
+                    <div class="punkt-scheme">
+                        <div class="rule-title">📋 3. Запятая при однородных членах</div>
+                        <div class="two-col" style="background: transparent; padding: 4px 0;">
+                            <div class="col" style="border-left: none; padding-left: 0;">
+                                <span class="tag">СТАВИТСЯ</span>
+                                <ul>
+                                    <li><strong>без союзов:</strong> <i>Густой, частый лес.</i></li>
+                                    <li><strong>повторяющиеся союзы (<i>и… и, то… то</i>):</strong> <i>То грозил, то уговаривал, то начинал просить.</i></li>
+                                    <li><strong>противительные (<i>а, но, зато</i>):</strong> <i>Мелкие у хорька зубы, да острые.</i></li>
+                                    <li><strong>двойные (<i>не только…, но и</i>):</strong> <i>Не только над центром, но и далеко вокруг.</i></li>
+                                </ul>
+                            </div>
+                            <div class="col" style="padding-left: 12px;">
+                                <span class="tag">НЕ СТАВИТСЯ</span>
+                                <ul>
+                                    <li><strong>одиночные <i>и, или</i>:</strong> <i>Он пел и плясал.</i></li>
+                                    <li><strong>фразеологизмы:</strong> <i>ни жив ни мёртв</i></li>
+                                </ul>
+                                <div style="margin-top: 4px; background: #eef2f8; border-radius: 8px; padding: 4px 10px; font-size: 0.9rem;">
+                                    <span class="tag">Важно</span> перед <i>но и</i> в двойных союзах.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Обособление -->
+                    <div class="punkt-scheme">
+                        <div class="rule-title">✂️ 4. Обособление определений и обстоятельств</div>
+                        <div class="two-col" style="background: transparent; padding: 4px 0;">
+                            <div class="col" style="border-left: none; padding-left: 0;">
+                                <span class="tag">ОПРЕДЕЛЕНИЯ</span>
+                                <ul>
+                                    <li><strong>после определяемого слова:</strong> <i>Здесь есть много ягод, пригодных для еды.</i></li>
+                                    <li><strong>при личном местоимении:</strong> <i>Он, бледный от страха, ничего не отвечал.</i></li>
+                                    <li><strong>с обстоятельственным значением:</strong> <i>Опытный охотник, Сергей на этот раз промахнулся.</i></li>
+                                </ul>
+                                <span class="tag">ПРИЛОЖЕНИЯ</span>
+                                <ul>
+                                    <li><strong>с именем собственным в постпозиции:</strong> <i>А.И. Попов, русский учёный, изобрёл радиоприёмник.</i></li>
+                                </ul>
+                            </div>
+                            <div class="col" style="padding-left: 12px;">
+                                <span class="tag">ОБСТОЯТЕЛЬСТВА</span>
+                                <ul>
+                                    <li><strong>деепричастия и обороты:</strong> <i>Она тихо ответила, посмотрев в окно.</i></li>
+                                    <li><strong>с предлогами <i>благодаря, вопреки, несмотря на</i>:</strong> <i>Благодаря лёгкому ветру, мы смогли высушить одежду.</i></li>
+                                </ul>
+                                <div style="margin-top: 4px; background: #fef9e7; border-radius: 8px; padding: 4px 10px; font-size: 0.9rem;">
+                                    <span class="tag">Не обособляются</span> фразеологизмы: <i>спустя рукава</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. ССП и СПП -->
+                    <div class="punkt-scheme">
+                        <div class="rule-title">🔗 5. Запятая в ССП и СПП</div>
+                        <div class="two-col" style="background: transparent; padding: 4px 0;">
+                            <div class="col" style="border-left: none; padding-left: 0;">
+                                <span class="tag">ССП</span>
+                                <ul>
+                                    <li><strong>запятая между частями:</strong> <i>Наступило утро, и наш пароход подошёл к Астрахани.</i></li>
+                                    <li><span class="tag">НЕ ставится</span> при общем члене: <i>Ночью ветер дул и шёл снег.</i></li>
+                                </ul>
+                            </div>
+                            <div class="col" style="padding-left: 12px;">
+                                <span class="tag">Стык союзов</span>
+                                <ul>
+                                    <li><strong>запятая есть</strong>, если придаточное можно убрать: <br><i>… и, если хочешь, я приду.</i></li>
+                                    <li><strong>запятой нет</strong>, если есть <i>то, так, но</i>: <br><i>… и если хочешь, то я приду.</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Вводные и обращения -->
+                    <div class="punkt-scheme">
+                        <div class="rule-title">💬 6. Вводные слова и обращения</div>
+                        <div class="two-col" style="background: transparent; padding: 4px 0;">
+                            <div class="col" style="border-left: none; padding-left: 0;">
+                                <span class="tag">ВВОДНЫЕ СЛОВА</span>
+                                <ul>
+                                    <li><strong>всегда выделяются запятыми:</strong> <i>конечно, кажется, по-моему</i></li>
+                                    <li><span class="tag">Не вводные</span> (без запятых): <i>вдруг, ведь, будто</i></li>
+                                </ul>
+                            </div>
+                            <div class="col" style="padding-left: 12px;">
+                                <span class="tag">ОБРАЩЕНИЯ</span>
+                                <ul>
+                                    <li><strong>выделяются запятыми:</strong> <i>Петя, принеси книгу.</i></li>
+                                    <li><strong>частица <i>О</i> не отделяется:</strong> <i>О Волга!</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="margin-top: 4px; background: #eef2f8; border-radius: 8px; padding: 4px 10px; font-size: 0.9rem;">
+                            <span class="tag">Сложные случаи</span> <i>однако</i> — вводное в середине / союз (=но) в начале.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3.1 Акцентологические нормы -->
+            <div class="card">
+                <div class="card-header"><h2>🎯 3.1 Акцентологические нормы</h2><span class="badge">ударение</span></div>
+                <div class="rule-block">
+                    <div class="scheme">
+                        <strong>Особенности русского ударения:</strong> нефиксированность, подвижность, наличие профессиональных и стилистических вариантов.
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Глаголы прошедшего времени ж.р.:</strong></p>
+                            <ul>
+                                <li>ударение на <strong>-А</strong>: <i>бралА, бралАсь, взялА, взялАсь, влилАсь, ворвалАсь, воспринялА, воссоздалА, гналА, гналАсь, добралА, добралАсь, дождалАсь, ждалА, занялА, заперлА, заперлАсь, звалА, лгалА, лилА, лилАсь, навралА, надорвалАсь, назвалАсь, налилА, нарвалА, началА, облилАсь, обнялАсь, обогналА, ободралА, отбылА, отдалА, отозвалА, отозвалАсь, перелилА, позвалА, полилА, понялА, прибылА, рвалА, снялА, создалА, сорвалА, убралА</i></li>
+                                <li><strong>Исключения</strong> (с приставкой ВЫ-): <i>вЫлила, вЫзвала</i></li>
+                                <li><strong>Исключения</strong> (ударение на основе): <i>клАла, крАлась, слАла, послАла, отослАла</i></li>
+                            </ul>
+                            <p><strong>Краткие страдательные причастия ж.р.:</strong></p>
+                            <ul>
+                                <li>ударение на <strong>-А</strong>: <i>занятА, запертА, заселенА, нажитА, налитА, ободренА, снятА, созданА</i></li>
+                            </ul>
+                            <p><strong>Глаголы на -ИТЬ (при спряжении):</strong></p>
+                            <ul>
+                                <li>ударение на окончании: <i>включИшь, включИт, звонИшь, звонИт, повторИшь, повторИт, облегчИшь, облегчИт</i></li>
+                                <li><strong>Исключения:</strong> <i>опОшлить — опОшлят, освЕдомиться — освЕдомишься</i></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p><strong>Глаголы, образованные от прилагательных:</strong></p>
+                            <ul>
+                                <li>ударение на <strong>-ИТЬ</strong>: <i>убыстрИть, обострИть, облегчИть, ободрИть, углубИть</i></li>
+                                <li><strong>Исключение:</strong> <i>озлОбить</i> (от «злой»)</li>
+                            </ul>
+                            <p><strong>Действительные причастия прош. вр.:</strong></p>
+                            <ul>
+                                <li>ударение на гласную перед <strong>-ВШ-</strong>: <i>нажИвший, начАвший, понЯвший, прожИвший</i></li>
+                            </ul>
+                            <p><strong>Страдательные причастия прош. вр. от глаголов на -гнуть:</strong></p>
+                            <ul>
+                                <li>ударение на приставку: <i>изОгнутый, зАгнутый, сОгнутый</i></li>
+                            </ul>
+                            <p><strong>Деепричастия:</strong></p>
+                            <ul>
+                                <li>ударение на гласную перед суффиксами: <i>начАв, отдАв, поднЯв, понЯв, прибЫв, начАвшись</i></li>
+                                <li>часто совпадает с ударением в инфинитиве: <i>задАть — задАв, пожИть — пожИв, положИть — положИв</i></li>
+                            </ul>
+                            <p><strong>Имена существительные иноязычные:</strong></p>
+                            <ul>
+                                <li>ударение на последний слог: <i>каталОг, квартАл, жалюзИ, партЕр, дефИс, диспансЕр, экспЕрт</i></li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Запомнить!</strong><br>
+                                <i>тОрты, бАнты, шАрфы, крАны, срЕдства, дОговор, слИвовый, кУхонный, красИвее, дОверху, дОнизу, дОсуха</i><br>
+                                <i>балОванный, баловАть, избалОванный</i> (ударение НЕ на корень БАЛ-)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3.2–3.3 Лексика и паронимы -->
+            <div class="card">
+                <div class="card-header"><h2>📚 3.2–3.3 Лексика и паронимы</h2><span class="badge">культура речи</span></div>
+                <div class="rule-block">
+                    <p><strong>Лексическая сочетаемость:</strong> слова должны сочетаться по смыслу (<i>глубокая старость</i>, но не <i>молодость</i>).</p>
+                    <p><strong>Плеоназм</strong> — лишнее слово: <i>моя автобиография, упал вниз, маршрут движения</i>.</p>
+                    <p><strong>Паронимы</strong> — близкие по звучанию, разные по смыслу: <i>одеть / надеть, представить / предоставить, абонент / абонемент</i>.</p>
+                    <div class="example">❌ <i>Вражебная оборона была сломлена</i> → ✅ <i>Враждебная оборона</i></div>
+                </div>
+            </div>
+
+            <!-- 3.4 Слово и его значение -->
+            <div class="card">
+                <div class="card-header"><h2>📖 3.4 Слово и его значение</h2><span class="badge">лексика</span></div>
+                <div class="rule-block">
+                    <div class="scheme">
+                        <strong>Слово</strong> — основная единица языка, отражает изменения в жизни общества, выполняет номинативную, эмоционально-экспрессивную и эстетическую функции.
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Значение слова</strong> — предметно-логическая соотнесённость с явлениями внешнего или внутреннего мира.</p>
+                            <p><strong>Однозначные слова:</strong> имеют только одно значение (<i>карандаш, тротуар, велосипед, кефир</i>).</p>
+                            <p><strong>Многозначные слова:</strong> имеют несколько значений (<i>идти — более 40 значений, модель — 5 значений</i>).</p>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Многозначность</strong> — удобный способ хранения информации, основа языковой образности и выразительности.
+                            </div>
+                        </div>
+                        <div class="col">
+                            <p><strong>Стилистические ограничения:</strong></p>
+                            <ul>
+                                <li>В художественной литературе и публицистике — образность, изобразительность, нестандартность.</li>
+                                <li>В деловой и научной речи — однозначность, стандартизация, терминологизация.</li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Внимание!</strong><br>
+                                <i>шаблон</i> — это образец, а не «вероятность»<br>
+                                <i>ристалище</i> — место для состязаний, а не праздник<br>
+                                <i>диалект</i> — наречие, а не убыток
+                            </div>
+                            <div class="example" style="margin-top: 4px;">
+                                <strong>Примеры неверного определения:</strong><br>
+                                ❌ шаблон — вероятность, возможность<br>
+                                ❌ ристалище — всеобщий праздник<br>
+                                ❌ диалект — убыток<br>
+                                ❌ банальный — недоказанный<br>
+                                ❌ ритуал — высший орган власти
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3.5 Грамматические нормы (формы слова) -->
+            <div class="card">
+                <div class="card-header"><h2>🧬 3.5 Грамматические нормы (формы слова)</h2><span class="badge">морфология</span></div>
+                <div class="rule-block">
+                    <div class="scheme">
+                        <strong>Грамматические нормы</strong> — правильное образование грамматических форм слов разных частей речи.
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Род существительных:</strong></p>
+                            <ul>
+                                <li><i>шампунь</i> (м.р.), <i>тюль</i> (м.р.), <i>мозоль</i> (ж.р.)</li>
+                                <li><i>какао</i> (ср.р.), <i>жалюзи</i> (ср.р.), <i>шимпанзе</i> (м.р.)</li>
+                                <li><i>туфля</i> (ж.р.), <i>бандероль</i> (ж.р.), <i>рельс</i> (м.р.)</li>
+                                <li>Несклоняемые: <i>кофе</i> (м.р.), <i>кашне</i> (ср.р.), <i>леди</i> (ж.р.)</li>
+                            </ul>
+                            <p><strong>Склонение числительных:</strong></p>
+                            <ul>
+                                <li><strong>40, 90, 100:</strong> <i>сорок, девяносто, сто</i> (в косв. падежах: <i>сорока, девяноста, ста</i>)</li>
+                                <li><strong>50–80:</strong> склоняются обе части: <i>пятьюдесятью</i></li>
+                                <li><strong>200–900:</strong> склоняются обе части: <i>двумястами, пятьюстами</i></li>
+                                <li><strong>полтора, полтораста:</strong> <i>полутора, полутораста</i> (в косв. падежах)</li>
+                            </ul>
+                            <p><strong>Собирательные числительные:</strong></p>
+                            <ul>
+                                <li>с лицами муж. пола: <i>двое друзей</i></li>
+                                <li>с детёнышами: <i>семеро козлят</i></li>
+                                <li>с парными предметами: <i>двое саней</i></li>
+                                <li><strong>НЕЛЬЗЯ</strong> с лицами жен. пола: ❌ <i>трое подруг</i></li>
+                                <li><strong>НЕЛЬЗЯ</strong> с взрослыми животными: ❌ <i>двое волков</i></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p><strong>Падежные формы существительных (мн.ч. И.п.):</strong></p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-size: 0.9rem; background: #f2f6fe; border-radius: 14px; padding: 8px 12px;">
+                                <div><span class="tag">-ы/-и</span> <br>бухгалтеры, договоры, инженеры, лекторы, торты, шофёры</div>
+                                <div><span class="tag">-а/-я</span> <br>адреса, директора, доктора, профессора, паспорта, катера</div>
+                            </div>
+                            <p style="margin-top: 4px;"><strong>Родительный падеж мн.ч.:</strong></p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-size: 0.9rem; background: #f2f6fe; border-radius: 14px; padding: 8px 12px;">
+                                <div><span class="tag">Нулевое окончание</span> <br>ботинок, валенок, чулок, солдат, яблок, макарон, башкир, татар, румын, турок, цыган</div>
+                                <div><span class="tag">-ОВ/-ЕВ</span> <br>носков, килограммов, помидоров, апельсинов, украинцев, гектаров</div>
+                            </div>
+                            <p><strong>Глагольные формы:</strong></p>
+                            <ul>
+                                <li><i>ляг</i> (не <i>ляжь</i>), <i>поезжай</i> (не <i>едь</i>), <i>класть</i> (не <i>ложить</i>)</li>
+                                <li><i>машет, плещется, колышется, мяукает</i> (не <i>махает, плескается, колыхается, мяучит</i>)</li>
+                                <li>нет формы 1-го лица ед.ч. у глаголов <i>победить, убедиться, очутиться</i></li>
+                                <li><i>сох, промок, замёрз, окреп</i> (не <i>сохнул, промокнул</i>)</li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Частые ошибки:</strong><br>
+                                <i>шестистами</i> → <i>шестьюстами</i><br>
+                                <i>обоих рук</i> → <i>обеих рук</i> (ж.р.)<br>
+                                <i>обоих чтецов</i> (м.р.)<br>
+                                <i>анализированный</i> → <i>проанализированный</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3.6 Грамматические нормы (речевые ошибки) -->
+            <div class="card">
+                <div class="card-header"><h2>⚠️ 3.6 Грамматические нормы (речевые ошибки)</h2><span class="badge">синтаксис</span></div>
+                <div class="rule-block">
+                    <div class="scheme">
+                        <strong>Грамматическая ошибка</strong> — употребление слова в несуществующей словоизменительной форме или нарушение синтаксических норм.
+                    </div>
+                    <div class="two-col">
+                        <div class="col">
+                            <p><strong>Неправильное употребление падежной формы с предлогом:</strong></p>
+                            <ul>
+                                <li><strong>благодаря, согласно, вопреки, наперерез, наперекор</strong> + <strong>Дат.п.</strong>: <br><i>согласно расписанию, благодаря помощи</i></li>
+                                <li><strong>по прибытии, по окончании, по приезде</strong> (предложный падеж): <br><i>по прибытии поезда, по окончании школы</i></li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                ❌ <i>Вопреки распространённого мнения</i> → ✅ <i>Вопреки распространённому мнению</i><br>
+                                ❌ <i>По прибытию поезда</i> → ✅ <i>По прибытии поезда</i>
+                            </div>
+                            <p><strong>Неправильное употребление имени числительного:</strong></p>
+                            <ul>
+                                <li>❌ <i>Трое одноклассниц</i> → ✅ <i>Три одноклассницы</i></li>
+                                <li>❌ <i>Четыре суток</i> → ✅ <i>Четверо суток</i> (собирательное)</li>
+                                <li>❌ <i>Не хватало трёх тысяч семьсот пятьдесят четырёх</i> → ✅ <i>Не хватало трёх тысяч семисот пятидесяти четырёх</i></li>
+                                <li>❌ <i>О ста тридцати втором номере</i> → ✅ <i>О сто тридцать втором номере</i> (порядковое склоняется по прилагательному)</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p><strong>Нарушение связи между подлежащим и сказуемым:</strong></p>
+                            <ul>
+                                <li><strong>Род несклоняемых существительных:</strong> <br><i>Тбилиси назывался</i> (город), <i>пони катал</i> (он)</li>
+                                <li><strong>Род аббревиатур:</strong> <i>МГУ был основан</i> (университет)</li>
+                                <li><strong>Согласование с местоимением КТО:</strong> <br><i>Все, кто побывал, увезли</i> (мн.ч.) / <i>Каждый, кто смотрел, узнает</i> (ед.ч.)</li>
+                            </ul>
+                            <p><strong>Ошибки с однородными членами:</strong></p>
+                            <ul>
+                                <li><strong>Двойные союзы:</strong> ❌ <i>не только для учителей, но и для учащихся</i> → ✅ <i>не только для учителей, но и для учащихся</i> (вторая часть на месте)</li>
+                                <li><strong>Смешение конструкций:</strong> ❌ <i>Девушка, сидевшая у окна и которая хорошо пела</i> → ✅ <i>Девушка, которая сидела у окна и хорошо пела</i></li>
+                                <li><strong>Разное управление:</strong> ❌ <i>Любил и восхищался народом</i> → ✅ <i>Любил народ и восхищался им</i></li>
+                            </ul>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Деепричастный оборот:</strong> действие выполняет тот же субъект, что и сказуемое.<br>
+                                ❌ <i>Прочитав «Преступление и наказание», судьба Сони поразила меня.</i><br>
+                                ✅ <i>Когда я прочитал «Преступление и наказание», судьба Сони поразила меня.</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Справочные материалы -->
+            <div class="card">
+                <div class="card-header"><h2>🧾 Справочные материалы</h2><span class="badge">минимум</span></div>
+                <div class="rule-block">
+                    <p><strong>Плеоназмы (избегать):</strong> <i>моя автобиография, предчувствовать заранее, упал вниз, маршрут движения, совместное сотрудничество</i>.</p>
+                    <p><strong>Акцентологический минимум:</strong> <i>каталОг, квартАл, жалюзИ, тОрты, бАнты, срЕдства, звонИт, облегчИть, закУпорить</i>.</p>
+                    <p><strong>Орфографический минимум:</strong> <i>абитуриент, бассейн, галерея, горизонт, колоссальный, президент, цитата, шоссе</i>.</p>
+                    <div class="highlight">📌 Структура билета ВИ 2025: А (9 заданий по орфографии), В (4 задания по пунктуации), С (6 заданий по культуре речи).</div>
                 </div>
             </div>
         </div>
-
-        <!-- 3.1 Акцентологические нормы -->
-        <div class="card">
-            <div class="card-header"><h2>🎯 3.1 Акцентологические нормы</h2><span class="badge">ударение</span></div>
-            <div class="rule-block">
-                <div class="scheme">
-                    <strong>Особенности русского ударения:</strong> нефиксированность, подвижность, наличие профессиональных и стилистических вариантов.
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Глаголы прошедшего времени ж.р.:</strong></p>
-                        <ul>
-                            <li>ударение на <strong>-А</strong>: <i>бралА, бралАсь, взялА, взялАсь, влилАсь, ворвалАсь, воспринялА, воссоздалА, гналА, гналАсь, добралА, добралАсь, дождалАсь, ждалА, занялА, заперлА, заперлАсь, звалА, лгалА, лилА, лилАсь, навралА, надорвалАсь, назвалАсь, налилА, нарвалА, началА, облилАсь, обнялАсь, обогналА, ободралА, отбылА, отдалА, отозвалА, отозвалАсь, перелилА, позвалА, полилА, понялА, прибылА, рвалА, снялА, создалА, сорвалА, убралА</i></li>
-                            <li><strong>Исключения</strong> (с приставкой ВЫ-): <i>вЫлила, вЫзвала</i></li>
-                            <li><strong>Исключения</strong> (ударение на основе): <i>клАла, крАлась, слАла, послАла, отослАла</i></li>
-                        </ul>
-                        <p><strong>Краткие страдательные причастия ж.р.:</strong></p>
-                        <ul>
-                            <li>ударение на <strong>-А</strong>: <i>занятА, запертА, заселенА, нажитА, налитА, ободренА, снятА, созданА</i></li>
-                        </ul>
-                        <p><strong>Глаголы на -ИТЬ (при спряжении):</strong></p>
-                        <ul>
-                            <li>ударение на окончании: <i>включИшь, включИт, звонИшь, звонИт, повторИшь, повторИт, облегчИшь, облегчИт</i></li>
-                            <li><strong>Исключения:</strong> <i>опОшлить — опОшлят, освЕдомиться — освЕдомишься</i></li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p><strong>Глаголы, образованные от прилагательных:</strong></p>
-                        <ul>
-                            <li>ударение на <strong>-ИТЬ</strong>: <i>убыстрИть, обострИть, облегчИть, ободрИть, углубИть</i></li>
-                            <li><strong>Исключение:</strong> <i>озлОбить</i> (от «злой»)</li>
-                        </ul>
-                        <p><strong>Действительные причастия прош. вр.:</strong></p>
-                        <ul>
-                            <li>ударение на гласную перед <strong>-ВШ-</strong>: <i>нажИвший, начАвший, понЯвший, прожИвший</i></li>
-                        </ul>
-                        <p><strong>Страдательные причастия прош. вр. от глаголов на -гнуть:</strong></p>
-                        <ul>
-                            <li>ударение на приставку: <i>изОгнутый, зАгнутый, сОгнутый</i></li>
-                        </ul>
-                        <p><strong>Деепричастия:</strong></p>
-                        <ul>
-                            <li>ударение на гласную перед суффиксами: <i>начАв, отдАв, поднЯв, понЯв, прибЫв, начАвшись</i></li>
-                            <li>часто совпадает с ударением в инфинитиве: <i>задАть — задАв, пожИть — пожИв, положИть — положИв</i></li>
-                        </ul>
-                        <p><strong>Имена существительные иноязычные:</strong></p>
-                        <ul>
-                            <li>ударение на последний слог: <i>каталОг, квартАл, жалюзИ, партЕр, дефИс, диспансЕр, экспЕрт</i></li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>Запомнить!</strong><br>
-                            <i>тОрты, бАнты, шАрфы, крАны, срЕдства, дОговор, слИвовый, кУхонный, красИвее, дОверху, дОнизу, дОсуха</i><br>
-                            <i>балОванный, баловАть, избалОванный</i> (ударение НЕ на корень БАЛ-)
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3.2–3.3 Лексика и паронимы -->
-        <div class="card">
-            <div class="card-header"><h2>📚 3.2–3.3 Лексика и паронимы</h2><span class="badge">культура речи</span></div>
-            <div class="rule-block">
-                <p><strong>Лексическая сочетаемость:</strong> слова должны сочетаться по смыслу (<i>глубокая старость</i>, но не <i>молодость</i>).</p>
-                <p><strong>Плеоназм</strong> — лишнее слово: <i>моя автобиография, упал вниз, маршрут движения</i>.</p>
-                <p><strong>Паронимы</strong> — близкие по звучанию, разные по смыслу: <i>одеть / надеть, представить / предоставить, абонент / абонемент</i>.</p>
-                <div class="example">❌ <i>Вражебная оборона была сломлена</i> → ✅ <i>Враждебная оборона</i></div>
-            </div>
-        </div>
-
-        <!-- 3.4 Слово и его значение -->
-        <div class="card">
-            <div class="card-header"><h2>📖 3.4 Слово и его значение</h2><span class="badge">лексика</span></div>
-            <div class="rule-block">
-                <div class="scheme">
-                    <strong>Слово</strong> — основная единица языка, отражает изменения в жизни общества, выполняет номинативную, эмоционально-экспрессивную и эстетическую функции.
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Значение слова</strong> — предметно-логическая соотнесённость с явлениями внешнего или внутреннего мира.</p>
-                        <p><strong>Однозначные слова:</strong> имеют только одно значение (<i>карандаш, тротуар, велосипед, кефир</i>).</p>
-                        <p><strong>Многозначные слова:</strong> имеют несколько значений (<i>идти — более 40 значений, модель — 5 значений</i>).</p>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>Многозначность</strong> — удобный способ хранения информации, основа языковой образности и выразительности.
-                        </div>
-                    </div>
-                    <div class="col">
-                        <p><strong>Стилистические ограничения:</strong></p>
-                        <ul>
-                            <li>В художественной литературе и публицистике — образность, изобразительность, нестандартность.</li>
-                            <li>В деловой и научной речи — однозначность, стандартизация, терминологизация.</li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>Внимание!</strong><br>
-                            <i>шаблон</i> — это образец, а не «вероятность»<br>
-                            <i>ристалище</i> — место для состязаний, а не праздник<br>
-                            <i>диалект</i> — наречие, а не убыток
-                        </div>
-                        <div class="example" style="margin-top: 4px;">
-                            <strong>Примеры неверного определения:</strong><br>
-                            ❌ шаблон — вероятность, возможность<br>
-                            ❌ ристалище — всеобщий праздник<br>
-                            ❌ диалект — убыток<br>
-                            ❌ банальный — недоказанный<br>
-                            ❌ ритуал — высший орган власти
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3.5 Грамматические нормы (формы слова) -->
-        <div class="card">
-            <div class="card-header"><h2>🧬 3.5 Грамматические нормы (формы слова)</h2><span class="badge">морфология</span></div>
-            <div class="rule-block">
-                <div class="scheme">
-                    <strong>Грамматические нормы</strong> — правильное образование грамматических форм слов разных частей речи.
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Род существительных:</strong></p>
-                        <ul>
-                            <li><i>шампунь</i> (м.р.), <i>тюль</i> (м.р.), <i>мозоль</i> (ж.р.)</li>
-                            <li><i>какао</i> (ср.р.), <i>жалюзи</i> (ср.р.), <i>шимпанзе</i> (м.р.)</li>
-                            <li><i>туфля</i> (ж.р.), <i>бандероль</i> (ж.р.), <i>рельс</i> (м.р.)</li>
-                            <li>Несклоняемые: <i>кофе</i> (м.р.), <i>кашне</i> (ср.р.), <i>леди</i> (ж.р.)</li>
-                        </ul>
-                        <p><strong>Склонение числительных:</strong></p>
-                        <ul>
-                            <li><strong>40, 90, 100:</strong> <i>сорок, девяносто, сто</i> (в косв. падежах: <i>сорока, девяноста, ста</i>)</li>
-                            <li><strong>50–80:</strong> склоняются обе части: <i>пятьюдесятью</i></li>
-                            <li><strong>200–900:</strong> склоняются обе части: <i>двумястами, пятьюстами</i></li>
-                            <li><strong>полтора, полтораста:</strong> <i>полутора, полутораста</i> (в косв. падежах)</li>
-                        </ul>
-                        <p><strong>Собирательные числительные:</strong></p>
-                        <ul>
-                            <li>с лицами муж. пола: <i>двое друзей</i></li>
-                            <li>с детёнышами: <i>семеро козлят</i></li>
-                            <li>с парными предметами: <i>двое саней</i></li>
-                            <li><strong>НЕЛЬЗЯ</strong> с лицами жен. пола: ❌ <i>трое подруг</i></li>
-                            <li><strong>НЕЛЬЗЯ</strong> с взрослыми животными: ❌ <i>двое волков</i></li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p><strong>Падежные формы существительных (мн.ч. И.п.):</strong></p>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-size: 0.9rem; background: #f2f6fe; border-radius: 14px; padding: 8px 12px;">
-                            <div><span class="tag">-ы/-и</span> <br>бухгалтеры, договоры, инженеры, лекторы, торты, шофёры</div>
-                            <div><span class="tag">-а/-я</span> <br>адреса, директора, доктора, профессора, паспорта, катера</div>
-                        </div>
-                        <p style="margin-top: 4px;"><strong>Родительный падеж мн.ч.:</strong></p>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-size: 0.9rem; background: #f2f6fe; border-radius: 14px; padding: 8px 12px;">
-                            <div><span class="tag">Нулевое окончание</span> <br>ботинок, валенок, чулок, солдат, яблок, макарон, башкир, татар, румын, турок, цыган</div>
-                            <div><span class="tag">-ОВ/-ЕВ</span> <br>носков, килограммов, помидоров, апельсинов, украинцев, гектаров</div>
-                        </div>
-                        <p><strong>Глагольные формы:</strong></p>
-                        <ul>
-                            <li><i>ляг</i> (не <i>ляжь</i>), <i>поезжай</i> (не <i>едь</i>), <i>класть</i> (не <i>ложить</i>)</li>
-                            <li><i>машет, плещется, колышется, мяукает</i> (не <i>махает, плескается, колыхается, мяучит</i>)</li>
-                            <li>нет формы 1-го лица ед.ч. у глаголов <i>победить, убедиться, очутиться</i></li>
-                            <li><i>сох, промок, замёрз, окреп</i> (не <i>сохнул, промокнул</i>)</li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>Частые ошибки:</strong><br>
-                            <i>шестистами</i> → <i>шестьюстами</i><br>
-                            <i>обоих рук</i> → <i>обеих рук</i> (ж.р.)<br>
-                            <i>обоих чтецов</i> (м.р.)<br>
-                            <i>анализированный</i> → <i>проанализированный</i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3.6 Грамматические нормы (речевые ошибки) -->
-        <div class="card">
-            <div class="card-header"><h2>⚠️ 3.6 Грамматические нормы (речевые ошибки)</h2><span class="badge">синтаксис</span></div>
-            <div class="rule-block">
-                <div class="scheme">
-                    <strong>Грамматическая ошибка</strong> — употребление слова в несуществующей словоизменительной форме или нарушение синтаксических норм.
-                </div>
-                <div class="two-col">
-                    <div class="col">
-                        <p><strong>Неправильное употребление падежной формы с предлогом:</strong></p>
-                        <ul>
-                            <li><strong>благодаря, согласно, вопреки, наперерез, наперекор</strong> + <strong>Дат.п.</strong>: <br><i>согласно расписанию, благодаря помощи</i></li>
-                            <li><strong>по прибытии, по окончании, по приезде</strong> (предложный падеж): <br><i>по прибытии поезда, по окончании школы</i></li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            ❌ <i>Вопреки распространённого мнения</i> → ✅ <i>Вопреки распространённому мнению</i><br>
-                            ❌ <i>По прибытию поезда</i> → ✅ <i>По прибытии поезда</i>
-                        </div>
-                        <p><strong>Неправильное употребление имени числительного:</strong></p>
-                        <ul>
-                            <li>❌ <i>Трое одноклассниц</i> → ✅ <i>Три одноклассницы</i></li>
-                            <li>❌ <i>Четыре суток</i> → ✅ <i>Четверо суток</i> (собирательное)</li>
-                            <li>❌ <i>Не хватало трёх тысяч семьсот пятьдесят четырёх</i> → ✅ <i>Не хватало трёх тысяч семисот пятидесяти четырёх</i></li>
-                            <li>❌ <i>О ста тридцати втором номере</i> → ✅ <i>О сто тридцать втором номере</i> (порядковое склоняется по прилагательному)</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p><strong>Нарушение связи между подлежащим и сказуемым:</strong></p>
-                        <ul>
-                            <li><strong>Род несклоняемых существительных:</strong> <br><i>Тбилиси назывался</i> (город), <i>пони катал</i> (он)</li>
-                            <li><strong>Род аббревиатур:</strong> <i>МГУ был основан</i> (университет)</li>
-                            <li><strong>Согласование с местоимением КТО:</strong> <br><i>Все, кто побывал, увезли</i> (мн.ч.) / <i>Каждый, кто смотрел, узнает</i> (ед.ч.)</li>
-                        </ul>
-                        <p><strong>Ошибки с однородными членами:</strong></p>
-                        <ul>
-                            <li><strong>Двойные союзы:</strong> ❌ <i>не только для учителей, но и для учащихся</i> → ✅ <i>не только для учителей, но и для учащихся</i> (вторая часть на месте)</li>
-                            <li><strong>Смешение конструкций:</strong> ❌ <i>Девушка, сидевшая у окна и которая хорошо пела</i> → ✅ <i>Девушка, которая сидела у окна и хорошо пела</i></li>
-                            <li><strong>Разное управление:</strong> ❌ <i>Любил и восхищался народом</i> → ✅ <i>Любил народ и восхищался им</i></li>
-                        </ul>
-                        <div class="highlight" style="margin-top: 4px;">
-                            <strong>Деепричастный оборот:</strong> действие выполняет тот же субъект, что и сказуемое.<br>
-                            ❌ <i>Прочитав «Преступление и наказание», судьба Сони поразила меня.</i><br>
-                            ✅ <i>Когда я прочитал «Преступление и наказание», судьба Сони поразила меня.</i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Справочные материалы -->
-        <div class="card">
-            <div class="card-header"><h2>🧾 Справочные материалы</h2><span class="badge">минимум</span></div>
-            <div class="rule-block">
-                <p><strong>Плеоназмы (избегать):</strong> <i>моя автобиография, предчувствовать заранее, упал вниз, маршрут движения, совместное сотрудничество</i>.</p>
-                <p><strong>Акцентологический минимум:</strong> <i>каталОг, квартАл, жалюзИ, тОрты, бАнты, срЕдства, звонИт, облегчИть, закУпорить</i>.</p>
-                <p><strong>Орфографический минимум:</strong> <i>абитуриент, бассейн, галерея, горизонт, колоссальный, президент, цитата, шоссе</i>.</p>
-                <div class="highlight">📌 Структура билета ВИ 2025: А (9 заданий по орфографии), В (4 задания по пунктуации), С (6 заданий по культуре речи).</div>
-            </div>
+        <div style="margin-top: 36px; font-size: 0.9rem; color: #64748b; border-top: 1px solid #dce2ec; padding-top: 18px; text-align: center;">
+            Схемы и алгоритмы по пособию «Русский язык. Вступительные испытания» (ТУСУР, 2025) · Подготовка к ВИ
         </div>
     </div>
-    <div style="margin-top: 36px; font-size: 0.9rem; color: #64748b; border-top: 1px solid #dce2ec; padding-top: 18px; text-align: center;">
-        Схемы и алгоритмы по пособию «Русский язык. Вступительные испытания» (ТУСУР, 2025) · Подготовка к ВИ
-    </div>
-</div>
 </body>
 </html>
