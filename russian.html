@@ -87,25 +87,6 @@
         .rule-block li {
             margin-bottom: 4px;
         }
-        .table-mini {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6px 12px;
-            background: #f4f7fd;
-            border-radius: 14px;
-            padding: 12px 14px;
-            margin: 8px 0 4px;
-        }
-        .table-mini .item {
-            display: flex;
-            align-items: baseline;
-            gap: 4px;
-        }
-        .table-mini .label {
-            font-weight: 600;
-            color: #1e3a6b;
-            min-width: 20px;
-        }
         .highlight {
             background: #fef9e7;
             padding: 10px 14px;
@@ -202,24 +183,6 @@
             color: #1e4a7a;
             min-width: 70px;
         }
-        .punkt-scheme {
-            background: #f0f7ff;
-            border-radius: 14px;
-            padding: 14px 16px;
-            margin: 8px 0;
-            border-left: 4px solid #2563eb;
-        }
-        .punkt-scheme .rule-title {
-            font-weight: 700;
-            color: #1e4a8b;
-            margin-bottom: 4px;
-        }
-        .punkt-scheme ul {
-            margin: 4px 0 4px 18px;
-        }
-        .punkt-scheme li {
-            margin-bottom: 2px;
-        }
         .def-block {
             background: #f0f7ff;
             border-radius: 12px;
@@ -239,9 +202,6 @@
                 grid-template-columns: 1fr;
             }
             .three-col {
-                grid-template-columns: 1fr;
-            }
-            .table-mini {
                 grid-template-columns: 1fr;
             }
             .morph-grid {
@@ -514,9 +474,9 @@
                 </div>
             </div>
 
-            <!-- 1.8+1.9 СУФФИКСЫ И ЛИЧНЫЕ ОКОНЧАНИЯ ГЛАГОЛОВ — ОБНОВЛЕННАЯ ВЕРСИЯ -->
+            <!-- 1.8+1.9 СУФФИКСЫ, ОКОНЧАНИЯ, ПРИЧАСТИЯ (разделены на действительные и страдательные) -->
             <div class="card">
-                <div class="card-header"><h2>🧩 Правописание суффиксов и личных окончаний глаголов (1.8 + 1.9)</h2><span class="badge">суффиксы · спряжение</span></div>
+                <div class="card-header"><h2>🧩 Правописание суффиксов, окончаний глаголов и причастий (1.8 + 1.9)</h2><span class="badge">суффиксы · спряжение</span></div>
                 <div class="rule-block">
                     <div class="scheme" style="margin-top: 0;">
                         <strong>Группировка по частям речи и схожести правил</strong>
@@ -602,17 +562,36 @@
                                 <span class="tag">I спр.</span> <i>брить, стелить, зиждиться</i> (и все производные).
                             </div>
                         </div>
-                        <!-- КОЛОНКА 3: ПРИЧАСТИЯ, ДЕЕПРИЧАСТИЯ и НАРЕЧИЯ -->
+                        <!-- КОЛОНКА 3: ПРИЧАСТИЯ (РАЗДЕЛЕНЫ) и ДЕЕПРИЧАСТИЯ -->
                         <div class="col">
-                            <p><strong>Причастия (суффиксы)</strong></p>
+                            <p><strong>Действительные причастия настоящего времени</strong></p>
                             <ul>
-                                <li><strong>Настоящего времени:</strong> <br><span class="tag">-ущ-/-ющ-</span> (I спр.): <i>прыгающий</i><br><span class="tag">-ащ-/-ящ-</span> (II спр.): <i>курящий, любящий</i><br><span class="tag">-ом-/-ем-</span> (I спр.): <i>потребляемый</i><br><span class="tag">-им-</span> (II спр.): <i>любимый</i></li>
-                                <li><strong>Прошедшего времени:</strong> <br><span class="tag">-вш-</span> (от гл. на гласную): <i>прочитавший</i><br><span class="tag">-ш-</span> (от гл. на согласную): <i>нёсший</i><br><span class="tag">-енн-</span> (от гл. на -ить, -еть): <i>напоенный</i><br><span class="tag">-анн-/-янн-</span> (от гл. на -ать, -ять): <i>посеянный, разрисованный</i><br><span class="tag">-т-</span> (от гл. на -нуть, -ереть): <i>занятый, открытый</i></li>
+                                <li><strong>-ущ-/-ющ-</strong> — от глаголов <strong>I спряжения</strong>: <br><i>прыгающий (прыгать), читающий (читать)</i></li>
+                                <li><strong>-ащ-/-ящ-</strong> — от глаголов <strong>II спряжения</strong>: <br><i>курящий (курить), любящий (любить), дышащий (дышать)</i></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Страдательные причастия настоящего времени</strong></p>
+                            <ul>
+                                <li><strong>-ом-/-ем-</strong> — от глаголов <strong>I спряжения</strong>: <br><i>потребляемый (потреблять), читаемый (читать)</i></li>
+                                <li><strong>-им-</strong> — от глаголов <strong>II спряжения</strong>: <br><i>любимый (любить), видимый (видеть)</i></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Действительные причастия прошедшего времени</strong></p>
+                            <ul>
+                                <li><strong>-вш-</strong> — от глаголов на гласную: <br><i>прочитавший (прочитать), надеявшийся (надеяться)</i></li>
+                                <li><strong>-ш-</strong> — от глаголов на согласную: <br><i>нёсший (нести), принёсший (принести)</i></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Страдательные причастия прошедшего времени</strong></p>
+                            <ul>
+                                <li><strong>-енн-</strong> — от глаголов на <strong>-ить, -еть</strong>: <br><i>напоенный (напоить), обиженный (обидеть)</i></li>
+                                <li><strong>-анн-/-янн-</strong> — от глаголов на <strong>-ать, -ять</strong>: <br><i>посеянный (посеять), разрисованный (разрисовать)</i></li>
+                                <li><strong>-т-</strong> — от глаголов на <strong>-нуть, -ереть</strong>: <br><i>занятый (занять), открытый (открыть)</i></li>
                             </ul>
                             <div class="highlight" style="margin-top: 4px;">
                                 <strong>Важно!</strong><br>
                                 Перед -л- и -вш- та же гласная, что в инфинитиве: <br>
-                                <i>строил, строивший — строить</i>
+                                <i>строил, строивший — строить</i> · <i>клеил, клеивший — клеить</i>
                             </div>
                             <hr>
                             <p><strong>Деепричастия</strong></p>
