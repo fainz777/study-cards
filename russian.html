@@ -234,9 +234,6 @@
             color: #b91c1c;
             font-weight: 700;
         }
-        .accent {
-            text-decoration: none;
-        }
         @media (max-width: 700px) {
             .two-col {
                 grid-template-columns: 1fr;
@@ -266,7 +263,6 @@
                 <div class="card-header"><h2>🧩 Части речи · склонение / спряжение</h2><span class="badge">морфология</span></div>
                 <div class="rule-block">
                     <div class="three-col">
-                        <!-- КОЛОНКА 1: СУЩЕСТВИТЕЛЬНОЕ, ПРИЛАГАТЕЛЬНОЕ, ЧИСЛИТЕЛЬНОЕ -->
                         <div class="col">
                             <div class="def-block">
                                 <strong>Имя существительное</strong> — часть речи, которая обозначает <strong>предмет</strong> и отвечает на вопросы <strong>кто? что?</strong>
@@ -302,7 +298,6 @@
                             <div class="example" style="margin-top: 0;"><i>Склонение 50–80, 200–900: обе части изменяются. Полтора, полтораста — особые формы.</i></div>
                         </div>
 
-                        <!-- КОЛОНКА 2: ГЛАГОЛ, НАРЕЧИЕ, МЕСТОИМЕНИЕ -->
                         <div class="col">
                             <div class="def-block">
                                 <strong>Глагол</strong> — часть речи, которая обозначает <strong>действие</strong> и отвечает на вопросы <strong>что делать? что сделать?</strong>
@@ -340,7 +335,6 @@
                             </div>
                         </div>
 
-                        <!-- КОЛОНКА 3: ПРИЧАСТИЕ, ДЕЕПРИЧАСТИЕ, СЛУЖЕБНЫЕ -->
                         <div class="col">
                             <div class="def-block">
                                 <strong>Причастие</strong> — особая форма глагола, которая обозначает <strong>признак предмета по действию</strong> и отвечает на вопросы <strong>какой? что делающий? что сделавший?</strong>
@@ -396,7 +390,7 @@
                 </div>
             </div>
 
-            <!-- 1.2 Чередующиеся гласные — С ДОБАВЛЕННЫМ ПРАВИЛОМ -->
+            <!-- 1.2 Чередующиеся гласные -->
             <div class="card">
                 <div class="card-header"><h2>🔄 1.2 Чередование в корне</h2><span class="badge">корень</span></div>
                 <div class="rule-block">
@@ -520,15 +514,15 @@
                 </div>
             </div>
 
-            <!-- 1.8+1.9 СУФФИКСЫ -->
+            <!-- 1.8+1.9 СУФФИКСЫ И ЛИЧНЫЕ ОКОНЧАНИЯ ГЛАГОЛОВ — ОБНОВЛЕННАЯ ВЕРСИЯ -->
             <div class="card">
-                <div class="card-header"><h2>🧩 Правописание суффиксов (1.8 + 1.9)</h2><span class="badge">суффиксы</span></div>
+                <div class="card-header"><h2>🧩 Правописание суффиксов и личных окончаний глаголов (1.8 + 1.9)</h2><span class="badge">суффиксы · спряжение</span></div>
                 <div class="rule-block">
                     <div class="scheme" style="margin-top: 0;">
                         <strong>Группировка по частям речи и схожести правил</strong>
                     </div>
                     <div class="three-col">
-                        <!-- КОЛОНКА 1: ИМЕНА СУЩЕСТВИТЕЛЬНЫЕ -->
+                        <!-- КОЛОНКА 1: ИМЕНА СУЩЕСТВИТЕЛЬНЫЕ и ПРИЛАГАТЕЛЬНЫЕ -->
                         <div class="col">
                             <p><strong>Имена существительные</strong></p>
                             <ul>
@@ -545,9 +539,7 @@
                                 <span class="tag">О</span> если не от глагола: <i>девч<span class="stress">о</span>нка</i><br>
                                 <span class="tag">ЁР</span> в сущ.: <i>стаж<span class="stress">ё</span>р, ухаж<span class="stress">ё</span>р</i>
                             </div>
-                        </div>
-                        <!-- КОЛОНКА 2: ИМЕНА ПРИЛАГАТЕЛЬНЫЕ и ГЛАГОЛЫ -->
-                        <div class="col">
+                            <hr>
                             <p><strong>Имена прилагательные</strong></p>
                             <ul>
                                 <li><strong>-ЕВ- / -ИВ-:</strong> <br><span class="tag">-ЕВ-</span> без ударения (относительные): <i>сир<span class="stress">е</span>невый, фас<span class="stress">о</span>левый</i><br><span class="tag">-ИВ-</span> под ударением (качественные, имеют краткую форму): <i>крас<span class="stress">и</span>вый (крас<span class="stress">и</span>в)</i></li>
@@ -555,7 +547,9 @@
                                 <li><strong>-ЕН- в кратких формах:</strong> <i>случаен (случайный), спокоен (спокойный)</i> (искл. <i>достоин</i>)</li>
                                 <li><strong>-ИСТ-:</strong> только <strong>И</strong>: <i>лучистый</i></li>
                             </ul>
-                            <hr>
+                        </div>
+                        <!-- КОЛОНКА 2: ГЛАГОЛЫ (СУФФИКСЫ ИНФИНИТИВА И ЛИЧНЫЕ ОКОНЧАНИЯ) -->
+                        <div class="col">
                             <p><strong>Глаголы (суффиксы инфинитива)</strong></p>
                             <ul>
                                 <li><strong>-ОВА- / -ЕВА-:</strong> <br>в 1-м лице ед.ч. на <strong>-ую, -юю</strong>: <i>пробовать — пробую</i></li>
@@ -564,16 +558,52 @@
                                 <li><strong>С корнем -ВЕД-:</strong> <i>заведовать, проповедовать, исповедовать</i> (в остальных -<strong>ыва</strong>-)</li>
                                 <li><strong>Запомнить:</strong> <i>застревать, расплевать, продлевать, обуревать, затмевать</i></li>
                             </ul>
+                            <hr>
+                            <p><strong>Личные окончания глаголов (настоящее/будущее время)</strong></p>
+                            <div style="background: #f2f6fe; border-radius: 12px; padding: 8px 12px; margin: 4px 0;">
+                                <span class="tag">Алгоритм</span> Чтобы определить спряжение и написать окончание:
+                                <ol style="margin: 4px 0 4px 18px;">
+                                    <li>Поставь глагол в <strong>3-е лицо мн.ч.</strong> (они).</li>
+                                    <li>Если окончание <strong>-ут/-ют</strong> → <strong>I спр.</strong> (пишем -ешь, -ет, -ем, -ете).</li>
+                                    <li>Если окончание <strong>-ат/-ят</strong> → <strong>II спр.</strong> (пишем -ишь, -ит, -им, -ите).</li>
+                                </ol>
+                            </div>
+                            <div class="two-col" style="grid-template-columns: 1fr 1fr; background: transparent; padding: 0;">
+                                <div class="col" style="border-left: none; padding-left: 0;">
+                                    <span class="tag">I спряжение</span>
+                                    <ul>
+                                        <li><strong>-ешь</strong> (ты)</li>
+                                        <li><strong>-ет</strong> (он/она)</li>
+                                        <li><strong>-ем</strong> (мы)</li>
+                                        <li><strong>-ете</strong> (вы)</li>
+                                        <li><strong>-ут/-ют</strong> (они)</li>
+                                    </ul>
+                                    <div class="example" style="margin-top: 4px;">
+                                        <i>читать → читаешь, читает, читаем, читаете, читают</i>
+                                    </div>
+                                </div>
+                                <div class="col" style="padding-left: 12px;">
+                                    <span class="tag">II спряжение</span>
+                                    <ul>
+                                        <li><strong>-ишь</strong> (ты)</li>
+                                        <li><strong>-ит</strong> (он/она)</li>
+                                        <li><strong>-им</strong> (мы)</li>
+                                        <li><strong>-ите</strong> (вы)</li>
+                                        <li><strong>-ат/-ят</strong> (они)</li>
+                                    </ul>
+                                    <div class="example" style="margin-top: 4px;">
+                                        <i>говорить → говоришь, говорит, говорим, говорите, говорят</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="highlight" style="margin-top: 4px;">
+                                <strong>Исключения:</strong><br>
+                                <span class="tag">II спр.</span> <i>гнать, держать, смотреть, видеть, дышать, слышать, ненавидеть, обидеть, вертеть, зависеть, терпеть</i> (и все производные).<br>
+                                <span class="tag">I спр.</span> <i>брить, стелить, зиждиться</i> (и все производные).
+                            </div>
                         </div>
                         <!-- КОЛОНКА 3: ПРИЧАСТИЯ, ДЕЕПРИЧАСТИЯ и НАРЕЧИЯ -->
                         <div class="col">
-                            <p><strong>Глагольные формы (личные окончания)</strong></p>
-                            <ul>
-                                <li><strong>I спряжение:</strong> <i>прыгаешь, прыгает, прыгают</i></li>
-                                <li><strong>II спряжение:</strong> <i>грузишь, грузит, грузят</i></li>
-                                <li><span class="tag">Исключения:</span> <i>гнать, держать, смотреть, видеть, дышать, слышать, ненавидеть, обидеть, вертеть, зависеть, терпеть</i> (II)</li>
-                            </ul>
-                            <hr>
                             <p><strong>Причастия (суффиксы)</strong></p>
                             <ul>
                                 <li><strong>Настоящего времени:</strong> <br><span class="tag">-ущ-/-ющ-</span> (I спр.): <i>прыгающий</i><br><span class="tag">-ащ-/-ящ-</span> (II спр.): <i>курящий, любящий</i><br><span class="tag">-ом-/-ем-</span> (I спр.): <i>потребляемый</i><br><span class="tag">-им-</span> (II спр.): <i>любимый</i></li>
