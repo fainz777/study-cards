@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Полный справочник по тригонометрии</title>
+    <title>Полный справочник по тригонометрии + Производные + Логарифмы</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; min-height: 100vh; }
@@ -17,6 +17,9 @@
         .badge-purple { background: #8e44ad; }
         .badge-orange { background: #e67e22; }
         .badge-red { background: #e74c3c; }
+        .badge-teal { background: #1abc9c; }
+        .badge-pink { background: #e84393; }
+        .badge-blue { background: #2980b9; }
         .row { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 15px 0 20px 0; }
         .card { background: #f8faff; border-radius: 20px; padding: 15px; flex: 1 1 200px; min-width: 160px; border: 1px solid #e9edf4; }
         .card h3 { color: #1e2a4a; margin-bottom: 10px; font-weight: 600; font-size: clamp(15px, 3vw, 20px); }
@@ -31,12 +34,16 @@
         .graph-box canvas { width: 100% !important; height: auto !important; aspect-ratio: 16/4; border-radius: 16px; background: white; box-shadow: inset 0 0 0 1px #e0e7f0; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
         .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 15px 0; }
+        .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin: 15px 0; }
         .formula-box { background: #f0f5fe; padding: 15px 10px; border-radius: 16px; border-left: 6px solid #2c3e7a; font-size: clamp(15px, 2.5vw, 18px); text-align: center; word-break: break-word; }
         .formula-box small { display: block; color: #4a5a7a; font-size: 12px; margin-top: 4px; font-weight: 400; }
         .formula-box.purple { border-left-color: #8e44ad; background: #f4ecf7; }
         .formula-box.green { border-left-color: #27ae60; background: #eafaf1; }
         .formula-box.orange { border-left-color: #e67e22; background: #fef9f0; }
         .formula-box.red { border-left-color: #e74c3c; background: #fdedec; }
+        .formula-box.teal { border-left-color: #1abc9c; background: #e8f8f5; }
+        .formula-box.pink { border-left-color: #e84393; background: #fce4ec; }
+        .formula-box.blue { border-left-color: #2980b9; background: #eaf2f8; }
         .table-wrap { overflow-x: auto; margin: 10px 0; -webkit-overflow-scrolling: touch; }
         table { width: 100%; min-width: 480px; border-collapse: collapse; background: white; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); font-size: clamp(12px, 2vw, 15px); }
         th { background: #1a2a5e; color: white; padding: 10px 6px; font-weight: 500; }
@@ -45,16 +52,21 @@
         .highlight-box { background: #fffbe6; border: 2px dashed #f1c40f; border-radius: 16px; padding: 15px; margin: 20px 0; }
         .highlight-box.blue { background: #f0f5fe; border-color: #2980b9; }
         .highlight-box.green-box { background: #eafaf1; border-color: #27ae60; }
+        .highlight-box.teal-box { background: #e8f8f5; border-color: #1abc9c; }
+        .highlight-box.pink-box { background: #fce4ec; border-color: #e84393; }
         .highlight-box h3 { font-size: clamp(15px, 3vw, 20px); margin: 0 0 10px 0; color: #1a2a5e; }
         .highlight-box p { font-size: clamp(14px, 2.2vw, 17px); line-height: 1.6; word-wrap: break-word; }
         .def-block { background: #eaf0fa; border-radius: 16px; padding: 14px 16px; margin-bottom: 15px; border-left: 6px solid #1a2a5e; }
         .def-block p { font-size: clamp(15px, 2.2vw, 17px); line-height: 1.8; margin: 0; word-wrap: break-word; }
         .def-block.orange { border-left-color: #e67e22; background: #fef9f0; }
+        .def-block.teal { border-left-color: #1abc9c; background: #e8f8f5; }
+        .def-block.pink { border-left-color: #e84393; background: #fce4ec; }
         .step { background: white; padding: 10px 14px; border-radius: 12px; margin: 6px 0; border: 1px solid #e9edf4; font-size: clamp(14px, 2vw, 16px); word-wrap: break-word; }
         .step b { color: #1a2a5e; }
         .formula-inline { background: #f0f5fe; padding: 2px 8px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: clamp(14px, 2vw, 16px); word-break: break-all; }
         .triangle-ascii { background: #f8faff; padding: 10px; border-radius: 12px; font-family: 'Courier New', monospace; font-size: clamp(13px, 2vw, 16px); line-height: 1.3; text-align: center; border: 1px solid #e9edf4; margin: 8px 0; white-space: pre; overflow-x: auto; }
-        @media (max-width: 700px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } .container { padding: 10px; border-radius: 16px; } body { padding: 5px; } .card { flex: 1 1 100%; min-width: 0; } .row { gap: 10px; } .def-block { padding: 10px 12px; } .highlight-box { padding: 12px; } .formula-box { padding: 12px 8px; } .step { padding: 8px 10px; } .legend { gap: 10px; font-size: 12px; } }
+        @media (max-width: 900px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 700px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .container { padding: 10px; border-radius: 16px; } body { padding: 5px; } .card { flex: 1 1 100%; min-width: 0; } .row { gap: 10px; } .def-block { padding: 10px 12px; } .highlight-box { padding: 12px; } .formula-box { padding: 12px 8px; } .step { padding: 8px 10px; } .legend { gap: 10px; font-size: 12px; } }
         @media (max-width: 400px) { .container { padding: 6px; border-radius: 12px; } body { padding: 3px; } .badge { font-size: 9px; padding: 1px 8px; } h2 { padding-left: 6px; border-left-width: 4px; margin: 20px 0 10px 0; } }
     </style>
 </head>
@@ -155,7 +167,7 @@
     </div>
 
     <!-- ========================================================= -->
-    <!-- 5. ОСНОВНЫЕ ФОРМУЛЫ (ОБНОВЛЁННЫЕ)                         -->
+    <!-- 5. ОСНОВНЫЕ ФОРМУЛЫ                                        -->
     <!-- ========================================================= -->
     <h2>5️⃣ Основные формулы <span class="badge">Шпаргалка</span></h2>
     <div class="grid-2">
@@ -175,7 +187,6 @@
             <b>cos 2α = cos²α − sin²α</b>
             <small>Косинус двойного угла (базовая)</small>
         </div>
-        <!-- ====== ВОТ ЭТУ ФОРМУЛУ ДОБАВИЛ ====== -->
         <div class="formula-box red">
             <b>cos 2α = 1 − 2sin²α</b>
             <small>Косинус двойного угла (через синус)</small>
@@ -243,25 +254,239 @@
     </div>
 
     <!-- ========================================================= -->
-    <!-- 8. ПРИМЕР С НОВОЙ ФОРМУЛОЙ                                -->
+    <!-- 8. ПРОИЗВОДНЫЕ (ПОЛНЫЙ РАЗДЕЛ)                            -->
     <!-- ========================================================= -->
-    <div class="highlight-box red" style="border-color: #e74c3c; background: #fdedec;">
-        <h3 style="color:#c0392b;">🧩 Пример: формула cos 2α = 1 − 2sin²α</h3>
-        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
-            Найдите cos 2α, если sin α = 1/3
-        </p>
-        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
-            <b>Решение:</b><br>
-            Используем формулу: <span class="formula-inline">cos 2α = 1 − 2sin²α</span><br>
-            Подставляем sin α = 1/3:<br>
-            cos 2α = 1 − 2 · (1/3)² = 1 − 2 · 1/9 = 1 − 2/9 = <b>7/9</b>
-        </p>
-        <p style="color:#3a4a6b; font-size:clamp(12px, 1.6vw, 14px); margin-top:6px;">
-            ✅ <b>Лайфхак:</b> Если известен только синус или только косинус — используйте соответствующий вариант формулы двойного угла!
+    <h2>8️⃣ Производные функций <span class="badge badge-teal">Матанализ</span></h2>
+
+    <!-- Определение -->
+    <div class="def-block teal">
+        <p style="font-size: clamp(15px, 2.2vw, 17px); line-height: 1.8;">
+            <strong>📌 Что такое производная?</strong><br>
+            <b>Производная функции</b> \( f'(x) \) — это <b>скорость изменения</b> функции в данной точке.<br>
+            Геометрически: производная равна <b>угловому коэффициенту</b> касательной к графику функции в этой точке.<br>
+            Физически: производная — это <b>мгновенная скорость</b> изменения величины.
         </p>
     </div>
 
-    <!-- Остальные примеры (2, 3, 4) и алгоритм я сократил, чтобы код не был слишком длинным, но они остались в полной версии -->
+    <!-- Правила дифференцирования -->
+    <div style="background: #e8f8f5; border-radius: 16px; padding: 12px 16px; margin: 12px 0; border: 1px solid #1abc9c;">
+        <p style="margin: 0; font-size: clamp(13px, 1.8vw, 15px);">
+            <b>📌 Правила дифференцирования:</b><br>
+            • <span class="formula-inline">(u + v)' = u' + v'</span> (сумма)<br>
+            • <span class="formula-inline">(u − v)' = u' − v'</span> (разность)<br>
+            • <span class="formula-inline">(u · v)' = u'·v + u·v'</span> (произведение)<br>
+            • <span class="formula-inline">(u / v)' = (u'·v − u·v') / v²</span> (частное)<br>
+            • <span class="formula-inline">(C·u)' = C·u'</span> (константа выносится)<br>
+            • <span class="formula-inline">(u(v))' = u'(v)·v'</span> (цепное правило, производная сложной функции)
+        </p>
+    </div>
+
+    <!-- Таблица производных -->
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr><th>Функция f(x)</th><th>Производная f'(x)</th><th>Примечание</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><b>C</b> (константа)</td><td>0</td><td>Производная константы равна нулю</td></tr>
+                <tr><td><b>x</b></td><td>1</td><td>—</td></tr>
+                <tr><td><b>x<sup>n</sup></b></td><td><b>n·x<sup>n−1</sup></b></td><td>Степенная функция</td></tr>
+                <tr><td><b>√x</b> (x<sup>1/2</sup>)</td><td><b>1/(2√x)</b></td><td>—</td></tr>
+                <tr><td><b>1/x</b> (x<sup>−1</sup>)</td><td><b>−1/x²</b></td><td>—</td></tr>
+                <tr><td><b>e<sup>x</sup></b></td><td><b>e<sup>x</sup></b></td><td>Экспонента — своя производная</td></tr>
+                <tr><td><b>a<sup>x</sup></b></td><td><b>a<sup>x</sup>·ln a</b></td><td>Показательная функция</td></tr>
+                <tr><td><b>ln x</b></td><td><b>1/x</b></td><td>Натуральный логарифм</td></tr>
+                <tr><td><b>log<sub>a</sub> x</b></td><td><b>1/(x·ln a)</b></td><td>Логарифм по основанию a</td></tr>
+                <tr><td style="color:#e74c3c;"><b>sin x</b></td><td style="color:#2980b9;"><b>cos x</b></td><td>Тригонометрическая</td></tr>
+                <tr><td style="color:#e74c3c;"><b>cos x</b></td><td style="color:#e74c3c;"><b>−sin x</b></td><td>Тригонометрическая</td></tr>
+                <tr><td style="color:#e74c3c;"><b>tg x</b></td><td style="color:#27ae60;"><b>1/cos²x</b></td><td>Тригонометрическая</td></tr>
+                <tr><td style="color:#e74c3c;"><b>ctg x</b></td><td style="color:#8e44ad;"><b>−1/sin²x</b></td><td>Тригонометрическая</td></tr>
+                <tr><td style="color:#e74c3c;"><b>arcsin x</b></td><td><b>1/√(1−x²)</b></td><td>Обратная тригонометрическая</td></tr>
+                <tr><td style="color:#e74c3c;"><b>arccos x</b></td><td><b>−1/√(1−x²)</b></td><td>Обратная тригонометрическая</td></tr>
+                <tr><td style="color:#e74c3c;"><b>arctg x</b></td><td><b>1/(1+x²)</b></td><td>Обратная тригонометрическая</td></tr>
+                <tr><td style="color:#e74c3c;"><b>arcctg x</b></td><td><b>−1/(1+x²)</b></td><td>Обратная тригонометрическая</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Примеры -->
+    <div class="highlight-box teal-box">
+        <h3>🧩 Пример 1: производная степенной функции</h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            Найдите производную: <b>f(x) = 3x⁵ − 2x³ + 7x − 4</b>
+        </p>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b><br>
+            <span class="formula-inline">f'(x) = 3·5x⁴ − 2·3x² + 7·1 − 0</span><br>
+            <span class="formula-inline">f'(x) = 15x⁴ − 6x² + 7</span>
+        </p>
+    </div>
+
+    <div class="highlight-box pink-box">
+        <h3>🧩 Пример 2: производная сложной функции</h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            Найдите производную: <b>f(x) = sin(2x + 1)</b>
+        </p>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b><br>
+            Используем цепное правило: <span class="formula-inline">(sin u)' = cos u · u'</span><br>
+            <span class="formula-inline">u = 2x + 1</span>, <span class="formula-inline">u' = 2</span><br>
+            <span class="formula-inline">f'(x) = cos(2x + 1) · 2</span><br>
+            <span class="formula-inline">f'(x) = 2cos(2x + 1)</span>
+        </p>
+    </div>
+
+    <div class="highlight-box blue">
+        <h3>🧩 Пример 3: производная произведения</h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            Найдите производную: <b>f(x) = x²·sin x</b>
+        </p>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b><br>
+            Используем правило произведения: <span class="formula-inline">(u·v)' = u'v + uv'</span><br>
+            <span class="formula-inline">u = x²</span>, <span class="formula-inline">u' = 2x</span><br>
+            <span class="formula-inline">v = sin x</span>, <span class="formula-inline">v' = cos x</span><br>
+            <span class="formula-inline">f'(x) = 2x·sin x + x²·cos x</span>
+        </p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 9. ЛОГАРИФМЫ                                               -->
+    <!-- ========================================================= -->
+    <h2>9️⃣ Логарифмы <span class="badge badge-pink">Алгебра</span></h2>
+
+    <div class="def-block pink">
+        <p style="font-size: clamp(15px, 2.2vw, 17px); line-height: 1.8;">
+            <strong>📌 Что такое логарифм?</strong><br>
+            <b>Логарифм</b> — это показатель степени, в которую нужно возвести основание, чтобы получить данное число.<br>
+            <span style="font-size:clamp(16px, 2.5vw, 20px); font-weight:600; color:#c0392b;">
+                log<sub>a</sub> b = c &nbsp;⇔&nbsp; a<sup>c</sup> = b
+            </span><br>
+            <span style="font-size:clamp(13px, 1.8vw, 15px); color:#4a5a7a;">
+                (a > 0, a ≠ 1, b > 0)
+            </span>
+        </p>
+    </div>
+
+    <div class="grid-3">
+        <div class="formula-box pink">
+            <b>log<sub>a</sub> (x·y) = log<sub>a</sub> x + log<sub>a</sub> y</b>
+            <small>Логарифм произведения</small>
+        </div>
+        <div class="formula-box pink" style="border-left-color: #e84393;">
+            <b>log<sub>a</sub> (x/y) = log<sub>a</sub> x − log<sub>a</sub> y</b>
+            <small>Логарифм частного</small>
+        </div>
+        <div class="formula-box pink" style="border-left-color: #e84393;">
+            <b>log<sub>a</sub> x<sup>n</sup> = n·log<sub>a</sub> x</b>
+            <small>Логарифм степени</small>
+        </div>
+        <div class="formula-box pink" style="border-left-color: #e84393;">
+            <b>log<sub>a</sub> a = 1</b> &nbsp;&nbsp; <b>log<sub>a</sub> 1 = 0</b>
+            <small>Частные случаи</small>
+        </div>
+        <div class="formula-box pink" style="border-left-color: #e84393;">
+            <b>log<sub>a</sub> b = log<sub>c</sub> b / log<sub>c</sub> a</b>
+            <small>Переход к новому основанию</small>
+        </div>
+        <div class="formula-box pink" style="border-left-color: #e84393;">
+            <b>a<sup>log<sub>a</sub> b</sup> = b</b>
+            <small>Основное логарифмическое тождество</small>
+        </div>
+    </div>
+
+    <div style="background: #fce4ec; border-radius: 16px; padding: 12px 16px; margin: 12px 0; border: 1px solid #e84393;">
+        <p style="margin: 0; font-size: clamp(13px, 1.8vw, 15px);">
+            <b>📌 Важные частные случаи:</b><br>
+            • <b>Десятичный логарифм:</b> <span class="formula-inline">lg x = log<sub>10</sub> x</span><br>
+            • <b>Натуральный логарифм:</b> <span class="formula-inline">ln x = log<sub>e</sub> x</span> (где e ≈ 2.71828)
+        </p>
+    </div>
+
+    <div class="highlight-box pink-box">
+        <h3>🧩 Пример: логарифмы</h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            Найдите: <b>log<sub>2</sub> 8 + log<sub>3</sub> 9</b>
+        </p>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b><br>
+            <span class="formula-inline">log<sub>2</sub> 8 = 3</span> (потому что 2³ = 8)<br>
+            <span class="formula-inline">log<sub>3</sub> 9 = 2</span> (потому что 3² = 9)<br>
+            Сумма: 3 + 2 = <b>5</b>
+        </p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 10. ПРИМЕРЫ (оставлены основные)                          -->
+    <!-- ========================================================= -->
+    <h2>🔟 Примеры решения задач <span class="badge badge-orange">Практика</span></h2>
+
+    <!-- Пример 1: двойной угол -->
+    <div class="highlight-box">
+        <h3>🧩 Пример 1: формула двойного угла</h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            Найдите: <b>30 · sin 79° · cos 79° / sin 158°</b>
+        </p>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b> 158° = 2 · 79°.<br>
+            sin 2α = 2 sin α cos α → 30·sin79°·cos79° = 15·sin158°.<br>
+            Дробь: (15·sin158°)/sin158° = <b>15</b>.
+        </p>
+    </div>
+
+    <!-- Пример 2: прямоугольный треугольник -->
+    <div class="highlight-box blue">
+        <h3>🧩 Пример 2: прямоугольный треугольник <span class="badge badge-orange">Самый важный</span></h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            В треугольнике ABC угол A = 90°, tg B = √3, AC = 8. Найдите BC.
+        </p>
+        <div class="triangle-ascii">
+   B
+   |\ 
+   | \
+   |  \   BC — ?
+   |   \
+   |    \
+   A-----C
+      8
+        </div>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b> tg B = √3 → B = 60°.<br>
+            AC = BC·sin B → 8 = BC·√3/2 → BC = 16/√3 ≈ <b>9.24</b>.
+        </p>
+    </div>
+
+    <!-- Пример 3: формулы приведения -->
+    <div class="highlight-box" style="background: #fef9f0; border-color: #e67e22;">
+        <h3>🧩 Пример 3: формулы приведения</h3>
+        <p style="font-size:clamp(16px, 2.5vw, 20px); background:white; padding:12px; border-radius:12px; text-align:center; word-wrap:break-word;">
+            Найдите: <b>8cos(2π + β) + 10sin(π/2 + β)</b>, если cos β = −1/9
+        </p>
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:1.7;">
+            <b>Решение:</b> cos(2π+β) = cosβ, sin(π/2+β) = cosβ.<br>
+            8cosβ + 10cosβ = 18cosβ = 18·(−1/9) = <b>−2</b>.
+        </p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 11. АЛГОРИТМ РЕШЕНИЯ ЗАДАЧ                                -->
+    <!-- ========================================================= -->
+    <h2>1️⃣1️⃣ Алгоритм решения задач с треугольником <span class="badge badge-green">Пошагово</span></h2>
+
+    <div style="background:#f8faff; border-radius:16px; padding:15px; border:1px solid #e9edf4;">
+        <p style="font-size:clamp(14px, 2vw, 16px); line-height:2;">
+            <b>1.</b> Нарисуйте прямоугольный треугольник, отметьте прямой угол.<br>
+            <b>2.</b> Обозначьте все известные стороны и углы.<br>
+            <b>3.</b> Выберите нужную тригонометрическую функцию:<br>
+            &nbsp;&nbsp;• Если известны <b>противолежащий катет</b> и <b>гипотенуза</b> → <span class="formula-inline">sin</span><br>
+            &nbsp;&nbsp;• Если известны <b>прилежащий катет</b> и <b>гипотенуза</b> → <span class="formula-inline">cos</span><br>
+            &nbsp;&nbsp;• Если известны <b>оба катета</b> → <span class="formula-inline">tg</span> или <span class="formula-inline">ctg</span><br>
+            <b>4.</b> Запишите формулу и подставьте числа.<br>
+            <b>5.</b> Если нужно найти угол — используйте <b>арк-функцию</b> (arcsin, arccos, arctg).<br>
+            <b>6.</b> Если нужно найти гипотенузу — используйте <b>теорему Пифагора</b>.
+        </p>
+    </div>
+
     <p style="text-align:center; color:#7a8aa0; font-size:clamp(12px, 1.6vw, 14px); margin-top:25px;">⚡ Покрутите ползунок, чтобы увидеть, как меняются все функции одновременно!</p>
 </div>
 
