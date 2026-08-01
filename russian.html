@@ -197,6 +197,24 @@
             color: #b91c1c;
             font-weight: 700;
         }
+        .punkt-scheme {
+            background: #f0f7ff;
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin: 8px 0;
+            border-left: 4px solid #2563eb;
+        }
+        .punkt-scheme .rule-title {
+            font-weight: 700;
+            color: #1e4a8b;
+            margin-bottom: 4px;
+        }
+        .punkt-scheme ul {
+            margin: 4px 0 4px 18px;
+        }
+        .punkt-scheme li {
+            margin-bottom: 2px;
+        }
         @media (max-width: 700px) {
             .two-col {
                 grid-template-columns: 1fr;
@@ -218,7 +236,7 @@
         </p>
         <div class="grid">
 
-            <!-- КАРТОЧКА: Части речи, склонение, спряжение — С ОПРЕДЕЛЕНИЯМИ -->
+            <!-- КАРТОЧКА: Части речи, склонение, спряжение — С ОПРЕДЕЛЕНИЯМИ и ОТДЕЛЬНЫМ БЛОКОМ ДЛЯ НАРЕЧИЙ -->
             <div class="card">
                 <div class="card-header"><h2>🧩 Части речи · склонение / спряжение</h2><span class="badge">морфология</span></div>
                 <div class="rule-block">
@@ -474,7 +492,7 @@
                 </div>
             </div>
 
-            <!-- 1.8+1.9 СУФФИКСЫ, ОКОНЧАНИЯ, ПРИЧАСТИЯ (разделены на действительные и страдательные) -->
+            <!-- 1.8+1.9 СУФФИКСЫ, ОКОНЧАНИЯ, ПРИЧАСТИЯ -->
             <div class="card">
                 <div class="card-header"><h2>🧩 Правописание суффиксов, окончаний глаголов и причастий (1.8 + 1.9)</h2><span class="badge">суффиксы · спряжение</span></div>
                 <div class="rule-block">
@@ -508,7 +526,7 @@
                                 <li><strong>-ИСТ-:</strong> только <strong>И</strong>: <i>лучистый</i></li>
                             </ul>
                         </div>
-                        <!-- КОЛОНКА 2: ГЛАГОЛЫ (СУФФИКСЫ ИНФИНИТИВА И ЛИЧНЫЕ ОКОНЧАНИЯ) -->
+                        <!-- КОЛОНКА 2: ГЛАГОЛЫ -->
                         <div class="col">
                             <p><strong>Глаголы (суффиксы инфинитива)</strong></p>
                             <ul>
@@ -562,7 +580,7 @@
                                 <span class="tag">I спр.</span> <i>брить, стелить, зиждиться</i> (и все производные).
                             </div>
                         </div>
-                        <!-- КОЛОНКА 3: ПРИЧАСТИЯ (РАЗДЕЛЕНЫ) и ДЕЕПРИЧАСТИЯ -->
+                        <!-- КОЛОНКА 3: ПРИЧАСТИЯ (разделены) и ДЕЕПРИЧАСТИЯ -->
                         <div class="col">
                             <p><strong>Действительные причастия настоящего времени</strong></p>
                             <ul>
@@ -671,7 +689,7 @@
                 </div>
             </div>
 
-            <!-- 1.11 НЕ с разными частями речи -->
+            <!-- 1.11 НЕ с разными частями речи — РАЗДЕЛЕНЫ ПРИЛАГАТЕЛЬНЫЕ И НАРЕЧИЯ -->
             <div class="card">
                 <div class="card-header"><h2>🚫 1.11 НЕ с разными частями речи</h2><span class="badge">слитно / раздельно</span></div>
                 <div class="rule-block">
@@ -682,43 +700,71 @@
                         3. Есть противопоставление с союзом <strong>А</strong>? → <strong>раздельно</strong> (<i>не правда, а ложь</i>) <br>
                         4. Есть слова <strong>далеко не, вовсе не, ничуть не</strong>? → <strong>раздельно</strong> (<i>далеко не красивый</i>)
                     </div>
+
+                    <p><strong>Имена существительные:</strong></p>
                     <div class="two-col">
-                        <div class="col">
-                            <p><strong>Имена существительные:</strong></p>
-                            <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>невежда, неряха</i> <br>• синоним: <i>неправда (= ложь)</i></div>
-                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• противопоставление с «а»: <i>не правда, а ложь</i></div>
-                            <hr>
-                            <p><strong>Прилагательные и наречия на -О/-Е:</strong></p>
-                            <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>ненастный</i> <br>• синоним: <i>некрасивый (= уродливый)</i></div>
-                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• противопоставление с «а»: <i>не красивый, а уродливый</i> <br>• слова <i>далеко не, вовсе не, ничуть не</i>: <i>вовсе не красивый</i> <br>• краткие формы: <i>не рад, не должен, не готов</i></div>
-                            <hr>
-                            <p><strong>Причастия:</strong></p>
-                            <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>недоумевающий</i> <br>• нет зависимого слова: <i>нерешённый пример</i></div>
-                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• зависимое слово: <i>не решённый мной пример</i> <br>• противопоставление: <i>не решённый, а списанный</i> <br>• <strong>краткие причастия всегда раздельно</strong>: <i>задача не решена</i></div>
-                        </div>
-                        <div class="col">
-                            <p><strong>Глаголы и деепричастия:</strong></p>
-                            <div><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>ненавидеть, негодуя</i> <br>• <strong>НЕДО-</strong> (меньше нормы): <i>недобрать баллов, недостаёт красок</i></div>
-                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• глаголы без НЕ: <i>не читал, не мог</i> <br>• <strong>НЕ ДО-</strong> (действие не закончено): <i>не доел суп</i></div>
-                            <hr>
-                            <p><strong>Местоимения:</strong></p>
-                            <div><span class="tag">Слитно</span> <br>• отрицательные и неопределённые: <i>нечто, несколько</i></div>
-                            <div style="margin-top: 4px;"><span class="tag">Раздельно</span> <br>• с предлогом: <i>не с кем, ни у кого</i></div>
-                            <hr>
-                            <div class="highlight" style="margin-top: 4px;">
-                                <strong>Важно!</strong> <br>
-                                • <strong>НЕДО-</strong> = недостаточно, меньше нормы: <i>недоварить, недосолить</i> <br>
-                                • <strong>НЕ ДО-</strong> = действие не доведено до конца: <i>не дочитать книгу, не досмотреть фильм</i> <br>
-                                • <strong>Никем непобедимая</strong> страна (слитно, так как без НЕ не употребляется в данном значении)
-                            </div>
-                            <div class="example" style="margin-top: 4px;">
-                                <strong>Примеры:</strong> <br>
-                                <i>небольшой, но уютный дом</i> (слитно, нет противопоставления) <br>
-                                <i>не большой, а маленький дом</i> (раздельно, противопоставление) <br>
-                                <i>ещё не прочитанная мной книга</i> (раздельно, зависимое слово) <br>
-                                <i>непрочитанная книга лежала на столе</i> (слитно, нет зависимых слов)
-                            </div>
-                        </div>
+                        <div class="col"><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>невежда, неряха</i> <br>• синоним: <i>неправда (= ложь)</i></div>
+                        <div class="col"><span class="tag">Раздельно</span> <br>• противопоставление с «а»: <i>не правда, а ложь</i></div>
+                    </div>
+
+                    <hr>
+
+                    <p><strong>Имена прилагательные:</strong></p>
+                    <div class="two-col">
+                        <div class="col"><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>ненастный, нелепый</i> <br>• синоним: <i>некрасивый (= уродливый)</i> <br>• можно заменить синонимом без НЕ: <i>небольшой (= маленький)</i></div>
+                        <div class="col"><span class="tag">Раздельно</span> <br>• противопоставление с «а»: <i>не красивый, а уродливый</i> <br>• слова <i>далеко не, вовсе не, ничуть не</i>: <i>вовсе не красивый</i> <br>• краткие формы: <i>не рад, не должен, не готов</i></div>
+                    </div>
+
+                    <hr>
+
+                    <p><strong>Наречия на -О / -Е (образованные от качественных прилагательных):</strong></p>
+                    <div class="two-col">
+                        <div class="col"><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>нелепо, небрежно</i> <br>• синоним: <i>некрасиво (= уродливо)</i> <br>• можно заменить синонимом без НЕ: <i>небольшой = маленький</i></div>
+                        <div class="col"><span class="tag">Раздельно</span> <br>• противопоставление с «а»: <i>не красиво, а уродливо</i> <br>• слова <i>далеко не, вовсе не, ничуть не</i>: <i>вовсе не красиво</i></div>
+                    </div>
+                    <div class="highlight" style="margin-top: 4px;">
+                        <strong>Важно!</strong><br>
+                        • С наречиями не на -О, -Е частица НЕ пишется <strong>раздельно</strong>: <i>не по-приятельски, не по-зимнему</i>.<br>
+                        • Местоименные наречия с частицей НЕ пишутся <strong>слитно</strong>: <i>некуда, неоткуда</i>.
+                    </div>
+
+                    <hr>
+
+                    <p><strong>Причастия:</strong></p>
+                    <div class="two-col">
+                        <div class="col"><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>недоумевающий</i> <br>• нет зависимого слова: <i>нерешённый пример</i></div>
+                        <div class="col"><span class="tag">Раздельно</span> <br>• зависимое слово: <i>не решённый мной пример</i> <br>• противопоставление: <i>не решённый, а списанный</i> <br>• <strong>краткие причастия всегда раздельно</strong>: <i>задача не решена</i></div>
+                    </div>
+
+                    <hr>
+
+                    <p><strong>Глаголы и деепричастия:</strong></p>
+                    <div class="two-col">
+                        <div class="col"><span class="tag">Слитно</span> <br>• без НЕ не употребляется: <i>ненавидеть, негодуя</i> <br>• <strong>НЕДО-</strong> (меньше нормы): <i>недобрать баллов, недостаёт красок</i></div>
+                        <div class="col"><span class="tag">Раздельно</span> <br>• глаголы без НЕ: <i>не читал, не мог</i> <br>• <strong>НЕ ДО-</strong> (действие не закончено): <i>не доел суп</i></div>
+                    </div>
+
+                    <hr>
+
+                    <p><strong>Местоимения:</strong></p>
+                    <div class="two-col">
+                        <div class="col"><span class="tag">Слитно</span> <br>• отрицательные и неопределённые: <i>нечто, несколько</i></div>
+                        <div class="col"><span class="tag">Раздельно</span> <br>• с предлогом: <i>не с кем, ни у кого</i></div>
+                    </div>
+
+                    <div class="highlight" style="margin-top: 8px;">
+                        <strong>Важно!</strong> <br>
+                        • <strong>НЕДО-</strong> = недостаточно, меньше нормы: <i>недоварить, недосолить</i> <br>
+                        • <strong>НЕ ДО-</strong> = действие не доведено до конца: <i>не дочитать книгу, не досмотреть фильм</i> <br>
+                        • <strong>Никем непобедимая</strong> страна (слитно, так как без НЕ не употребляется в данном значении)
+                    </div>
+
+                    <div class="example" style="margin-top: 6px;">
+                        <strong>Примеры:</strong> <br>
+                        <i>небольшой, но уютный дом</i> (слитно, нет противопоставления) <br>
+                        <i>не большой, а маленький дом</i> (раздельно, противопоставление) <br>
+                        <i>ещё не прочитанная мной книга</i> (раздельно, зависимое слово) <br>
+                        <i>непрочитанная книга лежала на столе</i> (слитно, нет зависимых слов)
                     </div>
                 </div>
             </div>
@@ -993,11 +1039,10 @@
                 </div>
             </div>
 
-            <!-- НОВЫЙ РАЗДЕЛ: Пунктуация в схемах — ПОЛНЫЙ С ПРИМЕРАМИ -->
+            <!-- Пунктуация в схемах -->
             <div class="card">
                 <div class="card-header"><h2>📌 Пунктуация в схемах</h2><span class="badge">простые правила</span></div>
                 <div class="rule-block">
-                    <!-- 1. ТИРЕ -->
                     <div class="punkt-scheme">
                         <div class="rule-title">➖ 1. Тире между подлежащим и сказуемым</div>
                         <div class="two-col" style="background: transparent; padding: 4px 0;">
@@ -1022,7 +1067,6 @@
                         </div>
                     </div>
 
-                    <!-- 2. БСП -->
                     <div class="punkt-scheme">
                         <div class="rule-title">➖ 2. Двоеточие и тире в БСП</div>
                         <div class="two-col" style="background: transparent; padding: 4px 0;">
@@ -1046,7 +1090,6 @@
                         </div>
                     </div>
 
-                    <!-- 3. Однородные -->
                     <div class="punkt-scheme">
                         <div class="rule-title">📋 3. Запятая при однородных членах</div>
                         <div class="two-col" style="background: transparent; padding: 4px 0;">
@@ -1072,7 +1115,6 @@
                         </div>
                     </div>
 
-                    <!-- 4. Обособление -->
                     <div class="punkt-scheme">
                         <div class="rule-title">✂️ 4. Обособление определений и обстоятельств</div>
                         <div class="two-col" style="background: transparent; padding: 4px 0;">
@@ -1101,7 +1143,6 @@
                         </div>
                     </div>
 
-                    <!-- 5. ССП и СПП -->
                     <div class="punkt-scheme">
                         <div class="rule-title">🔗 5. Запятая в ССП и СПП</div>
                         <div class="two-col" style="background: transparent; padding: 4px 0;">
@@ -1122,7 +1163,6 @@
                         </div>
                     </div>
 
-                    <!-- 6. Вводные и обращения -->
                     <div class="punkt-scheme">
                         <div class="rule-title">💬 6. Вводные слова и обращения</div>
                         <div class="two-col" style="background: transparent; padding: 4px 0;">
