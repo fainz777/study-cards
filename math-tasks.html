@@ -1525,30 +1525,106 @@
         </ul>
     </div>
 
-    <!-- ЗАДАЧА 22 -->
-    <div class="task-title">📌 Задача №22 — Число корней тригонометрического уравнения</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> Число корней уравнения <span class="math">ctg2x·sin4x − cos4x − sin3x = 0</span> на промежутке [0; 2π]
-    </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        1. <span class="math">ctg2x·sin4x = (cos2x/sin2x)·2sin2x·cos2x = 2cos²2x</span>.<br>
-        2. Уравнение: <span class="math">2cos²2x − cos4x − sin3x = 0</span>.<br>
-        3. <span class="math">cos4x = 2cos²2x − 1</span>.<br>
-        4. Подставляем: <span class="math">2cos²2x − (2cos²2x − 1) − sin3x = 0</span> → <span class="math">1 − sin3x = 0</span>.<br>
-        5. <span class="math">sin3x = 1</span> → <span class="math">3x = π/2 + 2πn</span> → <span class="math">x = π/6 + 2πn/3</span>.<br>
-        6. На промежутке [0; 2π] получаем: <span class="math">x = π/6, 5π/6, 3π/2, 13π/6</span>.<br>
-        Всего <b>4</b> корня.<br>
-        <span class="answer-box">Ответ: 4</span>
-    </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Тригонометрические тождества:</span> <span class="math">ctg x = cosx/sinx</span>, <span class="math">sin2x = 2sinx·cosx</span>, <span class="math">cos4x = 2cos²2x − 1</span>.</li>
-            <li><span class="term">Решение уравнения sin3x = 1:</span> <span class="math">3x = π/2 + 2πn</span>.</li>
-            <li><span class="term">Отбор корней на промежутке:</span> подставляем целые <span class="math">n</span>.</li>
-        </ul>
-    </div>
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 22 — Число корней тригонометрического уравнения -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №22 — Число корней тригонометрического уравнения</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Число корней уравнения <span class="math">ctg 2x · sin 4x − cos 4x − sin 3x = 0</span> на промежутке <span class="math">[0; 2π]</span> равно
+</div>
+
+<div class="step">
+    <span class="label">Шаг 1.</span>
+    <p>Упрощаем первое слагаемое:</p>
+    <p class="math-block">ctg 2x · sin 4x = (cos 2x / sin 2x) · 2 sin 2x cos 2x = 2 cos² 2x</p>
+    <p style="font-size:0.9rem; color:#1f3a7a;">(использованы: <span class="math">ctg x = cos x / sin x</span>, <span class="math">sin 4x = 2 sin 2x cos 2x</span>)</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 2.</span>
+    <p>Подставляем в исходное уравнение:</p>
+    <p class="math-block">2 cos² 2x − cos 4x − sin 3x = 0</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 3.</span>
+    <p>Используем формулу: <span class="math">cos 4x = 2 cos² 2x − 1</span>.</p>
+    <p class="math-block">2 cos² 2x − (2 cos² 2x − 1) − sin 3x = 0</p>
+    <p class="math-block">1 − sin 3x = 0</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 4.</span>
+    <p>Решаем <span class="math">sin 3x = 1</span>:</p>
+    <p class="math-block">3x = π/2 + 2πn, n ∈ ℤ</p>
+    <p class="math-block">x = π/6 + 2πn/3, n ∈ ℤ</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 5.</span>
+    <p>Находим корни на <span class="math">[0; 2π]</span>:</p>
+    <table style="border-collapse: collapse; margin: 10px 0;">
+        <tr style="background: #eaf1fd;">
+            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">n</th>
+            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">x</th>
+            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Входит?</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">0</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">π/6</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">✅ да</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">1</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">5π/6</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">✅ да</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">2</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">3π/2</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">✅ да</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">3</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">13π/6 > 2π</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">❌ нет</td>
+        </tr>
+    </table>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 6.</span>
+    <p><b>Проверка ОДЗ:</b></p>
+    <p>Мы сокращали <span class="math">sin 2x</span>, значит <span class="math">sin 2x ≠ 0</span>, то есть <span class="math">x ≠ πn/2</span>.</p>
+    <ul>
+        <li><span class="math">π/6</span> — подходит ✅</li>
+        <li><span class="math">5π/6</span> — подходит ✅</li>
+        <li><span class="math">3π/2</span> — <span class="math">sin(3π) = 0</span> → <b>не подходит</b> ❌</li>
+    </ul>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 7.</span>
+    <p>Остаются корни: <span class="math">π/6</span> и <span class="math">5π/6</span>.</p>
+    <p>Всего <b>2</b> корня.</p>
+</div>
+
+<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+    <span class="label">✅ Ответ:</span>
+    <span class="answer-box">2</span>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Котангенс:</span> <span class="math">ctg x = cos x / sin x</span>, определён только при <span class="math">sin x ≠ 0</span>.</li>
+        <li><span class="term">Синус двойного угла:</span> <span class="math">sin 2x = 2 sin x cos x</span>.</li>
+        <li><span class="term">Косинус двойного угла:</span> <span class="math">cos 2x = 2 cos² x − 1</span>.</li>
+        <li><span class="term">ОДЗ:</span> при работе с дробными выражениями нужно следить, чтобы знаменатель не обращался в ноль.</li>
+        <li><span class="term">Отбор корней:</span> подстановка целых значений <span class="math">n</span> для нахождения корней на заданном промежутке.</li>
+        <li><span class="term">Проверка ОДЗ:</span> обязательный шаг, так как при упрощениях могли появиться посторонние корни.</li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 23 -->
     <div class="task-title">📌 Задача №23 — Неравенство с дробью</div>
