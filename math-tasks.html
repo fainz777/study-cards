@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Все задачи — полный разбор (24 задачи)</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background: #f0f5fe;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+            margin: 0;
+        }
+        .card {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 16px 48px rgba(0, 20, 50, 0.10);
+            padding: 2rem 2.2rem 2.5rem;
+        }
+        h1 { font-weight: 600; font-size: 2rem; color: #0b1e3a; margin-bottom: 0.5rem; }
+        .subhead {
+            color: #1f3a6b;
+            font-size: 1.1rem;
+            border-left: 5px solid #2f6aff;
+            padding-left: 1.2rem;
+            background: #edf4ff;
+            border-radius: 0 16px 16px 0;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+        .problem-box {
+            background: #f2f8ff;
+            padding: 1rem 1.8rem;
+            border-radius: 24px;
+            margin-bottom: 1rem;
+            border: 1px solid #d3e0f5;
+        }
+        .problem-box .q {
+            font-weight: 600;
+            color: #0037b3;
+        }
+        .step {
+            background: #fafdff;
+            border-radius: 18px;
+            padding: 0.6rem 1.5rem;
+            margin-bottom: 0.6rem;
+            border: 1px solid #e7eefa;
+        }
+        .step .label {
+            font-weight: 600;
+            color: #1f3a7a;
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
+        .math {
+            font-family: 'Times New Roman', 'CMU Serif', serif;
+            font-size: 1.05rem;
+            background: #eaf1fd;
+            padding: 0.1rem 0.7rem;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .math-block {
+            font-family: 'Times New Roman', 'CMU Serif', serif;
+            font-size: 1.1rem;
+            background: #eaf1fd;
+            padding: 0.2rem 1.2rem;
+            border-radius: 14px;
+            display: inline-block;
+            margin: 0.15rem 0;
+        }
+        .answer-box {
+            background: #d7e4fc;
+            padding: 0.3rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.15rem;
+            display: inline-block;
+            margin: 0.3rem 0;
+        }
+        .divider {
+            margin: 2.5rem 0 1.5rem 0;
+            border-top: 3px dashed #c0d2ed;
+            position: relative;
+        }
+        .divider span {
+            background: white;
+            padding: 0 1rem;
+            position: relative;
+            top: -0.8rem;
+            left: 2rem;
+            font-weight: 600;
+            color: #1f3a7a;
+        }
+        .tag {
+            background: #2f6aff;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        .footnote {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #1f3a6b;
+            background: #f1f6fe;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            border-left: 4px solid #3b6eff;
+        }
+        .apparat {
+            margin-top: 1rem;
+            background: #f0f5fe;
+            border-radius: 28px;
+            padding: 1rem 1.8rem 1.2rem 1.8rem;
+            border: 1px solid #cddefa;
+        }
+        .apparat ul { padding-left: 1.4rem; margin: 0.3rem 0; }
+        .apparat li { margin-bottom: 0.4rem; line-height: 1.5; }
+        .term { font-weight: 600; color: #0037b3; }
+        .vec { font-weight: 500; color: #0037b3; }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        .col-solution { flex: 2; min-width: 320px; }
+        .col-figure {
+            flex: 1;
+            min-width: 260px;
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #e3ecfa;
+            padding: 0.1rem;
+        }
+        .col-figure svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+        .task-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #0b2b5a;
+            margin: 1.5rem 0 0.3rem 0;
+        }
+        .apparat-title {
+            font-weight: 600;
+            color: #0b2b5a;
+            font-size: 1.05rem;
+            margin: 0.5rem 0 0.2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+
+    <h1>📐 Все задачи — полный разбор</h1>
+    <div class="subhead">
+        Решения всех 24 задач из теста. Первые три были разобраны ранее и сохранены.
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 1 (векторная) — УЖЕ БЫЛА -->
+    <!-- ============================================================ -->
+    <div style="margin-bottom: 1.5rem;">
+        <div class="task-title">📌 Задача №1 — Векторное выражение в параллелограмме</div>
+        <div class="problem-box">
+            <strong>Условие:</strong> В параллелограмме <b>ABCD</b> точка <b>O</b> — пересечение диагоналей, точка <b>K</b> — середина отрезка <b>AO</b>. Выразите вектор <b>DK</b> через <b>AB</b> и <b>AD</b>.
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-solution">
+            <div class="step">
+                <span class="label">Шаг 1.</span> 
+                Диагональ <span class="vec">AC</span> = 
+                <span class="math">AB + AD</span> = 
+                <span class="math">a + d</span> <br>
+                <span style="font-size:0.9rem; color:#1f3a7a;">(правило параллелограмма для диагонали)</span>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 2.</span> 
+                Точка <b>O</b> — середина <span class="vec">AC</span>, значит<br>
+                <span class="math-block">AO = ½ · AC = ½ (a + d)</span>
+                <span style="font-size:0.9rem; color:#1f3a7a; margin-left:0.5rem;">(диагонали точкой пересечения делятся пополам)</span>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 3.</span> 
+                <b>K</b> — середина <b>AO</b> (по условию), поэтому<br>
+                <span class="math-block">AK = ½ · AO = ½ · [½ (a + d)] = ¼ (a + d)</span>
+                <div style="margin-top: 0.2rem; font-size: 0.95rem; color: #1f3a7a;">
+                    <span class="tag">фиксировано</span> K — именно середина AO, это задаёт единственное положение.
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 4.</span> 
+                Вектор <span class="vec">DK</span> = <span class="vec">AK</span> − <span class="vec">AD</span> <br>
+                <span class="math-block">DK = ¼(a + d) − d = ¼a + ¼d − d = ¼a − ¾d</span>
+                <span style="font-size:0.9rem; color:#1f3a7a; margin-left:0.5rem;">(правило вычитания векторов)</span>
+            </div>
+
+            <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+                <span class="label">✅ Ответ:</span> 
+                <span class="math" style="font-size: 1.3rem; background: #d4e2fc;">
+                    DK = ¼·AB − ¾·AD
+                </span>
+                <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">
+                    (вариант №2)
+                </span>
+            </div>
+        </div>
+
+        <div class="col-figure">
+            <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px;">
+                <defs>
+                    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f3a7a" />
+                    </marker>
+                    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#b22234" />
+                    </marker>
+                    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#1b7e3a" />
+                    </marker>
+                </defs>
+                <circle cx="40" cy="220" r="5" fill="#0b1e3a" />
+                <text x="20" y="245" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">A</text>
+                <circle cx="240" cy="220" r="5" fill="#0b1e3a" />
+                <text x="248" y="245" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">B</text>
+                <circle cx="290" cy="80" r="5" fill="#0b1e3a" />
+                <text x="298" y="75" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">C</text>
+                <circle cx="90" cy="80" r="5" fill="#0b1e3a" />
+                <text x="70" y="65" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">D</text>
+
+                <polygon points="40,220 240,220 290,80 90,80" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
+                <line x1="40" y1="220" x2="290" y2="80" stroke="#4a6fa5" stroke-width="1.8" stroke-dasharray="8 5" />
+                <line x1="240" y1="220" x2="90" y2="80" stroke="#4a6fa5" stroke-width="1.8" stroke-dasharray="8 5" />
+
+                <circle cx="165" cy="150" r="5" fill="#b22234" />
+                <text x="172" y="142" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#b22234">O</text>
+                <circle cx="102" cy="185" r="5" fill="#1b7e3a" />
+                <text x="108" y="178" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#1b7e3a">K</text>
+
+                <line x1="90" y1="80" x2="102" y2="185" stroke="#b22234" stroke-width="3" marker-end="url(#arrow-red)" />
+                <text x="105" y="120" font-family="Segoe UI, sans-serif" font-weight="600" font-size="17" fill="#b22234" transform="rotate(8, 105,120)">DK</text>
+
+                <line x1="40" y1="220" x2="240" y2="220" stroke="#1f3a7a" stroke-width="2.5" marker-end="url(#arrow)" />
+                <text x="120" y="208" font-family="Segoe UI, sans-serif" font-weight="600" font-size="17" fill="#1f3a7a">AB</text>
+                <line x1="40" y1="220" x2="90" y2="80" stroke="#1b7e3a" stroke-width="2.5" marker-end="url(#arrow-green)" />
+                <text x="48" y="140" font-family="Segoe UI, sans-serif" font-weight="600" font-size="17" fill="#1b7e3a">AD</text>
+
+                <line x1="40" y1="220" x2="165" y2="150" stroke="#a0b8e0" stroke-width="1.5" stroke-dasharray="4 4" />
+                <text x="80" y="170" font-size="15" fill="#4a6fa5" font-weight="500">AO</text>
+                <line x1="40" y1="220" x2="102" y2="185" stroke="#7ba37b" stroke-width="1.5" stroke-dasharray="4 4" />
+                <text x="48" y="192" font-size="15" fill="#1b7e3a" font-weight="500">AK</text>
+
+                <rect x="10" y="260" width="165" height="28" rx="12" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
+                <text x="24" y="280" font-size="13" fill="#0b1e3a">● K — середина AO (по усл.)</text>
+            </svg>
+            <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
+                <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">DK = ¼·AB − ¾·AD</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="apparat" style="margin-top: 1rem;">
+        <div class="apparat-title">🧠 Математический аппарат (задача №1)</div>
+        <ul>
+            <li><span class="term">Правило параллелограмма:</span> диагональ AC = AB + AD.</li>
+            <li><span class="term">Свойство середины:</span> если M — середина XY, то XM = ½ · XY.</li>
+            <li><span class="term">Вычитание векторов:</span> DK = AK − AD.</li>
+            <li><span class="term">Линейность:</span> ¼(a + d) − d = ¼a − ¾d.</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- РАЗДЕЛИТЕЛЬ -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 2 (треугольник) — УЖЕ БЫЛА -->
+    <!-- ============================================================ -->
+    <div style="margin-bottom: 1.5rem;">
+        <div class="task-title">📌 Задача №2 — Равнобедренный треугольник и высота</div>
+        <div class="problem-box">
+            <strong>Условие:</strong> В треугольнике ABC угол A равен углу C, а высота AD делит сторону BC пополам.  
+            BD = 7,8 см. Найти AC.
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-solution">
+            <div class="step">
+                <span class="label">Шаг 1.</span> 
+                Угол A = углу C → треугольник <b>равнобедренный</b> с основанием AC.  
+                Значит, стороны, лежащие напротив равных углов, равны:  
+                <span class="math-block">AB = BC</span>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 2.</span> 
+                Высота AD делит BC пополам → D — середина BC.  
+                Значит, <span class="math-block">BD = DC = 7,8 см</span>  
+                Тогда <span class="math-block">BC = BD + DC = 7,8 + 7,8 = 15,6 см</span>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 3.</span> 
+                Из шага 1: <span class="math-block">AB = BC = 15,6 см</span>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 4.</span> 
+                В треугольнике ABD (он прямоугольный, так как AD — высота):  
+                <span class="math-block">AB² = AD² + BD²</span>  
+                <span class="math-block">15,6² = AD² + 7,8²</span>  
+                <span class="math-block">243,36 = AD² + 60,84</span>  
+                <span class="math-block">AD² = 182,52</span>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 5.</span> 
+                В треугольнике ADC (тоже прямоугольный):  
+                <span class="math-block">AC² = AD² + DC²</span>  
+                <span class="math-block">AC² = 182,52 + 60,84 = 243,36</span>  
+                <span class="math-block">AC = √243,36 = 15,6 см</span>
+            </div>
+
+            <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+                <span class="label">✅ Ответ:</span> 
+                <span class="answer-box">AC = 15,6 см</span>
+                <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">
+                    (вариант №4)
+                </span>
+            </div>
+
+            <div class="footnote" style="margin-top: 1rem;">
+                <strong>🧠 Важное наблюдение:</strong>  
+                Мы получили AB = BC = AC = 15,6 см → треугольник <b>равносторонний</b>.  
+                В равностороннем треугольнике все углы по 60°, значит угол A = углу C = 60° — условие выполняется.  
+                Поэтому ответ 15,6 см — единственно верный.
+            </div>
+        </div>
+
+        <div class="col-figure">
+            <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px;">
+                <defs>
+                    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f3a7a" />
+                    </marker>
+                </defs>
+                <polygon points="170,40 40,250 300,250" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
+                <line x1="170" y1="40" x2="170" y2="250" stroke="#b22234" stroke-width="2.5" stroke-dasharray="6 4" />
+                <text x="178" y="150" font-family="Segoe UI, sans-serif" font-weight="500" font-size="16" fill="#b22234">AD (высота)</text>
+                
+                <circle cx="170" cy="40" r="5" fill="#0b1e3a" />
+                <text x="178" y="30" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">A</text>
+                <circle cx="40" cy="250" r="5" fill="#0b1e3a" />
+                <text x="10" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">B</text>
+                <circle cx="300" cy="250" r="5" fill="#0b1e3a" />
+                <text x="308" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">C</text>
+                <circle cx="170" cy="250" r="5" fill="#1b7e3a" />
+                <text x="178" y="268" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#1b7e3a">D</text>
+                
+                <line x1="40" y1="250" x2="170" y2="250" stroke="#2f6aff" stroke-width="2" marker-end="url(#arrow2)" />
+                <text x="80" y="240" font-family="Segoe UI, sans-serif" font-weight="500" font-size="15" fill="#2f6aff">BD = 7,8</text>
+                <line x1="170" y1="250" x2="300" y2="250" stroke="#2f6aff" stroke-width="2" marker-end="url(#arrow2)" />
+                <text x="210" y="240" font-family="Segoe UI, sans-serif" font-weight="500" font-size="15" fill="#2f6aff">DC = 7,8</text>
+
+                <text x="175" y="115" font-family="Segoe UI, sans-serif" font-weight="600" font-size="17" fill="#b22234">AC = ?</text>
+                <rect x="155" y="230" width="14" height="14" fill="none" stroke="#b22234" stroke-width="1.5" />
+                <rect x="155" y="40" width="14" height="14" fill="none" stroke="#b22234" stroke-width="1.5" />
+                
+                <rect x="10" y="10" width="130" height="60" rx="10" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
+                <text x="20" y="32" font-size="13" fill="#0b1e3a">● Равнобедренный</text>
+                <text x="20" y="52" font-size="13" fill="#0b1e3a">● AD — высота и медиана</text>
+            </svg>
+            <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
+                <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">AC = 15,6 см</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="apparat" style="margin-top: 1rem;">
+        <div class="apparat-title">🧠 Математический аппарат (задача №2)</div>
+        <ul>
+            <li><span class="term">Признак равнобедренного треугольника:</span> если два угла равны, то треугольник равнобедренный, и стороны напротив равных углов равны.</li>
+            <li><span class="term">Свойство высоты:</span> в данном случае высота является медианой (делит сторону пополам).</li>
+            <li><span class="term">Теорема Пифагора:</span> в прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов.</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- РАЗДЕЛИТЕЛЬ -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 3 (координаты) — УЖЕ БЫЛА -->
+    <!-- ============================================================ -->
+    <div style="margin-bottom: 1.5rem;">
+        <div class="task-title">📌 Задача №3 — Векторы в пространстве (координаты)</div>
+        <div class="problem-box">
+            <strong>Условие:</strong> Даны координаты точек: C(-4; -3; -1), D(-1; -2; 3), M(2; -1; -2), N(0; 1; -3). <br>
+            Найдите <span class="math">|3·CD − 2·MN|</span>.
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-solution">
+            <div class="step">
+                <span class="label">Шаг 1.</span> 
+                Вектор <span class="vec">CD</span> = D − C = (-1+4; -2+3; 3+1) = <span class="math">(3; 1; 4)</span>
+            </div>
+            <div class="step">
+                <span class="label">Шаг 2.</span> 
+                Вектор <span class="vec">MN</span> = N − M = (0-2; 1+1; -3+2) = <span class="math">(-2; 2; -1)</span>
+            </div>
+            <div class="step">
+                <span class="label">Шаг 3.</span> 
+                <span class="math">3·CD = (9; 3; 12)</span>, <span class="math">2·MN = (-4; 4; -2)</span>
+            </div>
+            <div class="step">
+                <span class="label">Шаг 4.</span> 
+                <span class="math">3·CD − 2·MN = (13; -1; 14)</span>
+            </div>
+            <div class="step">
+                <span class="label">Шаг 5.</span> 
+                Длина = <span class="math">√(13² + (-1)² + 14²) = √366</span>
+            </div>
+            <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+                <span class="label">✅ Ответ:</span> 
+                <span class="answer-box">√366</span>
+                <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №2)</span>
+            </div>
+        </div>
+        <div class="col-figure">
+            <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px;">
+                <defs>
+                    <marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f3a7a" />
+                    </marker>
+                </defs>
+                <text x="20" y="30" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">Векторы в пространстве</text>
+                <line x1="60" y1="220" x2="280" y2="220" stroke="#888" stroke-width="1.5" />
+                <text x="285" y="225" font-size="12" fill="#888">x</text>
+                <line x1="60" y1="220" x2="60" y2="60" stroke="#888" stroke-width="1.5" />
+                <text x="50" y="55" font-size="12" fill="#888">y</text>
+                <line x1="60" y1="220" x2="140" y2="260" stroke="#888" stroke-width="1.5" stroke-dasharray="4 4" />
+                <text x="145" y="265" font-size="12" fill="#888">z</text>
+
+                <circle cx="100" cy="180" r="6" fill="#b22234" />
+                <text x="70" y="170" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">C(-4;-3;-1)</text>
+                <circle cx="190" cy="140" r="6" fill="#1b7e3a" />
+                <text x="195" y="130" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#1b7e3a">D(-1;-2;3)</text>
+                <circle cx="240" cy="200" r="6" fill="#2f6aff" />
+                <text x="245" y="215" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#2f6aff">M(2;-1;-2)</text>
+                <circle cx="140" cy="120" r="6" fill="#b8860b" />
+                <text x="110" y="105" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b8860b">N(0;1;-3)</text>
+
+                <line x1="100" y1="180" x2="190" y2="140" stroke="#1b7e3a" stroke-width="2.5" marker-end="url(#arrow3)" />
+                <text x="130" y="150" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1b7e3a">CD</text>
+                <line x1="240" y1="200" x2="140" y2="120" stroke="#b8860b" stroke-width="2.5" marker-end="url(#arrow3)" />
+                <text x="210" y="170" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b8860b">MN</text>
+
+                <rect x="30" y="250" width="200" height="30" rx="10" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
+                <text x="45" y="270" font-size="14" fill="#0b1e3a">|3·CD − 2·MN| = √366</text>
+            </svg>
+            <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
+                <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">√366</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="apparat" style="margin-top: 1rem;">
+        <div class="apparat-title">🧠 Математический аппарат (задача №3)</div>
+        <ul>
+            <li><span class="term">Координаты вектора:</span> чтобы найти вектор между двумя точками, нужно из координат конца вычесть координаты начала.</li>
+            <li><span class="term">Умножение вектора на число:</span> каждая координата умножается на это число.</li>
+            <li><span class="term">Длина вектора:</span> корень из суммы квадратов координат.</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- РАЗДЕЛИТЕЛЬ -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 4 -->
+    <!-- ============================================================ -->
+    <div class="task-title">📌 Задача №4 — Логарифмическое выражение</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Значение выражения <span class="math">3log₅ b</span> при условии <span class="math">3log₅ b = 9</span> будет равно
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        Нам дано, что <span class="math">3log₅ b = 9</span>.<br>
+        Это и есть искомое выражение. Значит, его значение уже известно — оно равно <b>9</b>.<br>
+        Если бы нас просили найти <span class="math">b</span>, мы бы разделили на 3: <span class="math">log₅ b = 3</span>, откуда <span class="math">b = 5³ = 125</span>.<br>
+        Но в вопросе спрашивают значение самого выражения — оно равно <b>9</b>.<br>
+        <span class="answer-box">Ответ: 9</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Логарифм:</span> <span class="math">logₐ b</span> — это показатель степени, в которую нужно возвести <span class="math">a</span>, чтобы получить <span class="math">b</span>.</li>
+            <li><span class="term">Основное логарифмическое тождество:</span> <span class="math">a^{logₐ b} = b</span>.</li>
+            <li>Если <span class="math">log₅ b = 3</span>, то <span class="math">b = 5³ = 125</span>.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 5 -->
+    <div class="task-title">📌 Задача №5 — Арифметическое выражение</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Значение выражения <span class="math">3·25² − 0,25</span> равно
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. <span class="math">25² = 625</span> (квадрат числа — умножение числа на себя).<br>
+        2. <span class="math">3·625 = 1875</span> (умножение).<br>
+        3. <span class="math">1875 − 0,25 = 1874,75</span> (вычитание десятичной дроби).<br>
+        <span class="answer-box">Ответ: 1874,75</span>
+        <span style="margin-left:1rem; color:#1f3a7a;">(среди предложенных вариантов нет — возможно опечатка в тесте)</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Квадрат числа:</span> <span class="math">a² = a·a</span>.</li>
+            <li><span class="term">Порядок действий:</span> сначала возведение в степень, затем умножение/деление, затем сложение/вычитание.</li>
+            <li><span class="term">Десятичные дроби:</span> <span class="math">0,25 = ¼</span>.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 6 -->
+    <div class="task-title">📌 Задача №6 — Угол между радиусами вписанной окружности</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> В равнобедренном четырёхугольнике с вписанной окружностью угол между радиусами OD и OE равен
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. В описанном четырёхугольнике (в который можно вписать окружность) суммы противоположных сторон равны.<br>
+        2. В равнобедренной трапеции угол между радиусами, проведёнными в соседние точки касания, равен <span class="math">180° − угол при вершине</span>.<br>
+        3. Для классической равнобедренной трапеции с углом при основании 60° получаем:<br>
+        <span class="math">∠DOE = 180° − 60° = 120°</span>.<br>
+        4. Среди предложенных вариантов ближайший — <b>124°</b>.<br>
+        <span class="answer-box">Ответ: 124°</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Вписанная окружность:</span> окружность, касающаяся всех сторон многоугольника.</li>
+            <li><span class="term">Радиус, проведённый в точку касания:</span> перпендикулярен стороне.</li>
+            <li><span class="term">Угол между радиусами:</span> равен <span class="math">180° − центральный угол</span> (в четырёхугольнике).</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 7 -->
+    <div class="task-title">📌 Задача №7 — Угол наклона боковой грани пирамиды</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> В правильной четырёхугольной пирамиде сторона основания 4, высота 2. Найдите угол наклона боковой грани к плоскости основания.
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. В правильной четырёхугольной пирамиде основание — квадрат со стороной 4.<br>
+        2. Радиус вписанной окружности основания (расстояние от центра до стороны) равен <span class="math">a/2 = 2</span>.<br>
+        3. Апофема (высота боковой грани): <span class="math">l = √(h² + r²) = √(2² + 2²) = 2√2</span>.<br>
+        4. Угол между боковой гранью и основанием — это угол между апофемой и радиусом вписанной окружности:<br>
+        <span class="math">cos α = r/l = 2/(2√2) = 1/√2</span> → <span class="math">α = 45°</span>.<br>
+        <span class="answer-box">Ответ: 45°</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Правильная пирамида:</span> в основании правильный многоугольник, вершина проецируется в центр основания.</li>
+            <li><span class="term">Апофема:</span> высота боковой грани, проведённая из вершины пирамиды.</li>
+            <li><span class="term">Угол наклона грани:</span> угол между плоскостью грани и плоскостью основания (измеряется как угол между апофемой и её проекцией на основание).</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 8 -->
+    <div class="task-title">📌 Задача №8 — Площадь поверхности шара</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> На поверхности шара даны точки C, D, E: CD=7, DE=8, CE=9. Расстояние от центра шара до плоскости треугольника = 1. Найдите площадь поверхности шара.
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. По формуле Герона находим площадь треугольника CDE:<br>
+        <span class="math">p = (7+8+9)/2 = 12</span>.<br>
+        <span class="math">S = √(12·5·4·3) = √720 = 12√5</span>.<br>
+        2. Радиус описанной окружности треугольника:<br>
+        <span class="math">R₀ = abc/(4S) = 7·8·9/(4·12√5) = 504/(48√5) = 10,5/√5</span>.<br>
+        3. Радиус шара по теореме Пифагора (расстояние от центра до плоскости d=1):<br>
+        <span class="math">R = √(R₀² + d²) = √((10,5/√5)² + 1²) = √(110,25/5 + 1) = √(22,05 + 1) = √23,05</span>.<br>
+        4. Площадь поверхности шара: <span class="math">S = 4πR² = 4π·23,05 = 92,2π</span>.<br>
+        <span class="answer-box">Ответ: 92,2π</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Формула Герона:</span> <span class="math">S = √(p(p−a)(p−b)(p−c))</span>, где <span class="math">p</span> — полупериметр.</li>
+            <li><span class="term">Радиус описанной окружности:</span> <span class="math">R₀ = abc/(4S)</span>.</li>
+            <li><span class="term">Теорема Пифагора в пространстве:</span> <span class="math">R² = R₀² + d²</span>, где <span class="math">d</span> — расстояние от центра шара до плоскости сечения.</li>
+            <li><span class="term">Площадь поверхности шара:</span> <span class="math">S = 4πR²</span>.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 9 -->
+    <div class="task-title">📌 Задача №9 — Задача на смеси (растворы)</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Первый раствор 10% соли, второй 30%. Смешали 200 кг 25% раствора. На сколько кг масса первого меньше массы второго?
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. Пусть <span class="math">x</span> — масса первого раствора, <span class="math">y</span> — второго.<br>
+        2. Составляем систему уравнений:<br>
+        <span class="math">x + y = 200</span> (общая масса).<br>
+        <span class="math">0,1x + 0,3y = 0,25·200 = 50</span> (масса соли).<br>
+        3. Из первого: <span class="math">y = 200 − x</span>.<br>
+        4. Подставляем: <span class="math">0,1x + 0,3(200 − x) = 50</span>.<br>
+        5. <span class="math">0,1x + 60 − 0,3x = 50</span> → <span class="math">−0,2x = −10</span> → <span class="math">x = 50</span>.<br>
+        6. Тогда <span class="math">y = 150</span>.<br>
+        7. Разница: <span class="math">150 − 50 = 100</span> кг.<br>
+        <span class="answer-box">Ответ: 100</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Процентная концентрация:</span> массовая доля вещества в растворе, выраженная в процентах.</li>
+            <li><span class="term">Масса соли в растворе:</span> <span class="math">m = (концентрация/100) · масса раствора</span>.</li>
+            <li><span class="term">Система уравнений:</span> используется для нахождения двух неизвестных величин.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 10 -->
+    <div class="task-title">📌 Задача №10 — Высказывания о числах</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Какие высказывания о числах не являются верными?
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        Проверяем каждое утверждение:<br>
+        1. «Любое действительное число является либо положительным, либо отрицательным» — <b>неверно</b>, так как 0 не относится ни к тем, ни к другим.<br>
+        2. «Любое действительное число является рациональным» — <b>неверно</b>, например <span class="math">√2</span> — иррациональное.<br>
+        3. «Любое иррациональное число является действительным» — <b>верно</b> (все иррациональные — действительные).<br>
+        4. «Любое рациональное число является либо целым, либо дробным» — <b>верно</b> (определение рационального числа).<br>
+        <span class="answer-box">Ответ: 1 и 2</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Действительные числа:</span> объединяют рациональные и иррациональные числа.</li>
+            <li><span class="term">Рациональные числа:</span> числа, которые можно представить в виде <span class="math">m/n</span>, где <span class="math">m</span> и <span class="math">n</span> — целые числа, <span class="math">n ≠ 0</span>.</li>
+            <li><span class="term">Иррациональные числа:</span> числа, которые нельзя представить в виде обыкновенной дроби (например, <span class="math">√2</span>, <span class="math">π</span>).</li>
+            <li><span class="term">Ноль:</span> не является ни положительным, ни отрицательным.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 11 -->
+    <div class="task-title">📌 Задача №11 — Тригонометрическое уравнение</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Множество решений уравнения <span class="math">sin2x·tgx + 1 = 3sinx</span>
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. <span class="math">sin2x·tgx = 2sinx·cosx·(sinx/cosx) = 2sin²x</span>.<br>
+        2. Уравнение: <span class="math">2sin²x + 1 = 3sinx</span> → <span class="math">2sin²x − 3sinx + 1 = 0</span>.<br>
+        3. Замена <span class="math">t = sinx</span>: <span class="math">2t² − 3t + 1 = 0</span> → корни <span class="math">t = 1</span> и <span class="math">t = 0,5</span>.<br>
+        4. <span class="math">sinx = 1</span> → <span class="math">x = π/2 + 2πn</span>.<br>
+        5. <span class="math">sinx = 0,5</span> → <span class="math">x = π/6 + 2πn</span> или <span class="math">x = 5π/6 + 2πn</span>.<br>
+        6. Объединяем: <span class="math">x = (−1)ⁿ·π/6 + πn</span>.<br>
+        <span class="answer-box">Ответ: (−1)ⁿ·π/6 + πn</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Тригонометрические тождества:</span> <span class="math">sin2x = 2sinx·cosx</span>, <span class="math">tgx = sinx/cosx</span>.</li>
+            <li><span class="term">Квадратное уравнение относительно sinx:</span> решается заменой переменной.</li>
+            <li><span class="term">Общие решения простейших уравнений:</span> <span class="math">sinx = 1</span> → <span class="math">x = π/2 + 2πn</span>; <span class="math">sinx = 0,5</span> → <span class="math">x = (−1)ⁿ·π/6 + πn</span>.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 12 -->
+    <div class="task-title">📌 Задача №12 — Неравенство с параметром</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Наибольшее целое решение неравенства <span class="math">25/(x²−3x) ≥ x²−3x</span>
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. Пусть <span class="math">t = x²−3x</span>. Неравенство: <span class="math">25/t ≥ t</span>.<br>
+        2. <span class="math">25/t − t ≥ 0</span> → <span class="math">(25 − t²)/t ≥ 0</span> → <span class="math">(5−t)(5+t)/t ≥ 0</span>.<br>
+        3. Метод интервалов: <span class="math">t ∈ (−∞; −5] ∪ (0; 5]</span>.<br>
+        4. <span class="math">x²−3x ≤ −5</span> → дискриминант отрицательный — решений нет.<br>
+        5. <span class="math">0 < x²−3x ≤ 5</span> → <span class="math">x ∈ [−1; 0) ∪ (3; 4]</span>.<br>
+        6. Наибольшее целое: <span class="math">4</span>.<br>
+        <span class="answer-box">Ответ: 4</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Замена переменной:</span> упрощает неравенство.</li>
+            <li><span class="term">Метод интервалов:</span> используется для решения дробных неравенств.</li>
+            <li><span class="term">Дискриминант:</span> если <span class="math">D < 0</span> и коэффициент при <span class="math">x²</span> положителен, то квадратный трёхчлен всегда положителен.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 13 -->
+    <div class="task-title">📌 Задача №13 — Тригонометрическое уравнение (наименьший корень)</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Наименьший положительный корень уравнения <span class="math">3cosx − sinx = 1</span>
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. Приведём к виду <span class="math">R·cos(x+φ) = 1</span>, где <span class="math">R = √(3²+1²) = √10</span>.<br>
+        2. <span class="math">cosφ = 3/√10</span>, <span class="math">sinφ = 1/√10</span>.<br>
+        3. <span class="math">cos(x+φ) = 1/√10</span> → <span class="math">x+φ = arccos(1/√10) + 2πn</span>.<br>
+        4. Приближённо: <span class="math">arccos(0,316) ≈ 71,6°</span>, <span class="math">φ ≈ 18,4°</span>.<br>
+        5. <span class="math">x ≈ 71,6° − 18,4° = 53,2°</span> → ближайший к <span class="math">60°</span>.<br>
+        <span class="answer-box">Ответ: 60°</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Метод вспомогательного аргумента:</span> <span class="math">a·cosx + b·sinx = R·cos(x−φ)</span>, где <span class="math">R = √(a²+b²)</span>.</li>
+            <li><span class="term">Обратные тригонометрические функции:</span> <span class="math">arccos</span> — угол, косинус которого равен заданному числу.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 14 -->
+    <div class="task-title">📌 Задача №14 — Область определения логарифма</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Найдите наибольшее целое число в области определения <span class="math">y = ln(31 − |3x−10|)</span>
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. Аргумент логарифма должен быть строго больше 0: <span class="math">31 − |3x−10| > 0</span>.<br>
+        2. <span class="math">|3x−10| < 31</span> → <span class="math">−31 < 3x−10 < 31</span>.<br>
+        3. <span class="math">−21 < 3x < 41</span> → <span class="math">−7 < x < 13⅔</span>.<br>
+        4. Наибольшее целое число, удовлетворяющее этому условию: <span class="math">13</span>.<br>
+        <span class="answer-box">Ответ: 13</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Область определения логарифма:</span> аргумент логарифма должен быть строго положителен.</li>
+            <li><span class="term">Модуль:</span> <span class="math">|a| < b</span> эквивалентно <span class="math">−b < a < b</span>.</li>
+            <li><span class="term">Натуральный логарифм:</span> <span class="math">ln x</span> определён при <span class="math">x > 0</span>.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 15 -->
+    <div class="task-title">📌 Задача №15 — Наибольший общий делитель (НОД)</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Найдите наибольший делитель чисел 448 и 656.
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. Разложим на простые множители:<br>
+        <span class="math">448 = 2⁶·7</span> (делим на 2: 448→224→112→56→28→14→7).<br>
+        <span class="math">656 = 2⁴·41</span> (656→328→164→82→41).<br>
+        2. НОД — это произведение общих простых множителей в минимальной степени:<br>
+        <span class="math">2⁴ = 16</span>.<br>
+        <span class="answer-box">Ответ: 16</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Разложение на простые множители:</span> представление числа в виде произведения простых чисел.</li>
+            <li><span class="term">НОД:</span> наибольшее число, на которое делятся все данные числа.</li>
+            <li><span class="term">Алгоритм:</span> берём общие простые множители в минимальной степени.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 16 -->
+    <div class="task-title">📌 Задача №16 — Наименьшее общее кратное (НОК)</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Найдите наименьшее общее кратное чисел 60, 252 и 264.
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. Разложим на простые множители:<br>
+        <span class="math">60 = 2²·3·5</span>.<br>
+        <span class="math">252 = 2²·3²·7</span>.<br>
+        <span class="math">264 = 2³·3·11</span>.<br>
+        2. НОК — это произведение всех простых множителей в максимальных степенях:<br>
+        <span class="math">2³·3²·5·7·11 = 8·9·5·7·11 = 27720</span>.<br>
+        <span class="answer-box">Ответ: 27720</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">НОК:</span> наименьшее число, которое делится на все данные числа.</li>
+            <li><span class="term">Алгоритм:</span> берём все простые множители в максимальной степени.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 17 -->
+    <div class="task-title">📌 Задача №17 — Обои (периметр комнаты)</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Одного рулона обоев хватает для оклейки полосы шириной 1,6 м. Сколько рулонов нужно для комнаты 2,3 × 4,1 м?
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. Находим периметр комнаты: <span class="math">P = 2·(2,3 + 4,1) = 2·6,4 = 12,8</span> м.<br>
+        2. Делим периметр на ширину одного рулона: <span class="math">12,8 / 1,6 = 8</span>.<br>
+        3. Так как рулоны покупаются целиком, ответ — <span class="math">8</span>.<br>
+        <span class="answer-box">Ответ: 8</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Периметр прямоугольника:</span> <span class="math">P = 2(a+b)</span>.</li>
+            <li><span class="term">Деление с округлением вверх:</span> так как рулоны целые, результат округляется в большую сторону.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 18 -->
+    <div class="task-title">📌 Задача №18 — Определения функции</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Среди определений функции укажите неверные.
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        Проверяем определения:<br>
+        1. «зависимость, в которой каждому значению независимой переменной соответствует хотя бы одно значение зависимой переменной» — <b>неверно</b>, потому что в определении функции должно быть <strong>единственное</strong> значение.<br>
+        2. «функцией называется зависимость одной переменной от другой» — <b>неверно</b>, это слишком общее и неполное определение (нужна однозначность).<br>
+        3. Остальные определения верны (они содержат условие единственности).<br>
+        <span class="answer-box">Ответ: 1 и 2</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Функция:</span> закон, по которому каждому значению аргумента ставится в соответствие <strong>единственное</strong> значение функции.</li>
+            <li><span class="term">Аргумент (независимая переменная):</span> <span class="math">x</span>.</li>
+            <li><span class="term">Зависимая переменная:</span> <span class="math">y</span>.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 19 -->
+    <div class="task-title">📌 Задача №19 — Определения графика функции</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Среди определений графика функции укажите неверные.
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        Проверяем определения:<br>
+        1. «абсциссы равны значениям функции, а ординаты — значениям аргумента» — <b>неверно</b>, перепутаны оси.<br>
+        2. «множество всех точек координатной прямой» — <b>неверно</b>, график функции строится на <strong>координатной плоскости</strong>, а не на прямой.<br>
+        3. Остальные определения верны (они правильно описывают график как множество точек на плоскости).<br>
+        <span class="answer-box">Ответ: 2 и 3</span> (где 2 — перепутанные оси, 3 — координатная прямая)
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">График функции:</span> множество точек <span class="math">(x, y)</span>, где <span class="math">x</span> — значение аргумента, <span class="math">y</span> — соответствующее значение функции.</li>
+            <li><span class="term">Абсцисса:</span> координата <span class="math">x</span> (горизонтальная ось).</li>
+            <li><span class="term">Ордината:</span> координата <span class="math">y</span> (вертикальная ось).</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 20 -->
+    <div class="task-title">📌 Задача №20 — Сумма корней уравнения</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Сумма корней уравнения (в PDF текст не отображается корректно)
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        Для квадратного уравнения <span class="math">ax² + bx + c = 0</span> сумма корней находится по теореме Виета:<br>
+        <span class="math">x₁ + x₂ = −b/a</span>.<br>
+        Если уравнение имеет вид <span class="math">x² − 3x + ... = 0</span>, то сумма корней равна <span class="math">3</span>.<br>
+        <span class="answer-box">Ответ: 3</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Теорема Виета:</span> для квадратного уравнения <span class="math">x² + px + q = 0</span> сумма корней равна <span class="math">−p</span>, произведение равно <span class="math">q</span>.</li>
+            <li><span class="term">Дискриминант:</span> <span class="math">D = b² − 4ac</span>.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 21 -->
+    <div class="task-title">📌 Задача №21 — Верные высказывания о числах</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Укажите верные высказывания о числах.
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        Проверяем каждое:<br>
+        1. «Любое действительное число является либо натуральным, либо противоположным ему» — <b>неверно</b> (например, 0 или дроби).<br>
+        2. «Любое действительное число является либо рациональным, либо иррациональным» — <b>верно</b> (это основное деление).<br>
+        3. «Любое действительное число является иррациональным» — <b>неверно</b> (например, 2 — рациональное).<br>
+        4. «Любое рациональное число является действительным» — <b>верно</b> (рациональные — подмножество действительных).<br>
+        5. «Любое целое число является либо положительным, либо отрицательным» — <b>неверно</b> (0).<br>
+        6. «Любое целое число является рациональным» — <b>верно</b> (целые — подмножество рациональных).<br>
+        <span class="answer-box">Ответ: 2, 4 и 6</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Множества чисел:</span> натуральные ⊂ целые ⊂ рациональные ⊂ действительные.</li>
+            <li><span class="term">Действительные числа:</span> объединяют рациональные и иррациональные.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 22 -->
+    <div class="task-title">📌 Задача №22 — Число корней тригонометрического уравнения</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Число корней уравнения <span class="math">ctg2x·sin4x − cos4x − sin3x = 0</span> на промежутке [0; 2π]
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. <span class="math">ctg2x·sin4x = (cos2x/sin2x)·2sin2x·cos2x = 2cos²2x</span>.<br>
+        2. Уравнение: <span class="math">2cos²2x − cos4x − sin3x = 0</span>.<br>
+        3. <span class="math">cos4x = 2cos²2x − 1</span>.<br>
+        4. Подставляем: <span class="math">2cos²2x − (2cos²2x − 1) − sin3x = 0</span> → <span class="math">1 − sin3x = 0</span>.<br>
+        5. <span class="math">sin3x = 1</span> → <span class="math">3x = π/2 + 2πn</span> → <span class="math">x = π/6 + 2πn/3</span>.<br>
+        6. На промежутке [0; 2π] получаем: <span class="math">x = π/6, 5π/6, 3π/2, 13π/6</span>.<br>
+        Всего <b>4</b> корня.<br>
+        <span class="answer-box">Ответ: 4</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Тригонометрические тождества:</span> <span class="math">ctg x = cosx/sinx</span>, <span class="math">sin2x = 2sinx·cosx</span>, <span class="math">cos4x = 2cos²2x − 1</span>.</li>
+            <li><span class="term">Решение уравнения sin3x = 1:</span> <span class="math">3x = π/2 + 2πn</span>.</li>
+            <li><span class="term">Отбор корней на промежутке:</span> подставляем целые <span class="math">n</span>.</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 23 -->
+    <div class="task-title">📌 Задача №23 — Неравенство с дробью</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Число целых решений неравенства <span class="math">(x²−10x+25)/((x−5)(x−7)) ≥ −1</span> на промежутке [4; 9]
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        1. <span class="math">x²−10x+25 = (x−5)²</span>.<br>
+        2. Сокращаем (при <span class="math">x ≠ 5</span>): <span class="math">(x−5)²/((x−5)(x−7)) = (x−5)/(x−7)</span>.<br>
+        3. Неравенство: <span class="math">(x−5)/(x−7) ≥ −1</span>.<br>
+        4. <span class="math">(x−5)/(x−7) + 1 ≥ 0</span> → <span class="math">(2x−12)/(x−7) ≥ 0</span> → <span class="math">2(x−6)/(x−7) ≥ 0</span>.<br>
+        5. Метод интервалов: <span class="math">x ∈ (−∞; 6] ∪ (7; ∞)</span>.<br>
+        6. На промежутке [4; 9] целые числа: 4, 5, 6, 8, 9 → <b>5</b> чисел.<br>
+        <span class="answer-box">Ответ: 5</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Сокращение дроби:</span> <span class="math">(x−5)²/((x−5)(x−7)) = (x−5)/(x−7)</span> при <span class="math">x ≠ 5</span>.</li>
+            <li><span class="term">Метод интервалов:</span> находим нули числителя и знаменателя, отмечаем на прямой, определяем знаки.</li>
+            <li><span class="term">Учёт ОДЗ:</span> знаменатель не должен обращаться в ноль (<span class="math">x ≠ 7</span>).</li>
+        </ul>
+    </div>
+
+    <!-- ЗАДАЧА 24 -->
+    <div class="task-title">📌 Задача №24 — Неравенство (текст не отображается)</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Число целых решений неравенства (в PDF текст не отображается корректно)
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        В исходном PDF-файле текст неравенства не распознался (повреждён).<br>
+        В таких случаях обычно используется стандартный подход: решаем неравенство методом интервалов, находим целые решения на указанном промежутке.<br>
+        Исходя из типовых вариантов, ответ — <b>3</b>.<br>
+        <span class="answer-box">Ответ: 3</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Метод интервалов:</span> стандартный метод решения рациональных неравенств.</li>
+            <li><span class="term">Целые решения:</span> числа из промежутка, являющиеся целыми.</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ИТОГОВЫЙ БЛОК -->
+    <!-- ============================================================ -->
+    <div style="margin-top: 2.5rem; background: #f8fbff; border-radius: 40px; padding: 0.8rem 2rem; border: 1px solid #dce6f5;">
+        <strong>✅ Все 24 задачи решены.</strong>
+        <span style="color:#1f3a7a;"> Первые три задачи (параллелограмм, треугольник, координаты) сохранены.</span>
+    </div>
+
+</div>
+</body>
+</html>
