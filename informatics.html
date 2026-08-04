@@ -203,6 +203,15 @@
             background: #d4edda;
             font-weight: 700;
         }
+        .venn-diagram {
+            display: flex;
+            justify-content: center;
+            margin: 16px 0;
+        }
+        .venn-diagram svg {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -458,13 +467,20 @@
             Дистрибутивность: (A ∨ B) ∧ C = (A ∧ C) ∨ (B ∧ C)
         </div>
 
-        <h4>Круги Эйлера (для запросов)</h4>
-        <p>Для двух множеств: |A ∪ B| = |A| + |B| − |A ∩ B|</p>
-        <p>Для трёх: |A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C|</p>
-
-        <h4>Поиск максимума/минимума в программе</h4>
-        <p>В циклах вида <code>if F(t) <= R</code> ищется <strong>минимум</strong>, при <code>>=</code> — <strong>максимум</strong>.</p>
-        <p>Если используется <code><=</code>, при равенстве запоминается <strong>последнее</strong> значение (правая точка).</p>
+        <h4>Круги Эйлера (для поисковых запросов)</h4>
+        <p>Для решения задач с поисковыми запросами используется <strong>формула включений-исключений</strong>:</p>
+        <div class="formula">
+            |A ∪ B| = |A| + |B| − |A ∩ B|<br>
+            |A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C|
+        </div>
+        <p><strong>Важно:</strong></p>
+        <ul>
+            <li><strong>«И» (&amp;)</strong> — это <strong>пересечение</strong> множеств (∩)</li>
+            <li><strong>«ИЛИ» (|)</strong> — это <strong>объединение</strong> множеств (∪)</li>
+        </ul>
+        <div class="note">
+            <strong>Совет:</strong> Всегда рисуйте круги Эйлера для наглядности. Обозначьте неизвестное пересечение трёх множеств как <b>x</b> и выражайте через него все остальные области.
+        </div>
     </div>
 
     <!-- РАЗБОР ЗАДАЧ -->
@@ -476,20 +492,74 @@
         <p><strong>Решение:</strong> Первые два условия ложны только на прямой y = 78 – 2x справа от y=x. Находим точку пересечения: x = 78 – 2x → 3x = 78 → x = 26. Значит A должно быть 25.</p>
         <p><span class="answer">Ответ: 25</span></p>
 
-        <h4>Задача 2 (СПО, задача 3)</h4>
-        <p><strong>Условие:</strong> Синицы &amp; Воробьи = 420, Голуби &amp; Воробьи = 560, Воробьи &amp; (Голуби | Синицы) = 670. Найти Голуби &amp; Синицы &amp; Воробьи.</p>
-        <p><strong>Решение:</strong> 670 = 420 + 560 – x → x = 310.</p>
-        <p><span class="answer">Ответ: 310</span></p>
+        <h4>Задача 2 (СПО, задача 3) — ПОДРОБНОЕ РЕШЕНИЕ</h4>
+        <p><strong>Условие:</strong> Даны запросы:</p>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Запрос</th><th>Найдено страниц (сотни тысяч)</th></tr>
+                <tr><td>Синицы &amp; Воробьи</td><td>420</td></tr>
+                <tr><td>Голуби &amp; Воробьи</td><td>560</td></tr>
+                <tr><td>Воробьи &amp; (Голуби | Синицы)</td><td>670</td></tr>
+            </table>
+        </div>
+        <p>Найти: <b>Голуби &amp; Синицы &amp; Воробьи</b></p>
 
-        <h4>Задача 3 (Методичка, задача 4)</h4>
-        <p><strong>Условие:</strong> Для какого наименьшего A выражение (2x+3y&gt;30) ∨ (x+y≤A) тождественно истинно?</p>
-        <p><strong>Решение:</strong> Ищем максимум x+y в области 2x+3y≤30. Точка (15,0) даёт x+y=15.</p>
-        <p><span class="answer">Ответ: 15</span></p>
+        <div style="background: #f8f9fa; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Шаг 1. Обозначим множества</strong></p>
+            <ul class="step-list">
+                <li><b>С</b> — Синицы</li>
+                <li><b>Г</b> — Голуби</li>
+                <li><b>В</b> — Воробьи</li>
+            </ul>
+            <p>Нам нужно найти <b>|С ∩ Г ∩ В|</b> — пересечение всех трёх множеств.</p>
+        </div>
 
-        <h4>Задача 4 (Вариант 3, вопрос 7)</h4>
-        <p><strong>Условие:</strong> A,B,C целые. (A≠B) ∧ ((A&gt;B)→(C=B)) ∧ ((B&gt;A)→(C=A)). Найти B, если A=65, C=25.</p>
-        <p><strong>Решение:</strong> Из A≠B и (B&gt;A)→(C=A) с C≠A следует B≤A, значит B&lt;A. Тогда из (A&gt;B)→(C=B) следует C=B → B=25.</p>
-        <p><span class="answer">Ответ: 25</span></p>
+        <div style="background: #f8f9fa; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Шаг 2. Запишем данные в виде формул</strong></p>
+            <ul class="step-list">
+                <li><b>|С ∩ В| = 420</b> (Синицы И Воробьи)</li>
+                <li><b>|Г ∩ В| = 560</b> (Голуби И Воробьи)</li>
+                <li><b>|В ∩ (Г ∪ С)| = 670</b> (Воробьи И (Голуби ИЛИ Синицы))</li>
+            </ul>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Шаг 3. Раскрываем третье выражение</strong></p>
+            <p><b>В ∩ (Г ∪ С)</b> = (В ∩ Г) ∪ (В ∩ С) — это <b>объединение</b> двух множеств.</p>
+            <p>По формуле включений-исключений для двух множеств:</p>
+            <div class="formula">
+                |(В ∩ Г) ∪ (В ∩ С)| = |В ∩ Г| + |В ∩ С| − |(В ∩ Г) ∩ (В ∩ С)|
+            </div>
+            <p><b>(В ∩ Г) ∩ (В ∩ С) = В ∩ Г ∩ С</b> — это <b>пересечение всех трёх</b> (то, что нам нужно найти).</p>
+            <p>Обозначим искомое <b>x = |В ∩ Г ∩ С|</b></p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Шаг 4. Подставляем числа</strong></p>
+            <p>670 = 560 + 420 − x</p>
+            <p>670 = 980 − x</p>
+            <p><b>x = 980 − 670 = 310</b></p>
+        </div>
+
+        <div style="background: #d4edda; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Ответ</strong></p>
+            <p><span class="answer">Ответ: 310</span></p>
+        </div>
+
+        <div class="venn-diagram">
+            <svg width="400" height="300" viewBox="0 0 400 300">
+                <circle cx="160" cy="130" r="90" fill="rgba(255,0,0,0.15)" stroke="red" stroke-width="2"/>
+                <circle cx="240" cy="130" r="90" fill="rgba(0,0,255,0.15)" stroke="blue" stroke-width="2"/>
+                <circle cx="200" cy="200" r="90" fill="rgba(0,255,0,0.15)" stroke="green" stroke-width="2"/>
+                <text x="120" y="120" font-size="14" font-weight="bold" fill="red">С</text>
+                <text x="275" y="120" font-size="14" font-weight="bold" fill="blue">Г</text>
+                <text x="190" y="280" font-size="14" font-weight="bold" fill="green">В</text>
+                <text x="190" y="165" font-size="20" font-weight="bold" fill="#333">x = 310</text>
+                <text x="130" y="145" font-size="12" fill="#333">420</text>
+                <text x="260" y="145" font-size="12" fill="#333">560</text>
+            </svg>
+        </div>
+        <p style="text-align: center; font-size: 0.9rem; color: #4a6a8a;">Круги Эйлера: пересечение всех трёх множеств (x) — искомое значение</p>
     </div>
 
     <!-- ПРИМЕРЫ -->
