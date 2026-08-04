@@ -1146,27 +1146,74 @@
     </ul>
 </div>
 
-    <!-- ЗАДАЧА 13 -->
-    <div class="task-title">📌 Задача №13 — Тригонометрическое уравнение (наименьший корень)</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> Наименьший положительный корень уравнения <span class="math">3cosx − sinx = 1</span>
-    </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        1. Приведём к виду <span class="math">R·cos(x+φ) = 1</span>, где <span class="math">R = √(3²+1²) = √10</span>.<br>
-        2. <span class="math">cosφ = 3/√10</span>, <span class="math">sinφ = 1/√10</span>.<br>
-        3. <span class="math">cos(x+φ) = 1/√10</span> → <span class="math">x+φ = arccos(1/√10) + 2πn</span>.<br>
-        4. Приближённо: <span class="math">arccos(0,316) ≈ 71,6°</span>, <span class="math">φ ≈ 18,4°</span>.<br>
-        5. <span class="math">x ≈ 71,6° − 18,4° = 53,2°</span> → ближайший к <span class="math">60°</span>.<br>
-        <span class="answer-box">Ответ: 60°</span>
-    </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Метод вспомогательного аргумента:</span> <span class="math">a·cosx + b·sinx = R·cos(x−φ)</span>, где <span class="math">R = √(a²+b²)</span>.</li>
-            <li><span class="term">Обратные тригонометрические функции:</span> <span class="math">arccos</span> — угол, косинус которого равен заданному числу.</li>
-        </ul>
-    </div>
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 13 — Тригонометрическое уравнение (наименьший корень) -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №13 — Тригонометрическое уравнение (наименьший корень)</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Наименьшим положительным корнем уравнения <span class="math">√3·cos x − sin x = 1</span> является число
+</div>
+
+<div class="step">
+    <span class="label">Шаг 1.</span>
+    <p>Приводим уравнение к виду <span class="math">R·cos(x+φ) = 1</span> методом вспомогательного аргумента.</p>
+    <p>Здесь <span class="math">a = √3</span>, <span class="math">b = −1</span>.</p>
+    <p class="math-block">R = √(a² + b²) = √(3 + 1) = 2</p>
+    <p class="math-block">cos φ = a/R = √3/2,  sin φ = b/R = −1/2</p>
+    <p>Значит, <span class="math">φ = −π/6</span> (или −30°).</p>
+    <p class="math-block">√3·cos x − sin x = 2·cos(x + π/6)</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 2.</span>
+    <p>Подставляем в исходное уравнение:</p>
+    <p class="math-block">2·cos(x + π/6) = 1</p>
+    <p class="math-block">cos(x + π/6) = 1/2</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 3.</span>
+    <p>Решаем уравнение <span class="math">cos t = 1/2</span>:</p>
+    <p class="math-block">t = ±π/3 + 2πn, n ∈ ℤ</p>
+    <p>В нашем случае <span class="math">t = x + π/6</span>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 4.</span>
+    <p><b>Случай 1 (знак «+»):</b></p>
+    <p class="math-block">x + π/6 = π/3 + 2πn</p>
+    <p class="math-block">x = π/6 + 2πn</p>
+    <p>Наименьший положительный: <span class="math">π/6 = 30°</span>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 5.</span>
+    <p><b>Случай 2 (знак «−»):</b></p>
+    <p class="math-block">x + π/6 = −π/3 + 2πn</p>
+    <p class="math-block">x = −π/2 + 2πn</p>
+    <p>Положительные корни: <span class="math">3π/2 = 270°</span> (при n=1).</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 6.</span>
+    <p>Сравниваем: <span class="math">30° < 270°</span>.</p>
+    <p>Наименьший положительный корень: <span class="math">30°</span>.</p>
+</div>
+
+<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+    <span class="label">✅ Ответ:</span>
+    <span class="answer-box">30°</span>
+    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №1)</span>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Метод вспомогательного аргумента</span> — <span class="math">a·cos x + b·sin x = R·cos(x − φ)</span>, где <span class="math">R = √(a²+b²)</span>.</li>
+        <li><span class="term">Простейшее уравнение</span> — <span class="math">cos t = 1/2</span> → <span class="math">t = ±π/3 + 2πn</span>.</li>
+        <li><span class="term">Отбор корней</span> — выбор наименьшего положительного значения из всех серий решений.</li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 14 -->
     <div class="task-title">📌 Задача №14 — Область определения логарифма</div>
