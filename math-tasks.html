@@ -593,28 +593,113 @@
     </ul>
 </div>
     
-    <!-- ЗАДАЧА 6 -->
-    <div class="task-title">📌 Задача №6 — Угол между радиусами вписанной окружности</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> В равнобедренном четырёхугольнике с вписанной окружностью угол между радиусами OD и OE равен
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 6 — Угол между радиусами вписанной окружности -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №6 — Угол между радиусами вписанной окружности</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Известно, что <span class="math">△ABC</span> равнобедренный, <span class="math">AB = BC</span>, <span class="math">∠B = 76°</span>, точка <span class="math">O</span> является центром вписанной окружности, <span class="math">OD</span> и <span class="math">OE</span> — радиусы этой окружности (<span class="math">D ∈ AB</span>, <span class="math">E ∈ AC</span>). Тогда <span class="math">∠DOE</span> равен
+</div>
+
+<div class="row">
+    <div class="col-solution">
+        <div class="step">
+            <span class="label">Шаг 1.</span>
+            <p>Треугольник <span class="math">ABC</span> равнобедренный с основанием <span class="math">AC</span> (так как <span class="math">AB = BC</span>).</p>
+            <p>Углы при основании равны:</p>
+            <p class="math-block">∠A = ∠C = (180° − 76°) / 2 = 104° / 2 = 52°</p>
+        </div>
+
+        <div class="step">
+            <span class="label">Шаг 2.</span>
+            <p><span class="math">D ∈ AB</span> — точка касания вписанной окружности со стороной <span class="math">AB</span>.</p>
+            <p><span class="math">E ∈ AC</span> — точка касания вписанной окружности со стороной <span class="math">AC</span>.</p>
+            <p>Радиусы <span class="math">OD</span> и <span class="math">OE</span> проведены в точки касания, значит они <b>перпендикулярны</b> соответствующим сторонам:</p>
+            <p class="math-block">OD ⟂ AB, OE ⟂ AC</p>
+        </div>
+
+        <div class="step">
+            <span class="label">Шаг 3.</span>
+            <p>Угол между двумя прямыми равен углу между их перпендикулярами (или смежному с ним).</p>
+            <p>Угол между <span class="math">AB</span> и <span class="math">AC</span> — это угол при вершине <span class="math">A</span>:</p>
+            <p class="math-block">∠BAC = 52°</p>
+            <p>Угол между перпендикулярами к сторонам <span class="math">AB</span> и <span class="math">AC</span> равен:</p>
+            <p class="math-block">∠DOE = 180° − ∠BAC = 180° − 52° = 128°</p>
+        </div>
+
+        <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+            <span class="label">✅ Ответ:</span>
+            <span class="answer-box">128°</span>
+            <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
+        </div>
     </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        1. В описанном четырёхугольнике (в который можно вписать окружность) суммы противоположных сторон равны.<br>
-        2. В равнобедренной трапеции угол между радиусами, проведёнными в соседние точки касания, равен <span class="math">180° − угол при вершине</span>.<br>
-        3. Для классической равнобедренной трапеции с углом при основании 60° получаем:<br>
-        <span class="math">∠DOE = 180° − 60° = 120°</span>.<br>
-        4. Среди предложенных вариантов ближайший — <b>124°</b>.<br>
-        <span class="answer-box">Ответ: 124°</span>
+
+    <div class="col-figure">
+        <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px; width:100%; height:auto;">
+            <!-- Треугольник ABC -->
+            <polygon points="200,30 50,300 350,300" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
+            
+            <!-- Вершины -->
+            <circle cx="200" cy="30" r="5" fill="#0b1e3a" />
+            <text x="208" y="25" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">B</text>
+            
+            <circle cx="50" cy="300" r="5" fill="#0b1e3a" />
+            <text x="20" y="320" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">A</text>
+            
+            <circle cx="350" cy="300" r="5" fill="#0b1e3a" />
+            <text x="358" y="320" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">C</text>
+            
+            <!-- Точки касания D (на AB) и E (на AC) -->
+            <circle cx="115" cy="200" r="5" fill="#b22234" />
+            <text x="95" y="190" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#b22234">D</text>
+            
+            <circle cx="260" cy="200" r="5" fill="#1b7e3a" />
+            <text x="268" y="190" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#1b7e3a">E</text>
+            
+            <!-- Центр вписанной окружности O -->
+            <circle cx="200" cy="200" r="5" fill="#2f6aff" />
+            <text x="208" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#2f6aff">O</text>
+            
+            <!-- Радиусы OD и OE -->
+            <line x1="200" y1="200" x2="115" y2="200" stroke="#2f6aff" stroke-width="2" />
+            <line x1="200" y1="200" x2="260" y2="200" stroke="#2f6aff" stroke-width="2" />
+            
+            <!-- Угол DOE (дуга) -->
+            <path d="M 115 200 A 85 85 0 0 1 260 200" fill="none" stroke="#b22234" stroke-width="2" />
+            <text x="180" y="170" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#b22234">128°</text>
+            
+            <!-- Подписи сторон -->
+            <text x="125" y="280" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1f3a7a">AB</text>
+            <text x="280" y="280" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1f3a7a">BC</text>
+            <text x="180" y="320" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1f3a7a">AC</text>
+            
+            <!-- Угол B = 76° -->
+            <path d="M 200 30 A 30 30 0 0 0 170 50" fill="none" stroke="#b8860b" stroke-width="2" />
+            <text x="155" y="55" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b8860b">76°</text>
+            
+            <!-- Углы при основании 52° -->
+            <path d="M 50 300 A 25 25 0 0 0 70 280" fill="none" stroke="#b8860b" stroke-width="1.5" />
+            <text x="40" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="13" fill="#b8860b">52°</text>
+            
+            <path d="M 350 300 A 25 25 0 0 1 330 280" fill="none" stroke="#b8860b" stroke-width="1.5" />
+            <text x="305" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="13" fill="#b8860b">52°</text>
+        </svg>
+        <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
+            <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">∠DOE = 128°</span>
+        </div>
     </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Вписанная окружность:</span> окружность, касающаяся всех сторон многоугольника.</li>
-            <li><span class="term">Радиус, проведённый в точку касания:</span> перпендикулярен стороне.</li>
-            <li><span class="term">Угол между радиусами:</span> равен <span class="math">180° − центральный угол</span> (в четырёхугольнике).</li>
-        </ul>
-    </div>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Вписанная окружность</span> — окружность, касающаяся всех сторон треугольника.</li>
+        <li><span class="term">Радиус, проведённый в точку касания</span>, перпендикулярен стороне треугольника.</li>
+        <li><span class="term">Угол между двумя перпендикулярами</span> к сторонам угла равен либо самому углу, либо дополняет его до <span class="math">180°</span>.</li>
+        <li><span class="term">Сумма углов треугольника</span> равна <span class="math">180°</span>.</li>
+        <li>В <span class="term">равнобедренном треугольнике</span> углы при основании равны.</li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 7 -->
     <div class="task-title">📌 Задача №7 — Угол наклона боковой грани пирамиды</div>
