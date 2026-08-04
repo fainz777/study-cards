@@ -989,29 +989,83 @@
         </ul>
     </div>
 
-    <!-- ЗАДАЧА 11 -->
-    <div class="task-title">📌 Задача №11 — Тригонометрическое уравнение</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> Множество решений уравнения <span class="math">sin2x·tgx + 1 = 3sinx</span>
-    </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        1. <span class="math">sin2x·tgx = 2sinx·cosx·(sinx/cosx) = 2sin²x</span>.<br>
-        2. Уравнение: <span class="math">2sin²x + 1 = 3sinx</span> → <span class="math">2sin²x − 3sinx + 1 = 0</span>.<br>
-        3. Замена <span class="math">t = sinx</span>: <span class="math">2t² − 3t + 1 = 0</span> → корни <span class="math">t = 1</span> и <span class="math">t = 0,5</span>.<br>
-        4. <span class="math">sinx = 1</span> → <span class="math">x = π/2 + 2πn</span>.<br>
-        5. <span class="math">sinx = 0,5</span> → <span class="math">x = π/6 + 2πn</span> или <span class="math">x = 5π/6 + 2πn</span>.<br>
-        6. Объединяем: <span class="math">x = (−1)ⁿ·π/6 + πn</span>.<br>
-        <span class="answer-box">Ответ: (−1)ⁿ·π/6 + πn</span>
-    </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Тригонометрические тождества:</span> <span class="math">sin2x = 2sinx·cosx</span>, <span class="math">tgx = sinx/cosx</span>.</li>
-            <li><span class="term">Квадратное уравнение относительно sinx:</span> решается заменой переменной.</li>
-            <li><span class="term">Общие решения простейших уравнений:</span> <span class="math">sinx = 1</span> → <span class="math">x = π/2 + 2πn</span>; <span class="math">sinx = 0,5</span> → <span class="math">x = (−1)ⁿ·π/6 + πn</span>.</li>
-        </ul>
-    </div>
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 11 — Тригонометрическое уравнение (подробно) -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №11 — Тригонометрическое уравнение</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Множество решений уравнения <span class="math">sin 2x · tg x + 1 = 3 sin x</span> находится по формуле
+</div>
+
+<div class="step">
+    <span class="label">Шаг 1.</span>
+    <p>Упрощаем первое слагаемое:</p>
+    <p class="math-block">sin 2x · tg x = (2 sin x cos x) · (sin x / cos x) = 2 sin² x</p>
+    <p style="font-size:0.9rem; color:#1f3a7a;">(использованы формулы: <span class="math">sin 2x = 2 sin x cos x</span> и <span class="math">tg x = sin x / cos x</span>)</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 2.</span>
+    <p>Подставляем в исходное уравнение:</p>
+    <p class="math-block">2 sin² x + 1 = 3 sin x</p>
+    <p>Переносим всё в одну часть:</p>
+    <p class="math-block">2 sin² x − 3 sin x + 1 = 0</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 3.</span>
+    <p>Делаем замену: <span class="math">t = sin x</span>.</p>
+    <p class="math-block">2t² − 3t + 1 = 0</p>
+    <p>Находим дискриминант:</p>
+    <p class="math-block">D = (−3)² − 4·2·1 = 9 − 8 = 1</p>
+    <p>Корни:</p>
+    <p class="math-block">t₁ = (3−1)/(2·2) = 2/4 = 1/2</p>
+    <p class="math-block">t₂ = (3+1)/(2·2) = 4/4 = 1</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 4.</span>
+    <p>Возвращаемся к <span class="math">sin x</span>:</p>
+    <p><span class="math">sin x = 1</span> или <span class="math">sin x = 1/2</span></p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 5.</span>
+    <p>Решаем <span class="math">sin x = 1</span>:</p>
+    <p class="math-block">x = π/2 + 2πn, n ∈ ℤ</p>
+    <p>Но <span class="math">x = π/2</span> не входит в ОДЗ, так как <span class="math">tg x</span> в этой точке не определён.</p>
+    <p style="font-size:0.9rem; color:#1f3a7a;">(ОДЗ: <span class="math">cos x ≠ 0</span>, то есть <span class="math">x ≠ π/2 + πn</span>)</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 6.</span>
+    <p>Решаем <span class="math">sin x = 1/2</span>:</p>
+    <p class="math-block">x = π/6 + 2πn или x = 5π/6 + 2πn, n ∈ ℤ</p>
+    <p>Компактная запись:</p>
+    <p class="math-block">x = (−1)ⁿ · π/6 + πn, n ∈ ℤ</p>
+</div>
+
+<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+    <span class="label">✅ Ответ:</span>
+    <span class="answer-box">(−1)ⁿ · π/6 + πn, n ∈ ℤ</span>
+    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Синус двойного угла:</span> <span class="math">sin 2x = 2 sin x cos x</span>.</li>
+        <li><span class="term">Определение тангенса:</span> <span class="math">tg x = sin x / cos x</span>.</li>
+        <li><span class="term">Область определения:</span> <span class="math">tg x</span> определён только при <span class="math">cos x ≠ 0</span>, то есть <span class="math">x ≠ π/2 + πn</span>.</li>
+        <li><span class="term">Решение квадратного уравнения</span> относительно <span class="math">sin x</span> через замену <span class="math">t = sin x</span>.</li>
+        <li><span class="term">Простейшие уравнения:</span>
+            <ul>
+                <li><span class="math">sin x = 1</span> → <span class="math">x = π/2 + 2πn</span></li>
+                <li><span class="math">sin x = 1/2</span> → <span class="math">x = (−1)ⁿ·π/6 + πn</span></li>
+            </ul>
+        </li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 12 -->
     <div class="task-title">📌 Задача №12 — Неравенство с параметром</div>
