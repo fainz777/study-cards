@@ -1626,29 +1626,106 @@
     </ul>
 </div>
 
-    <!-- ЗАДАЧА 23 -->
-    <div class="task-title">📌 Задача №23 — Неравенство с дробью</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> Число целых решений неравенства <span class="math">(x²−10x+25)/((x−5)(x−7)) ≥ −1</span> на промежутке [4; 9]
-    </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        1. <span class="math">x²−10x+25 = (x−5)²</span>.<br>
-        2. Сокращаем (при <span class="math">x ≠ 5</span>): <span class="math">(x−5)²/((x−5)(x−7)) = (x−5)/(x−7)</span>.<br>
-        3. Неравенство: <span class="math">(x−5)/(x−7) ≥ −1</span>.<br>
-        4. <span class="math">(x−5)/(x−7) + 1 ≥ 0</span> → <span class="math">(2x−12)/(x−7) ≥ 0</span> → <span class="math">2(x−6)/(x−7) ≥ 0</span>.<br>
-        5. Метод интервалов: <span class="math">x ∈ (−∞; 6] ∪ (7; ∞)</span>.<br>
-        6. На промежутке [4; 9] целые числа: 4, 5, 6, 8, 9 → <b>5</b> чисел.<br>
-        <span class="answer-box">Ответ: 5</span>
-    </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Сокращение дроби:</span> <span class="math">(x−5)²/((x−5)(x−7)) = (x−5)/(x−7)</span> при <span class="math">x ≠ 5</span>.</li>
-            <li><span class="term">Метод интервалов:</span> находим нули числителя и знаменателя, отмечаем на прямой, определяем знаки.</li>
-            <li><span class="term">Учёт ОДЗ:</span> знаменатель не должен обращаться в ноль (<span class="math">x ≠ 7</span>).</li>
-        </ul>
-    </div>
+   <!-- ============================================================ -->
+<!-- ЗАДАЧА 23 — Неравенство с дробью -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №23 — Неравенство с дробью</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Число целых решений неравенства <span class="math">(x²−10x+25)/((x−5)(x−7)) ≥ −1</span> на промежутке <span class="math">[4; 9]</span> равно
+</div>
+
+<div class="step">
+    <span class="label">Шаг 1.</span>
+    <p>Замечаем, что числитель — это квадрат разности:</p>
+    <p class="math-block">x² − 10x + 25 = (x − 5)²</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 2.</span>
+    <p>Сокращаем дробь (при <span class="math">x ≠ 5</span>):</p>
+    <p class="math-block">(x−5)²/((x−5)(x−7)) = (x−5)/(x−7)</p>
+    <p style="font-size:0.9rem; color:#1f3a7a;">ОДЗ: <span class="math">x ≠ 5</span>, <span class="math">x ≠ 7</span></p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 3.</span>
+    <p>Переносим всё в одну часть:</p>
+    <p class="math-block">(x−5)/(x−7) + 1 ≥ 0</p>
+    <p class="math-block">(2x−12)/(x−7) ≥ 0</p>
+    <p class="math-block">2(x−6)/(x−7) ≥ 0</p>
+    <p>Так как 2 > 0, знак неравенства не меняется:</p>
+    <p class="math-block">(x−6)/(x−7) ≥ 0</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 4.</span>
+    <p>Решаем методом интервалов.</p>
+    <p>Нули числителя: <span class="math">x = 6</span></p>
+    <p>Нули знаменателя: <span class="math">x = 7</span> (не входит в ОДЗ)</p>
+    <table style="border-collapse: collapse; margin: 10px 0;">
+        <tr style="background: #eaf1fd;">
+            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Интервал</th>
+            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Знак</th>
+            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Результат</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">(−∞; 6]</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">+</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">подходит</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">(6; 7)</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">−</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">не подходит</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">(7; +∞)</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">+</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">подходит</td>
+        </tr>
+    </table>
+    <p class="math-block">x ∈ (−∞; 6] ∪ (7; +∞)</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 5.</span>
+    <p>Находим целые решения на промежутке <span class="math">[4; 9]</span>.</p>
+    <p>Пересечение: <span class="math">[4; 9] ∩ ((−∞; 6] ∪ (7; +∞))</span></p>
+    <ul>
+        <li><span class="math">[4; 9] ∩ (−∞; 6] = [4; 6]</span> → целые: 4, 5, 6</li>
+        <li><span class="math">[4; 9] ∩ (7; +∞) = (7; 9]</span> → целые: 8, 9</li>
+    </ul>
+    <p>Всего: <span class="math">4, 5, 6, 8, 9</span> → <b>5</b> чисел.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 6.</span>
+    <p><b>Проверка:</b></p>
+    <ul>
+        <li><span class="math">x = 4</span>: подходит ✅</li>
+        <li><span class="math">x = 5</span>: не входит в ОДЗ ❌</li>
+        <li><span class="math">x = 6</span>: подходит ✅</li>
+        <li><span class="math">x = 8</span>: подходит ✅</li>
+        <li><span class="math">x = 9</span>: подходит ✅</li>
+    </ul>
+</div>
+
+<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+    <span class="label">✅ Ответ:</span>
+    <span class="answer-box">5</span>
+    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Квадрат разности:</span> <span class="math">(a−b)² = a² − 2ab + b²</span>.</li>
+        <li><span class="term">Сокращение дроби:</span> допустимо только при условии, что сокращаемый множитель не равен нулю.</li>
+        <li><span class="term">ОДЗ:</span> знаменатель дроби не может быть равен нулю.</li>
+        <li><span class="term">Метод интервалов:</span> используется для решения рациональных неравенств.</li>
+        <li><span class="term">Проверка корней:</span> обязательна, так как при сокращении могли появиться посторонние корни.</li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 24 -->
     <div class="task-title">📌 Задача №24 — Неравенство (текст не отображается)</div>
