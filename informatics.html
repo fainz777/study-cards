@@ -108,6 +108,7 @@
             padding: 8px 12px;
             border: 1px solid #d5dfec;
             background: white;
+            text-align: center;
         }
         .table-wrap { overflow-x: auto; }
         .formula {
@@ -187,13 +188,28 @@
         .example-item:last-child {
             border-bottom: none;
         }
+        .step-list {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+        .step-list li {
+            margin-bottom: 10px;
+        }
+        .highlight-cell {
+            background: #fff3cd;
+            font-weight: 700;
+        }
+        .final-row {
+            background: #d4edda;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>
         📘 Полный справочник по информатике
-        <small>ТУСУР (ИКТ) + СПО (Основы ИТ) + методичка 2020</small>
+        <small>ТУСУР (ИКТ) + СПО + методичка 2020</small>
     </h1>
     <p style="font-size: 1.1rem; margin-top: -8px; color: #2c405a;">
         Теория → разбор задач из билетов → примеры для самостоятельной подготовки (ответы скрыты)
@@ -287,10 +303,83 @@
         <p><strong>Решение:</strong> 2110<sub>3</sub> = 2·3³+1·3²+1·3 = 66<sub>10</sub>; 48<sub>9</sub> = 4·9+8 = 44<sub>10</sub>. 66 – 44 + 5 = 27.</p>
         <p><span class="answer">Ответ: 27</span></p>
 
-        <h4>Задача 5 (Вариант 6, вопрос 4 — сложная)</h4>
-        <p><strong>Условие:</strong> Значение выражения 3·729⁴ + 2·243⁵ – 4·81⁶ + 27⁷ – 2·9⁸ – 6561 записали в 27-ричной системе. Сколько цифр больше 13?</p>
-        <p><strong>Решение:</strong> Приводим к виду a·27<sup>k</sup>. Получаем: 5·27⁸ + 27⁷ – 6·27⁵ – 9·27². В 27-ричной записи: 5 0 26 20 26 26 18 0 ... Цифры >13: 26,20,26,26,18 → 5 штук.</p>
-        <p><span class="answer">Ответ: 5</span></p>
+        <h4>Задача 5 (Вариант 6, вопрос 4) — ПОДРОБНОЕ РЕШЕНИЕ</h4>
+        <p><strong>Условие:</strong> Значение выражения <br>
+        <b>3·729⁴ + 2·243⁵ – 4·81⁶ + 27⁷ – 2·9⁸ – 6561</b> <br>
+        записали в системе счисления с основанием <b>27</b>. Сколько цифр в этой записи имеют значение <b>больше 13</b>?</p>
+
+        <div style="background: #f8f9fa; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Шаг 1. Приводим все слагаемые к виду a·27<sup>k</sup></strong></p>
+            <ul class="step-list">
+                <li><b>3·729⁴</b> = 3·(27²)⁴ = <b>3·27⁸</b></li>
+                <li><b>2·243⁵</b> = 2·(9·27)⁵ = 2·9⁵·27⁵ = 2·3¹⁰·27⁵ = 2·3·(3³)³·27⁵ = <b>6·27⁸</b></li>
+                <li><b>–4·81⁶</b> = –4·(3·27)⁶ = –4·3⁶·27⁶ = –4·(3³)²·27⁶ = <b>–4·27⁸</b></li>
+                <li><b>+27⁷</b> = <b>1·27⁷</b></li>
+                <li><b>–2·9⁸</b> = –2·3¹⁶ = –2·3·(3³)⁵ = <b>–6·27⁵</b></li>
+                <li><b>–6561</b> = –9·27·27 = <b>–9·27²</b></li>
+            </ul>
+            <p><strong>Собираем коэффициенты:</strong> <b>5·27⁸ + 1·27⁷ – 6·27⁵ – 9·27²</b></p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Шаг 2. Записываем в виде таблицы разрядов</strong></p>
+            <p>В 27-ричной системе разряд <b>k</b> — это 27<sup>k</sup>. Старший разряд — 8-й (27⁸).</p>
+            <div class="table-wrap">
+                <table>
+                    <tr><th>Разряд (27<sup>k</sup>)</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr>
+                    <tr><th>Начальное значение</th><td>5</td><td>1</td><td>0</td><td>−6</td><td>0</td><td>0</td><td>−9</td><td>0</td><td>0</td></tr>
+                </table>
+            </div>
+            <p>Отрицательные цифры — это сигнал, что нужно сделать <b>заём</b> из старших разрядов.</p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Шаг 3. Выполняем вычитание (заём из старших разрядов)</strong></p>
+            <p>В 27-ричной системе <b>заём 1 из соседнего старшего разряда = +27</b> к текущему.</p>
+
+            <p><b>3а. Исправляем разряд 5 (27⁵):</b> там стоит −6.</p>
+            <ul class="step-list">
+                <li>В разряде 6 (27⁶) — 0, в разряде 7 — 1.</li>
+                <li>Занимаем 1 из разряда 7 → там становится 0.</li>
+                <li>Эта единица превращается в 27 в разряде 6.</li>
+                <li>Из разряда 6 забираем 1 (остаётся 26) и отдаём 27 в разряд 5.</li>
+                <li>В разряде 5: 27 − 6 = <b>21</b>.</li>
+            </ul>
+            <div class="table-wrap">
+                <table>
+                    <tr><th>Разряд</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr>
+                    <tr><th>После шага 3а</th><td>5</td><td>0</td><td>26</td><td>21</td><td>0</td><td>0</td><td>−9</td><td>0</td><td>0</td></tr>
+                </table>
+            </div>
+
+            <p><b>3б. Исправляем разряд 2 (27²):</b> там стоит −9.</p>
+            <ul class="step-list">
+                <li>В разрядах 3 и 4 — нули. Занимаем из разряда 5 (там 21).</li>
+                <li>Из разряда 5 забираем 1 → остаётся 20.</li>
+                <li>Эта единица → 27 в разряд 4.</li>
+                <li>Из разряда 4 забираем 1 → остаётся 26, отдаём 27 в разряд 3.</li>
+                <li>Из разряда 3 забираем 1 → остаётся 26, отдаём 27 в разряд 2.</li>
+                <li>В разряде 2: 27 − 9 = <b>18</b>.</li>
+            </ul>
+        </div>
+
+        <div style="background: #d4edda; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Шаг 4. Итоговая 27-ричная запись числа</strong></p>
+            <div class="table-wrap">
+                <table>
+                    <tr><th>Разряд</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr>
+                    <tr class="final-row"><th>Итог</th><td>5</td><td>0</td><td>26</td><td>20</td><td>26</td><td>26</td><td>18</td><td>0</td><td>0</td></tr>
+                </table>
+            </div>
+            <p>Число в 27-ричной системе: <b>5 0 26 20 26 26 18 0 0</b><sub>27</sub></p>
+        </div>
+
+        <div style="background: #fff3cd; padding: 16px 20px; border-radius: 12px; margin: 12px 0;">
+            <p><strong>▶ Шаг 5. Считаем цифры, которые больше 13</strong></p>
+            <p>Цифры в записи: <b>5, 0, 26, 20, 26, 26, 18, 0, 0</b></p>
+            <p>Цифры > 13: <b>26, 20, 26, 26, 18</b> → <b>ровно 5 штук</b>.</p>
+            <p><span class="answer">Ответ: 5</span></p>
+        </div>
     </div>
 
     <!-- ПРИМЕРЫ ДЛЯ САМОСТОЯТЕЛЬНОЙ ПОДГОТОВКИ -->
