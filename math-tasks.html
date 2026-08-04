@@ -1260,28 +1260,103 @@
         </ul>
     </div>
 
-    <!-- ЗАДАЧА 16 -->
-    <div class="task-title">📌 Задача №16 — Наименьшее общее кратное (НОК)</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> Найдите наименьшее общее кратное чисел 60, 252 и 264.
-    </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        1. Разложим на простые множители:<br>
-        <span class="math">60 = 2²·3·5</span>.<br>
-        <span class="math">252 = 2²·3²·7</span>.<br>
-        <span class="math">264 = 2³·3·11</span>.<br>
-        2. НОК — это произведение всех простых множителей в максимальных степенях:<br>
-        <span class="math">2³·3²·5·7·11 = 8·9·5·7·11 = 27720</span>.<br>
-        <span class="answer-box">Ответ: 27720</span>
-    </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">НОК:</span> наименьшее число, которое делится на все данные числа.</li>
-            <li><span class="term">Алгоритм:</span> берём все простые множители в максимальной степени.</li>
-        </ul>
-    </div>
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 15 — Наибольший общий делитель (НОД) -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №15 — Наибольший общий делитель (НОД)</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Найдите наибольший делитель чисел 448 и 656.
+</div>
+
+<div class="step">
+    <span class="label">Шаг 1.</span>
+    <p><b>Что такое НОД?</b></p>
+    <p>НОД (наибольший общий делитель) двух чисел — это <b>самое большое</b> натуральное число, на которое <b>оба</b> данных числа делятся без остатка.</p>
+    <p>Например, для чисел 12 и 18: общие делители — 1, 2, 3, 6, наибольший — <b>6</b>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 2.</span>
+    <p>Разложим число <b>448</b> на простые множители.</p>
+    <p>Последовательно делим на наименьшее простое число 2:</p>
+    <ul>
+        <li>448 ÷ 2 = 224</li>
+        <li>224 ÷ 2 = 112</li>
+        <li>112 ÷ 2 = 56</li>
+        <li>56 ÷ 2 = 28</li>
+        <li>28 ÷ 2 = 14</li>
+        <li>14 ÷ 2 = 7</li>
+        <li>7 — простое число</li>
+    </ul>
+    <p class="math-block">448 = 2·2·2·2·2·2·7 = 2⁶ · 7</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 3.</span>
+    <p>Разложим число <b>656</b> на простые множители.</p>
+    <p>Последовательно делим на 2:</p>
+    <ul>
+        <li>656 ÷ 2 = 328</li>
+        <li>328 ÷ 2 = 164</li>
+        <li>164 ÷ 2 = 82</li>
+        <li>82 ÷ 2 = 41</li>
+        <li>41 — простое число</li>
+    </ul>
+    <p class="math-block">656 = 2·2·2·2·41 = 2⁴ · 41</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 4.</span>
+    <p>Сравниваем разложения:</p>
+    <table style="border-collapse: collapse; margin: 10px 0;">
+        <tr style="background: #eaf1fd;">
+            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Число</th>
+            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Разложение</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">448</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">2⁶ · 7</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">656</td>
+            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">2⁴ · 41</td>
+        </tr>
+    </table>
+    <p>Общий множитель — только <b>2</b>.</p>
+    <p>Берём <b>наименьшую</b> степень: <span class="math">2^{min(6,4)} = 2^4 = 16</span>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 5.</span>
+    <p><b>Проверка:</b></p>
+    <ul>
+        <li>448 ÷ 16 = 28 (делится без остатка) ✅</li>
+        <li>656 ÷ 16 = 41 (делится без остатка) ✅</li>
+    </ul>
+    <p>Число больше 16 не подходит (например, 32 не делит 656 без остатка).</p>
+</div>
+
+<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+    <span class="label">✅ Ответ:</span>
+    <span class="answer-box">16</span>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Простые числа</span> — числа, которые делятся только на 1 и на себя (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, ...).</li>
+        <li><span class="term">Разложение на простые множители</span> — представление числа в виде произведения простых чисел.</li>
+        <li><span class="term">НОД</span> — наибольшее число, на которое делятся все данные числа.</li>
+        <li><span class="term">Правило нахождения НОД через разложение:</span>
+            <ol style="margin-top: 0.3rem;">
+                <li>Разложить каждое число на простые множители.</li>
+                <li>Найти общие множители.</li>
+                <li>Взять каждый общий множитель в <b>наименьшей</b> степени.</li>
+                <li>Перемножить полученные множители.</li>
+            </ol>
+        </li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 17 -->
     <div class="task-title">📌 Задача №17 — Обои (периметр комнаты)</div>
