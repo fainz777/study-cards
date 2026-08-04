@@ -824,32 +824,119 @@
     </ul>
 </div>
 
-    <!-- ЗАДАЧА 8 -->
-    <div class="task-title">📌 Задача №8 — Площадь поверхности шара</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> На поверхности шара даны точки C, D, E: CD=7, DE=8, CE=9. Расстояние от центра шара до плоскости треугольника = 1. Найдите площадь поверхности шара.
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 8 — Площадь поверхности шара -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №8 — Площадь поверхности шара</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Известно, что на поверхности шара даны три точки: C, D и E такие, что CD = 7 см, DE = 8 см, CE = 9 см. Расстояние от центра шара до плоскости треугольника CDE равно 1 см. Тогда площадь поверхности шара будет равна
+</div>
+
+<div class="row">
+    <div class="col-solution">
+        <div class="step">
+            <span class="label">Шаг 1.</span>
+            <p>Найдём площадь треугольника <span class="math">CDE</span> по формуле Герона.</p>
+            <p>Стороны: <span class="math">a = 7</span>, <span class="math">b = 8</span>, <span class="math">c = 9</span>.</p>
+            <p>Полупериметр: <span class="math">p = (7+8+9)/2 = 12</span>.</p>
+            <p class="math-block">S = √(12·5·4·3) = √720 = 12√5 см²</p>
+        </div>
+
+        <div class="step">
+            <span class="label">Шаг 2.</span>
+            <p>Найдём радиус описанной окружности треугольника <span class="math">R₀</span>.</p>
+            <p class="math-block">R₀ = abc/(4S) = 7·8·9/(4·12√5) = 504/(48√5) = 21/(2√5) см</p>
+        </div>
+
+        <div class="step">
+            <span class="label">Шаг 3.</span>
+            <p>Найдём радиус шара <span class="math">R</span>.</p>
+            <p>Расстояние от центра шара до плоскости: <span class="math">d = 1</span> см.</p>
+            <p>По теореме Пифагора: <span class="math">R² = R₀² + d²</span>.</p>
+            <p class="math-block">R² = (21/(2√5))² + 1² = 441/20 + 1 = 461/20</p>
+        </div>
+
+        <div class="step">
+            <span class="label">Шаг 4.</span>
+            <p>Площадь поверхности шара:</p>
+            <p class="math-block">S = 4πR² = 4π·461/20 = 92,2π см²</p>
+        </div>
+
+        <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+            <span class="label">✅ Ответ:</span>
+            <span class="answer-box">92,2π см²</span>
+        </div>
     </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        1. По формуле Герона находим площадь треугольника CDE:<br>
-        <span class="math">p = (7+8+9)/2 = 12</span>.<br>
-        <span class="math">S = √(12·5·4·3) = √720 = 12√5</span>.<br>
-        2. Радиус описанной окружности треугольника:<br>
-        <span class="math">R₀ = abc/(4S) = 7·8·9/(4·12√5) = 504/(48√5) = 10,5/√5</span>.<br>
-        3. Радиус шара по теореме Пифагора (расстояние от центра до плоскости d=1):<br>
-        <span class="math">R = √(R₀² + d²) = √((10,5/√5)² + 1²) = √(110,25/5 + 1) = √(22,05 + 1) = √23,05</span>.<br>
-        4. Площадь поверхности шара: <span class="math">S = 4πR² = 4π·23,05 = 92,2π</span>.<br>
-        <span class="answer-box">Ответ: 92,2π</span>
+
+    <div class="col-figure">
+        <svg viewBox="0 0 450 400" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px; width:100%; height:auto;">
+            <!-- Шар (окружность) -->
+            <circle cx="225" cy="200" r="160" fill="#e8f0fe" stroke="#1f3a7a" stroke-width="2.5" />
+            
+            <!-- Центр шара O -->
+            <circle cx="225" cy="200" r="5" fill="#b22234" />
+            <text x="230" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#b22234">O</text>
+            
+            <!-- Плоскость сечения (эллипс) -->
+            <ellipse cx="225" cy="200" rx="120" ry="60" fill="none" stroke="#2f6aff" stroke-width="2" stroke-dasharray="6 4" />
+            
+            <!-- Центр окружности сечения O₁ -->
+            <circle cx="225" cy="200" r="4" fill="#1b7e3a" />
+            <text x="230" y="215" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#1b7e3a">O₁</text>
+            
+            <!-- Расстояние от центра шара до плоскости (d) -->
+            <line x1="225" y1="200" x2="225" y2="260" stroke="#b8860b" stroke-width="2" stroke-dasharray="4 4" />
+            <text x="175" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b8860b">d = 1</text>
+            
+            <!-- Радиус шара R -->
+            <line x1="225" y1="200" x2="340" y2="130" stroke="#b22234" stroke-width="2.5" />
+            <text x="285" y="155" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b22234">R</text>
+            
+            <!-- Радиус описанной окружности треугольника R₀ -->
+            <line x1="225" y1="200" x2="225" y2="140" stroke="#1b7e3a" stroke-width="2.5" />
+            <text x="235" y="165" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1b7e3a">R₀</text>
+            
+            <!-- Треугольник CDE (на плоскости сечения) -->
+            <polygon points="145,200 225,260 305,200" fill="none" stroke="#b22234" stroke-width="2" />
+            
+            <!-- Вершины треугольника -->
+            <circle cx="145" cy="200" r="4" fill="#b22234" />
+            <text x="125" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">C</text>
+            
+            <circle cx="225" cy="260" r="4" fill="#b22234" />
+            <text x="225" y="280" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">D</text>
+            
+            <circle cx="305" cy="200" r="4" fill="#b22234" />
+            <text x="310" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">E</text>
+            
+            <!-- Стороны треугольника -->
+            <text x="175" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#b22234">CD = 7</text>
+            <text x="260" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#b22234">DE = 8</text>
+            <text x="220" y="175" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#b22234">CE = 9</text>
+            
+            <!-- Легенда -->
+            <rect x="10" y="10" width="200" height="100" rx="10" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
+            <text x="20" y="30" font-size="12" fill="#0b1e3a">● O — центр шара</text>
+            <text x="20" y="48" font-size="12" fill="#0b1e3a">● O₁ — центр сечения</text>
+            <text x="20" y="66" font-size="12" fill="#0b1e3a">● R — радиус шара</text>
+            <text x="20" y="84" font-size="12" fill="#0b1e3a">● R₀ — радиус описанной окружности</text>
+            <text x="20" y="102" font-size="12" fill="#0b1e3a">● d — расстояние от O до плоскости</text>
+        </svg>
+        <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
+            <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">S = 92,2π см²</span>
+        </div>
     </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Формула Герона:</span> <span class="math">S = √(p(p−a)(p−b)(p−c))</span>, где <span class="math">p</span> — полупериметр.</li>
-            <li><span class="term">Радиус описанной окружности:</span> <span class="math">R₀ = abc/(4S)</span>.</li>
-            <li><span class="term">Теорема Пифагора в пространстве:</span> <span class="math">R² = R₀² + d²</span>, где <span class="math">d</span> — расстояние от центра шара до плоскости сечения.</li>
-            <li><span class="term">Площадь поверхности шара:</span> <span class="math">S = 4πR²</span>.</li>
-        </ul>
-    </div>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Формула Герона</span> — <span class="math">S = √(p(p−a)(p−b)(p−c))</span>, где <span class="math">p</span> — полупериметр.</li>
+        <li><span class="term">Радиус описанной окружности</span> — <span class="math">R₀ = abc/(4S)</span>.</li>
+        <li><span class="term">Теорема Пифагора в пространстве</span> — <span class="math">R² = R₀² + d²</span>, где <span class="math">d</span> — расстояние от центра шара до плоскости сечения.</li>
+        <li><span class="term">Площадь поверхности шара</span> — <span class="math">S = 4πR²</span>.</li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 9 -->
     <div class="task-title">📌 Задача №9 — Задача на смеси (растворы)</div>
