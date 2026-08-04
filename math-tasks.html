@@ -701,28 +701,128 @@
     </ul>
 </div>
 
-    <!-- ЗАДАЧА 7 -->
-    <div class="task-title">📌 Задача №7 — Угол наклона боковой грани пирамиды</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> В правильной четырёхугольной пирамиде сторона основания 4, высота 2. Найдите угол наклона боковой грани к плоскости основания.
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 7 — Угол наклона боковой грани пирамиды -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №7 — Угол наклона боковой грани пирамиды</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Известно, что в правильной четырёхугольной пирамиде сторона основания равна 4, а высота равна 2. Тогда угол наклона боковой грани к плоскости основания будет равен
+</div>
+
+<div class="row">
+    <div class="col-solution">
+        <div class="step">
+            <span class="label">Шаг 1.</span>
+            <p>В правильной четырёхугольной пирамиде:</p>
+            <ul>
+                <li>основание — <b>квадрат</b> со стороной <span class="math">a = 4</span>;</li>
+                <li>вершина проецируется в <b>центр</b> основания;</li>
+                <li>все боковые грани — <b>равные равнобедренные треугольники</b>.</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <span class="label">Шаг 2.</span>
+            <p>Найдём <b>апофему</b> <span class="math">l</span> — высоту боковой грани.</p>
+            <p>Рассмотрим прямоугольный треугольник, образованный:</p>
+            <ul>
+                <li>высотой пирамиды <span class="math">h = 2</span>,</li>
+                <li>радиусом вписанной окружности основания <span class="math">r = a/2 = 2</span>,</li>
+                <li>апофемой <span class="math">l</span> (гипотенуза).</li>
+            </ul>
+            <p>По теореме Пифагора:</p>
+            <p class="math-block">l = √(h² + r²) = √(2² + 2²) = √8 = 2√2</p>
+        </div>
+
+        <div class="step">
+            <span class="label">Шаг 3.</span>
+            <p>Угол наклона боковой грани — это угол между апофемой <span class="math">l</span> и её проекцией на основание (радиусом <span class="math">r</span>).</p>
+            <p>В прямоугольном треугольнике:</p>
+            <p class="math-block">cos α = r / l = 2 / (2√2) = 1/√2</p>
+            <p>Отсюда:</p>
+            <p class="math-block">α = arccos(1/√2) = 45°</p>
+        </div>
+
+        <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+            <span class="label">✅ Ответ:</span>
+            <span class="answer-box">45°</span>
+        </div>
     </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        1. В правильной четырёхугольной пирамиде основание — квадрат со стороной 4.<br>
-        2. Радиус вписанной окружности основания (расстояние от центра до стороны) равен <span class="math">a/2 = 2</span>.<br>
-        3. Апофема (высота боковой грани): <span class="math">l = √(h² + r²) = √(2² + 2²) = 2√2</span>.<br>
-        4. Угол между боковой гранью и основанием — это угол между апофемой и радиусом вписанной окружности:<br>
-        <span class="math">cos α = r/l = 2/(2√2) = 1/√2</span> → <span class="math">α = 45°</span>.<br>
-        <span class="answer-box">Ответ: 45°</span>
+
+    <div class="col-figure">
+        <svg viewBox="0 0 450 400" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px; width:100%; height:auto;">
+            <!-- Основание (квадрат) в изометрии -->
+            <polygon points="225,320 80,260 225,200 370,260" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
+            
+            <!-- Вершина пирамиды -->
+            <circle cx="225" cy="120" r="5" fill="#b22234" />
+            <text x="230" y="110" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#b22234">S</text>
+            
+            <!-- Вершины основания -->
+            <circle cx="225" cy="320" r="5" fill="#0b1e3a" />
+            <text x="230" y="340" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">A</text>
+            
+            <circle cx="80" cy="260" r="5" fill="#0b1e3a" />
+            <text x="50" y="260" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">B</text>
+            
+            <circle cx="225" cy="200" r="5" fill="#0b1e3a" />
+            <text x="230" y="190" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">C</text>
+            
+            <circle cx="370" cy="260" r="5" fill="#0b1e3a" />
+            <text x="378" y="260" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">D</text>
+            
+            <!-- Центр основания O -->
+            <circle cx="225" cy="260" r="5" fill="#1b7e3a" />
+            <text x="230" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#1b7e3a">O</text>
+            
+            <!-- Ребра пирамиды -->
+            <line x1="225" y1="120" x2="225" y2="320" stroke="#1f3a7a" stroke-width="2" />
+            <line x1="225" y1="120" x2="80" y2="260" stroke="#1f3a7a" stroke-width="2" />
+            <line x1="225" y1="120" x2="225" y2="200" stroke="#1f3a7a" stroke-width="2" />
+            <line x1="225" y1="120" x2="370" y2="260" stroke="#1f3a7a" stroke-width="2" />
+            
+            <!-- Высота пирамиды SO -->
+            <line x1="225" y1="120" x2="225" y2="260" stroke="#b22234" stroke-width="2.5" stroke-dasharray="6 4" />
+            <text x="180" y="195" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b22234">h = 2</text>
+            
+            <!-- Апофема (высота боковой грани SBC) -->
+            <line x1="225" y1="120" x2="225" y2="200" stroke="#2f6aff" stroke-width="2.5" />
+            <text x="170" y="165" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#2f6aff">l = 2√2</text>
+            
+            <!-- Радиус вписанной окружности основания (проекция апофемы) -->
+            <line x1="225" y1="260" x2="225" y2="200" stroke="#1b7e3a" stroke-width="2" stroke-dasharray="4 4" />
+            <text x="240" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1b7e3a">r = 2</text>
+            
+            <!-- Угол наклона (между апофемой и её проекцией) -->
+            <path d="M 225 200 A 20 20 0 0 0 210 215" fill="none" stroke="#b8860b" stroke-width="2" />
+            <text x="195" y="215" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b8860b">α = 45°</text>
+            
+            <!-- Подписи сторон основания -->
+            <text x="150" y="295" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#1f3a7a">a = 4</text>
+            <text x="295" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#1f3a7a">a = 4</text>
+            
+            <!-- Легенда -->
+            <rect x="10" y="10" width="180" height="80" rx="10" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
+            <text x="20" y="30" font-size="12" fill="#0b1e3a">● S — вершина пирамиды</text>
+            <text x="20" y="48" font-size="12" fill="#0b1e3a">● O — центр основания</text>
+            <text x="20" y="66" font-size="12" fill="#0b1e3a">● SO — высота (h = 2)</text>
+            <text x="20" y="82" font-size="12" fill="#0b1e3a">● l — апофема</text>
+        </svg>
+        <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
+            <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">Угол наклона = 45°</span>
+        </div>
     </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Правильная пирамида:</span> в основании правильный многоугольник, вершина проецируется в центр основания.</li>
-            <li><span class="term">Апофема:</span> высота боковой грани, проведённая из вершины пирамиды.</li>
-            <li><span class="term">Угол наклона грани:</span> угол между плоскостью грани и плоскостью основания (измеряется как угол между апофемой и её проекцией на основание).</li>
-        </ul>
-    </div>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Правильная четырёхугольная пирамида</span> — пирамида, в основании которой лежит квадрат, а вершина проецируется в центр основания.</li>
+        <li><span class="term">Апофема</span> — высота боковой грани, проведённая из вершины пирамиды к стороне основания.</li>
+        <li><span class="term">Угол наклона боковой грани</span> — угол между плоскостью боковой грани и плоскостью основания. Измеряется как угол между апофемой и её проекцией на основание.</li>
+        <li><span class="term">Теорема Пифагора</span> — в прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов.</li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 8 -->
     <div class="task-title">📌 Задача №8 — Площадь поверхности шара</div>
