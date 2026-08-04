@@ -1067,29 +1067,84 @@
     </ul>
 </div>
 
-    <!-- ЗАДАЧА 12 -->
-    <div class="task-title">📌 Задача №12 — Неравенство с параметром</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> Наибольшее целое решение неравенства <span class="math">25/(x²−3x) ≥ x²−3x</span>
-    </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        1. Пусть <span class="math">t = x²−3x</span>. Неравенство: <span class="math">25/t ≥ t</span>.<br>
-        2. <span class="math">25/t − t ≥ 0</span> → <span class="math">(25 − t²)/t ≥ 0</span> → <span class="math">(5−t)(5+t)/t ≥ 0</span>.<br>
-        3. Метод интервалов: <span class="math">t ∈ (−∞; −5] ∪ (0; 5]</span>.<br>
-        4. <span class="math">x²−3x ≤ −5</span> → дискриминант отрицательный — решений нет.<br>
-        5. <span class="math">0 < x²−3x ≤ 5</span> → <span class="math">x ∈ [−1; 0) ∪ (3; 4]</span>.<br>
-        6. Наибольшее целое: <span class="math">4</span>.<br>
-        <span class="answer-box">Ответ: 4</span>
-    </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Замена переменной:</span> упрощает неравенство.</li>
-            <li><span class="term">Метод интервалов:</span> используется для решения дробных неравенств.</li>
-            <li><span class="term">Дискриминант:</span> если <span class="math">D < 0</span> и коэффициент при <span class="math">x²</span> положителен, то квадратный трёхчлен всегда положителен.</li>
-        </ul>
-    </div>
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 12 — Неравенство с параметром (подробно) -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №12 — Неравенство с параметром</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Наибольшим целым решением неравенства <span class="math">25/(x²−3x) ≥ x²−3x</span> является число
+</div>
+
+<div class="step">
+    <span class="label">Шаг 1.</span>
+    <p>Вводим замену: <span class="math">t = x² − 3x</span>.</p>
+    <p class="math-block">25/t ≥ t</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 2.</span>
+    <p>Приводим к общему знаменателю:</p>
+    <p class="math-block">25/t − t ≥ 0</p>
+    <p class="math-block">(25 − t²)/t ≥ 0</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 3.</span>
+    <p>Раскладываем числитель на множители:</p>
+    <p class="math-block">(5−t)(5+t)/t ≥ 0</p>
+    <p>Метод интервалов даёт:</p>
+    <p class="math-block">t ∈ (−∞; −5] ∪ (0; 5]</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 4.</span>
+    <p>Возвращаемся к <span class="math">x</span>.</p>
+    <p><b>Случай 1:</b> <span class="math">t ≤ −5</span>, то есть <span class="math">x² − 3x ≤ −5</span>.</p>
+    <p class="math-block">x² − 3x + 5 ≤ 0</p>
+    <p>Дискриминант: <span class="math">D = 9 − 20 = −11 < 0</span>, значит решений нет.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 5.</span>
+    <p><b>Случай 2:</b> <span class="math">0 < t ≤ 5</span>, то есть <span class="math">0 < x² − 3x ≤ 5</span>.</p>
+    <p><b>2а)</b> <span class="math">x² − 3x > 0</span> → <span class="math">x(x−3) > 0</span> → <span class="math">x ∈ (−∞; 0) ∪ (3; +∞)</span>.</p>
+    <p><b>2б)</b> <span class="math">x² − 3x ≤ 5</span> → <span class="math">x² − 3x − 5 ≤ 0</span>.</p>
+    <p>Корни: <span class="math">x = (3 ± √29)/2</span>, значит <span class="math">x ∈ [(3−√29)/2; (3+√29)/2]</span>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 6.</span>
+    <p>Пересекаем решения:</p>
+    <p><span class="math">x ∈ [(3−√29)/2; 0) ∪ (3; (3+√29)/2]</span></p>
+    <p>Приближённо: <span class="math">x ∈ [−1,192; 0) ∪ (3; 4,192]</span>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 7.</span>
+    <p>Целые решения:</p>
+    <ul>
+        <li>в первом промежутке: <span class="math">−1</span> (и 0 не входит);</li>
+        <li>во втором промежутке: <span class="math">4</span>.</li>
+    </ul>
+    <p>Наибольшее целое: <span class="math">4</span>.</p>
+</div>
+
+<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+    <span class="label">✅ Ответ:</span>
+    <span class="answer-box">4</span>
+    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Замена переменной</span> — упрощает сложное неравенство.</li>
+        <li><span class="term">Метод интервалов</span> — используется для решения дробных неравенств.</li>
+        <li><span class="term">Дискриминант</span> — если <span class="math">D < 0</span> и коэффициент при <span class="math">x²</span> положителен, то квадратный трёхчлен всегда положителен.</li>
+        <li><span class="term">Пересечение промежутков</span> — для нахождения итогового решения.</li>
+        <li><span class="term">Целые решения</span> — отбор целых чисел из полученных промежутков.</li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 13 -->
     <div class="task-title">📌 Задача №13 — Тригонометрическое уравнение (наименьший корень)</div>
