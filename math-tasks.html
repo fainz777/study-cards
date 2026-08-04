@@ -1422,25 +1422,84 @@
         </ul>
     </div>
 
-    <!-- ЗАДАЧА 20 -->
-    <div class="task-title">📌 Задача №20 — Сумма корней уравнения</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> Сумма корней уравнения (в PDF текст не отображается корректно)
-    </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        Для квадратного уравнения <span class="math">ax² + bx + c = 0</span> сумма корней находится по теореме Виета:<br>
-        <span class="math">x₁ + x₂ = −b/a</span>.<br>
-        Если уравнение имеет вид <span class="math">x² − 3x + ... = 0</span>, то сумма корней равна <span class="math">3</span>.<br>
-        <span class="answer-box">Ответ: 3</span>
-    </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Теорема Виета:</span> для квадратного уравнения <span class="math">x² + px + q = 0</span> сумма корней равна <span class="math">−p</span>, произведение равно <span class="math">q</span>.</li>
-            <li><span class="term">Дискриминант:</span> <span class="math">D = b² − 4ac</span>.</li>
-        </ul>
-    </div>
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 20 — Сумма корней уравнения -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №20 — Сумма корней уравнения</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Сумма корней уравнения <span class="math">(3x²−5x−2)/(x−2) = x²+6x−3</span> равна
+</div>
+
+<div class="step">
+    <span class="label">Шаг 1.</span>
+    <p>Находим ОДЗ: <span class="math">x − 2 ≠ 0</span> → <span class="math">x ≠ 2</span>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 2.</span>
+    <p>Умножаем обе части на <span class="math">x − 2</span>:</p>
+    <p class="math-block">3x² − 5x − 2 = (x² + 6x − 3)(x − 2)</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 3.</span>
+    <p>Раскрываем скобки в правой части:</p>
+    <p class="math-block">(x² + 6x − 3)(x − 2) = x³ + 4x² − 15x + 6</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 4.</span>
+    <p>Приводим уравнение к стандартному виду:</p>
+    <p class="math-block">x³ + x² − 10x + 8 = 0</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 5.</span>
+    <p>Проверяем целые корни среди делителей 8: <span class="math">±1, ±2, ±4, ±8</span>.</p>
+    <p>Подходит <span class="math">x = 1</span>, так как <span class="math">1 + 1 − 10 + 8 = 0</span>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 6.</span>
+    <p>Делим многочлен на <span class="math">(x − 1)</span>:</p>
+    <p class="math-block">x³ + x² − 10x + 8 = (x − 1)(x² + 2x − 8)</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 7.</span>
+    <p>Решаем <span class="math">x² + 2x − 8 = 0</span>:</p>
+    <p class="math-block">D = 4 + 32 = 36</p>
+    <p class="math-block">x₂ = 2,  x₃ = −4</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 8.</span>
+    <p>Проверяем ОДЗ: <span class="math">x = 2</span> не подходит (знаменатель обращается в ноль).</p>
+    <p>Корни: <span class="math">1</span> и <span class="math">−4</span>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 9.</span>
+    <p>Сумма корней: <span class="math">1 + (−4) = −3</span>.</p>
+</div>
+
+<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+    <span class="label">✅ Ответ:</span>
+    <span class="answer-box">−3</span>
+    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №2)</span>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">ОДЗ</span> — знаменатель не может быть равен нулю.</li>
+        <li><span class="term">Умножение на знаменатель</span> — позволяет избавиться от дроби.</li>
+        <li><span class="term">Кубическое уравнение</span> — решается подбором целого корня среди делителей свободного члена.</li>
+        <li><span class="term">Схема Горнера</span> — метод деления многочлена на <span class="math">(x − корень)</span>.</li>
+        <li><span class="term">Квадратное уравнение</span> — <span class="math">D = b² − 4ac</span>, <span class="math">x = (−b ± √D)/(2a)</span>.</li>
+        <li><span class="term">Проверка ОДЗ</span> — обязательна, так как при умножении могли появиться посторонние корни.</li>
+    </ul>
+</div>
 
     <!-- ЗАДАЧА 21 -->
     <div class="task-title">📌 Задача №21 — Верные высказывания о числах</div>
