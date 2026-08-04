@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полный справочник | Информатика и ИКТ (ТУСУР + СПО)</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #f0f5fa;
+            margin: 0;
+            padding: 20px;
+            color: #1a2634;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0, 20, 40, 0.08);
+            padding: 36px 44px;
+        }
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            border-bottom: 4px solid #1a73e8;
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            background: #eaf0f8;
+            padding: 4px 18px;
+            border-radius: 40px;
+            color: #1f3a5f;
+        }
+        h2 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin-top: 2.8rem;
+            border-bottom: 2px dashed #b8cce0;
+            padding-bottom: 8px;
+            color: #0b2b4a;
+        }
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.8rem 0;
+            color: #144272;
+        }
+        h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 1.4rem 0 0.4rem 0;
+            color: #1f4a7a;
+        }
+        .card {
+            background: #f9fcff;
+            border-radius: 20px;
+            padding: 18px 24px;
+            border: 1px solid #e2ebf5;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            margin-bottom: 24px;
+        }
+        .card-theory {
+            background: #f2f7fe;
+            border-left: 6px solid #1a73e8;
+        }
+        .card-solution {
+            background: #fafff5;
+            border-left: 6px solid #34a853;
+        }
+        .card-example {
+            background: #fffbf0;
+            border-left: 6px solid #f9ab00;
+        }
+        .badge {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 14px;
+            border-radius: 30px;
+            margin-right: 8px;
+        }
+        .badge-green { background: #34a853; }
+        .badge-gold { background: #f9ab00; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.95rem;
+        }
+        th {
+            background: #e6edf6;
+            color: #0f2a44;
+            font-weight: 600;
+            padding: 10px 12px;
+            border: 1px solid #ced8e6;
+        }
+        td {
+            padding: 8px 12px;
+            border: 1px solid #d5dfec;
+            background: white;
+        }
+        .table-wrap { overflow-x: auto; }
+        .formula {
+            background: #e8f0fa;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.05rem;
+            margin: 12px 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+            border-left: 4px solid #1a73e8;
+        }
+        .note {
+            background: #fef7e9;
+            border-radius: 14px;
+            padding: 12px 20px;
+            border-left: 5px solid #f5b342;
+            margin: 14px 0;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 16px; }
+            .two-col { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+        }
+        .source {
+            font-size: 0.85rem;
+            color: #4a6a8a;
+            margin-top: 4px;
+        }
+        .answer {
+            font-weight: 700;
+            color: #1a5a2a;
+        }
+        .hidden-answer {
+            display: none;
+            margin-top: 6px;
+            padding: 8px 14px;
+            background: #e6f5e6;
+            border-radius: 10px;
+            border-left: 4px solid #2e7d32;
+        }
+        .hidden-answer.show {
+            display: block;
+        }
+        .btn-answer {
+            background: #1a73e8;
+            border: none;
+            color: white;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-answer:hover {
+            background: #1558b0;
+            transform: scale(1.02);
+        }
+        .btn-answer.gold {
+            background: #f9ab00;
+        }
+        .btn-answer.gold:hover {
+            background: #d99a00;
+        }
+        .example-item {
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #dce4ed;
+        }
+        .example-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>
+        📘 Полный справочник по информатике
+        <small>ТУСУР (ИКТ) + СПО (Основы ИТ) + методичка 2020</small>
+    </h1>
+    <p style="font-size: 1.1rem; margin-top: -8px; color: #2c405a;">
+        Теория → разбор задач из билетов → примеры для самостоятельной подготовки (ответы скрыты)
+    </p>
+
+    <!-- ============================================================ -->
+    <!-- ТЕМА 1. СИСТЕМЫ СЧИСЛЕНИЯ -->
+    <h2>🔢 1. Системы счисления</h2>
+
+    <!-- ТЕОРИЯ -->
+    <div class="card card-theory">
+        <h3>📌 Теория</h3>
+        <p><strong>Система счисления</strong> — способ записи чисел с помощью цифр. Основание (q) — количество цифр в алфавите.</p>
+        <ul>
+            <li><strong>Двоичная (2)</strong>: 0, 1</li>
+            <li><strong>Троичная (3)</strong>: 0, 1, 2</li>
+            <li><strong>Четверичная (4)</strong>: 0, 1, 2, 3</li>
+            <li><strong>Пятеричная (5)</strong>: 0–4</li>
+            <li><strong>Семеричная (7)</strong>: 0–6</li>
+            <li><strong>Восьмеричная (8)</strong>: 0–7</li>
+            <li><strong>Десятичная (10)</strong>: 0–9</li>
+            <li><strong>Шестнадцатеричная (16)</strong>: 0–9, A(10), B(11), C(12), D(13), E(14), F(15)</li>
+        </ul>
+
+        <h4>Перевод в десятичную</h4>
+        <div class="formula">a<sub>n-1</sub>...a<sub>1</sub>a<sub>0</sub><sub>(q)</sub> = Σ a<sub>i</sub> · q<sup>i</sup></div>
+        <p><strong>Пример:</strong> 2032<sub>4</sub> = 2·4³ + 0·4² + 3·4¹ + 2·4⁰ = 128 + 0 + 12 + 2 = 142<sub>10</sub></p>
+
+        <h4>Быстрый перевод через двоичную</h4>
+        <ul>
+            <li><strong>8 ↔ 2</strong>: каждая 8-ричная цифра → 3 бита (триада)</li>
+            <li><strong>16 ↔ 2</strong>: каждая 16-ричная цифра → 4 бита (тетрада)</li>
+        </ul>
+
+        <div class="table-wrap">
+            <table>
+                <caption>Таблица триад (8 ↔ 2)</caption>
+                <tr><th>8-рич.</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr>
+                <tr><th>2-ич.</th><td>000</td><td>001</td><td>010</td><td>011</td><td>100</td><td>101</td><td>110</td><td>111</td></tr>
+            </table>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <caption>Таблица тетрад (16 ↔ 2)</caption>
+                <tr><th>16-рич.</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+                <tr><th>2-ич.</th><td>0000</td><td>0001</td><td>0010</td><td>0011</td><td>0100</td><td>0101</td><td>0110</td><td>0111</td><td>1000</td><td>1001</td><td>1010</td><td>1011</td><td>1100</td><td>1101</td><td>1110</td><td>1111</td></tr>
+            </table>
+        </div>
+
+        <h4>Перевод из десятичной в q-ичную</h4>
+        <p>Последовательно делим число на q, записывая остатки в обратном порядке.</p>
+        <p><strong>Пример:</strong> 22<sub>10</sub> → 22/2=11 (0), 11/2=5 (1), 5/2=2 (1), 2/2=1 (0), 1/2=0 (1) → 10110<sub>2</sub>.</p>
+
+        <h4>Количество чисел в интервале</h4>
+        <p>Для строгого неравенства A &lt; N &lt; B: <strong>B – A – 1</strong> чисел.</p>
+        <p>Если левая граница включена (≤): <strong>B – A</strong> (при строгой правой).</p>
+        <p>Если обе границы включены: <strong>B – A + 1</strong>.</p>
+
+        <h4>Арифметика в системах счисления</h4>
+        <ul>
+            <li><strong>Сложение:</strong> поразрядно, с переносом, когда сумма ≥ основания.</li>
+            <li><strong>Вычитание:</strong> с заёмом из старшего разряда (вес заёма = основание).</li>
+            <li><strong>Умножение/деление:</strong> аналогично десятичной системе.</li>
+        </ul>
+        <div class="note">
+            <strong>Важно:</strong> при работе с 8-ричной системой десяток = 8, в 16-ричной — 16.
+        </div>
+    </div>
+
+    <!-- РАЗБОР ЗАДАЧ -->
+    <div class="card card-solution">
+        <h3>🧩 Разбор задач из билетов</h3>
+
+        <h4>Задача 1 (Вариант 1, вопрос 1)</h4>
+        <p><strong>Условие:</strong> Сколько значащих нулей в двоичной записи восьмеричного числа 157535<sub>8</sub>?</p>
+        <p><strong>Решение:</strong> Заменяем каждую 8-ричную цифру триадой: 1→001, 5→101, 7→111, 5→101, 3→011, 5→101. Получаем 001 101 111 101 011 101<sub>2</sub>. Убираем ведущие нули → 1101111101011101<sub>2</sub>. Считаем нули: 4.</p>
+        <p><span class="answer">Ответ: 4</span></p>
+
+        <h4>Задача 2 (Вариант 1, вопрос 2)</h4>
+        <p><strong>Условие:</strong> Сколько натуральных N, для которых A8<sub>16</sub> &lt; N &lt; 10110001<sub>2</sub>?</p>
+        <p><strong>Решение:</strong> A8<sub>16</sub> = 1010 1000<sub>2</sub> = 168<sub>10</sub>. 10110001<sub>2</sub> = 177<sub>10</sub>. 177 – 168 – 1 = 8.</p>
+        <p><span class="answer">Ответ: 8</span></p>
+
+        <h4>Задача 3 (СПО, задача 1)</h4>
+        <p><strong>Условие:</strong> Как запишется число 4E5<sub>16</sub> в восьмеричной системе?</p>
+        <p><strong>Решение:</strong> 4E5<sub>16</sub> → 0100 1110 0101<sub>2</sub> → 001 001 110 010 101<sub>2</sub> → 1 1 6 2 5<sub>8</sub> = 11625<sub>8</sub>.</p>
+        <p><span class="answer">Ответ: 11625<sub>8</sub></span></p>
+
+        <h4>Задача 4 (Методичка, задача 1)</h4>
+        <p><strong>Условие:</strong> Вычислите 2110<sub>3</sub> – 48<sub>9</sub> + 5<sub>10</sub>.</p>
+        <p><strong>Решение:</strong> 2110<sub>3</sub> = 2·3³+1·3²+1·3 = 66<sub>10</sub>; 48<sub>9</sub> = 4·9+8 = 44<sub>10</sub>. 66 – 44 + 5 = 27.</p>
+        <p><span class="answer">Ответ: 27</span></p>
+
+        <h4>Задача 5 (Вариант 6, вопрос 4 — сложная)</h4>
+        <p><strong>Условие:</strong> Значение выражения 3·729⁴ + 2·243⁵ – 4·81⁶ + 27⁷ – 2·9⁸ – 6561 записали в 27-ричной системе. Сколько цифр больше 13?</p>
+        <p><strong>Решение:</strong> Приводим к виду a·27<sup>k</sup>. Получаем: 5·27⁸ + 27⁷ – 6·27⁵ – 9·27². В 27-ричной записи: 5 0 26 20 26 26 18 0 ... Цифры >13: 26,20,26,26,18 → 5 штук.</p>
+        <p><span class="answer">Ответ: 5</span></p>
+    </div>
+
+    <!-- ПРИМЕРЫ ДЛЯ САМОСТОЯТЕЛЬНОЙ ПОДГОТОВКИ -->
+    <div class="card card-example">
+        <h3>📝 Примеры для самостоятельной подготовки</h3>
+        <p><em>Нажмите на кнопку, чтобы увидеть ответ.</em></p>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Переведите 165<sub>10</sub> в двоичную систему.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">10100101<sub>2</sub> <span class="source">(Методичка, §4.1.2, №1)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Переведите 1101100<sub>2</sub> в десятичную.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">108<sub>10</sub> <span class="source">(Методичка, §4.1.2, №2)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Переведите 100101110<sub>2</sub> в 8-ричную и 16-ричную.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">456<sub>8</sub>, 12E<sub>16</sub> <span class="source">(Методичка, §4.1.2, №3)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Сколько нулей в двоичной записи четверичного числа 2121213<sub>4</sub>?</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">6 <span class="source">(Открытый билет, вариант 6, вопрос 1)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Найдите среднее арифметическое 244<sub>8</sub>, 85<sub>16</sub>, 1001011<sub>2</sub>.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">123 <span class="source">(Открытый билет, вариант 4, вопрос 5)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Вычислите 2025<sub>9</sub> + 2025<sub>7</sub> − 2023<sub>4</sub>.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">2047 <span class="source">(Открытый билет, вариант 4, вопрос 3)</span></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ТЕМА 2. ЛОГИКА И АЛГОРИТМЫ -->
+    <h2>🧠 2. Логика и алгоритмы</h2>
+
+    <!-- ТЕОРИЯ -->
+    <div class="card card-theory">
+        <h3>📌 Теория</h3>
+        <h4>Логические операции</h4>
+        <ul>
+            <li><strong>Отрицание (¬)</strong>: меняет 0↔1</li>
+            <li><strong>Конъюнкция (∧, И, &amp;)</strong>: 1 только если оба 1</li>
+            <li><strong>Дизъюнкция (∨, ИЛИ, |)</strong>: 0 только если оба 0</li>
+            <li><strong>Импликация (→)</strong>: ложна только при 1→0 (A→B = ¬A ∨ B)</li>
+            <li><strong>Эквивалентность (≡, ~)</strong>: истина при одинаковых значениях</li>
+        </ul>
+        <div class="table-wrap">
+            <table>
+                <tr><th>A</th><th>B</th><th>¬A</th><th>A∧B</th><th>A∨B</th><th>A→B</th></tr>
+                <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+                <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+            </table>
+        </div>
+
+        <h4>Законы алгебры логики</h4>
+        <div class="formula">
+            Законы де Моргана:<br>
+            ¬(A ∨ B) = ¬A ∧ ¬B<br>
+            ¬(A ∧ B) = ¬A ∨ ¬B<br><br>
+            Импликация: A → B = ¬A ∨ B<br>
+            Дистрибутивность: (A ∨ B) ∧ C = (A ∧ C) ∨ (B ∧ C)
+        </div>
+
+        <h4>Круги Эйлера (для запросов)</h4>
+        <p>Для двух множеств: |A ∪ B| = |A| + |B| − |A ∩ B|</p>
+        <p>Для трёх: |A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C|</p>
+
+        <h4>Поиск максимума/минимума в программе</h4>
+        <p>В циклах вида <code>if F(t) <= R</code> ищется <strong>минимум</strong>, при <code>>=</code> — <strong>максимум</strong>.</p>
+        <p>Если используется <code><=</code>, при равенстве запоминается <strong>последнее</strong> значение (правая точка).</p>
+    </div>
+
+    <!-- РАЗБОР ЗАДАЧ -->
+    <div class="card card-solution">
+        <h3>🧩 Разбор задач из билетов</h3>
+
+        <h4>Задача 1 (Вариант 1, вопрос 7)</h4>
+        <p><strong>Условие:</strong> Для какого наибольшего A выражение (2x+y≠78) ∨ (x&lt;y) ∨ (A&lt;x) тождественно истинно?</p>
+        <p><strong>Решение:</strong> Первые два условия ложны только на прямой y = 78 – 2x справа от y=x. Находим точку пересечения: x = 78 – 2x → 3x = 78 → x = 26. Значит A должно быть 25.</p>
+        <p><span class="answer">Ответ: 25</span></p>
+
+        <h4>Задача 2 (СПО, задача 3)</h4>
+        <p><strong>Условие:</strong> Синицы &amp; Воробьи = 420, Голуби &amp; Воробьи = 560, Воробьи &amp; (Голуби | Синицы) = 670. Найти Голуби &amp; Синицы &amp; Воробьи.</p>
+        <p><strong>Решение:</strong> 670 = 420 + 560 – x → x = 310.</p>
+        <p><span class="answer">Ответ: 310</span></p>
+
+        <h4>Задача 3 (Методичка, задача 4)</h4>
+        <p><strong>Условие:</strong> Для какого наименьшего A выражение (2x+3y&gt;30) ∨ (x+y≤A) тождественно истинно?</p>
+        <p><strong>Решение:</strong> Ищем максимум x+y в области 2x+3y≤30. Точка (15,0) даёт x+y=15.</p>
+        <p><span class="answer">Ответ: 15</span></p>
+
+        <h4>Задача 4 (Вариант 3, вопрос 7)</h4>
+        <p><strong>Условие:</strong> A,B,C целые. (A≠B) ∧ ((A&gt;B)→(C=B)) ∧ ((B&gt;A)→(C=A)). Найти B, если A=65, C=25.</p>
+        <p><strong>Решение:</strong> Из A≠B и (B&gt;A)→(C=A) с C≠A следует B≤A, значит B&lt;A. Тогда из (A&gt;B)→(C=B) следует C=B → B=25.</p>
+        <p><span class="answer">Ответ: 25</span></p>
+    </div>
+
+    <!-- ПРИМЕРЫ -->
+    <div class="card card-example">
+        <h3>📝 Примеры для самостоятельной подготовки</h3>
+        <p><em>Нажмите на кнопку, чтобы увидеть ответ.</em></p>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Сколько решений у уравнения (K∧L) ∨ (M∧N) = 1?</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">7 <span class="source">(Методичка, задача 5)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> На отрезках P=[5,15], Q=[12,18] найти отрезок A для формулы ((x∈A)→(x∈P)) ∨ (x∈Q).</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">[2,21] <span class="source">(Методичка, §4.3.2, №1)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Сколько целых A, при которых ((x&lt;6)→(x²&lt;A)) ∧ ((y²≤A)→(y≤6)) тождественно истинно?</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">10 <span class="source">(Методичка, §4.3.2, №6)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Для какого наибольшего A выражение (2x+y≠78) ∨ (2x&lt;y) ∨ (A&lt;x) тождественно истинно?</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">19 <span class="source">(Открытый билет, вариант 5, вопрос 7)</span></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ТЕМА 3. КОДИРОВАНИЕ -->
+    <h2>📨 3. Кодирование информации</h2>
+
+    <div class="card card-theory">
+        <h3>📌 Теория</h3>
+        <h4>Условие Фано</h4>
+        <p><strong>Ни один код не должен быть началом другого кода.</strong> Обеспечивает однозначное декодирование.</p>
+        <p>Для поиска кода строят <strong>двоичное дерево</strong>: от корня 0 и 1, ветви — следующие биты.</p>
+        <p><strong>Обратное условие Фано:</strong> ни один код не является окончанием другого.</p>
+
+        <h4>Количество сообщений</h4>
+        <div class="formula">Q = N<sup>k</sup> (равновероятные символы)</div>
+        <p>Если есть ограничения — используем <strong>комбинаторику</strong>:</p>
+        <ul>
+            <li><strong>Сочетания:</strong> C(n, k) = n! / (k!·(n−k)!)</li>
+            <li><strong>Размещения с повторениями:</strong> N<sup>k</sup></li>
+            <li><strong>Правило произведения:</strong> если есть m₁ вариантов для 1-й позиции, m₂ для 2-й и т.д., то общее число = m₁·m₂·…</li>
+        </ul>
+    </div>
+
+    <div class="card card-solution">
+        <h3>🧩 Разбор задач</h3>
+
+        <h4>Задача 1 (Вариант 1, вопрос 9)</h4>
+        <p><strong>Условие:</strong> Коды: Т=111, О=0, П=100. Найти код для С.</p>
+        <p><strong>Решение:</strong> Строим дерево. Заняты 0, 100, 111. Свободны 101 и 110. Выбираем 101 (меньше).</p>
+        <p><span class="answer">Ответ: 101</span></p>
+
+        <h4>Задача 2 (СПО, задача 2)</h4>
+        <p><strong>Условие:</strong> А=10, Б=110, В=111, Г=001. Найти код для Д.</p>
+        <p><strong>Решение:</strong> Код 0 нельзя (начало 001). Код 01 — подходит (не является началом 001).</p>
+        <p><span class="answer">Ответ: 01</span></p>
+
+        <h4>Задача 3 (Методичка, пример 2)</h4>
+        <p><strong>Условие:</strong> Кодировка: Е=0, Д=1, Г=2, О=3, Л=4 (в двоичном виде). Закодировать ГОЛОЛЕД.</p>
+        <p><strong>Решение:</strong> Г=10, О=11, Л=100, О=11, Л=100, Е=0, Д=1 → 1011100111000001<sub>2</sub> → B9C1<sub>16</sub>.</p>
+        <p><span class="answer">Ответ: B9C1<sub>16</sub></span></p>
+
+        <h4>Задача 4 (Вариант 3, вопрос 9)</h4>
+        <p><strong>Условие:</strong> Коды: A=00, B=11, C=10, D=010. Найти код для E.</p>
+        <p><strong>Решение:</strong> Строим дерево. Заняты 00, 10, 11, 010. Свободен 011.</p>
+        <p><span class="answer">Ответ: 011</span></p>
+    </div>
+
+    <div class="card card-example">
+        <h3>📝 Примеры для самостоятельной подготовки</h3>
+        <p><em>Нажмите на кнопку, чтобы увидеть ответ.</em></p>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Для букв А=0, Б=10 найти минимальную сумму длин для В, Г, Д, Е (условие Фано).</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">9 <span class="source">(Методичка, §4.2.2, №1)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Сколько 5-буквенных слов из букв З, И, М, А, где ровно одна гласная?</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">405 <span class="source">(Методичка, §4.2.2, №7)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Сколько кодов из букв А, Б, В длиной 6, где А не больше одного раза?</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">2·3⁵ = 486 <span class="source">(Методичка, §4.2.2, №10)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Для кодирования букв М, И, Р, А использовать 00–11. Закодировать РАМА в 16-ричном виде.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">B3<sub>16</sub> <span class="source">(Открытый билет, вариант 6, вопрос 9)</span></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ТЕМА 4. ТЕОРИЯ АЛГОРИТМОВ -->
+    <h2>⚙️ 4. Теория алгоритмов</h2>
+
+    <div class="card card-theory">
+        <h3>📌 Теория</h3>
+        <ul>
+            <li><strong>Исполнители:</strong> Калькулятор (прибавь, умножь), Редактор (замена), Черепашка (графика), Чертёжник (смещение).</li>
+            <li><strong>Рекурсия:</strong> функция вызывает саму себя. Для вычисления значения используем <strong>подстановку</strong> или <strong>таблицу значений</strong>.</li>
+            <li><strong>Алгоритмы с двоичной записью:</strong> дописывание битов по чётности, удаление последнего разряда и т.п. Решаются <strong>с конца</strong>.</li>
+            <li><strong>Комбинаторика программ:</strong> число программ = число перестановок команд с учётом сочетаний: C(n, k) = n! / (k!·(n−k)!).</li>
+        </ul>
+    </div>
+
+    <div class="card card-solution">
+        <h3>🧩 Разбор задач</h3>
+
+        <h4>Задача 1 (Вариант 1, вопрос 12, Редактор)</h4>
+        <p><strong>Условие:</strong> Строка: 1 + 124 восьмёрки. Цикл: заменить(18,2), заменить(288,3), заменить(3888,1).</p>
+        <p><strong>Решение:</strong> За 1 итерацию убирается 6 восьмёрок. 124 / 6 = 20 (остаток 4). После 20 итераций: 18888. На 21-й: 18→2888→38→38.</p>
+        <p><span class="answer">Ответ: 38</span></p>
+
+        <h4>Задача 2 (Методичка, задача 3)</h4>
+        <p><strong>Условие:</strong> Автомат: удалить последний бит, если N нечётное дописать 10, если чётное — 01. Получить 2017.</p>
+        <p><strong>Решение:</strong> 2017<sub>10</sub> = 11111100001<sub>2</sub>. Последние 2 бита 01 → N было чётным. Отбрасываем 01 → 111111000<sub>2</sub> = 504<sub>10</sub>.</p>
+        <p><span class="answer">Ответ: 1008</span></p>
+
+        <h4>Задача 3 (Вариант 6, вопрос 12, Прибавитель)</h4>
+        <p><strong>Условие:</strong> Команды: 1) прибавить 1, 2) увеличить старшую цифру. Сколько программ из 30 в 54?</p>
+        <p><strong>Решение:</strong> 24 единицы — 1 программа. С одной двойкой: 15 позиций → 15 программ. С двумя двойками: C(6,2) = 15. Итого: 31.</p>
+        <p><span class="answer">Ответ: 31</span></p>
+    </div>
+
+    <div class="card card-example">
+        <h3>📝 Примеры для самостоятельной подготовки</h3>
+        <p><em>Нажмите на кнопку, чтобы увидеть ответ.</em></p>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Найти минимальное R > 102 для алгоритма с дописыванием 01/10.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">150 <span class="source">(Методичка, §4.4, №1)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Чему равно F(5) для рекурсии F(n)=F(n-1)+F(n-2)+F(n-3), F(0)=0,F(1)=1,F(2)=2?</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">11 <span class="source">(Методичка, задача 7)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Чертёжник: повтори 7 [(1,1)(-1,4)(2,-5)] из (2,5). Координаты?</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">(16,5) <span class="source">(Открытый билет, вариант 3, вопрос 12)</span></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ТЕМА 5. ПРОГРАММИРОВАНИЕ -->
+    <h2>💻 5. Программирование</h2>
+
+    <div class="card card-theory">
+        <h3>📌 Теория</h3>
+        <ul>
+            <li><strong>Трассировка</strong> — выполнение программы по шагам с фиксацией значений переменных.</li>
+            <li>Поиск <strong>минимума/максимума</strong> в массиве или на интервале.</li>
+            <li><strong>Сумма цифр</strong> числа: <code>n = n + s % 10; s = s // 10</code>.</li>
+            <li><strong>Работа с массивами:</strong> ввод, поиск пар, перестановки, проверка упорядоченности.</li>
+            <li><strong>Вложенные циклы:</strong> для перебора всех пар элементов массива.</li>
+            <li><strong>Эффективные алгоритмы:</strong> однократный проход, использование минимальной памяти.</li>
+        </ul>
+    </div>
+
+    <div class="card card-solution">
+        <h3>🧩 Разбор задач</h3>
+
+        <h4>Задача 1 (Вариант 1, вопрос 13)</h4>
+        <p><strong>Условие:</strong> s=50, n=1; while s>0: s//=4; n*=3. Найти n.</p>
+        <p><strong>Решение:</strong> 50→12→3→0 (3 итерации). n = 1·3·3·3 = 27.</p>
+        <p><span class="answer">Ответ: 27</span></p>
+
+        <h4>Задача 2 (СПО, задача 13)</h4>
+        <p><strong>Условие:</strong> Дан массив из 20 элементов. Найти количество пар соседних, где хотя бы один делится на 5.</p>
+        <p><strong>Решение (алгоритмический язык):</strong></p>
+        <div class="formula">
+            k := 0<br>
+            нц для i от 1 до 19<br>
+            &nbsp;&nbsp;если (mod(a[i],5)=0) или (mod(a[i+1],5)=0)<br>
+            &nbsp;&nbsp;то k := k + 1<br>
+            &nbsp;&nbsp;все<br>
+            кц<br>
+            вывод k
+        </div>
+        <p><span class="answer">Ответ: программа дописана</span></p>
+
+        <h4>Задача 3 (Методичка, задача 6)</h4>
+        <p><strong>Условие:</strong> s=0, k=0; while s&lt;80: s+=2*k; k+=4. Найти s.</p>
+        <p><strong>Решение:</strong> Трассировка: k=0→s=0; k=4→s=8; k=8→s=24; k=12→s=48; k=16→s=80. Цикл завершается, s=80.</p>
+        <p><span class="answer">Ответ: 80</span></p>
+    </div>
+
+    <div class="card card-example">
+        <h3>📝 Примеры для самостоятельной подготовки</h3>
+        <p><em>Нажмите на кнопку, чтобы увидеть ответ.</em></p>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Написать программу вычисления корней квадратного уравнения.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">(алгоритм: дискриминант, ветвления) <span class="source">(Методичка, §5, №1)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Дан массив из 30 элементов. Найти минимум среди не делящихся на 6 и заменить их на него.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">(алгоритм: поиск минимума, затем замена) <span class="source">(Методичка, §5, №15)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> Найти количество пар элементов на расстоянии ≥4, произведение которых кратно 29.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">(алгоритм: вложенные циклы с проверкой индексов) <span class="source">(Методичка, §5, №22)</span></div>
+        </div>
+
+        <div class="example-item">
+            <p><strong>Задача:</strong> s=100, n=200; while s+n≤600: s+=40; n-=20. Найти s.</p>
+            <button class="btn-answer" onclick="toggleAnswer(this)">Показать ответ</button>
+            <div class="hidden-answer">740 <span class="source">(Открытый билет, вариант 2, вопрос 13)</span></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ДОПОЛНИТЕЛЬНЫЕ ТАБЛИЦЫ -->
+    <h2>📎 Быстрые таблицы</h2>
+    <div class="two-col">
+        <div class="card">
+            <h4>Степени двойки</h4>
+            <ul>
+                <li>2⁰=1, 2¹=2, 2²=4, 2³=8, 2⁴=16</li>
+                <li>2⁵=32, 2⁶=64, 2⁷=128, 2⁸=256</li>
+                <li>2⁹=512, 2¹⁰=1024, 2¹¹=2048</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>Степени 4, 8, 16</h4>
+            <ul>
+                <li>4⁰=1, 4¹=4, 4²=16, 4³=64, 4⁴=256</li>
+                <li>8¹=8, 8²=64, 8³=512</li>
+                <li>16¹=16, 16²=256, 16³=4096</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="margin-top: 30px; padding: 16px 24px; background: #eaf3fb; border-radius: 40px; text-align: center; font-size: 0.95rem;">
+        ⚡ <strong>Ключевые приёмы:</strong> перевод через 2-чную систему, условие Фано, круги Эйлера, трассировка, анализ экстремумов, работа с массивами.
+    </div>
+    <p style="margin-top: 32px; color: #4a5f7a; font-size: 0.9rem; border-top: 1px solid #dce4ed; padding-top: 16px;">
+        Справочник составлен по материалам: Открытый билет ТУСУР (ИКТ), образец билета СПО, методические указания 2020.
+    </p>
+</div>
+
+<script>
+    function toggleAnswer(btn) {
+        const parent = btn.parentElement;
+        const answerDiv = parent.querySelector('.hidden-answer');
+        if (answerDiv.classList.contains('show')) {
+            answerDiv.classList.remove('show');
+            btn.textContent = 'Показать ответ';
+        } else {
+            answerDiv.classList.add('show');
+            btn.textContent = 'Скрыть ответ';
+        }
+    }
+</script>
+</body>
+</html>
