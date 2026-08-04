@@ -1727,25 +1727,75 @@
     </ul>
 </div>
 
-    <!-- ЗАДАЧА 24 -->
-    <div class="task-title">📌 Задача №24 — Неравенство (текст не отображается)</div>
-    <div class="problem-box">
-        <span class="q">Условие:</span> Число целых решений неравенства (в PDF текст не отображается корректно)
-    </div>
-    <div class="step">
-        <span class="label">Решение:</span>
-        В исходном PDF-файле текст неравенства не распознался (повреждён).<br>
-        В таких случаях обычно используется стандартный подход: решаем неравенство методом интервалов, находим целые решения на указанном промежутке.<br>
-        Исходя из типовых вариантов, ответ — <b>3</b>.<br>
-        <span class="answer-box">Ответ: 3</span>
-    </div>
-    <div class="apparat">
-        <div class="apparat-title">🧠 Понятийный аппарат</div>
-        <ul>
-            <li><span class="term">Метод интервалов:</span> стандартный метод решения рациональных неравенств.</li>
-            <li><span class="term">Целые решения:</span> числа из промежутка, являющиеся целыми.</li>
-        </ul>
-    </div>
+    <!-- ============================================================ -->
+<!-- ЗАДАЧА 24 — Дробно-рациональное неравенство -->
+<!-- ============================================================ -->
+<div class="task-title">📌 Задача №24 — Дробно-рациональное неравенство</div>
+<div class="problem-box">
+    <span class="q">Условие:</span> Число целых решений неравенства <span class="math">(8x+3)/((x²+2x+1)(x²+x−6)) ≥ 1/(x²−x−2)</span> равно
+</div>
+
+<div class="step">
+    <span class="label">Шаг 1.</span>
+    <p>Раскладываем знаменатели на множители:</p>
+    <ul>
+        <li><span class="math">x² + 2x + 1 = (x+1)²</span></li>
+        <li><span class="math">x² + x − 6 = (x+3)(x−2)</span></li>
+        <li><span class="math">x² − x − 2 = (x−2)(x+1)</span></li>
+    </ul>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 2.</span>
+    <p>ОДЗ: <span class="math">x ≠ -3, -1, 2</span>.</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 3.</span>
+    <p>Переносим всё в одну часть и приводим к общему знаменателю:</p>
+    <p class="math-block">(8x+3 − (x+1)(x+3)) / ((x+1)²(x+3)(x−2)) ≥ 0</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 4.</span>
+    <p>Упрощаем числитель:</p>
+    <p class="math-block">8x+3 − (x²+4x+3) = −x²+4x = x(4−x)</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 5.</span>
+    <p>Получаем:</p>
+    <p class="math-block">x(x−4)/((x+1)²(x+3)(x−2)) ≤ 0</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 6.</span>
+    <p>Метод интервалов даёт:</p>
+    <p class="math-block">x ∈ (−3; −1) ∪ (−1; 0] ∪ (2; 4]</p>
+</div>
+
+<div class="step">
+    <span class="label">Шаг 7.</span>
+    <p>Целые решения: <span class="math">−2, 0, 3, 4</span> → <b>4</b> числа.</p>
+</div>
+
+<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+    <span class="label">✅ Ответ:</span>
+    <span class="answer-box">4</span>
+    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №4)</span>
+</div>
+
+<div class="apparat">
+    <div class="apparat-title">🧠 Понятийный аппарат</div>
+    <ul>
+        <li><span class="term">Разложение на множители</span> — ключевой шаг для упрощения дробно-рациональных выражений.</li>
+        <li><span class="term">ОДЗ</span> — знаменатели не должны равняться нулю.</li>
+        <li><span class="term">Приведение к общему знаменателю</span> — позволяет свести неравенство к виду <span class="math">P(x)/Q(x) ≥ 0</span>.</li>
+        <li><span class="term">Метод интервалов</span> — используется для решения рациональных неравенств.</li>
+        <li><span class="term">Чётная кратность корня</span> — при переходе через такой корень знак не меняется.</li>
+        <li><span class="term">Отбор целых решений</span> — из найденных промежутков выбираем только целые числа.</li>
+    </ul>
+</div>
 
     <!-- ============================================================ -->
     <!-- ИТОГОВЫЙ БЛОК -->
