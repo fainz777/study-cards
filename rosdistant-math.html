@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📐 Полный справочник по математике (для начинающих)</title>
+    <style>
+        /* Общий стиль, чтобы было приятно читать */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #1e2a3a;
+            padding: 30px 20px;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px 45px;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 20, 40, 0.08);
+        }
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, #0b2b4a, #1b4a7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            border-bottom: 4px solid #d0e2f2;
+            padding-bottom: 20px;
+        }
+        .subhead {
+            font-size: 1.1rem;
+            color: #3a5b7a;
+            margin-top: -10px;
+            margin-bottom: 35px;
+            border-left: 5px solid #4a90d9;
+            padding-left: 20px;
+            background: #ecf3fa;
+            border-radius: 0 20px 20px 0;
+            padding: 12px 22px;
+        }
+        h2 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 18px;
+            color: #0a314b;
+            border-bottom: 3px solid #b6d4e8;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            color: #1d4b6e;
+            padding-left: 10px;
+            border-left: 6px solid #4a90d9;
+        }
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 22px;
+            margin-bottom: 6px;
+            color: #215a7a;
+        }
+        p {
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+        }
+        ul, ol {
+            margin: 12px 0 18px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .formula-block {
+            background: #e9f0f9;
+            padding: 16px 24px;
+            border-radius: 16px;
+            margin: 18px 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-left: 8px solid #2b6c9e;
+            font-family: 'Courier New', monospace;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .formula-block span {
+            font-weight: 400;
+            color: #144a6b;
+        }
+        .example-box {
+            background: #fbfbfd;
+            border-radius: 18px;
+            padding: 20px 28px;
+            margin: 20px 0;
+            border: 1px solid #dce7f0;
+            box-shadow: 0 4px 8px rgba(0, 20, 30, 0.04);
+        }
+        .example-box strong {
+            color: #0b3d62;
+        }
+        .badge {
+            display: inline-block;
+            background: #1b4a7a;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 2px 15px;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            margin-right: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        th {
+            background: #d3e2f0;
+            color: #0c2c44;
+            font-weight: 600;
+            padding: 12px 16px;
+            text-align: left;
+        }
+        td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #e2ecf5;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .highlight {
+            background-color: #f5faff;
+        }
+        .footer-note {
+            margin-top: 50px;
+            padding: 25px 30px;
+            background: #eaf1f9;
+            border-radius: 30px;
+            font-size: 1rem;
+            color: #1a3d5a;
+            border: 1px solid #c1d8ec;
+        }
+        .footer-note strong {
+            color: #003366;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 20px 15px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            .formula-block { font-size: 1rem; padding: 12px; white-space: normal; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>📘 Математика с нуля</h1>
+    <div class="subhead">
+        ⚡ Полный справочник для тех, кто всё забыл, но хочет вспомнить.<br>
+        Всё по программе ТГУ: от пределов до объёмов шара.
+    </div>
+
+    <!-- ============================================================ -->
+    <h2>🧩 1. Функции и их поведение</h2>
+
+    <h3>🔹 Что такое функция?</h3>
+    <p><strong>Функция</strong> — это правило, которое каждому <strong>иксу</strong> (аргументу) ставит в соответствие единственный <strong>игрек</strong> (значение).</p>
+    <p>Как в автомате с напитками: нажал кнопку (x) — получил банку (y).</p>
+    <ul>
+        <li><strong>Область определения</strong> — все иксы, которые можно подставить. Например, в <code>y = 1/x</code> нельзя подставить ноль.</li>
+        <li><strong>Область значений</strong> — все игреки, которые получаются.</li>
+    </ul>
+
+    <div class="example-box">
+        <strong>🧪 Пример:</strong> <code>y = x²</code> <br>
+        • Область определения: любые числа (x — любое). <br>
+        • Область значений: только неотрицательные числа (y ≥ 0), потому что квадрат всегда ≥ 0.
+    </div>
+
+    <h3>🔹 Свойства, о которых надо помнить</h3>
+    <ul>
+        <li><strong>Чётная</strong>: <code>f(-x) = f(x)</code> (график симметричен относительно оси Y). Пример: <code>y = x²</code>, <code>y = cos x</code>.</li>
+        <li><strong>Нечётная</strong>: <code>f(-x) = -f(x)</code> (симметрия относительно начала координат). Пример: <code>y = x³</code>, <code>y = sin x</code>.</li>
+        <li><strong>Возрастает</strong>: чем больше x, тем больше y (идём в гору).</li>
+        <li><strong>Убывает</strong>: чем больше x, тем меньше y (спускаемся).</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <h2>🚀 2. Пределы и непрерывность (страшно? не очень)</h2>
+
+    <h3>🔹 Что такое предел?</h3>
+    <p><strong>Предел</strong> — это число, к которому функция <strong>приближается</strong>, когда икс становится очень близким к какому-то значению или уходит в бесконечность.</p>
+    <p>Представьте: вы идёте к двери, делаете шаг за шагом, но до конца не доходите — вы <em>стремитесь</em> к двери. Предел — это «дверь».</p>
+
+    <div class="formula-block">
+        lim (x → a) f(x) = A  &nbsp;&nbsp;→&nbsp;&nbsp; «при x, стремящемся к a, f(x) стремится к A»
+    </div>
+
+    <h4>Два "золотых" предела (их нужно знать)</h4>
+    <ul>
+        <li><strong>Первый замечательный</strong>: <br> <code>lim (x→0) sin x / x = 1</code> — помогает, когда есть синус и икс в знаменателе.</li>
+        <li><strong>Второй замечательный</strong>: <br> <code>lim (x→∞) (1 + 1/x)ˣ = e</code> (число e ≈ 2.718).</li>
+    </ul>
+
+    <h3>🔹 Непрерывность — простыми словами</h3>
+    <p>Функция непрерывна, если её график можно <strong>нарисовать, не отрывая ручки</strong>. Если в точке «дырка» или «скачок» — это разрыв.</p>
+    <ul>
+        <li><strong>Точка разрыва I рода</strong>: скачок (например, пол в лифте — был на 1-м этаже, стал на 2-м).</li>
+        <li><strong>Точка разрыва II рода</strong>: уходит в бесконечность (например, <code>y = 1/x</code> в точке 0).</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <h2>📈 3. Производная (скорость изменения)</h2>
+
+    <h3>🔹 Что такое производная простыми словами?</h3>
+    <p><strong>Производная</strong> показывает, <strong>как быстро</strong> меняется функция в данной точке. Это как спидометр в машине: показывает скорость в каждый момент.</p>
+
+    <div class="formula-block">
+        f'(x) = lim (Δx→0) (f(x+Δx) — f(x)) / Δx
+    </div>
+    <p>На практике мы не считаем этот предел, а пользуемся <strong>готовыми формулами</strong> (таблицей).</p>
+
+    <h4>📋 Таблица основных производных (выучите как Отче наш)</h4>
+    <table>
+        <tr><th>Функция f(x)</th><th>Производная f'(x)</th><th>Комментарий</th></tr>
+        <tr><td>C (любое число)</td><td>0</td><td>константа не меняется</td></tr>
+        <tr><td>xⁿ</td><td>n·xⁿ⁻¹</td><td>степень «падает» вперёд и уменьшается на 1</td></tr>
+        <tr><td>sin x</td><td>cos x</td><td>синус → косинус</td></tr>
+        <tr><td>cos x</td><td>−sin x</td><td>косинус → минус синус</td></tr>
+        <tr><td>eˣ</td><td>eˣ</td><td>экспонента не меняется</td></tr>
+        <tr><td>ln x</td><td>1/x</td><td>натуральный логарифм</td></tr>
+    </table>
+
+    <h4>⚙️ Правила (главные)</h4>
+    <ul>
+        <li><strong>Сумма:</strong> (u + v)' = u' + v'</li>
+        <li><strong>Произведение:</strong> (u · v)' = u'·v + u·v'</li>
+        <li><strong>Деление:</strong> (u / v)' = (u'·v — u·v') / v²</li>
+        <li><strong>Сложная функция:</strong> если y = f(g(x)), то y' = f'(g) · g'(x). <br> 
+        <span style="background: #e6f0fa; padding:2px 8px;">Пример: (sin 5x)' = cos 5x · 5 = 5cos 5x</span></li>
+    </ul>
+
+    <h3>🔹 Зачем нужна производная? (применение)</h3>
+    <ul>
+        <li><strong>Монотонность:</strong> если производная > 0 — функция растёт, если < 0 — убывает.</li>
+        <li><strong>Экстремумы (макс/мин):</strong> в точках, где производная = 0 (или не существует). Если производная меняет знак с + на − — это максимум, с − на + — минимум.</li>
+        <li><strong>Выпуклость:</strong> вторая производная (f'') > 0 — график «улыбается» (выпуклый вниз), f'' < 0 — «грустит» (выпуклый вверх).</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <h2>🧮 4. Интегралы (площадь под кривой)</h2>
+
+    <h3>🔹 Неопределённый интеграл (первообразная)</h3>
+    <p><strong>Первообразная</strong> — это функция, производная которой равна исходной. <br>
+    <strong>Неопределённый интеграл</strong> — это семейство всех первообразных (с константой C).</p>
+    <div class="formula-block">
+        ∫ f(x) dx = F(x) + C
+    </div>
+
+    <h4>📋 Таблица главных интегралов (обратная таблице производных)</h4>
+    <table>
+        <tr><th>Интеграл ∫ … dx</th><th>Результат</th></tr>
+        <tr><td>∫ xⁿ dx (n≠−1)</td><td>xⁿ⁺¹ / (n+1) + C</td></tr>
+        <tr><td>∫ 1/x dx</td><td>ln|x| + C</td></tr>
+        <tr><td>∫ eˣ dx</td><td>eˣ + C</td></tr>
+        <tr><td>∫ sin x dx</td><td>−cos x + C</td></tr>
+        <tr><td>∫ cos x dx</td><td>sin x + C</td></tr>
+    </table>
+
+    <h4>🧠 Методы интегрирования (чтобы решать сложные)</h4>
+    <ul>
+        <li><strong>Непосредственное</strong> — когда прямо по таблице.</li>
+        <li><strong>Замена переменной</strong>: делаем замену, чтобы стало проще. Например, <code>t = x²</code>.</li>
+        <li><strong>Интегрирование по частям</strong>: <code>∫ u dv = u·v — ∫ v du</code>. Выручает, когда есть произведение функций (например, x·eˣ).</li>
+    </ul>
+
+    <h3>🔹 Определённый интеграл (площадь)</h3>
+    <p><strong>Определённый интеграл</strong> — это число, равное площади фигуры под графиком на отрезке [a, b].</p>
+    <div class="formula-block">
+        ∫ₐᵇ f(x) dx = F(b) — F(a) &nbsp;&nbsp;(формула Ньютона-Лейбница)
+    </div>
+    <p><strong>Суть:</strong> берём первообразную, подставляем верхний предел (b) и нижний (a), вычитаем.</p>
+
+    <!-- ============================================================ -->
+    <h2>🧊 5. Линейная алгебра (матрицы и системы)</h2>
+
+    <h3>🔹 Матрицы — это просто таблицы</h3>
+    <ul>
+        <li><strong>Сложение</strong>: только с одинаковым размером, поэлементно.</li>
+        <li><strong>Умножение на число</strong>: каждый элемент умножаем.</li>
+        <li><strong>Умножение матриц</strong>: строка на столбец. (число столбцов первой = числу строк второй).</li>
+    </ul>
+
+    <h3>🔹 Определитель (детерминант)</h3>
+    <p>Это число, которое можно вычислить только для <strong>квадратной</strong> матрицы.</p>
+    <ul>
+        <li>Для 2×2: <code>|a b; c d| = a·d — b·c</code>.</li>
+        <li>Для 3×3 — по правилу треугольников или разложением по строке.</li>
+    </ul>
+
+    <h3>🔹 Системы уравнений (СЛАУ)</h3>
+    <p>Набор уравнений, которые надо решить одновременно.</p>
+    <ul>
+        <li><strong>Метод Крамера</strong>: использует определители. Работает, если главный определитель ≠ 0.</li>
+        <li><strong>Метод Гаусса</strong>: универсальный, пошагово исключаем неизвестные (как в школе, но с матрицами).</li>
+        <li><strong>Метод обратной матрицы</strong>: <code>X = A⁻¹·B</code>, где A — матрица коэффициентов, B — столбец свободных членов.</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <h2>➡️ 6. Векторы (стрелочки в пространстве)</h2>
+
+    <h3>🔹 Что такое вектор?</h3>
+    <p>Это направленный отрезок. У него есть <strong>длина</strong> (модуль) и <strong>направление</strong>.</p>
+    <ul>
+        <li><strong>Сложение</strong>: по правилу треугольника или параллелограмма.</li>
+        <li><strong>Умножение на число</strong>: меняется длина, направление может измениться на противоположное.</li>
+    </ul>
+
+    <h3>🔹 Скалярное произведение (даёт число)</h3>
+    <div class="formula-block">
+        a · b = |a|·|b|·cos α = x₁x₂ + y₁y₂ + z₁z₂
+    </div>
+    <p>Главное: <strong>если скалярное произведение = 0</strong> → векторы перпендикулярны.</p>
+
+    <h3>🔹 Векторное произведение (даёт вектор)</h3>
+    <p>Результат — вектор, перпендикулярный двум исходным. Его длина = площадь параллелограмма, построенного на векторах.</p>
+    <ul>
+        <li>Площадь треугольника = <strong>половина</strong> модуля векторного произведения.</li>
+    </ul>
+
+    <h3>🔹 Смешанное произведение (объём)</h3>
+    <p><code>a · (b × c)</code> — это число, по модулю равное объёму параллелепипеда. Для пирамиды — делим на 6.</p>
+
+    <!-- ============================================================ -->
+    <h2>📐 7. Аналитическая геометрия (прямые на плоскости)</h2>
+
+    <h3>🔹 Уравнение прямой</h3>
+    <p><strong>Основное:</strong> <code>y = kx + b</code>, где <code>k</code> — угловой коэффициент (тангенс угла наклона).</p>
+    <ul>
+        <li><strong>Параллельны</strong> → k₁ = k₂.</li>
+        <li><strong>Перпендикулярны</strong> → k₁·k₂ = −1.</li>
+    </ul>
+    <div class="formula-block">
+        Расстояние от точки (x₀, y₀) до прямой Ax + By + C = 0: <br>
+        d = |Ax₀ + By₀ + C| / √(A² + B²)
+    </div>
+
+    <!-- ============================================================ -->
+    <h2>🧪 8. Комплексные числа (где корень из минус 1)</h2>
+
+    <h3>🔹 Что это?</h3>
+    <p><code>i</code> — мнимая единица, где <code>i² = −1</code>. Комплексное число: <code>z = a + bi</code>.</p>
+    <ul>
+        <li><strong>Сложение/вычитание</strong>: отдельно складываем реальные части и мнимые.</li>
+        <li><strong>Умножение</strong>: как многочлены, помня, что i² = −1.</li>
+    </ul>
+
+    <h3>🔹 Тригонометрическая форма</h3>
+    <p><code>z = r (cos φ + i sin φ)</code>, где <code>r</code> — модуль (длина), <code>φ</code> — угол.</p>
+    <ul>
+        <li><strong>Умножать</strong> в этой форме легко: модули перемножаем, углы складываем.</li>
+        <li><strong>Возводить в степень</strong> — формула Муавра: <code>zⁿ = rⁿ (cos nφ + i sin nφ)</code>.</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <h2>🎲 9. Теория вероятностей и комбинаторика</h2>
+
+    <h3>🔹 Вероятность</h3>
+    <p><strong>Классическое определение:</strong> <code>P(A) = (число благоприятных исходов) / (общее число исходов)</code>.</p>
+    <div class="example-box">
+        <strong>🎯 Пример:</strong> бросаем кубик. Вероятность выпадения 4 = 1/6.
+    </div>
+
+    <h3>🔹 Комбинаторика (посчитать количество)</h3>
+    <ul>
+        <li><strong>Факториал</strong>: <code>5! = 1·2·3·4·5 = 120</code>.</li>
+        <li><strong>Перестановки</strong> (все элементы, порядок важен): <code>Pₙ = n!</code>.</li>
+        <li><strong>Размещения</strong> (выбираем k из n, порядок важен): <code>Aₙᵏ = n! / (n−k)!</code>.</li>
+        <li><strong>Сочетания</strong> (выбираем k из n, порядок не важен): <code>Cₙᵏ = n! / (k!·(n−k)!)</code>.</li>
+    </ul>
+
+    <h3>🔹 Статистика</h3>
+    <p><strong>Среднее арифметическое</strong> = (сумма всех чисел) / (их количество).</p>
+    <p>Данные удобно показывать в виде диаграмм и графиков.</p>
+
+    <!-- ============================================================ -->
+    <h2>📦 10. Геометрия: объёмы и площади</h2>
+
+    <h3>🔹 Многогранники (с гранями)</h3>
+    <table>
+        <tr><th>Фигура</th><th>Объём (V)</th><th>Площадь боковой поверхности</th></tr>
+        <tr><td>Призма</td><td>S<sub>осн</sub> · h</td><td>P<sub>осн</sub> · h</td></tr>
+        <tr><td>Пирамида</td><td>⅓ S<sub>осн</sub> · h</td><td>½ P<sub>осн</sub> · l (апофема)</td></tr>
+        <tr><td>Куб (ребро a)</td><td>a³</td><td>4a²</td></tr>
+    </table>
+
+    <h3>🔹 Тела вращения (круглые)</h3>
+    <table>
+        <tr><th>Фигура</th><th>Объём (V)</th><th>Боковая площадь</th></tr>
+        <tr><td>Цилиндр (R, h)</td><td>πR²h</td><td>2πRh</td></tr>
+        <tr><td>Конус (R, h, l)</td><td>⅓πR²h</td><td>πRl (l — образующая)</td></tr>
+        <tr><td>Шар (R)</td><td>⁴⁄₃ πR³</td><td>4πR² (полная)</td></tr>
+    </table>
+
+    <div class="example-box">
+        <strong>💡 Важно:</strong> объём всегда в кубических единицах (см³, м³), площадь — в квадратных (см², м²).
+    </div>
+
+    <!-- ============================================================ -->
+    <div class="footer-note">
+        <strong>🎓 Финальный совет:</strong> <br>
+        На экзамене главное — не бояться. Вспоминайте смысл: <br>
+        • производная → скорость, <br>
+        • интеграл → площадь, <br>
+        • определитель → число, которое помогает решать системы. <br><br>
+        По формуле вашего вуза: <br>
+        <strong>Балл = (верные ответы / всего заданий) × 100</strong>. <br>
+        Удачи! 🍀
+    </div>
+
+</div>
+</body>
+</html>
