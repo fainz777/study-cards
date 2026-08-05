@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Все задачи — полный разбор (24 задачи)</title>
+    <title>Все задачи — полный разбор</title>
     <style>
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
         body {
             background: #f0f5fe;
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
@@ -38,7 +39,7 @@
             background: #f2f8ff;
             padding: 1rem 1.8rem;
             border-radius: 24px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border: 1px solid #d3e0f5;
         }
         .problem-box .q {
@@ -161,6 +162,94 @@
             font-size: 1.05rem;
             margin: 0.5rem 0 0.2rem 0;
         }
+        .highlight-box {
+            background: #dce6fa;
+            border-radius: 18px;
+            padding: 0.7rem 1.4rem;
+            margin: 0.8rem 0;
+            border: 1px solid #b2c8ed;
+        }
+        .example-box {
+            background: #e6effa;
+            border-radius: 18px;
+            padding: 0.5rem 1.2rem;
+            margin: 0.5rem 0 0.8rem 0;
+            border-left: 4px solid #2f6aff;
+        }
+        .badge {
+            background: #2f6aff;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
+        .formula {
+            font-family: 'Times New Roman', serif;
+            background: #dbe5f8;
+            padding: 0.1rem 0.9rem;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            display: inline-block;
+        }
+        details.quiz-block {
+            background: #f8fbff;
+            border: 1px solid #dce6f5;
+            border-radius: 18px;
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        details.quiz-block:hover {
+            background: #f0f6ff;
+            border-color: #b8cef5;
+        }
+        details.quiz-block summary {
+            font-weight: 600;
+            color: #0037b3;
+            outline: none;
+            padding: 0.3rem 0;
+        }
+        details.quiz-block .answer {
+            background: #e8f0fe;
+            border-radius: 14px;
+            padding: 0.5rem 1.2rem;
+            margin: 0.4rem 0 0.2rem 0;
+            font-family: 'Times New Roman', 'CMU Serif', serif;
+            font-size: 1.05rem;
+            border-left: 4px solid #2f6aff;
+        }
+        .quiz-title {
+            font-weight: 600;
+            color: #0b2b5a;
+            font-size: 1.15rem;
+            margin: 1.8rem 0 0.5rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #dce6f5;
+        }
+        .quiz-variant {
+            font-weight: 500;
+            color: #1f3a7a;
+            margin: 0.5rem 0 0.2rem 0;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        table th, table td {
+            border: 1px solid #b8cef5;
+            padding: 5px 15px;
+        }
+        table th {
+            background: #eaf1fd;
+        }
+        @media (max-width: 700px) {
+            .card { padding: 1.5rem; }
+            .row { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
@@ -172,7 +261,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- ЗАДАЧА 1 (векторная) — УЖЕ БЫЛА -->
+    <!-- ЗАДАЧА 1 (векторная) — ОБНОВЛЕНА по файлу 1.html -->
     <!-- ============================================================ -->
     <div style="margin-bottom: 1.5rem;">
         <div class="task-title">📌 Задача №1 — Векторное выражение в параллелограмме</div>
@@ -203,7 +292,7 @@
                 <b>K</b> — середина <b>AO</b> (по условию), поэтому<br>
                 <span class="math-block">AK = ½ · AO = ½ · [½ (a + d)] = ¼ (a + d)</span>
                 <div style="margin-top: 0.2rem; font-size: 0.95rem; color: #1f3a7a;">
-                    <span class="tag">фиксировано</span> K — именно середина AO, это задаёт единственное положение.
+                    <span class="badge">фиксировано</span> K — именно середина AO, это задаёт единственное положение.
                 </div>
             </div>
 
@@ -222,6 +311,13 @@
                 <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">
                     (вариант №2)
                 </span>
+            </div>
+
+            <div class="footnote">
+                <i>❓ Почему именно середина AO?</i> 
+                — Это <b>дано</b> в условии. Если бы K была серединой другого отрезка, 
+                ответ изменился бы. Задача построена так, чтобы получить 
+                единственный вариант среди предложенных.
             </div>
         </div>
 
@@ -278,29 +374,129 @@
         </div>
     </div>
 
-    <div class="apparat" style="margin-top: 1rem;">
-        <div class="apparat-title">🧠 Математический аппарат (задача №1)</div>
+    <!-- ====== МАКСИМАЛЬНО ПОДРОБНЫЙ АППАРАТ (БЕЗ ТЕХНИЧЕСКИХ \overrightarrow) ====== -->
+    <div class="apparat">
+        <div class="apparat-title">🧠 Всё, что нужно знать о векторах для этой задачи</div>
+
+        <!-- ======== БЛОК: ПОЧЕМУ AC = AB + AD ======== -->
+        <div class="highlight-box" style="background: #dce6fa; border-left: 6px solid #0037b3;">
+            <h4 style="margin-top:0.2rem; color:#0037b3;">⭐ Почему диагональ AC = AB + AD ?</h4>
+            <p><strong>Геометрический смысл:</strong> 
+            Вектор <span class="vec">AB</span> — это шаг из точки A в точку B. 
+            Вектор <span class="vec">AD</span> — это шаг из A в D. 
+            Чтобы попасть из A в C по <strong>правилу параллелограмма</strong>, мы сначала идём из A в B (вектор <span class="vec">AB</span>), 
+            а затем из B в C. Но в параллелограмме <strong>BC = AD</strong> (противоположные стороны равны и параллельны). 
+            Значит, путь A → B → C — это <span class="vec">AB</span> + <span class="vec">BC</span> = <span class="vec">AB</span> + <span class="vec">AD</span>.
+            </p>
+            <p><strong>Правило параллелограмма для сложения векторов:</strong> 
+            Если отложить два вектора <b>a</b> и <b>b</b> из одной точки, то их сумма — это диагональ параллелограмма, построенного на этих векторах. 
+            В нашем случае <b>a</b> = <span class="vec">AB</span>, <b>b</b> = <span class="vec">AD</span>, а диагональ — это <span class="vec">AC</span>. 
+            Поэтому <span class="formula">AC = AB + AD</span> — это не просто формула, а прямое следствие определения параллелограмма.
+            </p>
+            <div class="example-box" style="margin-top:0.4rem;">
+                <strong>🧭 Аналогия:</strong> Представьте, что вы идёте из точки A в B (1 км на восток), а затем из B в C (1 км на север). 
+                В параллелограмме это то же самое, что сразу пойти из A в C по диагонали. 
+                Вектор <span class="vec">AC</span> — это и есть ваш итоговый путь, равный сумме двух «шагов».
+            </div>
+        </div>
+
+        <h4>1. Что такое вектор?</h4>
+        <p><span class="term">Вектор</span> — это направленный отрезок. У него есть <strong>длина</strong> (модуль) и <strong>направление</strong>. 
+        На рисунке вектор обозначают стрелкой. Например, <span class="vec">AB</span> — это вектор, который начинается в точке A и заканчивается в точке B.</p>
+        <div class="example-box">
+            <strong>Важно:</strong> вектор можно <strong>переносить</strong> параллельно самому себе — он не изменится. 
+            Поэтому мы можем работать с векторами, «откладывая» их от любой точки.
+        </div>
+
+        <h4>2. Операции с векторами (правила)</h4>
         <ul>
-            <li><span class="term">Правило параллелограмма:</span> диагональ AC = AB + AD.</li>
-            <li><span class="term">Свойство середины:</span> если M — середина XY, то XM = ½ · XY.</li>
-            <li><span class="term">Вычитание векторов:</span> DK = AK − AD.</li>
-            <li><span class="term">Линейность:</span> ¼(a + d) − d = ¼a − ¾d.</li>
+            <li>
+                <span class="term">Сложение векторов (правило треугольника)</span>: 
+                чтобы сложить <b>a</b> и <b>b</b>, нужно к концу первого приложить начало второго. 
+                Вектор-сумма — от начала первого к концу второго. <br>
+                <span class="formula">a + b</span> (геометрически).
+            </li>
+            <li>
+                <span class="term">Сложение векторов (правило параллелограмма)</span>: 
+                если отложить <b>a</b> и <b>b</b> из одной точки, то их сумма — диагональ параллелограмма, построенного на этих векторах. 
+                Именно это правило мы используем: <span class="formula">AC = AB + AD</span>.
+            </li>
+            <li>
+                <span class="term">Вычитание векторов</span>: 
+                <span class="formula">a − b</span> — это <b>a</b> + (−<b>b</b>), где −<b>b</b> — вектор, противоположный <b>b</b> (такой же длины, но направлен в другую сторону). 
+                Геометрически: <span class="formula">DK = AK − AD</span> означает, что мы откладываем <b>AD</b> в обратную сторону.
+            </li>
+            <li>
+                <span class="term">Умножение вектора на число</span>: 
+                если умножить вектор на число <i>k</i>, его длина изменится в |<i>k</i>| раз, а направление:
+                <ul style="margin-top:0.2rem;">
+                    <li>при <i>k</i> > 0 — направление сохраняется;</li>
+                    <li>при <i>k</i> < 0 — направление меняется на противоположное.</li>
+                </ul>
+                Например, <span class="formula">½ · AO</span> — это вектор в ту же сторону, но вдвое короче.
+            </li>
         </ul>
+
+        <h4>3. Середина отрезка в векторной записи</h4>
+        <p>
+            Если точка <b>M</b> — середина отрезка <b>XY</b>, то вектор из <b>X</b> в <b>M</b> равен <strong>половине</strong> вектора из <b>X</b> в <b>Y</b>:
+        </p>
+        <div class="math-block" style="font-size:1.2rem;">
+            XM = ½ · XY
+        </div>
+        <p style="margin-top:0.3rem;">
+            <strong>Как это понять?</strong> Идём от X к Y. Если M ровно посередине, то мы прошли <strong>половину</strong> всего пути. 
+            Вектор <span class="vec">XM</span> — это половинка вектора <span class="vec">XY</span>. 
+            Поэтому мы пишем <span class="formula">½ · XY</span>. 
+            В нашей задаче мы используем это дважды:
+            <br> • <span class="formula">AO = ½ · AC</span>  (O — середина AC),
+            <br> • <span class="formula">AK = ½ · AO</span>  (K — середина AO).
+        </p>
+
+        <h4>4. Свойство диагоналей параллелограмма</h4>
+        <p>
+            В любом параллелограмме диагонали <strong>пересекаются и точкой пересечения делятся пополам</strong>. 
+            Поэтому O — середина <b>AC</b> (и одновременно середина <b>BD</b>). 
+            Это даёт нам <span class="formula">AO = ½ · AC</span>.
+        </p>
+
+        <h4>5. Как мы выражаем всё через базисные векторы</h4>
+        <p>
+            В задаче мы выбираем два «основных» вектора: <span class="vec">AB</span> и <span class="vec">AD</span>. 
+            Все остальные векторы (диагонали, отрезки до середин) мы выражаем через них, потому что они <strong>линейно независимы</strong> 
+            и задают всю плоскость. Это как система координат, только векторная.
+        </p>
+
+        <h4>6. Последовательность действий (алгоритм для таких задач)</h4>
+        <ul>
+            <li><strong>Шаг 1.</strong> Записать, чему равна диагональ: <span class="formula">AC = AB + AD</span> (правило параллелограмма).</li>
+            <li><strong>Шаг 2.</strong> Использовать свойство середины: <span class="formula">AO = ½ · AC</span>.</li>
+            <li><strong>Шаг 3.</strong> Если дана ещё одна середина (K), снова взять половину: <span class="formula">AK = ½ · AO</span>.</li>
+            <li><strong>Шаг 4.</strong> Выразить искомый вектор через разность: <span class="formula">DK = AK − AD</span> (или через сумму, если удобнее).</li>
+            <li><strong>Шаг 5.</strong> Подставить и привести подобные (раскрыть скобки, сложить коэффициенты).</li>
+        </ul>
+        <div style="margin-top:0.6rem; background: #e3edfc; border-radius: 40px; padding: 0.1rem 1.2rem; display: inline-block;">
+            📘 <strong>Главный принцип:</strong> положение точек (K, O) всегда строго по условию — мы не меняем их произвольно.
+        </div>
+
+        <h4 style="margin-top: 1.2rem;">7. Почему в ответе получилось <span class="formula">¼·AB − ¾·AD</span>?</h4>
+        <p>
+            Мы получили <span class="formula">¼·(a + d) − d</span>. 
+            Раскрываем скобки: <span class="formula">¼a + ¼d − d</span>. 
+            Так как <span class="formula">¼d − d = ¼d − ⁴⁄₄d = −¾d</span>, остаётся <span class="formula">¼a − ¾d</span>. 
+            Это и есть ответ: вектор <span class="vec">DK</span> «состоит» из ¼ вектора <span class="vec">AB</span> и <strong>минус</strong> ¾ вектора <span class="vec">AD</span> 
+            (то есть направлен в сторону, противоположную <span class="vec">AD</span>, но на ¾ длины).
+        </p>
     </div>
 
     <!-- ============================================================ -->
-    <!-- РАЗДЕЛИТЕЛЬ -->
+    <!-- ЗАДАЧА 2 -->
     <!-- ============================================================ -->
     <div class="divider"><span>✦ ✦ ✦</span></div>
-
-    <!-- ============================================================ -->
-    <!-- ЗАДАЧА 2 (треугольник) — УЖЕ БЫЛА -->
-    <!-- ============================================================ -->
     <div style="margin-bottom: 1.5rem;">
         <div class="task-title">📌 Задача №2 — Равнобедренный треугольник и высота</div>
         <div class="problem-box">
-            <strong>Условие:</strong> В треугольнике ABC угол A равен углу C, а высота AD делит сторону BC пополам.  
-            BD = 7,8 см. Найти AC.
+            <strong>Условие:</strong> В треугольнике ABC угол A равен углу C, а высота AD делит сторону BC пополам. BD = 7,8 см. Найти AC.
         </div>
     </div>
 
@@ -398,7 +594,7 @@
     </div>
 
     <div class="apparat" style="margin-top: 1rem;">
-        <div class="apparat-title">🧠 Математический аппарат (задача №2)</div>
+        <div class="apparat-title">🧠 Что используется в задаче №2</div>
         <ul>
             <li><span class="term">Признак равнобедренного треугольника:</span> если два угла равны, то треугольник равнобедренный, и стороны напротив равных углов равны.</li>
             <li><span class="term">Свойство высоты:</span> в данном случае высота является медианой (делит сторону пополам).</li>
@@ -407,13 +603,9 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- РАЗДЕЛИТЕЛЬ -->
+    <!-- ЗАДАЧА 3 -->
     <!-- ============================================================ -->
     <div class="divider"><span>✦ ✦ ✦</span></div>
-
-    <!-- ============================================================ -->
-    <!-- ЗАДАЧА 3 (координаты) — УЖЕ БЫЛА -->
-    <!-- ============================================================ -->
     <div style="margin-bottom: 1.5rem;">
         <div class="task-title">📌 Задача №3 — Векторы в пространстве (координаты)</div>
         <div class="problem-box">
@@ -489,7 +681,7 @@
     </div>
 
     <div class="apparat" style="margin-top: 1rem;">
-        <div class="apparat-title">🧠 Математический аппарат (задача №3)</div>
+        <div class="apparat-title">🧠 Что используется в задаче №3</div>
         <ul>
             <li><span class="term">Координаты вектора:</span> чтобы найти вектор между двумя точками, нужно из координат конца вычесть координаты начала.</li>
             <li><span class="term">Умножение вектора на число:</span> каждая координата умножается на это число.</li>
@@ -498,462 +690,394 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- РАЗДЕЛИТЕЛЬ -->
-    <!-- ============================================================ -->
-    <div class="divider"><span>✦ ✦ ✦</span></div>
-
-    <!-- ============================================================ -->
     <!-- ЗАДАЧА 4 -->
     <!-- ============================================================ -->
-<div class="task-title">📌 Задача №4 — Логарифмическое выражение</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Найдите <span class="math">log₅ b</span>, если <span class="math">log₅ b³ = 9</span>.
-</div>
-<div class="step">
-    <span class="label">Решение:</span>
-    <p>1. Используем свойство логарифма степени:</p>
-    <p class="math-block">log₅ b³ = 3 · log₅ b</p>
-    <p>2. Подставляем данное значение:</p>
-    <p class="math-block">3 · log₅ b = 9</p>
-    <p>3. Делим обе части на 3:</p>
-    <p class="math-block">log₅ b = 3</p>
-    <span class="answer-box">Ответ: 3</span>
-    <span style="margin-left:1rem; font-weight:400; color:#1f3a7a;">(вариант №1)</span>
-</div>
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Логарифм степени:</span> <span class="math">logₐ bⁿ = n · logₐ b</span> — позволяет выносить показатель степени вперёд как множитель.</li>
-        <li><span class="term">Решение простейшего логарифмического уравнения:</span> если <span class="math">logₐ x = c</span>, то <span class="math">x = aᶜ</span>.</li>
-        <li><span class="term">Внимание:</span> в задаче просят найти <span class="math">log₅ b</span>, а не <span class="math">b</span>. Поэтому после нахождения <span class="math">log₅ b = 3</span> мы сразу получаем ответ.</li>
-    </ul>
-</div>
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №4 — Логарифмическое выражение</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Найдите <span class="math">log₅ b</span>, если <span class="math">log₅ b³ = 9</span>.
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        <p>1. Используем свойство логарифма степени:</p>
+        <p class="math-block">log₅ b³ = 3 · log₅ b</p>
+        <p>2. Подставляем данное значение:</p>
+        <p class="math-block">3 · log₅ b = 9</p>
+        <p>3. Делим обе части на 3:</p>
+        <p class="math-block">log₅ b = 3</p>
+        <span class="answer-box">Ответ: 3</span>
+        <span style="margin-left:1rem; font-weight:400; color:#1f3a7a;">(вариант №1)</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Логарифм степени:</span> <span class="math">logₐ bⁿ = n · logₐ b</span> — позволяет выносить показатель степени вперёд как множитель.</li>
+            <li><span class="term">Решение простейшего логарифмического уравнения:</span> если <span class="math">logₐ x = c</span>, то <span class="math">x = aᶜ</span>.</li>
+            <li><span class="term">Внимание:</span> в задаче просят найти <span class="math">log₅ b</span>, а не <span class="math">b</span>. Поэтому после нахождения <span class="math">log₅ b = 3</span> мы сразу получаем ответ.</li>
+        </ul>
+    </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 5 (исправленная) — Арифметическое выражение -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №5 — Арифметическое выражение</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Значение выражения <span class="math">25^{3/2} − 0,25</span> равно
-</div>
-<div class="step">
-    <span class="label">Решение:</span>
-    <p>1. Вычисляем <span class="math">25^{3/2}</span>.</p>
-    <p>Дробный показатель степени означает: <span class="math">a^{m/n} = (ⁿ√a)ᵐ</span>.</p>
-    <p>Поэтому: <span class="math">25^{3/2} = (√25)³ = 5³ = 125</span>.</p>
-    <p>2. Подставляем в выражение:</p>
-    <p class="math-block">125 − 0,25 = 124,75</p>
-    <span class="answer-box">Ответ: 124,75</span>
-    <span style="margin-left:1rem; font-weight:400; color:#1f3a7a;">(вариант №4)</span>
-</div>
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Дробный показатель степени:</span> <span class="math">a^{m/n} = (ⁿ√a)ᵐ</span>.</li>
-        <li><span class="term">Пример:</span> <span class="math">25^{3/2} = (√25)³ = 5³ = 125</span>.</li>
-        <li><span class="term">Вычитание десятичных дробей:</span> <span class="math">125 - 0,25 = 124,75</span>.</li>
-    </ul>
-</div>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 6 — Тригонометрическое выражение -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №6 — Тригонометрическое выражение</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Значение выражения <span class="math">cos²(π/2 − α) + sin²(3π/2 − α) − sin²α</span> равно
-</div>
-<div class="step">
-    <span class="label">Решение:</span>
-    <p>1. Упрощаем первое слагаемое по формуле приведения:</p>
-    <p class="math-block">cos(π/2 − α) = sinα</p>
-    <p>Значит: <span class="math">cos²(π/2 − α) = sin²α</span>.</p>
-
-    <p>2. Упрощаем второе слагаемое по формуле приведения:</p>
-    <p class="math-block">sin(3π/2 − α) = −cosα</p>
-    <p>Значит: <span class="math">sin²(3π/2 − α) = cos²α</span>.</p>
-
-    <p>3. Подставляем в исходное выражение:</p>
-    <p class="math-block">sin²α + cos²α − sin²α</p>
-
-    <p>4. Сокращаем: <span class="math">sin²α − sin²α = 0</span>, остаётся <span class="math">cos²α</span>.</p>
-
-    <span class="answer-box">Ответ: cos²α</span>
-</div>
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Формулы приведения:</span> позволяют упрощать тригонометрические выражения с углами <span class="math">π/2 ± α</span>, <span class="math">π ± α</span>, <span class="math">3π/2 ± α</span>.</li>
-        <li><span class="term">Использованные формулы:</span>
-            <ul>
-                <li><span class="math">cos(π/2 − α) = sinα</span></li>
-                <li><span class="math">sin(3π/2 − α) = −cosα</span></li>
-            </ul>
-        </li>
-        <li><span class="term">Основное тригонометрическое тождество:</span> <span class="math">sin²α + cos²α = 1</span>.</li>
-    </ul>
-</div>
-    
+    <!-- ЗАДАЧА 5 -->
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 6 — Угол между радиусами вписанной окружности -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №6 — Угол между радиусами вписанной окружности</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Известно, что <span class="math">△ABC</span> равнобедренный, <span class="math">AB = BC</span>, <span class="math">∠B = 76°</span>, точка <span class="math">O</span> является центром вписанной окружности, <span class="math">OD</span> и <span class="math">OE</span> — радиусы этой окружности (<span class="math">D ∈ AB</span>, <span class="math">E ∈ AC</span>). Тогда <span class="math">∠DOE</span> равен
-</div>
-
-<div class="row">
-    <div class="col-solution">
-        <div class="step">
-            <span class="label">Шаг 1.</span>
-            <p>Треугольник <span class="math">ABC</span> равнобедренный с основанием <span class="math">AC</span> (так как <span class="math">AB = BC</span>).</p>
-            <p>Углы при основании равны:</p>
-            <p class="math-block">∠A = ∠C = (180° − 76°) / 2 = 104° / 2 = 52°</p>
-        </div>
-
-        <div class="step">
-            <span class="label">Шаг 2.</span>
-            <p><span class="math">D ∈ AB</span> — точка касания вписанной окружности со стороной <span class="math">AB</span>.</p>
-            <p><span class="math">E ∈ AC</span> — точка касания вписанной окружности со стороной <span class="math">AC</span>.</p>
-            <p>Радиусы <span class="math">OD</span> и <span class="math">OE</span> проведены в точки касания, значит они <b>перпендикулярны</b> соответствующим сторонам:</p>
-            <p class="math-block">OD ⟂ AB, OE ⟂ AC</p>
-        </div>
-
-        <div class="step">
-            <span class="label">Шаг 3.</span>
-            <p>Угол между двумя прямыми равен углу между их перпендикулярами (или смежному с ним).</p>
-            <p>Угол между <span class="math">AB</span> и <span class="math">AC</span> — это угол при вершине <span class="math">A</span>:</p>
-            <p class="math-block">∠BAC = 52°</p>
-            <p>Угол между перпендикулярами к сторонам <span class="math">AB</span> и <span class="math">AC</span> равен:</p>
-            <p class="math-block">∠DOE = 180° − ∠BAC = 180° − 52° = 128°</p>
-        </div>
-
-        <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-            <span class="label">✅ Ответ:</span>
-            <span class="answer-box">128°</span>
-            <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
-        </div>
+    <div class="task-title">📌 Задача №5 — Арифметическое выражение</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Значение выражения <span class="math">25^{3/2} − 0,25</span> равно
     </div>
-
-    <div class="col-figure">
-        <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px; width:100%; height:auto;">
-            <!-- Треугольник ABC -->
-            <polygon points="200,30 50,300 350,300" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
-            
-            <!-- Вершины -->
-            <circle cx="200" cy="30" r="5" fill="#0b1e3a" />
-            <text x="208" y="25" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">B</text>
-            
-            <circle cx="50" cy="300" r="5" fill="#0b1e3a" />
-            <text x="20" y="320" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">A</text>
-            
-            <circle cx="350" cy="300" r="5" fill="#0b1e3a" />
-            <text x="358" y="320" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">C</text>
-            
-            <!-- Точки касания D (на AB) и E (на AC) -->
-            <circle cx="115" cy="200" r="5" fill="#b22234" />
-            <text x="95" y="190" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#b22234">D</text>
-            
-            <circle cx="260" cy="200" r="5" fill="#1b7e3a" />
-            <text x="268" y="190" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#1b7e3a">E</text>
-            
-            <!-- Центр вписанной окружности O -->
-            <circle cx="200" cy="200" r="5" fill="#2f6aff" />
-            <text x="208" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#2f6aff">O</text>
-            
-            <!-- Радиусы OD и OE -->
-            <line x1="200" y1="200" x2="115" y2="200" stroke="#2f6aff" stroke-width="2" />
-            <line x1="200" y1="200" x2="260" y2="200" stroke="#2f6aff" stroke-width="2" />
-            
-            <!-- Угол DOE (дуга) -->
-            <path d="M 115 200 A 85 85 0 0 1 260 200" fill="none" stroke="#b22234" stroke-width="2" />
-            <text x="180" y="170" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#b22234">128°</text>
-            
-            <!-- Подписи сторон -->
-            <text x="125" y="280" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1f3a7a">AB</text>
-            <text x="280" y="280" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1f3a7a">BC</text>
-            <text x="180" y="320" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1f3a7a">AC</text>
-            
-            <!-- Угол B = 76° -->
-            <path d="M 200 30 A 30 30 0 0 0 170 50" fill="none" stroke="#b8860b" stroke-width="2" />
-            <text x="155" y="55" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b8860b">76°</text>
-            
-            <!-- Углы при основании 52° -->
-            <path d="M 50 300 A 25 25 0 0 0 70 280" fill="none" stroke="#b8860b" stroke-width="1.5" />
-            <text x="40" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="13" fill="#b8860b">52°</text>
-            
-            <path d="M 350 300 A 25 25 0 0 1 330 280" fill="none" stroke="#b8860b" stroke-width="1.5" />
-            <text x="305" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="13" fill="#b8860b">52°</text>
-        </svg>
-        <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
-            <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">∠DOE = 128°</span>
-        </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        <p>1. Вычисляем <span class="math">25^{3/2}</span>.</p>
+        <p>Дробный показатель степени означает: <span class="math">a^{m/n} = (ⁿ√a)ᵐ</span>.</p>
+        <p>Поэтому: <span class="math">25^{3/2} = (√25)³ = 5³ = 125</span>.</p>
+        <p>2. Подставляем в выражение:</p>
+        <p class="math-block">125 − 0,25 = 124,75</p>
+        <span class="answer-box">Ответ: 124,75</span>
+        <span style="margin-left:1rem; font-weight:400; color:#1f3a7a;">(вариант №4)</span>
     </div>
-</div>
-
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Вписанная окружность</span> — окружность, касающаяся всех сторон треугольника.</li>
-        <li><span class="term">Радиус, проведённый в точку касания</span>, перпендикулярен стороне треугольника.</li>
-        <li><span class="term">Угол между двумя перпендикулярами</span> к сторонам угла равен либо самому углу, либо дополняет его до <span class="math">180°</span>.</li>
-        <li><span class="term">Сумма углов треугольника</span> равна <span class="math">180°</span>.</li>
-        <li>В <span class="term">равнобедренном треугольнике</span> углы при основании равны.</li>
-    </ul>
-</div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Дробный показатель степени:</span> <span class="math">a^{m/n} = (ⁿ√a)ᵐ</span>.</li>
+            <li><span class="term">Пример:</span> <span class="math">25^{3/2} = (√25)³ = 5³ = 125</span>.</li>
+            <li><span class="term">Вычитание десятичных дробей:</span> <span class="math">125 - 0,25 = 124,75</span>.</li>
+        </ul>
+    </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 7 — Угол наклона боковой грани пирамиды -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №7 — Угол наклона боковой грани пирамиды</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Известно, что в правильной четырёхугольной пирамиде сторона основания равна 4, а высота равна 2. Тогда угол наклона боковой грани к плоскости основания будет равен
-</div>
-
-<div class="row">
-    <div class="col-solution">
-        <div class="step">
-            <span class="label">Шаг 1.</span>
-            <p>В правильной четырёхугольной пирамиде:</p>
-            <ul>
-                <li>основание — <b>квадрат</b> со стороной <span class="math">a = 4</span>;</li>
-                <li>вершина проецируется в <b>центр</b> основания;</li>
-                <li>все боковые грани — <b>равные равнобедренные треугольники</b>.</li>
-            </ul>
-        </div>
-
-        <div class="step">
-            <span class="label">Шаг 2.</span>
-            <p>Найдём <b>апофему</b> <span class="math">l</span> — высоту боковой грани.</p>
-            <p>Рассмотрим прямоугольный треугольник, образованный:</p>
-            <ul>
-                <li>высотой пирамиды <span class="math">h = 2</span>,</li>
-                <li>радиусом вписанной окружности основания <span class="math">r = a/2 = 2</span>,</li>
-                <li>апофемой <span class="math">l</span> (гипотенуза).</li>
-            </ul>
-            <p>По теореме Пифагора:</p>
-            <p class="math-block">l = √(h² + r²) = √(2² + 2²) = √8 = 2√2</p>
-        </div>
-
-        <div class="step">
-            <span class="label">Шаг 3.</span>
-            <p>Угол наклона боковой грани — это угол между апофемой <span class="math">l</span> и её проекцией на основание (радиусом <span class="math">r</span>).</p>
-            <p>В прямоугольном треугольнике:</p>
-            <p class="math-block">cos α = r / l = 2 / (2√2) = 1/√2</p>
-            <p>Отсюда:</p>
-            <p class="math-block">α = arccos(1/√2) = 45°</p>
-        </div>
-
-        <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-            <span class="label">✅ Ответ:</span>
-            <span class="answer-box">45°</span>
-        </div>
+    <!-- ЗАДАЧА 6 — Тригонометрическое выражение -->
+    <!-- ============================================================ -->
+    <div class="task-title">📌 Задача №6 — Тригонометрическое выражение</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Значение выражения <span class="math">cos²(π/2 − α) + sin²(3π/2 − α) − sin²α</span> равно
     </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        <p>1. Упрощаем первое слагаемое по формуле приведения:</p>
+        <p class="math-block">cos(π/2 − α) = sinα</p>
+        <p>Значит: <span class="math">cos²(π/2 − α) = sin²α</span>.</p>
 
-    <div class="col-figure">
-        <svg viewBox="0 0 450 400" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px; width:100%; height:auto;">
-            <!-- Основание (квадрат) в изометрии -->
-            <polygon points="225,320 80,260 225,200 370,260" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
-            
-            <!-- Вершина пирамиды -->
-            <circle cx="225" cy="120" r="5" fill="#b22234" />
-            <text x="230" y="110" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#b22234">S</text>
-            
-            <!-- Вершины основания -->
-            <circle cx="225" cy="320" r="5" fill="#0b1e3a" />
-            <text x="230" y="340" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">A</text>
-            
-            <circle cx="80" cy="260" r="5" fill="#0b1e3a" />
-            <text x="50" y="260" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">B</text>
-            
-            <circle cx="225" cy="200" r="5" fill="#0b1e3a" />
-            <text x="230" y="190" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">C</text>
-            
-            <circle cx="370" cy="260" r="5" fill="#0b1e3a" />
-            <text x="378" y="260" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">D</text>
-            
-            <!-- Центр основания O -->
-            <circle cx="225" cy="260" r="5" fill="#1b7e3a" />
-            <text x="230" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#1b7e3a">O</text>
-            
-            <!-- Ребра пирамиды -->
-            <line x1="225" y1="120" x2="225" y2="320" stroke="#1f3a7a" stroke-width="2" />
-            <line x1="225" y1="120" x2="80" y2="260" stroke="#1f3a7a" stroke-width="2" />
-            <line x1="225" y1="120" x2="225" y2="200" stroke="#1f3a7a" stroke-width="2" />
-            <line x1="225" y1="120" x2="370" y2="260" stroke="#1f3a7a" stroke-width="2" />
-            
-            <!-- Высота пирамиды SO -->
-            <line x1="225" y1="120" x2="225" y2="260" stroke="#b22234" stroke-width="2.5" stroke-dasharray="6 4" />
-            <text x="180" y="195" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b22234">h = 2</text>
-            
-            <!-- Апофема (высота боковой грани SBC) -->
-            <line x1="225" y1="120" x2="225" y2="200" stroke="#2f6aff" stroke-width="2.5" />
-            <text x="170" y="165" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#2f6aff">l = 2√2</text>
-            
-            <!-- Радиус вписанной окружности основания (проекция апофемы) -->
-            <line x1="225" y1="260" x2="225" y2="200" stroke="#1b7e3a" stroke-width="2" stroke-dasharray="4 4" />
-            <text x="240" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1b7e3a">r = 2</text>
-            
-            <!-- Угол наклона (между апофемой и её проекцией) -->
-            <path d="M 225 200 A 20 20 0 0 0 210 215" fill="none" stroke="#b8860b" stroke-width="2" />
-            <text x="195" y="215" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b8860b">α = 45°</text>
-            
-            <!-- Подписи сторон основания -->
-            <text x="150" y="295" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#1f3a7a">a = 4</text>
-            <text x="295" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#1f3a7a">a = 4</text>
-            
-            <!-- Легенда -->
-            <rect x="10" y="10" width="180" height="80" rx="10" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
-            <text x="20" y="30" font-size="12" fill="#0b1e3a">● S — вершина пирамиды</text>
-            <text x="20" y="48" font-size="12" fill="#0b1e3a">● O — центр основания</text>
-            <text x="20" y="66" font-size="12" fill="#0b1e3a">● SO — высота (h = 2)</text>
-            <text x="20" y="82" font-size="12" fill="#0b1e3a">● l — апофема</text>
-        </svg>
-        <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
-            <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">Угол наклона = 45°</span>
-        </div>
+        <p>2. Упрощаем второе слагаемое по формуле приведения:</p>
+        <p class="math-block">sin(3π/2 − α) = −cosα</p>
+        <p>Значит: <span class="math">sin²(3π/2 − α) = cos²α</span>.</p>
+
+        <p>3. Подставляем в исходное выражение:</p>
+        <p class="math-block">sin²α + cos²α − sin²α</p>
+
+        <p>4. Сокращаем: <span class="math">sin²α − sin²α = 0</span>, остаётся <span class="math">cos²α</span>.</p>
+        <span class="answer-box">Ответ: cos²α</span>
     </div>
-</div>
-
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Правильная четырёхугольная пирамида</span> — пирамида, в основании которой лежит квадрат, а вершина проецируется в центр основания.</li>
-        <li><span class="term">Апофема</span> — высота боковой грани, проведённая из вершины пирамиды к стороне основания.</li>
-        <li><span class="term">Угол наклона боковой грани</span> — угол между плоскостью боковой грани и плоскостью основания. Измеряется как угол между апофемой и её проекцией на основание.</li>
-        <li><span class="term">Теорема Пифагора</span> — в прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов.</li>
-    </ul>
-</div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Формулы приведения:</span> позволяют упрощать тригонометрические выражения с углами <span class="math">π/2 ± α</span>, <span class="math">π ± α</span>, <span class="math">3π/2 ± α</span>.</li>
+            <li><span class="term">Использованные формулы:</span>
+                <ul>
+                    <li><span class="math">cos(π/2 − α) = sinα</span></li>
+                    <li><span class="math">sin(3π/2 − α) = −cosα</span></li>
+                </ul>
+            </li>
+            <li><span class="term">Основное тригонометрическое тождество:</span> <span class="math">sin²α + cos²α = 1</span>.</li>
+        </ul>
+    </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 8 — Площадь поверхности шара -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №8 — Площадь поверхности шара</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Известно, что на поверхности шара даны три точки: C, D и E такие, что CD = 7 см, DE = 8 см, CE = 9 см. Расстояние от центра шара до плоскости треугольника CDE равно 1 см. Тогда площадь поверхности шара будет равна
-</div>
+    <!-- ЗАДАЧА 6 — Угол между радиусами вписанной окружности -->
+    <!-- ============================================================ -->
+    <div class="task-title">📌 Задача №6 — Угол между радиусами вписанной окружности</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Известно, что <span class="math">△ABC</span> равнобедренный, <span class="math">AB = BC</span>, <span class="math">∠B = 76°</span>, точка <span class="math">O</span> является центром вписанной окружности, <span class="math">OD</span> и <span class="math">OE</span> — радиусы этой окружности (<span class="math">D ∈ AB</span>, <span class="math">E ∈ AC</span>). Тогда <span class="math">∠DOE</span> равен
+    </div>
 
-<div class="row">
-    <div class="col-solution">
-        <div class="step">
-            <span class="label">Шаг 1.</span>
-            <p>Найдём площадь треугольника <span class="math">CDE</span> по формуле Герона.</p>
-            <p>Стороны: <span class="math">a = 7</span>, <span class="math">b = 8</span>, <span class="math">c = 9</span>.</p>
-            <p>Полупериметр: <span class="math">p = (7+8+9)/2 = 12</span>.</p>
-            <p class="math-block">S = √(12·5·4·3) = √720 = 12√5 см²</p>
+    <div class="row">
+        <div class="col-solution">
+            <div class="step">
+                <span class="label">Шаг 1.</span>
+                <p>Треугольник <span class="math">ABC</span> равнобедренный с основанием <span class="math">AC</span> (так как <span class="math">AB = BC</span>).</p>
+                <p>Углы при основании равны:</p>
+                <p class="math-block">∠A = ∠C = (180° − 76°) / 2 = 104° / 2 = 52°</p>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 2.</span>
+                <p><span class="math">D ∈ AB</span> — точка касания вписанной окружности со стороной <span class="math">AB</span>.</p>
+                <p><span class="math">E ∈ AC</span> — точка касания вписанной окружности со стороной <span class="math">AC</span>.</p>
+                <p>Радиусы <span class="math">OD</span> и <span class="math">OE</span> проведены в точки касания, значит они <b>перпендикулярны</b> соответствующим сторонам:</p>
+                <p class="math-block">OD ⟂ AB, OE ⟂ AC</p>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 3.</span>
+                <p>Угол между двумя прямыми равен углу между их перпендикулярами (или смежному с ним).</p>
+                <p>Угол между <span class="math">AB</span> и <span class="math">AC</span> — это угол при вершине <span class="math">A</span>:</p>
+                <p class="math-block">∠BAC = 52°</p>
+                <p>Угол между перпендикулярами к сторонам <span class="math">AB</span> и <span class="math">AC</span> равен:</p>
+                <p class="math-block">∠DOE = 180° − ∠BAC = 180° − 52° = 128°</p>
+            </div>
+
+            <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+                <span class="label">✅ Ответ:</span>
+                <span class="answer-box">128°</span>
+                <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
+            </div>
         </div>
 
-        <div class="step">
-            <span class="label">Шаг 2.</span>
-            <p>Найдём радиус описанной окружности треугольника <span class="math">R₀</span>.</p>
-            <p class="math-block">R₀ = abc/(4S) = 7·8·9/(4·12√5) = 504/(48√5) = 21/(2√5) см</p>
-        </div>
-
-        <div class="step">
-            <span class="label">Шаг 3.</span>
-            <p>Найдём радиус шара <span class="math">R</span>.</p>
-            <p>Расстояние от центра шара до плоскости: <span class="math">d = 1</span> см.</p>
-            <p>По теореме Пифагора: <span class="math">R² = R₀² + d²</span>.</p>
-            <p class="math-block">R² = (21/(2√5))² + 1² = 441/20 + 1 = 461/20</p>
-        </div>
-
-        <div class="step">
-            <span class="label">Шаг 4.</span>
-            <p>Площадь поверхности шара:</p>
-            <p class="math-block">S = 4πR² = 4π·461/20 = 92,2π см²</p>
-        </div>
-
-        <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-            <span class="label">✅ Ответ:</span>
-            <span class="answer-box">92,2π см²</span>
+        <div class="col-figure">
+            <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px; width:100%; height:auto;">
+                <polygon points="200,30 50,300 350,300" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
+                <circle cx="200" cy="30" r="5" fill="#0b1e3a" />
+                <text x="208" y="25" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">B</text>
+                <circle cx="50" cy="300" r="5" fill="#0b1e3a" />
+                <text x="20" y="320" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">A</text>
+                <circle cx="350" cy="300" r="5" fill="#0b1e3a" />
+                <text x="358" y="320" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">C</text>
+                <circle cx="115" cy="200" r="5" fill="#b22234" />
+                <text x="95" y="190" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#b22234">D</text>
+                <circle cx="260" cy="200" r="5" fill="#1b7e3a" />
+                <text x="268" y="190" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#1b7e3a">E</text>
+                <circle cx="200" cy="200" r="5" fill="#2f6aff" />
+                <text x="208" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#2f6aff">O</text>
+                <line x1="200" y1="200" x2="115" y2="200" stroke="#2f6aff" stroke-width="2" />
+                <line x1="200" y1="200" x2="260" y2="200" stroke="#2f6aff" stroke-width="2" />
+                <path d="M 115 200 A 85 85 0 0 1 260 200" fill="none" stroke="#b22234" stroke-width="2" />
+                <text x="180" y="170" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#b22234">128°</text>
+                <text x="125" y="280" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1f3a7a">AB</text>
+                <text x="280" y="280" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1f3a7a">BC</text>
+                <text x="180" y="320" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1f3a7a">AC</text>
+                <path d="M 200 30 A 30 30 0 0 0 170 50" fill="none" stroke="#b8860b" stroke-width="2" />
+                <text x="155" y="55" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b8860b">76°</text>
+                <path d="M 50 300 A 25 25 0 0 0 70 280" fill="none" stroke="#b8860b" stroke-width="1.5" />
+                <text x="40" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="13" fill="#b8860b">52°</text>
+                <path d="M 350 300 A 25 25 0 0 1 330 280" fill="none" stroke="#b8860b" stroke-width="1.5" />
+                <text x="305" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="13" fill="#b8860b">52°</text>
+            </svg>
+            <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
+                <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">∠DOE = 128°</span>
+            </div>
         </div>
     </div>
 
-    <div class="col-figure">
-        <svg viewBox="0 0 450 400" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px; width:100%; height:auto;">
-            <!-- Шар (окружность) -->
-            <circle cx="225" cy="200" r="160" fill="#e8f0fe" stroke="#1f3a7a" stroke-width="2.5" />
-            
-            <!-- Центр шара O -->
-            <circle cx="225" cy="200" r="5" fill="#b22234" />
-            <text x="230" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#b22234">O</text>
-            
-            <!-- Плоскость сечения (эллипс) -->
-            <ellipse cx="225" cy="200" rx="120" ry="60" fill="none" stroke="#2f6aff" stroke-width="2" stroke-dasharray="6 4" />
-            
-            <!-- Центр окружности сечения O₁ -->
-            <circle cx="225" cy="200" r="4" fill="#1b7e3a" />
-            <text x="230" y="215" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#1b7e3a">O₁</text>
-            
-            <!-- Расстояние от центра шара до плоскости (d) -->
-            <line x1="225" y1="200" x2="225" y2="260" stroke="#b8860b" stroke-width="2" stroke-dasharray="4 4" />
-            <text x="175" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b8860b">d = 1</text>
-            
-            <!-- Радиус шара R -->
-            <line x1="225" y1="200" x2="340" y2="130" stroke="#b22234" stroke-width="2.5" />
-            <text x="285" y="155" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b22234">R</text>
-            
-            <!-- Радиус описанной окружности треугольника R₀ -->
-            <line x1="225" y1="200" x2="225" y2="140" stroke="#1b7e3a" stroke-width="2.5" />
-            <text x="235" y="165" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1b7e3a">R₀</text>
-            
-            <!-- Треугольник CDE (на плоскости сечения) -->
-            <polygon points="145,200 225,260 305,200" fill="none" stroke="#b22234" stroke-width="2" />
-            
-            <!-- Вершины треугольника -->
-            <circle cx="145" cy="200" r="4" fill="#b22234" />
-            <text x="125" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">C</text>
-            
-            <circle cx="225" cy="260" r="4" fill="#b22234" />
-            <text x="225" y="280" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">D</text>
-            
-            <circle cx="305" cy="200" r="4" fill="#b22234" />
-            <text x="310" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">E</text>
-            
-            <!-- Стороны треугольника -->
-            <text x="175" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#b22234">CD = 7</text>
-            <text x="260" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#b22234">DE = 8</text>
-            <text x="220" y="175" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#b22234">CE = 9</text>
-            
-            <!-- Легенда -->
-            <rect x="10" y="10" width="200" height="100" rx="10" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
-            <text x="20" y="30" font-size="12" fill="#0b1e3a">● O — центр шара</text>
-            <text x="20" y="48" font-size="12" fill="#0b1e3a">● O₁ — центр сечения</text>
-            <text x="20" y="66" font-size="12" fill="#0b1e3a">● R — радиус шара</text>
-            <text x="20" y="84" font-size="12" fill="#0b1e3a">● R₀ — радиус описанной окружности</text>
-            <text x="20" y="102" font-size="12" fill="#0b1e3a">● d — расстояние от O до плоскости</text>
-        </svg>
-        <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
-            <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">S = 92,2π см²</span>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Вписанная окружность</span> — окружность, касающаяся всех сторон треугольника.</li>
+            <li><span class="term">Радиус, проведённый в точку касания</span>, перпендикулярен стороне треугольника.</li>
+            <li><span class="term">Угол между двумя перпендикулярами</span> к сторонам угла равен либо самому углу, либо дополняет его до <span class="math">180°</span>.</li>
+            <li><span class="term">Сумма углов треугольника</span> равна <span class="math">180°</span>.</li>
+            <li>В <span class="term">равнобедренном треугольнике</span> углы при основании равны.</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 7 — Угол наклона боковой грани пирамиды -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №7 — Угол наклона боковой грани пирамиды</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Известно, что в правильной четырёхугольной пирамиде сторона основания равна 4, а высота равна 2. Тогда угол наклона боковой грани к плоскости основания будет равен
+    </div>
+
+    <div class="row">
+        <div class="col-solution">
+            <div class="step">
+                <span class="label">Шаг 1.</span>
+                <p>В правильной четырёхугольной пирамиде:</p>
+                <ul>
+                    <li>основание — <b>квадрат</b> со стороной <span class="math">a = 4</span>;</li>
+                    <li>вершина проецируется в <b>центр</b> основания;</li>
+                    <li>все боковые грани — <b>равные равнобедренные треугольники</b>.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 2.</span>
+                <p>Найдём <b>апофему</b> <span class="math">l</span> — высоту боковой грани.</p>
+                <p>Рассмотрим прямоугольный треугольник, образованный:</p>
+                <ul>
+                    <li>высотой пирамиды <span class="math">h = 2</span>,</li>
+                    <li>радиусом вписанной окружности основания <span class="math">r = a/2 = 2</span>,</li>
+                    <li>апофемой <span class="math">l</span> (гипотенуза).</li>
+                </ul>
+                <p>По теореме Пифагора:</p>
+                <p class="math-block">l = √(h² + r²) = √(2² + 2²) = √8 = 2√2</p>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 3.</span>
+                <p>Угол наклона боковой грани — это угол между апофемой <span class="math">l</span> и её проекцией на основание (радиусом <span class="math">r</span>).</p>
+                <p>В прямоугольном треугольнике:</p>
+                <p class="math-block">cos α = r / l = 2 / (2√2) = 1/√2</p>
+                <p>Отсюда:</p>
+                <p class="math-block">α = arccos(1/√2) = 45°</p>
+            </div>
+
+            <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+                <span class="label">✅ Ответ:</span>
+                <span class="answer-box">45°</span>
+            </div>
+        </div>
+
+        <div class="col-figure">
+            <svg viewBox="0 0 450 400" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px; width:100%; height:auto;">
+                <polygon points="225,320 80,260 225,200 370,260" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
+                <circle cx="225" cy="120" r="5" fill="#b22234" />
+                <text x="230" y="110" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#b22234">S</text>
+                <circle cx="225" cy="320" r="5" fill="#0b1e3a" />
+                <text x="230" y="340" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">A</text>
+                <circle cx="80" cy="260" r="5" fill="#0b1e3a" />
+                <text x="50" y="260" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">B</text>
+                <circle cx="225" cy="200" r="5" fill="#0b1e3a" />
+                <text x="230" y="190" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">C</text>
+                <circle cx="370" cy="260" r="5" fill="#0b1e3a" />
+                <text x="378" y="260" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#0b1e3a">D</text>
+                <circle cx="225" cy="260" r="5" fill="#1b7e3a" />
+                <text x="230" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#1b7e3a">O</text>
+                <line x1="225" y1="120" x2="225" y2="320" stroke="#1f3a7a" stroke-width="2" />
+                <line x1="225" y1="120" x2="80" y2="260" stroke="#1f3a7a" stroke-width="2" />
+                <line x1="225" y1="120" x2="225" y2="200" stroke="#1f3a7a" stroke-width="2" />
+                <line x1="225" y1="120" x2="370" y2="260" stroke="#1f3a7a" stroke-width="2" />
+                <line x1="225" y1="120" x2="225" y2="260" stroke="#b22234" stroke-width="2.5" stroke-dasharray="6 4" />
+                <text x="180" y="195" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b22234">h = 2</text>
+                <line x1="225" y1="120" x2="225" y2="200" stroke="#2f6aff" stroke-width="2.5" />
+                <text x="170" y="165" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#2f6aff">l = 2√2</text>
+                <line x1="225" y1="260" x2="225" y2="200" stroke="#1b7e3a" stroke-width="2" stroke-dasharray="4 4" />
+                <text x="240" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1b7e3a">r = 2</text>
+                <path d="M 225 200 A 20 20 0 0 0 210 215" fill="none" stroke="#b8860b" stroke-width="2" />
+                <text x="195" y="215" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b8860b">α = 45°</text>
+                <text x="150" y="295" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#1f3a7a">a = 4</text>
+                <text x="295" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#1f3a7a">a = 4</text>
+                <rect x="10" y="10" width="180" height="80" rx="10" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
+                <text x="20" y="30" font-size="12" fill="#0b1e3a">● S — вершина пирамиды</text>
+                <text x="20" y="48" font-size="12" fill="#0b1e3a">● O — центр основания</text>
+                <text x="20" y="66" font-size="12" fill="#0b1e3a">● SO — высота (h = 2)</text>
+                <text x="20" y="82" font-size="12" fill="#0b1e3a">● l — апофема</text>
+            </svg>
+            <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
+                <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">Угол наклона = 45°</span>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Формула Герона</span> — <span class="math">S = √(p(p−a)(p−b)(p−c))</span>, где <span class="math">p</span> — полупериметр.</li>
-        <li><span class="term">Радиус описанной окружности</span> — <span class="math">R₀ = abc/(4S)</span>.</li>
-        <li><span class="term">Теорема Пифагора в пространстве</span> — <span class="math">R² = R₀² + d²</span>, где <span class="math">d</span> — расстояние от центра шара до плоскости сечения.</li>
-        <li><span class="term">Площадь поверхности шара</span> — <span class="math">S = 4πR²</span>.</li>
-    </ul>
-</div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Правильная четырёхугольная пирамида</span> — пирамида, в основании которой лежит квадрат, а вершина проецируется в центр основания.</li>
+            <li><span class="term">Апофема</span> — высота боковой грани, проведённая из вершины пирамиды к стороне основания.</li>
+            <li><span class="term">Угол наклона боковой грани</span> — угол между плоскостью боковой грани и плоскостью основания. Измеряется как угол между апофемой и её проекцией на основание.</li>
+            <li><span class="term">Теорема Пифагора</span> — в прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов.</li>
+        </ul>
+    </div>
 
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 8 — Площадь поверхности шара -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №8 — Площадь поверхности шара</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Известно, что на поверхности шара даны три точки: C, D и E такие, что CD = 7 см, DE = 8 см, CE = 9 см. Расстояние от центра шара до плоскости треугольника CDE равно 1 см. Тогда площадь поверхности шара будет равна
+    </div>
+
+    <div class="row">
+        <div class="col-solution">
+            <div class="step">
+                <span class="label">Шаг 1.</span>
+                <p>Найдём площадь треугольника <span class="math">CDE</span> по формуле Герона.</p>
+                <p>Стороны: <span class="math">a = 7</span>, <span class="math">b = 8</span>, <span class="math">c = 9</span>.</p>
+                <p>Полупериметр: <span class="math">p = (7+8+9)/2 = 12</span>.</p>
+                <p class="math-block">S = √(12·5·4·3) = √720 = 12√5 см²</p>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 2.</span>
+                <p>Найдём радиус описанной окружности треугольника <span class="math">R₀</span>.</p>
+                <p class="math-block">R₀ = abc/(4S) = 7·8·9/(4·12√5) = 504/(48√5) = 21/(2√5) см</p>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 3.</span>
+                <p>Найдём радиус шара <span class="math">R</span>.</p>
+                <p>Расстояние от центра шара до плоскости: <span class="math">d = 1</span> см.</p>
+                <p>По теореме Пифагора: <span class="math">R² = R₀² + d²</span>.</p>
+                <p class="math-block">R² = (21/(2√5))² + 1² = 441/20 + 1 = 461/20</p>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 4.</span>
+                <p>Площадь поверхности шара:</p>
+                <p class="math-block">S = 4πR² = 4π·461/20 = 92,2π см²</p>
+            </div>
+
+            <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+                <span class="label">✅ Ответ:</span>
+                <span class="answer-box">92,2π см²</span>
+            </div>
+        </div>
+
+        <div class="col-figure">
+            <svg viewBox="0 0 450 400" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px; width:100%; height:auto;">
+                <circle cx="225" cy="200" r="160" fill="#e8f0fe" stroke="#1f3a7a" stroke-width="2.5" />
+                <circle cx="225" cy="200" r="5" fill="#b22234" />
+                <text x="230" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#b22234">O</text>
+                <ellipse cx="225" cy="200" rx="120" ry="60" fill="none" stroke="#2f6aff" stroke-width="2" stroke-dasharray="6 4" />
+                <circle cx="225" cy="200" r="4" fill="#1b7e3a" />
+                <text x="230" y="215" font-family="Segoe UI, sans-serif" font-weight="600" font-size="16" fill="#1b7e3a">O₁</text>
+                <line x1="225" y1="200" x2="225" y2="260" stroke="#b8860b" stroke-width="2" stroke-dasharray="4 4" />
+                <text x="175" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b8860b">d = 1</text>
+                <line x1="225" y1="200" x2="340" y2="130" stroke="#b22234" stroke-width="2.5" />
+                <text x="285" y="155" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#b22234">R</text>
+                <line x1="225" y1="200" x2="225" y2="140" stroke="#1b7e3a" stroke-width="2.5" />
+                <text x="235" y="165" font-family="Segoe UI, sans-serif" font-weight="500" font-size="14" fill="#1b7e3a">R₀</text>
+                <polygon points="145,200 225,260 305,200" fill="none" stroke="#b22234" stroke-width="2" />
+                <circle cx="145" cy="200" r="4" fill="#b22234" />
+                <text x="125" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">C</text>
+                <circle cx="225" cy="260" r="4" fill="#b22234" />
+                <text x="225" y="280" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">D</text>
+                <circle cx="305" cy="200" r="4" fill="#b22234" />
+                <text x="310" y="195" font-family="Segoe UI, sans-serif" font-weight="600" font-size="14" fill="#b22234">E</text>
+                <text x="175" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#b22234">CD = 7</text>
+                <text x="260" y="235" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#b22234">DE = 8</text>
+                <text x="220" y="175" font-family="Segoe UI, sans-serif" font-weight="500" font-size="12" fill="#b22234">CE = 9</text>
+                <rect x="10" y="10" width="200" height="100" rx="10" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
+                <text x="20" y="30" font-size="12" fill="#0b1e3a">● O — центр шара</text>
+                <text x="20" y="48" font-size="12" fill="#0b1e3a">● O₁ — центр сечения</text>
+                <text x="20" y="66" font-size="12" fill="#0b1e3a">● R — радиус шара</text>
+                <text x="20" y="84" font-size="12" fill="#0b1e3a">● R₀ — радиус описанной окружности</text>
+                <text x="20" y="102" font-size="12" fill="#0b1e3a">● d — расстояние от O до плоскости</text>
+            </svg>
+            <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
+                <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">S = 92,2π см²</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Формула Герона</span> — <span class="math">S = √(p(p−a)(p−b)(p−c))</span>, где <span class="math">p</span> — полупериметр.</li>
+            <li><span class="term">Радиус описанной окружности</span> — <span class="math">R₀ = abc/(4S)</span>.</li>
+            <li><span class="term">Теорема Пифагора в пространстве</span> — <span class="math">R² = R₀² + d²</span>, где <span class="math">d</span> — расстояние от центра шара до плоскости сечения.</li>
+            <li><span class="term">Площадь поверхности шара</span> — <span class="math">S = 4πR²</span>.</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================ -->
     <!-- ЗАДАЧА 9 -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
     <div class="task-title">📌 Задача №9 — Задача на смеси (растворы)</div>
     <div class="problem-box">
         <span class="q">Условие:</span> Первый раствор 10% соли, второй 30%. Смешали 200 кг 25% раствора. На сколько кг масса первого меньше массы второго?
     </div>
     <div class="step">
         <span class="label">Решение:</span>
-        1. Пусть <span class="math">x</span> — масса первого раствора, <span class="math">y</span> — второго.<br>
-        2. Составляем систему уравнений:<br>
-        <span class="math">x + y = 200</span> (общая масса).<br>
-        <span class="math">0,1x + 0,3y = 0,25·200 = 50</span> (масса соли).<br>
-        3. Из первого: <span class="math">y = 200 − x</span>.<br>
-        4. Подставляем: <span class="math">0,1x + 0,3(200 − x) = 50</span>.<br>
-        5. <span class="math">0,1x + 60 − 0,3x = 50</span> → <span class="math">−0,2x = −10</span> → <span class="math">x = 50</span>.<br>
-        6. Тогда <span class="math">y = 150</span>.<br>
-        7. Разница: <span class="math">150 − 50 = 100</span> кг.<br>
+        <p>1. Пусть <span class="math">x</span> — масса первого раствора, <span class="math">y</span> — второго.</p>
+        <p>2. Составляем систему уравнений:</p>
+        <p class="math-block">x + y = 200</p>
+        <p class="math-block">0,1x + 0,3y = 0,25·200 = 50</p>
+        <p>3. Из первого: <span class="math">y = 200 − x</span>.</p>
+        <p>4. Подставляем: <span class="math">0,1x + 0,3(200 − x) = 50</span>.</p>
+        <p>5. <span class="math">0,1x + 60 − 0,3x = 50</span> → <span class="math">−0,2x = −10</span> → <span class="math">x = 50</span>.</p>
+        <p>6. Тогда <span class="math">y = 150</span>.</p>
+        <p>7. Разница: <span class="math">150 − 50 = 100</span> кг.</p>
         <span class="answer-box">Ответ: 100</span>
     </div>
     <div class="apparat">
@@ -965,18 +1089,21 @@
         </ul>
     </div>
 
-    <!-- ЗАДАЧА 10 -->
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 10 — Высказывания о числах -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
     <div class="task-title">📌 Задача №10 — Высказывания о числах</div>
     <div class="problem-box">
         <span class="q">Условие:</span> Какие высказывания о числах не являются верными?
     </div>
     <div class="step">
         <span class="label">Решение:</span>
-        Проверяем каждое утверждение:<br>
-        1. «Любое действительное число является либо положительным, либо отрицательным» — <b>неверно</b>, так как 0 не относится ни к тем, ни к другим.<br>
-        2. «Любое действительное число является рациональным» — <b>неверно</b>, например <span class="math">√2</span> — иррациональное.<br>
-        3. «Любое иррациональное число является действительным» — <b>верно</b> (все иррациональные — действительные).<br>
-        4. «Любое рациональное число является либо целым, либо дробным» — <b>верно</b> (определение рационального числа).<br>
+        <p>Проверяем каждое утверждение:</p>
+        <p>1. «Любое действительное число является либо положительным, либо отрицательным» — <b>неверно</b>, так как 0 не относится ни к тем, ни к другим.</p>
+        <p>2. «Любое действительное число является рациональным» — <b>неверно</b>, например <span class="math">√2</span> — иррациональное.</p>
+        <p>3. «Любое иррациональное число является действительным» — <b>верно</b> (все иррациональные — действительные).</p>
+        <p>4. «Любое рациональное число является либо целым, либо дробным» — <b>верно</b> (определение рационального числа).</p>
         <span class="answer-box">Ответ: 1 и 2</span>
     </div>
     <div class="apparat">
@@ -990,242 +1117,248 @@
     </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 11 — Тригонометрическое уравнение (подробно) -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №11 — Тригонометрическое уравнение</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Множество решений уравнения <span class="math">sin 2x · tg x + 1 = 3 sin x</span> находится по формуле
-</div>
+    <!-- ЗАДАЧА 11 — Тригонометрическое уравнение -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №11 — Тригонометрическое уравнение</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Множество решений уравнения <span class="math">sin 2x · tg x + 1 = 3 sin x</span> находится по формуле
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 1.</span>
-    <p>Упрощаем первое слагаемое:</p>
-    <p class="math-block">sin 2x · tg x = (2 sin x cos x) · (sin x / cos x) = 2 sin² x</p>
-    <p style="font-size:0.9rem; color:#1f3a7a;">(использованы формулы: <span class="math">sin 2x = 2 sin x cos x</span> и <span class="math">tg x = sin x / cos x</span>)</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 1.</span>
+        <p>Упрощаем первое слагаемое:</p>
+        <p class="math-block">sin 2x · tg x = (2 sin x cos x) · (sin x / cos x) = 2 sin² x</p>
+        <p style="font-size:0.9rem; color:#1f3a7a;">(использованы формулы: <span class="math">sin 2x = 2 sin x cos x</span> и <span class="math">tg x = sin x / cos x</span>)</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 2.</span>
-    <p>Подставляем в исходное уравнение:</p>
-    <p class="math-block">2 sin² x + 1 = 3 sin x</p>
-    <p>Переносим всё в одну часть:</p>
-    <p class="math-block">2 sin² x − 3 sin x + 1 = 0</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 2.</span>
+        <p>Подставляем в исходное уравнение:</p>
+        <p class="math-block">2 sin² x + 1 = 3 sin x</p>
+        <p>Переносим всё в одну часть:</p>
+        <p class="math-block">2 sin² x − 3 sin x + 1 = 0</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 3.</span>
-    <p>Делаем замену: <span class="math">t = sin x</span>.</p>
-    <p class="math-block">2t² − 3t + 1 = 0</p>
-    <p>Находим дискриминант:</p>
-    <p class="math-block">D = (−3)² − 4·2·1 = 9 − 8 = 1</p>
-    <p>Корни:</p>
-    <p class="math-block">t₁ = (3−1)/(2·2) = 2/4 = 1/2</p>
-    <p class="math-block">t₂ = (3+1)/(2·2) = 4/4 = 1</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 3.</span>
+        <p>Делаем замену: <span class="math">t = sin x</span>.</p>
+        <p class="math-block">2t² − 3t + 1 = 0</p>
+        <p>Находим дискриминант:</p>
+        <p class="math-block">D = (−3)² − 4·2·1 = 9 − 8 = 1</p>
+        <p>Корни:</p>
+        <p class="math-block">t₁ = (3−1)/(2·2) = 2/4 = 1/2</p>
+        <p class="math-block">t₂ = (3+1)/(2·2) = 4/4 = 1</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 4.</span>
-    <p>Возвращаемся к <span class="math">sin x</span>:</p>
-    <p><span class="math">sin x = 1</span> или <span class="math">sin x = 1/2</span></p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 4.</span>
+        <p>Возвращаемся к <span class="math">sin x</span>:</p>
+        <p><span class="math">sin x = 1</span> или <span class="math">sin x = 1/2</span></p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 5.</span>
-    <p>Решаем <span class="math">sin x = 1</span>:</p>
-    <p class="math-block">x = π/2 + 2πn, n ∈ ℤ</p>
-    <p>Но <span class="math">x = π/2</span> не входит в ОДЗ, так как <span class="math">tg x</span> в этой точке не определён.</p>
-    <p style="font-size:0.9rem; color:#1f3a7a;">(ОДЗ: <span class="math">cos x ≠ 0</span>, то есть <span class="math">x ≠ π/2 + πn</span>)</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 5.</span>
+        <p>Решаем <span class="math">sin x = 1</span>:</p>
+        <p class="math-block">x = π/2 + 2πn, n ∈ ℤ</p>
+        <p>Но <span class="math">x = π/2</span> не входит в ОДЗ, так как <span class="math">tg x</span> в этой точке не определён.</p>
+        <p style="font-size:0.9rem; color:#1f3a7a;">(ОДЗ: <span class="math">cos x ≠ 0</span>, то есть <span class="math">x ≠ π/2 + πn</span>)</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 6.</span>
-    <p>Решаем <span class="math">sin x = 1/2</span>:</p>
-    <p class="math-block">x = π/6 + 2πn или x = 5π/6 + 2πn, n ∈ ℤ</p>
-    <p>Компактная запись:</p>
-    <p class="math-block">x = (−1)ⁿ · π/6 + πn, n ∈ ℤ</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 6.</span>
+        <p>Решаем <span class="math">sin x = 1/2</span>:</p>
+        <p class="math-block">x = π/6 + 2πn или x = 5π/6 + 2πn, n ∈ ℤ</p>
+        <p>Компактная запись:</p>
+        <p class="math-block">x = (−1)ⁿ · π/6 + πn, n ∈ ℤ</p>
+    </div>
 
-<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-    <span class="label">✅ Ответ:</span>
-    <span class="answer-box">(−1)ⁿ · π/6 + πn, n ∈ ℤ</span>
-    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
-</div>
+    <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+        <span class="label">✅ Ответ:</span>
+        <span class="answer-box">(−1)ⁿ · π/6 + πn, n ∈ ℤ</span>
+        <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
+    </div>
 
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Синус двойного угла:</span> <span class="math">sin 2x = 2 sin x cos x</span>.</li>
-        <li><span class="term">Определение тангенса:</span> <span class="math">tg x = sin x / cos x</span>.</li>
-        <li><span class="term">Область определения:</span> <span class="math">tg x</span> определён только при <span class="math">cos x ≠ 0</span>, то есть <span class="math">x ≠ π/2 + πn</span>.</li>
-        <li><span class="term">Решение квадратного уравнения</span> относительно <span class="math">sin x</span> через замену <span class="math">t = sin x</span>.</li>
-        <li><span class="term">Простейшие уравнения:</span>
-            <ul>
-                <li><span class="math">sin x = 1</span> → <span class="math">x = π/2 + 2πn</span></li>
-                <li><span class="math">sin x = 1/2</span> → <span class="math">x = (−1)ⁿ·π/6 + πn</span></li>
-            </ul>
-        </li>
-    </ul>
-</div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Синус двойного угла:</span> <span class="math">sin 2x = 2 sin x cos x</span>.</li>
+            <li><span class="term">Определение тангенса:</span> <span class="math">tg x = sin x / cos x</span>.</li>
+            <li><span class="term">Область определения:</span> <span class="math">tg x</span> определён только при <span class="math">cos x ≠ 0</span>, то есть <span class="math">x ≠ π/2 + πn</span>.</li>
+            <li><span class="term">Решение квадратного уравнения</span> относительно <span class="math">sin x</span> через замену <span class="math">t = sin x</span>.</li>
+            <li><span class="term">Простейшие уравнения:</span>
+                <ul>
+                    <li><span class="math">sin x = 1</span> → <span class="math">x = π/2 + 2πn</span></li>
+                    <li><span class="math">sin x = 1/2</span> → <span class="math">x = (−1)ⁿ·π/6 + πn</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 12 — Неравенство с параметром (подробно) -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №12 — Неравенство с параметром</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Наибольшим целым решением неравенства <span class="math">25/(x²−3x) ≥ x²−3x</span> является число
-</div>
+    <!-- ЗАДАЧА 12 — Неравенство с параметром -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №12 — Неравенство с параметром</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Наибольшим целым решением неравенства <span class="math">25/(x²−3x) ≥ x²−3x</span> является число
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 1.</span>
-    <p>Вводим замену: <span class="math">t = x² − 3x</span>.</p>
-    <p class="math-block">25/t ≥ t</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 1.</span>
+        <p>Вводим замену: <span class="math">t = x² − 3x</span>.</p>
+        <p class="math-block">25/t ≥ t</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 2.</span>
-    <p>Приводим к общему знаменателю:</p>
-    <p class="math-block">25/t − t ≥ 0</p>
-    <p class="math-block">(25 − t²)/t ≥ 0</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 2.</span>
+        <p>Приводим к общему знаменателю:</p>
+        <p class="math-block">25/t − t ≥ 0</p>
+        <p class="math-block">(25 − t²)/t ≥ 0</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 3.</span>
-    <p>Раскладываем числитель на множители:</p>
-    <p class="math-block">(5−t)(5+t)/t ≥ 0</p>
-    <p>Метод интервалов даёт:</p>
-    <p class="math-block">t ∈ (−∞; −5] ∪ (0; 5]</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 3.</span>
+        <p>Раскладываем числитель на множители:</p>
+        <p class="math-block">(5−t)(5+t)/t ≥ 0</p>
+        <p>Метод интервалов даёт:</p>
+        <p class="math-block">t ∈ (−∞; −5] ∪ (0; 5]</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 4.</span>
-    <p>Возвращаемся к <span class="math">x</span>.</p>
-    <p><b>Случай 1:</b> <span class="math">t ≤ −5</span>, то есть <span class="math">x² − 3x ≤ −5</span>.</p>
-    <p class="math-block">x² − 3x + 5 ≤ 0</p>
-    <p>Дискриминант: <span class="math">D = 9 − 20 = −11 < 0</span>, значит решений нет.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 4.</span>
+        <p>Возвращаемся к <span class="math">x</span>.</p>
+        <p><b>Случай 1:</b> <span class="math">t ≤ −5</span>, то есть <span class="math">x² − 3x ≤ −5</span>.</p>
+        <p class="math-block">x² − 3x + 5 ≤ 0</p>
+        <p>Дискриминант: <span class="math">D = 9 − 20 = −11 < 0</span>, значит решений нет.</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 5.</span>
-    <p><b>Случай 2:</b> <span class="math">0 < t ≤ 5</span>, то есть <span class="math">0 < x² − 3x ≤ 5</span>.</p>
-    <p><b>2а)</b> <span class="math">x² − 3x > 0</span> → <span class="math">x(x−3) > 0</span> → <span class="math">x ∈ (−∞; 0) ∪ (3; +∞)</span>.</p>
-    <p><b>2б)</b> <span class="math">x² − 3x ≤ 5</span> → <span class="math">x² − 3x − 5 ≤ 0</span>.</p>
-    <p>Корни: <span class="math">x = (3 ± √29)/2</span>, значит <span class="math">x ∈ [(3−√29)/2; (3+√29)/2]</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 5.</span>
+        <p><b>Случай 2:</b> <span class="math">0 < t ≤ 5</span>, то есть <span class="math">0 < x² − 3x ≤ 5</span>.</p>
+        <p><b>2а)</b> <span class="math">x² − 3x > 0</span> → <span class="math">x(x−3) > 0</span> → <span class="math">x ∈ (−∞; 0) ∪ (3; +∞)</span>.</p>
+        <p><b>2б)</b> <span class="math">x² − 3x ≤ 5</span> → <span class="math">x² − 3x − 5 ≤ 0</span>.</p>
+        <p>Корни: <span class="math">x = (3 ± √29)/2</span>, значит <span class="math">x ∈ [(3−√29)/2; (3+√29)/2]</span>.</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 6.</span>
-    <p>Пересекаем решения:</p>
-    <p><span class="math">x ∈ [(3−√29)/2; 0) ∪ (3; (3+√29)/2]</span></p>
-    <p>Приближённо: <span class="math">x ∈ [−1,192; 0) ∪ (3; 4,192]</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 6.</span>
+        <p>Пересекаем решения:</p>
+        <p><span class="math">x ∈ [(3−√29)/2; 0) ∪ (3; (3+√29)/2]</span></p>
+        <p>Приближённо: <span class="math">x ∈ [−1,192; 0) ∪ (3; 4,192]</span>.</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 7.</span>
-    <p>Целые решения:</p>
-    <ul>
-        <li>в первом промежутке: <span class="math">−1</span> (и 0 не входит);</li>
-        <li>во втором промежутке: <span class="math">4</span>.</li>
-    </ul>
-    <p>Наибольшее целое: <span class="math">4</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 7.</span>
+        <p>Целые решения:</p>
+        <ul>
+            <li>в первом промежутке: <span class="math">−1</span> (и 0 не входит);</li>
+            <li>во втором промежутке: <span class="math">4</span>.</li>
+        </ul>
+        <p>Наибольшее целое: <span class="math">4</span>.</p>
+    </div>
 
-<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-    <span class="label">✅ Ответ:</span>
-    <span class="answer-box">4</span>
-    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
-</div>
+    <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+        <span class="label">✅ Ответ:</span>
+        <span class="answer-box">4</span>
+        <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
+    </div>
 
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Замена переменной</span> — упрощает сложное неравенство.</li>
-        <li><span class="term">Метод интервалов</span> — используется для решения дробных неравенств.</li>
-        <li><span class="term">Дискриминант</span> — если <span class="math">D < 0</span> и коэффициент при <span class="math">x²</span> положителен, то квадратный трёхчлен всегда положителен.</li>
-        <li><span class="term">Пересечение промежутков</span> — для нахождения итогового решения.</li>
-        <li><span class="term">Целые решения</span> — отбор целых чисел из полученных промежутков.</li>
-    </ul>
-</div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Замена переменной</span> — упрощает сложное неравенство.</li>
+            <li><span class="term">Метод интервалов</span> — используется для решения дробных неравенств.</li>
+            <li><span class="term">Дискриминант</span> — если <span class="math">D < 0</span> и коэффициент при <span class="math">x²</span> положителен, то квадратный трёхчлен всегда положителен.</li>
+            <li><span class="term">Пересечение промежутков</span> — для нахождения итогового решения.</li>
+            <li><span class="term">Целые решения</span> — отбор целых чисел из полученных промежутков.</li>
+        </ul>
+    </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 13 — Тригонометрическое уравнение (наименьший корень) -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №13 — Тригонометрическое уравнение (наименьший корень)</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Наименьшим положительным корнем уравнения <span class="math">√3·cos x − sin x = 1</span> является число
-</div>
+    <!-- ЗАДАЧА 13 — Тригонометрическое уравнение (наименьший корень) -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №13 — Тригонометрическое уравнение (наименьший корень)</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Наименьшим положительным корнем уравнения <span class="math">√3·cos x − sin x = 1</span> является число
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 1.</span>
-    <p>Приводим уравнение к виду <span class="math">R·cos(x+φ) = 1</span> методом вспомогательного аргумента.</p>
-    <p>Здесь <span class="math">a = √3</span>, <span class="math">b = −1</span>.</p>
-    <p class="math-block">R = √(a² + b²) = √(3 + 1) = 2</p>
-    <p class="math-block">cos φ = a/R = √3/2,  sin φ = b/R = −1/2</p>
-    <p>Значит, <span class="math">φ = −π/6</span> (или −30°).</p>
-    <p class="math-block">√3·cos x − sin x = 2·cos(x + π/6)</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 1.</span>
+        <p>Приводим уравнение к виду <span class="math">R·cos(x+φ) = 1</span> методом вспомогательного аргумента.</p>
+        <p>Здесь <span class="math">a = √3</span>, <span class="math">b = −1</span>.</p>
+        <p class="math-block">R = √(a² + b²) = √(3 + 1) = 2</p>
+        <p class="math-block">cos φ = a/R = √3/2,  sin φ = b/R = −1/2</p>
+        <p>Значит, <span class="math">φ = −π/6</span> (или −30°).</p>
+        <p class="math-block">√3·cos x − sin x = 2·cos(x + π/6)</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 2.</span>
-    <p>Подставляем в исходное уравнение:</p>
-    <p class="math-block">2·cos(x + π/6) = 1</p>
-    <p class="math-block">cos(x + π/6) = 1/2</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 2.</span>
+        <p>Подставляем в исходное уравнение:</p>
+        <p class="math-block">2·cos(x + π/6) = 1</p>
+        <p class="math-block">cos(x + π/6) = 1/2</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 3.</span>
-    <p>Решаем уравнение <span class="math">cos t = 1/2</span>:</p>
-    <p class="math-block">t = ±π/3 + 2πn, n ∈ ℤ</p>
-    <p>В нашем случае <span class="math">t = x + π/6</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 3.</span>
+        <p>Решаем уравнение <span class="math">cos t = 1/2</span>:</p>
+        <p class="math-block">t = ±π/3 + 2πn, n ∈ ℤ</p>
+        <p>В нашем случае <span class="math">t = x + π/6</span>.</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 4.</span>
-    <p><b>Случай 1 (знак «+»):</b></p>
-    <p class="math-block">x + π/6 = π/3 + 2πn</p>
-    <p class="math-block">x = π/6 + 2πn</p>
-    <p>Наименьший положительный: <span class="math">π/6 = 30°</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 4.</span>
+        <p><b>Случай 1 (знак «+»):</b></p>
+        <p class="math-block">x + π/6 = π/3 + 2πn</p>
+        <p class="math-block">x = π/6 + 2πn</p>
+        <p>Наименьший положительный: <span class="math">π/6 = 30°</span>.</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 5.</span>
-    <p><b>Случай 2 (знак «−»):</b></p>
-    <p class="math-block">x + π/6 = −π/3 + 2πn</p>
-    <p class="math-block">x = −π/2 + 2πn</p>
-    <p>Положительные корни: <span class="math">3π/2 = 270°</span> (при n=1).</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 5.</span>
+        <p><b>Случай 2 (знак «−»):</b></p>
+        <p class="math-block">x + π/6 = −π/3 + 2πn</p>
+        <p class="math-block">x = −π/2 + 2πn</p>
+        <p>Положительные корни: <span class="math">3π/2 = 270°</span> (при n=1).</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 6.</span>
-    <p>Сравниваем: <span class="math">30° < 270°</span>.</p>
-    <p>Наименьший положительный корень: <span class="math">30°</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 6.</span>
+        <p>Сравниваем: <span class="math">30° < 270°</span>.</p>
+        <p>Наименьший положительный корень: <span class="math">30°</span>.</p>
+    </div>
 
-<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-    <span class="label">✅ Ответ:</span>
-    <span class="answer-box">30°</span>
-    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №1)</span>
-</div>
+    <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+        <span class="label">✅ Ответ:</span>
+        <span class="answer-box">30°</span>
+        <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №1)</span>
+    </div>
 
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Метод вспомогательного аргумента</span> — <span class="math">a·cos x + b·sin x = R·cos(x − φ)</span>, где <span class="math">R = √(a²+b²)</span>.</li>
-        <li><span class="term">Простейшее уравнение</span> — <span class="math">cos t = 1/2</span> → <span class="math">t = ±π/3 + 2πn</span>.</li>
-        <li><span class="term">Отбор корней</span> — выбор наименьшего положительного значения из всех серий решений.</li>
-    </ul>
-</div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Метод вспомогательного аргумента</span> — <span class="math">a·cos x + b·sin x = R·cos(x − φ)</span>, где <span class="math">R = √(a²+b²)</span>.</li>
+            <li><span class="term">Простейшее уравнение</span> — <span class="math">cos t = 1/2</span> → <span class="math">t = ±π/3 + 2πn</span>.</li>
+            <li><span class="term">Отбор корней</span> — выбор наименьшего положительного значения из всех серий решений.</li>
+        </ul>
+    </div>
 
-    <!-- ЗАДАЧА 14 -->
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 14 — Область определения логарифма -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
     <div class="task-title">📌 Задача №14 — Область определения логарифма</div>
     <div class="problem-box">
         <span class="q">Условие:</span> Найдите наибольшее целое число в области определения <span class="math">y = ln(31 − |3x−10|)</span>
     </div>
     <div class="step">
         <span class="label">Решение:</span>
-        1. Аргумент логарифма должен быть строго больше 0: <span class="math">31 − |3x−10| > 0</span>.<br>
-        2. <span class="math">|3x−10| < 31</span> → <span class="math">−31 < 3x−10 < 31</span>.<br>
-        3. <span class="math">−21 < 3x < 41</span> → <span class="math">−7 < x < 13⅔</span>.<br>
-        4. Наибольшее целое число, удовлетворяющее этому условию: <span class="math">13</span>.<br>
+        <p>1. Аргумент логарифма должен быть строго больше 0: <span class="math">31 − |3x−10| > 0</span>.</p>
+        <p>2. <span class="math">|3x−10| < 31</span> → <span class="math">−31 < 3x−10 < 31</span>.</p>
+        <p>3. <span class="math">−21 < 3x < 41</span> → <span class="math">−7 < x < 13⅔</span>.</p>
+        <p>4. Наибольшее целое число, удовлетворяющее этому условию: <span class="math">13</span>.</p>
         <span class="answer-box">Ответ: 13</span>
     </div>
     <div class="apparat">
@@ -1237,137 +1370,144 @@
         </ul>
     </div>
 
-    <!-- ЗАДАЧА 15 -->
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 15 — Наибольший общий делитель (НОД) — подробно -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
     <div class="task-title">📌 Задача №15 — Наибольший общий делитель (НОД)</div>
     <div class="problem-box">
         <span class="q">Условие:</span> Найдите наибольший делитель чисел 448 и 656.
     </div>
+
     <div class="step">
-        <span class="label">Решение:</span>
-        1. Разложим на простые множители:<br>
-        <span class="math">448 = 2⁶·7</span> (делим на 2: 448→224→112→56→28→14→7).<br>
-        <span class="math">656 = 2⁴·41</span> (656→328→164→82→41).<br>
-        2. НОД — это произведение общих простых множителей в минимальной степени:<br>
-        <span class="math">2⁴ = 16</span>.<br>
-        <span class="answer-box">Ответ: 16</span>
+        <span class="label">Шаг 1.</span>
+        <p><b>Что такое НОД?</b></p>
+        <p>НОД (наибольший общий делитель) двух чисел — это <b>самое большое</b> натуральное число, на которое <b>оба</b> данных числа делятся без остатка.</p>
+        <p>Например, для чисел 12 и 18: общие делители — 1, 2, 3, 6, наибольший — <b>6</b>.</p>
     </div>
+
+    <div class="step">
+        <span class="label">Шаг 2.</span>
+        <p>Разложим число <b>448</b> на простые множители.</p>
+        <p>Последовательно делим на наименьшее простое число 2:</p>
+        <ul>
+            <li>448 ÷ 2 = 224</li>
+            <li>224 ÷ 2 = 112</li>
+            <li>112 ÷ 2 = 56</li>
+            <li>56 ÷ 2 = 28</li>
+            <li>28 ÷ 2 = 14</li>
+            <li>14 ÷ 2 = 7</li>
+            <li>7 — простое число</li>
+        </ul>
+        <p class="math-block">448 = 2·2·2·2·2·2·7 = 2⁶ · 7</p>
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 3.</span>
+        <p>Разложим число <b>656</b> на простые множители.</p>
+        <p>Последовательно делим на 2:</p>
+        <ul>
+            <li>656 ÷ 2 = 328</li>
+            <li>328 ÷ 2 = 164</li>
+            <li>164 ÷ 2 = 82</li>
+            <li>82 ÷ 2 = 41</li>
+            <li>41 — простое число</li>
+        </ul>
+        <p class="math-block">656 = 2·2·2·2·41 = 2⁴ · 41</p>
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 4.</span>
+        <p>Сравниваем разложения:</p>
+        <table>
+            <tr>
+                <th>Число</th>
+                <th>Разложение</th>
+            </tr>
+            <tr>
+                <td>448</td>
+                <td>2⁶ · 7</td>
+            </tr>
+            <tr>
+                <td>656</td>
+                <td>2⁴ · 41</td>
+            </tr>
+        </table>
+        <p>Общий множитель — только <b>2</b>.</p>
+        <p>Берём <b>наименьшую</b> степень: <span class="math">2^{min(6,4)} = 2^4 = 16</span>.</p>
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 5.</span>
+        <p><b>Проверка:</b></p>
+        <ul>
+            <li>448 ÷ 16 = 28 (делится без остатка) ✅</li>
+            <li>656 ÷ 16 = 41 (делится без остатка) ✅</li>
+        </ul>
+        <p>Число больше 16 не подходит (например, 32 не делит 656 без остатка).</p>
+    </div>
+
+    <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+        <span class="label">✅ Ответ:</span>
+        <span class="answer-box">16</span>
+    </div>
+
     <div class="apparat">
         <div class="apparat-title">🧠 Понятийный аппарат</div>
         <ul>
-            <li><span class="term">Разложение на простые множители:</span> представление числа в виде произведения простых чисел.</li>
-            <li><span class="term">НОД:</span> наибольшее число, на которое делятся все данные числа.</li>
-            <li><span class="term">Алгоритм:</span> берём общие простые множители в минимальной степени.</li>
+            <li><span class="term">Простые числа</span> — числа, которые делятся только на 1 и на себя (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, ...).</li>
+            <li><span class="term">Разложение на простые множители</span> — представление числа в виде произведения простых чисел.</li>
+            <li><span class="term">НОД</span> — наибольшее число, на которое делятся все данные числа.</li>
+            <li><span class="term">Правило нахождения НОД через разложение:</span>
+                <ol style="margin-top: 0.3rem;">
+                    <li>Разложить каждое число на простые множители.</li>
+                    <li>Найти общие множители.</li>
+                    <li>Взять каждый общий множитель в <b>наименьшей</b> степени.</li>
+                    <li>Перемножить полученные множители.</li>
+                </ol>
+            </li>
         </ul>
     </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 15 — Наибольший общий делитель (НОД) -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №15 — Наибольший общий делитель (НОД)</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Найдите наибольший делитель чисел 448 и 656.
-</div>
+    <!-- ЗАДАЧА 16 — Наименьшее общее кратное (НОК) -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №16 — Наименьшее общее кратное (НОК)</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Найдите наименьшее общее кратное чисел 60, 252 и 264.
+    </div>
+    <div class="step">
+        <span class="label">Решение:</span>
+        <p>1. Разложим на простые множители:</p>
+        <p class="math-block">60 = 2²·3·5</p>
+        <p class="math-block">252 = 2²·3²·7</p>
+        <p class="math-block">264 = 2³·3·11</p>
+        <p>2. НОК — это произведение всех простых множителей в максимальных степенях:</p>
+        <p class="math-block">2³·3²·5·7·11 = 8·9·5·7·11 = 27720</p>
+        <span class="answer-box">Ответ: 27720</span>
+    </div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">НОК:</span> наименьшее число, которое делится на все данные числа.</li>
+            <li><span class="term">Алгоритм:</span> берём все простые множители в максимальной степени.</li>
+        </ul>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 1.</span>
-    <p><b>Что такое НОД?</b></p>
-    <p>НОД (наибольший общий делитель) двух чисел — это <b>самое большое</b> натуральное число, на которое <b>оба</b> данных числа делятся без остатка.</p>
-    <p>Например, для чисел 12 и 18: общие делители — 1, 2, 3, 6, наибольший — <b>6</b>.</p>
-</div>
-
-<div class="step">
-    <span class="label">Шаг 2.</span>
-    <p>Разложим число <b>448</b> на простые множители.</p>
-    <p>Последовательно делим на наименьшее простое число 2:</p>
-    <ul>
-        <li>448 ÷ 2 = 224</li>
-        <li>224 ÷ 2 = 112</li>
-        <li>112 ÷ 2 = 56</li>
-        <li>56 ÷ 2 = 28</li>
-        <li>28 ÷ 2 = 14</li>
-        <li>14 ÷ 2 = 7</li>
-        <li>7 — простое число</li>
-    </ul>
-    <p class="math-block">448 = 2·2·2·2·2·2·7 = 2⁶ · 7</p>
-</div>
-
-<div class="step">
-    <span class="label">Шаг 3.</span>
-    <p>Разложим число <b>656</b> на простые множители.</p>
-    <p>Последовательно делим на 2:</p>
-    <ul>
-        <li>656 ÷ 2 = 328</li>
-        <li>328 ÷ 2 = 164</li>
-        <li>164 ÷ 2 = 82</li>
-        <li>82 ÷ 2 = 41</li>
-        <li>41 — простое число</li>
-    </ul>
-    <p class="math-block">656 = 2·2·2·2·41 = 2⁴ · 41</p>
-</div>
-
-<div class="step">
-    <span class="label">Шаг 4.</span>
-    <p>Сравниваем разложения:</p>
-    <table style="border-collapse: collapse; margin: 10px 0;">
-        <tr style="background: #eaf1fd;">
-            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Число</th>
-            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Разложение</th>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">448</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">2⁶ · 7</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">656</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">2⁴ · 41</td>
-        </tr>
-    </table>
-    <p>Общий множитель — только <b>2</b>.</p>
-    <p>Берём <b>наименьшую</b> степень: <span class="math">2^{min(6,4)} = 2^4 = 16</span>.</p>
-</div>
-
-<div class="step">
-    <span class="label">Шаг 5.</span>
-    <p><b>Проверка:</b></p>
-    <ul>
-        <li>448 ÷ 16 = 28 (делится без остатка) ✅</li>
-        <li>656 ÷ 16 = 41 (делится без остатка) ✅</li>
-    </ul>
-    <p>Число больше 16 не подходит (например, 32 не делит 656 без остатка).</p>
-</div>
-
-<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-    <span class="label">✅ Ответ:</span>
-    <span class="answer-box">16</span>
-</div>
-
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Простые числа</span> — числа, которые делятся только на 1 и на себя (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, ...).</li>
-        <li><span class="term">Разложение на простые множители</span> — представление числа в виде произведения простых чисел.</li>
-        <li><span class="term">НОД</span> — наибольшее число, на которое делятся все данные числа.</li>
-        <li><span class="term">Правило нахождения НОД через разложение:</span>
-            <ol style="margin-top: 0.3rem;">
-                <li>Разложить каждое число на простые множители.</li>
-                <li>Найти общие множители.</li>
-                <li>Взять каждый общий множитель в <b>наименьшей</b> степени.</li>
-                <li>Перемножить полученные множители.</li>
-            </ol>
-        </li>
-    </ul>
-</div>
-
-    <!-- ЗАДАЧА 17 -->
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 17 — Обои (периметр комнаты) -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
     <div class="task-title">📌 Задача №17 — Обои (периметр комнаты)</div>
     <div class="problem-box">
         <span class="q">Условие:</span> Одного рулона обоев хватает для оклейки полосы шириной 1,6 м. Сколько рулонов нужно для комнаты 2,3 × 4,1 м?
     </div>
     <div class="step">
         <span class="label">Решение:</span>
-        1. Находим периметр комнаты: <span class="math">P = 2·(2,3 + 4,1) = 2·6,4 = 12,8</span> м.<br>
-        2. Делим периметр на ширину одного рулона: <span class="math">12,8 / 1,6 = 8</span>.<br>
-        3. Так как рулоны покупаются целиком, ответ — <span class="math">8</span>.<br>
+        <p>1. Находим периметр комнаты: <span class="math">P = 2·(2,3 + 4,1) = 2·6,4 = 12,8</span> м.</p>
+        <p>2. Делим периметр на ширину одного рулона: <span class="math">12,8 / 1,6 = 8</span>.</p>
+        <p>3. Так как рулоны покупаются целиком, ответ — <span class="math">8</span>.</p>
         <span class="answer-box">Ответ: 8</span>
     </div>
     <div class="apparat">
@@ -1378,17 +1518,20 @@
         </ul>
     </div>
 
-    <!-- ЗАДАЧА 18 -->
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 18 — Определения функции -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
     <div class="task-title">📌 Задача №18 — Определения функции</div>
     <div class="problem-box">
         <span class="q">Условие:</span> Среди определений функции укажите неверные.
     </div>
     <div class="step">
         <span class="label">Решение:</span>
-        Проверяем определения:<br>
-        1. «зависимость, в которой каждому значению независимой переменной соответствует хотя бы одно значение зависимой переменной» — <b>неверно</b>, потому что в определении функции должно быть <strong>единственное</strong> значение.<br>
-        2. «функцией называется зависимость одной переменной от другой» — <b>неверно</b>, это слишком общее и неполное определение (нужна однозначность).<br>
-        3. Остальные определения верны (они содержат условие единственности).<br>
+        <p>Проверяем определения:</p>
+        <p>1. «зависимость, в которой каждому значению независимой переменной соответствует хотя бы одно значение зависимой переменной» — <b>неверно</b>, потому что в определении функции должно быть <strong>единственное</strong> значение.</p>
+        <p>2. «функцией называется зависимость одной переменной от другой» — <b>неверно</b>, это слишком общее и неполное определение (нужна однозначность).</p>
+        <p>3. Остальные определения верны (они содержат условие единственности).</p>
         <span class="answer-box">Ответ: 1 и 2</span>
     </div>
     <div class="apparat">
@@ -1400,17 +1543,20 @@
         </ul>
     </div>
 
-    <!-- ЗАДАЧА 19 -->
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 19 — Определения графика функции -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
     <div class="task-title">📌 Задача №19 — Определения графика функции</div>
     <div class="problem-box">
         <span class="q">Условие:</span> Среди определений графика функции укажите неверные.
     </div>
     <div class="step">
         <span class="label">Решение:</span>
-        Проверяем определения:<br>
-        1. «абсциссы равны значениям функции, а ординаты — значениям аргумента» — <b>неверно</b>, перепутаны оси.<br>
-        2. «множество всех точек координатной прямой» — <b>неверно</b>, график функции строится на <strong>координатной плоскости</strong>, а не на прямой.<br>
-        3. Остальные определения верны (они правильно описывают график как множество точек на плоскости).<br>
+        <p>Проверяем определения:</p>
+        <p>1. «абсциссы равны значениям функции, а ординаты — значениям аргумента» — <b>неверно</b>, перепутаны оси.</p>
+        <p>2. «множество всех точек координатной прямой» — <b>неверно</b>, график функции строится на <strong>координатной плоскости</strong>, а не на прямой.</p>
+        <p>3. Остальные определения верны (они правильно описывают график как множество точек на плоскости).</p>
         <span class="answer-box">Ответ: 2 и 3</span> (где 2 — перепутанные оси, 3 — координатная прямая)
     </div>
     <div class="apparat">
@@ -1423,98 +1569,102 @@
     </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 20 — Сумма корней уравнения -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №20 — Сумма корней уравнения</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Сумма корней уравнения <span class="math">(3x²−5x−2)/(x−2) = x²+6x−3</span> равна
-</div>
+    <!-- ЗАДАЧА 20 — Сумма корней уравнения -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №20 — Сумма корней уравнения</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Сумма корней уравнения <span class="math">(3x²−5x−2)/(x−2) = x²+6x−3</span> равна
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 1.</span>
-    <p>Находим ОДЗ: <span class="math">x − 2 ≠ 0</span> → <span class="math">x ≠ 2</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 1.</span>
+        <p>Находим ОДЗ: <span class="math">x − 2 ≠ 0</span> → <span class="math">x ≠ 2</span>.</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 2.</span>
-    <p>Умножаем обе части на <span class="math">x − 2</span>:</p>
-    <p class="math-block">3x² − 5x − 2 = (x² + 6x − 3)(x − 2)</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 2.</span>
+        <p>Умножаем обе части на <span class="math">x − 2</span>:</p>
+        <p class="math-block">3x² − 5x − 2 = (x² + 6x − 3)(x − 2)</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 3.</span>
-    <p>Раскрываем скобки в правой части:</p>
-    <p class="math-block">(x² + 6x − 3)(x − 2) = x³ + 4x² − 15x + 6</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 3.</span>
+        <p>Раскрываем скобки в правой части:</p>
+        <p class="math-block">(x² + 6x − 3)(x − 2) = x³ + 4x² − 15x + 6</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 4.</span>
-    <p>Приводим уравнение к стандартному виду:</p>
-    <p class="math-block">x³ + x² − 10x + 8 = 0</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 4.</span>
+        <p>Приводим уравнение к стандартному виду:</p>
+        <p class="math-block">x³ + x² − 10x + 8 = 0</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 5.</span>
-    <p>Проверяем целые корни среди делителей 8: <span class="math">±1, ±2, ±4, ±8</span>.</p>
-    <p>Подходит <span class="math">x = 1</span>, так как <span class="math">1 + 1 − 10 + 8 = 0</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 5.</span>
+        <p>Проверяем целые корни среди делителей 8: <span class="math">±1, ±2, ±4, ±8</span>.</p>
+        <p>Подходит <span class="math">x = 1</span>, так как <span class="math">1 + 1 − 10 + 8 = 0</span>.</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 6.</span>
-    <p>Делим многочлен на <span class="math">(x − 1)</span>:</p>
-    <p class="math-block">x³ + x² − 10x + 8 = (x − 1)(x² + 2x − 8)</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 6.</span>
+        <p>Делим многочлен на <span class="math">(x − 1)</span>:</p>
+        <p class="math-block">x³ + x² − 10x + 8 = (x − 1)(x² + 2x − 8)</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 7.</span>
-    <p>Решаем <span class="math">x² + 2x − 8 = 0</span>:</p>
-    <p class="math-block">D = 4 + 32 = 36</p>
-    <p class="math-block">x₂ = 2,  x₃ = −4</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 7.</span>
+        <p>Решаем <span class="math">x² + 2x − 8 = 0</span>:</p>
+        <p class="math-block">D = 4 + 32 = 36</p>
+        <p class="math-block">x₂ = 2,  x₃ = −4</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 8.</span>
-    <p>Проверяем ОДЗ: <span class="math">x = 2</span> не подходит (знаменатель обращается в ноль).</p>
-    <p>Корни: <span class="math">1</span> и <span class="math">−4</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 8.</span>
+        <p>Проверяем ОДЗ: <span class="math">x = 2</span> не подходит (знаменатель обращается в ноль).</p>
+        <p>Корни: <span class="math">1</span> и <span class="math">−4</span>.</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 9.</span>
-    <p>Сумма корней: <span class="math">1 + (−4) = −3</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 9.</span>
+        <p>Сумма корней: <span class="math">1 + (−4) = −3</span>.</p>
+    </div>
 
-<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-    <span class="label">✅ Ответ:</span>
-    <span class="answer-box">−3</span>
-    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №2)</span>
-</div>
+    <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+        <span class="label">✅ Ответ:</span>
+        <span class="answer-box">−3</span>
+        <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №2)</span>
+    </div>
 
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">ОДЗ</span> — знаменатель не может быть равен нулю.</li>
-        <li><span class="term">Умножение на знаменатель</span> — позволяет избавиться от дроби.</li>
-        <li><span class="term">Кубическое уравнение</span> — решается подбором целого корня среди делителей свободного члена.</li>
-        <li><span class="term">Схема Горнера</span> — метод деления многочлена на <span class="math">(x − корень)</span>.</li>
-        <li><span class="term">Квадратное уравнение</span> — <span class="math">D = b² − 4ac</span>, <span class="math">x = (−b ± √D)/(2a)</span>.</li>
-        <li><span class="term">Проверка ОДЗ</span> — обязательна, так как при умножении могли появиться посторонние корни.</li>
-    </ul>
-</div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">ОДЗ</span> — знаменатель не может быть равен нулю.</li>
+            <li><span class="term">Умножение на знаменатель</span> — позволяет избавиться от дроби.</li>
+            <li><span class="term">Кубическое уравнение</span> — решается подбором целого корня среди делителей свободного члена.</li>
+            <li><span class="term">Схема Горнера</span> — метод деления многочлена на <span class="math">(x − корень)</span>.</li>
+            <li><span class="term">Квадратное уравнение</span> — <span class="math">D = b² − 4ac</span>, <span class="math">x = (−b ± √D)/(2a)</span>.</li>
+            <li><span class="term">Проверка ОДЗ</span> — обязательна, так как при умножении могли появиться посторонние корни.</li>
+        </ul>
+    </div>
 
-    <!-- ЗАДАЧА 21 -->
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 21 — Верные высказывания о числах -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
     <div class="task-title">📌 Задача №21 — Верные высказывания о числах</div>
     <div class="problem-box">
         <span class="q">Условие:</span> Укажите верные высказывания о числах.
     </div>
     <div class="step">
         <span class="label">Решение:</span>
-        Проверяем каждое:<br>
-        1. «Любое действительное число является либо натуральным, либо противоположным ему» — <b>неверно</b> (например, 0 или дроби).<br>
-        2. «Любое действительное число является либо рациональным, либо иррациональным» — <b>верно</b> (это основное деление).<br>
-        3. «Любое действительное число является иррациональным» — <b>неверно</b> (например, 2 — рациональное).<br>
-        4. «Любое рациональное число является действительным» — <b>верно</b> (рациональные — подмножество действительных).<br>
-        5. «Любое целое число является либо положительным, либо отрицательным» — <b>неверно</b> (0).<br>
-        6. «Любое целое число является рациональным» — <b>верно</b> (целые — подмножество рациональных).<br>
+        <p>Проверяем каждое:</p>
+        <p>1. «Любое действительное число является либо натуральным, либо противоположным ему» — <b>неверно</b> (например, 0 или дроби).</p>
+        <p>2. «Любое действительное число является либо рациональным, либо иррациональным» — <b>верно</b> (это основное деление).</p>
+        <p>3. «Любое действительное число является иррациональным» — <b>неверно</b> (например, 2 — рациональное).</p>
+        <p>4. «Любое рациональное число является действительным» — <b>верно</b> (рациональные — подмножество действительных).</p>
+        <p>5. «Любое целое число является либо положительным, либо отрицательным» — <b>неверно</b> (0).</p>
+        <p>6. «Любое целое число является рациональным» — <b>верно</b> (целые — подмножество рациональных).</p>
         <span class="answer-box">Ответ: 2, 4 и 6</span>
     </div>
     <div class="apparat">
@@ -1526,276 +1676,769 @@
     </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 22 — Число корней тригонометрического уравнения -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №22 — Число корней тригонометрического уравнения</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Число корней уравнения <span class="math">ctg 2x · sin 4x − cos 4x − sin 3x = 0</span> на промежутке <span class="math">[0; 2π]</span> равно
-</div>
+    <!-- ЗАДАЧА 22 — Число корней тригонометрического уравнения -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №22 — Число корней тригонометрического уравнения</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Число корней уравнения <span class="math">ctg 2x · sin 4x − cos 4x − sin 3x = 0</span> на промежутке <span class="math">[0; 2π]</span> равно
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 1.</span>
-    <p>Упрощаем первое слагаемое:</p>
-    <p class="math-block">ctg 2x · sin 4x = (cos 2x / sin 2x) · 2 sin 2x cos 2x = 2 cos² 2x</p>
-    <p style="font-size:0.9rem; color:#1f3a7a;">(использованы: <span class="math">ctg x = cos x / sin x</span>, <span class="math">sin 4x = 2 sin 2x cos 2x</span>)</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 1.</span>
+        <p>Упрощаем первое слагаемое:</p>
+        <p class="math-block">ctg 2x · sin 4x = (cos 2x / sin 2x) · 2 sin 2x cos 2x = 2 cos² 2x</p>
+        <p style="font-size:0.9rem; color:#1f3a7a;">(использованы: <span class="math">ctg x = cos x / sin x</span>, <span class="math">sin 4x = 2 sin 2x cos 2x</span>)</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 2.</span>
-    <p>Подставляем в исходное уравнение:</p>
-    <p class="math-block">2 cos² 2x − cos 4x − sin 3x = 0</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 2.</span>
+        <p>Подставляем в исходное уравнение:</p>
+        <p class="math-block">2 cos² 2x − cos 4x − sin 3x = 0</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 3.</span>
-    <p>Используем формулу: <span class="math">cos 4x = 2 cos² 2x − 1</span>.</p>
-    <p class="math-block">2 cos² 2x − (2 cos² 2x − 1) − sin 3x = 0</p>
-    <p class="math-block">1 − sin 3x = 0</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 3.</span>
+        <p>Используем формулу: <span class="math">cos 4x = 2 cos² 2x − 1</span>.</p>
+        <p class="math-block">2 cos² 2x − (2 cos² 2x − 1) − sin 3x = 0</p>
+        <p class="math-block">1 − sin 3x = 0</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 4.</span>
-    <p>Решаем <span class="math">sin 3x = 1</span>:</p>
-    <p class="math-block">3x = π/2 + 2πn, n ∈ ℤ</p>
-    <p class="math-block">x = π/6 + 2πn/3, n ∈ ℤ</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 4.</span>
+        <p>Решаем <span class="math">sin 3x = 1</span>:</p>
+        <p class="math-block">3x = π/2 + 2πn, n ∈ ℤ</p>
+        <p class="math-block">x = π/6 + 2πn/3, n ∈ ℤ</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 5.</span>
-    <p>Находим корни на <span class="math">[0; 2π]</span>:</p>
-    <table style="border-collapse: collapse; margin: 10px 0;">
-        <tr style="background: #eaf1fd;">
-            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">n</th>
-            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">x</th>
-            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Входит?</th>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">0</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">π/6</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">✅ да</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">1</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">5π/6</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">✅ да</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">2</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">3π/2</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">✅ да</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">3</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">13π/6 > 2π</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">❌ нет</td>
-        </tr>
-    </table>
-</div>
+    <div class="step">
+        <span class="label">Шаг 5.</span>
+        <p>Находим корни на <span class="math">[0; 2π]</span>:</p>
+        <table>
+            <tr>
+                <th>n</th>
+                <th>x</th>
+                <th>Входит?</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>π/6</td>
+                <td>✅ да</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>5π/6</td>
+                <td>✅ да</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>3π/2</td>
+                <td>✅ да</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>13π/6 > 2π</td>
+                <td>❌ нет</td>
+            </tr>
+        </table>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 6.</span>
-    <p><b>Проверка ОДЗ:</b></p>
-    <p>Мы сокращали <span class="math">sin 2x</span>, значит <span class="math">sin 2x ≠ 0</span>, то есть <span class="math">x ≠ πn/2</span>.</p>
-    <ul>
-        <li><span class="math">π/6</span> — подходит ✅</li>
-        <li><span class="math">5π/6</span> — подходит ✅</li>
-        <li><span class="math">3π/2</span> — <span class="math">sin(3π) = 0</span> → <b>не подходит</b> ❌</li>
-    </ul>
-</div>
+    <div class="step">
+        <span class="label">Шаг 6.</span>
+        <p><b>Проверка ОДЗ:</b></p>
+        <p>Мы сокращали <span class="math">sin 2x</span>, значит <span class="math">sin 2x ≠ 0</span>, то есть <span class="math">x ≠ πn/2</span>.</p>
+        <ul>
+            <li><span class="math">π/6</span> — подходит ✅</li>
+            <li><span class="math">5π/6</span> — подходит ✅</li>
+            <li><span class="math">3π/2</span> — <span class="math">sin(3π) = 0</span> → <b>не подходит</b> ❌</li>
+        </ul>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 7.</span>
-    <p>Остаются корни: <span class="math">π/6</span> и <span class="math">5π/6</span>.</p>
-    <p>Всего <b>2</b> корня.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 7.</span>
+        <p>Остаются корни: <span class="math">π/6</span> и <span class="math">5π/6</span>.</p>
+        <p>Всего <b>2</b> корня.</p>
+    </div>
 
-<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-    <span class="label">✅ Ответ:</span>
-    <span class="answer-box">2</span>
-</div>
+    <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+        <span class="label">✅ Ответ:</span>
+        <span class="answer-box">2</span>
+    </div>
 
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Котангенс:</span> <span class="math">ctg x = cos x / sin x</span>, определён только при <span class="math">sin x ≠ 0</span>.</li>
-        <li><span class="term">Синус двойного угла:</span> <span class="math">sin 2x = 2 sin x cos x</span>.</li>
-        <li><span class="term">Косинус двойного угла:</span> <span class="math">cos 2x = 2 cos² x − 1</span>.</li>
-        <li><span class="term">ОДЗ:</span> при работе с дробными выражениями нужно следить, чтобы знаменатель не обращался в ноль.</li>
-        <li><span class="term">Отбор корней:</span> подстановка целых значений <span class="math">n</span> для нахождения корней на заданном промежутке.</li>
-        <li><span class="term">Проверка ОДЗ:</span> обязательный шаг, так как при упрощениях могли появиться посторонние корни.</li>
-    </ul>
-</div>
-
-   <!-- ============================================================ -->
-<!-- ЗАДАЧА 23 — Неравенство с дробью -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №23 — Неравенство с дробью</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Число целых решений неравенства <span class="math">(x²−10x+25)/((x−5)(x−7)) ≥ −1</span> на промежутке <span class="math">[4; 9]</span> равно
-</div>
-
-<div class="step">
-    <span class="label">Шаг 1.</span>
-    <p>Замечаем, что числитель — это квадрат разности:</p>
-    <p class="math-block">x² − 10x + 25 = (x − 5)²</p>
-</div>
-
-<div class="step">
-    <span class="label">Шаг 2.</span>
-    <p>Сокращаем дробь (при <span class="math">x ≠ 5</span>):</p>
-    <p class="math-block">(x−5)²/((x−5)(x−7)) = (x−5)/(x−7)</p>
-    <p style="font-size:0.9rem; color:#1f3a7a;">ОДЗ: <span class="math">x ≠ 5</span>, <span class="math">x ≠ 7</span></p>
-</div>
-
-<div class="step">
-    <span class="label">Шаг 3.</span>
-    <p>Переносим всё в одну часть:</p>
-    <p class="math-block">(x−5)/(x−7) + 1 ≥ 0</p>
-    <p class="math-block">(2x−12)/(x−7) ≥ 0</p>
-    <p class="math-block">2(x−6)/(x−7) ≥ 0</p>
-    <p>Так как 2 > 0, знак неравенства не меняется:</p>
-    <p class="math-block">(x−6)/(x−7) ≥ 0</p>
-</div>
-
-<div class="step">
-    <span class="label">Шаг 4.</span>
-    <p>Решаем методом интервалов.</p>
-    <p>Нули числителя: <span class="math">x = 6</span></p>
-    <p>Нули знаменателя: <span class="math">x = 7</span> (не входит в ОДЗ)</p>
-    <table style="border-collapse: collapse; margin: 10px 0;">
-        <tr style="background: #eaf1fd;">
-            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Интервал</th>
-            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Знак</th>
-            <th style="border: 1px solid #b8cef5; padding: 5px 15px;">Результат</th>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">(−∞; 6]</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">+</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">подходит</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">(6; 7)</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">−</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">не подходит</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">(7; +∞)</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">+</td>
-            <td style="border: 1px solid #b8cef5; padding: 5px 15px;">подходит</td>
-        </tr>
-    </table>
-    <p class="math-block">x ∈ (−∞; 6] ∪ (7; +∞)</p>
-</div>
-
-<div class="step">
-    <span class="label">Шаг 5.</span>
-    <p>Находим целые решения на промежутке <span class="math">[4; 9]</span>.</p>
-    <p>Пересечение: <span class="math">[4; 9] ∩ ((−∞; 6] ∪ (7; +∞))</span></p>
-    <ul>
-        <li><span class="math">[4; 9] ∩ (−∞; 6] = [4; 6]</span> → целые: 4, 5, 6</li>
-        <li><span class="math">[4; 9] ∩ (7; +∞) = (7; 9]</span> → целые: 8, 9</li>
-    </ul>
-    <p>Всего: <span class="math">4, 5, 6, 8, 9</span> → <b>5</b> чисел.</p>
-</div>
-
-<div class="step">
-    <span class="label">Шаг 6.</span>
-    <p><b>Проверка:</b></p>
-    <ul>
-        <li><span class="math">x = 4</span>: подходит ✅</li>
-        <li><span class="math">x = 5</span>: не входит в ОДЗ ❌</li>
-        <li><span class="math">x = 6</span>: подходит ✅</li>
-        <li><span class="math">x = 8</span>: подходит ✅</li>
-        <li><span class="math">x = 9</span>: подходит ✅</li>
-    </ul>
-</div>
-
-<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-    <span class="label">✅ Ответ:</span>
-    <span class="answer-box">5</span>
-    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
-</div>
-
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Квадрат разности:</span> <span class="math">(a−b)² = a² − 2ab + b²</span>.</li>
-        <li><span class="term">Сокращение дроби:</span> допустимо только при условии, что сокращаемый множитель не равен нулю.</li>
-        <li><span class="term">ОДЗ:</span> знаменатель дроби не может быть равен нулю.</li>
-        <li><span class="term">Метод интервалов:</span> используется для решения рациональных неравенств.</li>
-        <li><span class="term">Проверка корней:</span> обязательна, так как при сокращении могли появиться посторонние корни.</li>
-    </ul>
-</div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Котангенс:</span> <span class="math">ctg x = cos x / sin x</span>, определён только при <span class="math">sin x ≠ 0</span>.</li>
+            <li><span class="term">Синус двойного угла:</span> <span class="math">sin 2x = 2 sin x cos x</span>.</li>
+            <li><span class="term">Косинус двойного угла:</span> <span class="math">cos 2x = 2 cos² x − 1</span>.</li>
+            <li><span class="term">ОДЗ:</span> при работе с дробными выражениями нужно следить, чтобы знаменатель не обращался в ноль.</li>
+            <li><span class="term">Отбор корней:</span> подстановка целых значений <span class="math">n</span> для нахождения корней на заданном промежутке.</li>
+            <li><span class="term">Проверка ОДЗ:</span> обязательный шаг, так как при упрощениях могли появиться посторонние корни.</li>
+        </ul>
+    </div>
 
     <!-- ============================================================ -->
-<!-- ЗАДАЧА 24 — Дробно-рациональное неравенство -->
-<!-- ============================================================ -->
-<div class="task-title">📌 Задача №24 — Дробно-рациональное неравенство</div>
-<div class="problem-box">
-    <span class="q">Условие:</span> Число целых решений неравенства <span class="math">(8x+3)/((x²+2x+1)(x²+x−6)) ≥ 1/(x²−x−2)</span> равно
-</div>
+    <!-- ЗАДАЧА 23 — Неравенство с дробью -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №23 — Неравенство с дробью</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Число целых решений неравенства <span class="math">(x²−10x+25)/((x−5)(x−7)) ≥ −1</span> на промежутке <span class="math">[4; 9]</span> равно
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 1.</span>
-    <p>Раскладываем знаменатели на множители:</p>
-    <ul>
-        <li><span class="math">x² + 2x + 1 = (x+1)²</span></li>
-        <li><span class="math">x² + x − 6 = (x+3)(x−2)</span></li>
-        <li><span class="math">x² − x − 2 = (x−2)(x+1)</span></li>
-    </ul>
-</div>
+    <div class="step">
+        <span class="label">Шаг 1.</span>
+        <p>Замечаем, что числитель — это квадрат разности:</p>
+        <p class="math-block">x² − 10x + 25 = (x − 5)²</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 2.</span>
-    <p>ОДЗ: <span class="math">x ≠ -3, -1, 2</span>.</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 2.</span>
+        <p>Сокращаем дробь (при <span class="math">x ≠ 5</span>):</p>
+        <p class="math-block">(x−5)²/((x−5)(x−7)) = (x−5)/(x−7)</p>
+        <p style="font-size:0.9rem; color:#1f3a7a;">ОДЗ: <span class="math">x ≠ 5</span>, <span class="math">x ≠ 7</span></p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 3.</span>
-    <p>Переносим всё в одну часть и приводим к общему знаменателю:</p>
-    <p class="math-block">(8x+3 − (x+1)(x+3)) / ((x+1)²(x+3)(x−2)) ≥ 0</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 3.</span>
+        <p>Переносим всё в одну часть:</p>
+        <p class="math-block">(x−5)/(x−7) + 1 ≥ 0</p>
+        <p class="math-block">(2x−12)/(x−7) ≥ 0</p>
+        <p class="math-block">2(x−6)/(x−7) ≥ 0</p>
+        <p>Так как 2 > 0, знак неравенства не меняется:</p>
+        <p class="math-block">(x−6)/(x−7) ≥ 0</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 4.</span>
-    <p>Упрощаем числитель:</p>
-    <p class="math-block">8x+3 − (x²+4x+3) = −x²+4x = x(4−x)</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 4.</span>
+        <p>Решаем методом интервалов.</p>
+        <p>Нули числителя: <span class="math">x = 6</span></p>
+        <p>Нули знаменателя: <span class="math">x = 7</span> (не входит в ОДЗ)</p>
+        <table>
+            <tr>
+                <th>Интервал</th>
+                <th>Знак</th>
+                <th>Результат</th>
+            </tr>
+            <tr>
+                <td>(−∞; 6]</td>
+                <td>+</td>
+                <td>подходит</td>
+            </tr>
+            <tr>
+                <td>(6; 7)</td>
+                <td>−</td>
+                <td>не подходит</td>
+            </tr>
+            <tr>
+                <td>(7; +∞)</td>
+                <td>+</td>
+                <td>подходит</td>
+            </tr>
+        </table>
+        <p class="math-block">x ∈ (−∞; 6] ∪ (7; +∞)</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 5.</span>
-    <p>Получаем:</p>
-    <p class="math-block">x(x−4)/((x+1)²(x+3)(x−2)) ≤ 0</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 5.</span>
+        <p>Находим целые решения на промежутке <span class="math">[4; 9]</span>.</p>
+        <p>Пересечение: <span class="math">[4; 9] ∩ ((−∞; 6] ∪ (7; +∞))</span></p>
+        <ul>
+            <li><span class="math">[4; 9] ∩ (−∞; 6] = [4; 6]</span> → целые: 4, 5, 6</li>
+            <li><span class="math">[4; 9] ∩ (7; +∞) = (7; 9]</span> → целые: 8, 9</li>
+        </ul>
+        <p>Всего: <span class="math">4, 5, 6, 8, 9</span> → <b>5</b> чисел.</p>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 6.</span>
-    <p>Метод интервалов даёт:</p>
-    <p class="math-block">x ∈ (−3; −1) ∪ (−1; 0] ∪ (2; 4]</p>
-</div>
+    <div class="step">
+        <span class="label">Шаг 6.</span>
+        <p><b>Проверка:</b></p>
+        <ul>
+            <li><span class="math">x = 4</span>: подходит ✅</li>
+            <li><span class="math">x = 5</span>: не входит в ОДЗ ❌</li>
+            <li><span class="math">x = 6</span>: подходит ✅</li>
+            <li><span class="math">x = 8</span>: подходит ✅</li>
+            <li><span class="math">x = 9</span>: подходит ✅</li>
+        </ul>
+    </div>
 
-<div class="step">
-    <span class="label">Шаг 7.</span>
-    <p>Целые решения: <span class="math">−2, 0, 3, 4</span> → <b>4</b> числа.</p>
-</div>
+    <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+        <span class="label">✅ Ответ:</span>
+        <span class="answer-box">5</span>
+        <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №3)</span>
+    </div>
 
-<div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
-    <span class="label">✅ Ответ:</span>
-    <span class="answer-box">4</span>
-    <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №4)</span>
-</div>
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Квадрат разности:</span> <span class="math">(a−b)² = a² − 2ab + b²</span>.</li>
+            <li><span class="term">Сокращение дроби:</span> допустимо только при условии, что сокращаемый множитель не равен нулю.</li>
+            <li><span class="term">ОДЗ:</span> знаменатель дроби не может быть равен нулю.</li>
+            <li><span class="term">Метод интервалов:</span> используется для решения рациональных неравенств.</li>
+            <li><span class="term">Проверка корней:</span> обязательна, так как при сокращении могли появиться посторонние корни.</li>
+        </ul>
+    </div>
 
-<div class="apparat">
-    <div class="apparat-title">🧠 Понятийный аппарат</div>
-    <ul>
-        <li><span class="term">Разложение на множители</span> — ключевой шаг для упрощения дробно-рациональных выражений.</li>
-        <li><span class="term">ОДЗ</span> — знаменатели не должны равняться нулю.</li>
-        <li><span class="term">Приведение к общему знаменателю</span> — позволяет свести неравенство к виду <span class="math">P(x)/Q(x) ≥ 0</span>.</li>
-        <li><span class="term">Метод интервалов</span> — используется для решения рациональных неравенств.</li>
-        <li><span class="term">Чётная кратность корня</span> — при переходе через такой корень знак не меняется.</li>
-        <li><span class="term">Отбор целых решений</span> — из найденных промежутков выбираем только целые числа.</li>
-    </ul>
-</div>
+    <!-- ============================================================ -->
+    <!-- ЗАДАЧА 24 — Дробно-рациональное неравенство -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+    <div class="task-title">📌 Задача №24 — Дробно-рациональное неравенство</div>
+    <div class="problem-box">
+        <span class="q">Условие:</span> Число целых решений неравенства <span class="math">(8x+3)/((x²+2x+1)(x²+x−6)) ≥ 1/(x²−x−2)</span> равно
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 1.</span>
+        <p>Раскладываем знаменатели на множители:</p>
+        <ul>
+            <li><span class="math">x² + 2x + 1 = (x+1)²</span></li>
+            <li><span class="math">x² + x − 6 = (x+3)(x−2)</span></li>
+            <li><span class="math">x² − x − 2 = (x−2)(x+1)</span></li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 2.</span>
+        <p>ОДЗ: <span class="math">x ≠ -3, -1, 2</span>.</p>
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 3.</span>
+        <p>Переносим всё в одну часть и приводим к общему знаменателю:</p>
+        <p class="math-block">(8x+3 − (x+1)(x+3)) / ((x+1)²(x+3)(x−2)) ≥ 0</p>
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 4.</span>
+        <p>Упрощаем числитель:</p>
+        <p class="math-block">8x+3 − (x²+4x+3) = −x²+4x = x(4−x)</p>
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 5.</span>
+        <p>Получаем:</p>
+        <p class="math-block">x(x−4)/((x+1)²(x+3)(x−2)) ≤ 0</p>
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 6.</span>
+        <p>Метод интервалов даёт:</p>
+        <p class="math-block">x ∈ (−3; −1) ∪ (−1; 0] ∪ (2; 4]</p>
+    </div>
+
+    <div class="step">
+        <span class="label">Шаг 7.</span>
+        <p>Целые решения: <span class="math">−2, 0, 3, 4</span> → <b>4</b> числа.</p>
+    </div>
+
+    <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
+        <span class="label">✅ Ответ:</span>
+        <span class="answer-box">4</span>
+        <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">(вариант №4)</span>
+    </div>
+
+    <div class="apparat">
+        <div class="apparat-title">🧠 Понятийный аппарат</div>
+        <ul>
+            <li><span class="term">Разложение на множители</span> — ключевой шаг для упрощения дробно-рациональных выражений.</li>
+            <li><span class="term">ОДЗ</span> — знаменатели не должны равняться нулю.</li>
+            <li><span class="term">Приведение к общему знаменателю</span> — позволяет свести неравенство к виду <span class="math">P(x)/Q(x) ≥ 0</span>.</li>
+            <li><span class="term">Метод интервалов</span> — используется для решения рациональных неравенств.</li>
+            <li><span class="term">Чётная кратность корня</span> — при переходе через такой корень знак не меняется.</li>
+            <li><span class="term">Отбор целых решений</span> — из найденных промежутков выбираем только целые числа.</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК ЗАДАЧ ДЛЯ САМОПРОВЕРКИ -->
+    <!-- ============================================================ -->
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+
+    <h2 style="color: #0b2b5a; font-weight: 600; font-size: 1.8rem; margin-top: 1.5rem;">📝 Задачи для самопроверки</h2>
+    <div style="font-size: 1rem; color: #1f3a6b; margin-bottom: 1.5rem;">
+        Для каждой задачи даны 3 похожих варианта. Ответы скрыты — нажмите на блок, чтобы проверить себя.
+    </div>
+
+    <!-- ЗАДАЧА 1 -->
+    <div class="quiz-title">📌 Задача №1 — Векторное выражение в параллелограмме</div>
+
+    <div class="quiz-variant">Вариант 1.1</div>
+    <div style="margin-bottom: 0.3rem;">В параллелограмме <b>ABCD</b> точка <b>O</b> — пересечение диагоналей, точка <b>K</b> — середина отрезка <b>BO</b>. Выразите вектор <b>AK</b> через <b>AB</b> и <b>AD</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">AK = ½·AB + ¼·AD</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 1.2</div>
+    <div style="margin-bottom: 0.3rem;">В параллелограмме <b>ABCD</b> точка <b>O</b> — пересечение диагоналей, точка <b>K</b> — середина отрезка <b>CO</b>. Выразите вектор <b>DK</b> через <b>AB</b> и <b>AD</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">DK = ¼·AB − ¾·AD</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 1.3</div>
+    <div style="margin-bottom: 0.3rem;">В параллелограмме <b>ABCD</b> точка <b>O</b> — пересечение диагоналей, точка <b>K</b> — середина отрезка <b>DO</b>. Выразите вектор <b>CK</b> через <b>AB</b> и <b>AD</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">CK = −¾·AB + ¼·AD</div>
+    </details>
+
+    <!-- ЗАДАЧА 2 -->
+    <div class="quiz-title">📌 Задача №2 — Равнобедренный треугольник и высота</div>
+
+    <div class="quiz-variant">Вариант 2.1</div>
+    <div style="margin-bottom: 0.3rem;">В треугольнике <b>ABC</b> угол <b>A</b> равен углу <b>C</b>, а высота <b>AD</b> делит сторону <b>BC</b> пополам. <b>BD = 5,2</b> см. Найдите <b>AC</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">AC = 10,4 см</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 2.2</div>
+    <div style="margin-bottom: 0.3rem;">В треугольнике <b>ABC</b> угол <b>A</b> равен углу <b>B</b>, а высота <b>CD</b> делит сторону <b>AB</b> пополам. <b>AD = 6,3</b> см. Найдите <b>AC</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">AC = 12,6 см</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 2.3</div>
+    <div style="margin-bottom: 0.3rem;">В треугольнике <b>ABC</b> угол <b>B</b> равен углу <b>C</b>, а высота <b>AD</b> делит сторону <b>BC</b> пополам. <b>BD = 4,5</b> см. Найдите <b>AB</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">AB = 9 см</div>
+    </details>
+
+    <!-- ЗАДАЧА 3 -->
+    <div class="quiz-title">📌 Задача №3 — Векторы в пространстве (координаты)</div>
+
+    <div class="quiz-variant">Вариант 3.1</div>
+    <div style="margin-bottom: 0.3rem;">Даны координаты точек: <b>A(1; -2; 3)</b>, <b>B(4; 0; -1)</b>, <b>C(-1; 3; 2)</b>, <b>D(2; -1; 0)</b>. Найдите <b>|2·AB − 3·CD|</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">√269</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 3.2</div>
+    <div style="margin-bottom: 0.3rem;">Даны координаты точек: <b>M(0; 2; -1)</b>, <b>N(3; -1; 4)</b>, <b>P(-2; 0; 3)</b>, <b>Q(1; -3; 0)</b>. Найдите <b>|MN + PQ|</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">2√19</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 3.3</div>
+    <div style="margin-bottom: 0.3rem;">Даны координаты точек: <b>C(2; -1; 3)</b>, <b>D(-1; 4; 0)</b>, <b>E(0; 2; -2)</b>, <b>F(3; -1; 1)</b>. Найдите <b>|CD − EF|</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">2√34</div>
+    </details>
+
+    <!-- ЗАДАЧА 4 -->
+    <div class="quiz-title">📌 Задача №4 — Логарифмическое выражение</div>
+
+    <div class="quiz-variant">Вариант 4.1</div>
+    <div style="margin-bottom: 0.3rem;">Найдите <b>log₂ b</b>, если <b>log₂ b⁴ = 12</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">log₂ b = 3</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 4.2</div>
+    <div style="margin-bottom: 0.3rem;">Найдите <b>log₃ b</b>, если <b>log₃ b² = 8</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">log₃ b = 4</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 4.3</div>
+    <div style="margin-bottom: 0.3rem;">Найдите <b>log₄ b</b>, если <b>log₄ b³ = 15</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">log₄ b = 5</div>
+    </details>
+
+    <!-- ЗАДАЧА 5 -->
+    <div class="quiz-title">📌 Задача №5 — Арифметическое выражение</div>
+
+    <div class="quiz-variant">Вариант 5.1</div>
+    <div style="margin-bottom: 0.3rem;">Вычислите: <b>16^{3/2} − 0,5</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">63,5</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 5.2</div>
+    <div style="margin-bottom: 0.3rem;">Вычислите: <b>9^{5/2} + 1,25</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">244,25</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 5.3</div>
+    <div style="margin-bottom: 0.3rem;">Вычислите: <b>4^{7/2} − 2,75</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">125,25</div>
+    </details>
+
+    <!-- ЗАДАЧА 6 — Тригонометрическое выражение -->
+    <div class="quiz-title">📌 Задача №6 — Тригонометрическое выражение</div>
+
+    <div class="quiz-variant">Вариант 6.1</div>
+    <div style="margin-bottom: 0.3rem;">Упростите: <b>sin²(π/2 − α) + cos²(3π/2 − α) − cos²α</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">sin²α</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 6.2</div>
+    <div style="margin-bottom: 0.3rem;">Упростите: <b>cos²(π + α) + sin²(π/2 + α) − sin²α</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">2cos²α − sin²α</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 6.3</div>
+    <div style="margin-bottom: 0.3rem;">Упростите: <b>sin²(π − α) + cos²(π/2 + α) − sin²α</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">sin²α</div>
+    </details>
+
+    <!-- ЗАДАЧА 7 -->
+    <div class="quiz-title">📌 Задача №7 — Угол наклона боковой грани пирамиды</div>
+
+    <div class="quiz-variant">Вариант 7.1</div>
+    <div style="margin-bottom: 0.3rem;">В правильной четырёхугольной пирамиде сторона основания равна 6, высота равна 3. Найдите угол наклона боковой грани к плоскости основания.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">45°</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 7.2</div>
+    <div style="margin-bottom: 0.3rem;">В правильной четырёхугольной пирамиде сторона основания равна 8, высота равна 4. Найдите угол наклона боковой грани к плоскости основания.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">45°</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 7.3</div>
+    <div style="margin-bottom: 0.3rem;">В правильной четырёхугольной пирамиде сторона основания равна 10, высота равна 5. Найдите угол наклона боковой грани к плоскости основания.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">45°</div>
+    </details>
+
+    <!-- ЗАДАЧА 8 -->
+    <div class="quiz-title">📌 Задача №8 — Площадь поверхности шара</div>
+
+    <div class="quiz-variant">Вариант 8.1</div>
+    <div style="margin-bottom: 0.3rem;">На поверхности шара даны точки <b>A</b>, <b>B</b>, <b>C</b>: <b>AB = 6</b>, <b>BC = 8</b>, <b>AC = 10</b>. Расстояние от центра шара до плоскости треугольника равно 2. Найдите площадь поверхности шара.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">116π</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 8.2</div>
+    <div style="margin-bottom: 0.3rem;">На поверхности шара даны точки <b>C</b>, <b>D</b>, <b>E</b>: <b>CD = 5</b>, <b>DE = 12</b>, <b>CE = 13</b>. Расстояние от центра шара до плоскости треугольника равно 3. Найдите площадь поверхности шара.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">205π</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 8.3</div>
+    <div style="margin-bottom: 0.3rem;">На поверхности шара даны точки <b>M</b>, <b>N</b>, <b>P</b>: <b>MN = 9</b>, <b>NP = 12</b>, <b>MP = 15</b>. Расстояние от центра шара до плоскости треугольника равно 4. Найдите площадь поверхности шара.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">289π</div>
+    </details>
+
+    <!-- ЗАДАЧА 9 -->
+    <div class="quiz-title">📌 Задача №9 — Задача на смеси (растворы)</div>
+
+    <div class="quiz-variant">Вариант 9.1</div>
+    <div style="margin-bottom: 0.3rem;">Первый раствор содержит 20% соли, второй — 40%. Смешали 300 кг 35% раствора. На сколько кг масса первого меньше массы второго?</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">150 кг</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 9.2</div>
+    <div style="margin-bottom: 0.3rem;">Первый раствор содержит 15% соли, второй — 25%. Смешали 400 кг 22% раствора. На сколько кг масса первого меньше массы второго?</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">160 кг</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 9.3</div>
+    <div style="margin-bottom: 0.3rem;">Первый раствор содержит 10% соли, второй — 20%. Смешали 500 кг 18% раствора. На сколько кг масса первого меньше массы второго?</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">300 кг</div>
+    </details>
+
+    <!-- ЗАДАЧА 11 -->
+    <div class="quiz-title">📌 Задача №11 — Тригонометрическое уравнение</div>
+
+    <div class="quiz-variant">Вариант 11.1</div>
+    <div style="margin-bottom: 0.3rem;">Решите уравнение: <b>sin 2x · ctg x + 1 = 3 cos x</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">x = 2πn, ±π/3 + 2πn, n ∈ ℤ</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 11.2</div>
+    <div style="margin-bottom: 0.3rem;">Решите уравнение: <b>cos 2x · tg x + 1 = 2 sin x</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">x = (−1)ⁿ·π/6 + πn, n ∈ ℤ</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 11.3</div>
+    <div style="margin-bottom: 0.3rem;">Решите уравнение: <b>sin 2x · tg x + 2 = 4 sin x</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">x = π/2 + 2πn, n ∈ ℤ</div>
+    </details>
+
+    <!-- ЗАДАЧА 12 -->
+    <div class="quiz-title">📌 Задача №12 — Неравенство с параметром</div>
+
+    <div class="quiz-variant">Вариант 12.1</div>
+    <div style="margin-bottom: 0.3rem;">Найдите наибольшее целое решение неравенства: <b>16/(x²−2x) ≥ x²−2x</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">4</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 12.2</div>
+    <div style="margin-bottom: 0.3rem;">Найдите наименьшее целое решение неравенства: <b>9/(x²+x) ≤ x²+x</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">-3</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 12.3</div>
+    <div style="margin-bottom: 0.3rem;">Найдите наибольшее целое решение неравенства: <b>36/(x²−4x) ≥ x²−4x</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">5</div>
+    </details>
+
+    <!-- ЗАДАЧА 13 -->
+    <div class="quiz-title">📌 Задача №13 — Тригонометрическое уравнение (наименьший корень)</div>
+
+    <div class="quiz-variant">Вариант 13.1</div>
+    <div style="margin-bottom: 0.3rem;">Найдите наименьший положительный корень уравнения: <b>√2·cos x − sin x = 1</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">45°</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 13.2</div>
+    <div style="margin-bottom: 0.3rem;">Найдите наименьший положительный корень уравнения: <b>cos x − √3·sin x = 1</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">60°</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 13.3</div>
+    <div style="margin-bottom: 0.3rem;">Найдите наименьший положительный корень уравнения: <b>2·cos x − 2·sin x = 1</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">15°</div>
+    </details>
+
+    <!-- ЗАДАЧА 14 -->
+    <div class="quiz-title">📌 Задача №14 — Область определения логарифма</div>
+
+    <div class="quiz-variant">Вариант 14.1</div>
+    <div style="margin-bottom: 0.3rem;">Найдите наибольшее целое число в области определения: <b>y = ln(20 − |2x−5|)</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">12</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 14.2</div>
+    <div style="margin-bottom: 0.3rem;">Найдите наибольшее целое число в области определения: <b>y = ln(15 − |4x+3|)</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">2</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 14.3</div>
+    <div style="margin-bottom: 0.3rem;">Найдите наименьшее целое число в области определения: <b>y = ln(25 − |5x−10|)</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">-2</div>
+    </details>
+
+    <!-- ЗАДАЧА 15 -->
+    <div class="quiz-title">📌 Задача №15 — Наибольший общий делитель (НОД)</div>
+
+    <div class="quiz-variant">Вариант 15.1</div>
+    <div style="margin-bottom: 0.3rem;">Найдите НОД чисел 324 и 486.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">162</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 15.2</div>
+    <div style="margin-bottom: 0.3rem;">Найдите НОД чисел 360 и 840.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">120</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 15.3</div>
+    <div style="margin-bottom: 0.3rem;">Найдите НОД чисел 512 и 640.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">128</div>
+    </details>
+
+    <!-- ЗАДАЧА 16 -->
+    <div class="quiz-title">📌 Задача №16 — Наименьшее общее кратное (НОК)</div>
+
+    <div class="quiz-variant">Вариант 16.1</div>
+    <div style="margin-bottom: 0.3rem;">Найдите НОК чисел 48, 72 и 90.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">720</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 16.2</div>
+    <div style="margin-bottom: 0.3rem;">Найдите НОК чисел 36, 54 и 81.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">324</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 16.3</div>
+    <div style="margin-bottom: 0.3rem;">Найдите НОК чисел 42, 56 и 63.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">504</div>
+    </details>
+
+    <!-- ЗАДАЧА 17 -->
+    <div class="quiz-title">📌 Задача №17 — Обои (периметр комнаты)</div>
+
+    <div class="quiz-variant">Вариант 17.1</div>
+    <div style="margin-bottom: 0.3rem;">Одного рулона обоев хватает на полосу шириной 1,2 м. Сколько рулонов нужно для комнаты 3,0 × 4,5 м?</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">13</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 17.2</div>
+    <div style="margin-bottom: 0.3rem;">Одного рулона обоев хватает на полосу шириной 1,0 м. Сколько рулонов нужно для комнаты 2,8 × 3,6 м?</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">13</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 17.3</div>
+    <div style="margin-bottom: 0.3rem;">Одного рулона обоев хватает на полосу шириной 0,8 м. Сколько рулонов нужно для комнаты 4,2 × 5,4 м?</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">24</div>
+    </details>
+
+    <!-- ЗАДАЧА 20 -->
+    <div class="quiz-title">📌 Задача №20 — Сумма корней уравнения</div>
+
+    <div class="quiz-variant">Вариант 20.1</div>
+    <div style="margin-bottom: 0.3rem;">Найдите сумму корней уравнения: <b>(2x² − 3x − 2)/(x − 2) = x² + 4x + 1</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">4</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 20.2</div>
+    <div style="margin-bottom: 0.3rem;">Найдите сумму корней уравнения: <b>(3x² + 5x − 2)/(x + 2) = x² − 3x + 1</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">-2</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 20.3</div>
+    <div style="margin-bottom: 0.3rem;">Найдите сумму корней уравнения: <b>(x² − 4x + 3)/(x − 1) = x² + 2x − 5</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">0</div>
+    </details>
+
+    <!-- ЗАДАЧА 22 -->
+    <div class="quiz-title">📌 Задача №22 — Число корней тригонометрического уравнения</div>
+
+    <div class="quiz-variant">Вариант 22.1</div>
+    <div style="margin-bottom: 0.3rem;">Сколько корней имеет уравнение <b>ctg 3x · sin 6x − cos 6x − sin 2x = 0</b> на промежутке <b>[0; 2π]</b>?</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">2</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 22.2</div>
+    <div style="margin-bottom: 0.3rem;">Сколько корней имеет уравнение <b>ctg x · sin 2x − cos 2x − sin x = 0</b> на промежутке <b>[0; π]</b>?</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">1</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 22.3</div>
+    <div style="margin-bottom: 0.3rem;">Сколько корней имеет уравнение <b>ctg 4x · sin 8x − cos 8x − sin 4x = 0</b> на промежутке <b>[0; π]</b>?</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">2</div>
+    </details>
+
+    <!-- ЗАДАЧА 23 -->
+    <div class="quiz-title">📌 Задача №23 — Неравенство с дробью</div>
+
+    <div class="quiz-variant">Вариант 23.1</div>
+    <div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(x²−6x+9)/((x−3)(x+2)) ≥ −1</b> на промежутке <b>[-3; 5]</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">6</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 23.2</div>
+    <div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(x²−2x+1)/((x−1)(x+3)) ≥ −1</b> на промежутке <b>[-4; 4]</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">7</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 23.3</div>
+    <div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(x²−8x+16)/((x−4)(x+1)) ≥ −1</b> на промежутке <b>[-2; 6]</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">6</div>
+    </details>
+
+    <!-- ЗАДАЧА 24 -->
+    <div class="quiz-title">📌 Задача №24 — Дробно-рациональное неравенство</div>
+
+    <div class="quiz-variant">Вариант 24.1</div>
+    <div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(5x+2)/((x²+2x+1)(x²−x−2)) ≥ 1/(x²−x−2)</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">3</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 24.2</div>
+    <div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(7x+1)/((x²+4x+4)(x²+x−6)) ≥ 1/(x²−x−6)</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">4</div>
+    </details>
+
+    <div class="quiz-variant">Вариант 24.3</div>
+    <div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(6x+5)/((x²+6x+9)(x²+2x−8)) ≥ 1/(x²+2x−8)</b>.</div>
+    <details class="quiz-block">
+        <summary>📌 Показать ответ</summary>
+        <div class="answer">3</div>
+    </details>
 
     <!-- ============================================================ -->
     <!-- ИТОГОВЫЙ БЛОК -->
@@ -1804,584 +2447,6 @@
         <strong>✅ Все 24 задачи решены.</strong>
         <span style="color:#1f3a7a;"> Первые три задачи (параллелограмм, треугольник, координаты) сохранены.</span>
     </div>
-
-<!-- ============================================================ -->
-<!-- БЛОК ЗАДАЧ ДЛЯ САМОПРОВЕРКИ -->
-<!-- ============================================================ -->
-<div class="divider"><span>✦ ✦ ✦</span></div>
-
-<h2 style="color: #0b2b5a; font-weight: 600; font-size: 1.8rem; margin-top: 1.5rem;">📝 Задачи для самопроверки</h2>
-<div style="font-size: 1rem; color: #1f3a6b; margin-bottom: 1.5rem;">
-    Для каждой задачи даны 3 похожих варианта. Ответы скрыты — нажмите на блок, чтобы проверить себя.
-</div>
-
-<style>
-    details.quiz-block {
-        background: #f8fbff;
-        border: 1px solid #dce6f5;
-        border-radius: 18px;
-        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-        margin-bottom: 0.8rem;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-    details.quiz-block:hover {
-        background: #f0f6ff;
-        border-color: #b8cef5;
-    }
-    details.quiz-block summary {
-        font-weight: 600;
-        color: #0037b3;
-        outline: none;
-        padding: 0.3rem 0;
-    }
-    details.quiz-block .answer {
-        background: #e8f0fe;
-        border-radius: 14px;
-        padding: 0.5rem 1.2rem;
-        margin: 0.4rem 0 0.2rem 0;
-        font-family: 'Times New Roman', 'CMU Serif', serif;
-        font-size: 1.05rem;
-        border-left: 4px solid #2f6aff;
-    }
-    .quiz-title {
-        font-weight: 600;
-        color: #0b2b5a;
-        font-size: 1.15rem;
-        margin: 1.8rem 0 0.5rem 0;
-        padding-bottom: 0.3rem;
-        border-bottom: 2px solid #dce6f5;
-    }
-    .quiz-variant {
-        font-weight: 500;
-        color: #1f3a7a;
-        margin: 0.5rem 0 0.2rem 0;
-    }
-</style>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 1 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №1 — Векторное выражение в параллелограмме</div>
-
-<div class="quiz-variant">Вариант 1.1</div>
-<div style="margin-bottom: 0.3rem;">В параллелограмме <b>ABCD</b> точка <b>O</b> — пересечение диагоналей, точка <b>K</b> — середина отрезка <b>BO</b>. Выразите вектор <b>AK</b> через <b>AB</b> и <b>AD</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">AK = ½·AB + ¼·AD</div>
-</details>
-
-<div class="quiz-variant">Вариант 1.2</div>
-<div style="margin-bottom: 0.3rem;">В параллелограмме <b>ABCD</b> точка <b>O</b> — пересечение диагоналей, точка <b>K</b> — середина отрезка <b>CO</b>. Выразите вектор <b>DK</b> через <b>AB</b> и <b>AD</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">DK = ¼·AB − ¾·AD</div>
-</details>
-
-<div class="quiz-variant">Вариант 1.3</div>
-<div style="margin-bottom: 0.3rem;">В параллелограмме <b>ABCD</b> точка <b>O</b> — пересечение диагоналей, точка <b>K</b> — середина отрезка <b>DO</b>. Выразите вектор <b>CK</b> через <b>AB</b> и <b>AD</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">CK = −¾·AB + ¼·AD</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 2 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №2 — Равнобедренный треугольник и высота</div>
-
-<div class="quiz-variant">Вариант 2.1</div>
-<div style="margin-bottom: 0.3rem;">В треугольнике <b>ABC</b> угол <b>A</b> равен углу <b>C</b>, а высота <b>AD</b> делит сторону <b>BC</b> пополам. <b>BD = 5,2</b> см. Найдите <b>AC</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">AC = 10,4 см</div>
-</details>
-
-<div class="quiz-variant">Вариант 2.2</div>
-<div style="margin-bottom: 0.3rem;">В треугольнике <b>ABC</b> угол <b>A</b> равен углу <b>B</b>, а высота <b>CD</b> делит сторону <b>AB</b> пополам. <b>AD = 6,3</b> см. Найдите <b>AC</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">AC = 12,6 см</div>
-</details>
-
-<div class="quiz-variant">Вариант 2.3</div>
-<div style="margin-bottom: 0.3rem;">В треугольнике <b>ABC</b> угол <b>B</b> равен углу <b>C</b>, а высота <b>AD</b> делит сторону <b>BC</b> пополам. <b>BD = 4,5</b> см. Найдите <b>AB</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">AB = 9 см</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 3 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №3 — Векторы в пространстве (координаты)</div>
-
-<div class="quiz-variant">Вариант 3.1</div>
-<div style="margin-bottom: 0.3rem;">Даны координаты точек: <b>A(1; -2; 3)</b>, <b>B(4; 0; -1)</b>, <b>C(-1; 3; 2)</b>, <b>D(2; -1; 0)</b>. Найдите <b>|2·AB − 3·CD|</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">√269</div>
-</details>
-
-<div class="quiz-variant">Вариант 3.2</div>
-<div style="margin-bottom: 0.3rem;">Даны координаты точек: <b>M(0; 2; -1)</b>, <b>N(3; -1; 4)</b>, <b>P(-2; 0; 3)</b>, <b>Q(1; -3; 0)</b>. Найдите <b>|MN + PQ|</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">2√19</div>
-</details>
-
-<div class="quiz-variant">Вариант 3.3</div>
-<div style="margin-bottom: 0.3rem;">Даны координаты точек: <b>C(2; -1; 3)</b>, <b>D(-1; 4; 0)</b>, <b>E(0; 2; -2)</b>, <b>F(3; -1; 1)</b>. Найдите <b>|CD − EF|</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">2√34</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 4 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №4 — Логарифмическое выражение</div>
-
-<div class="quiz-variant">Вариант 4.1</div>
-<div style="margin-bottom: 0.3rem;">Найдите <b>log₂ b</b>, если <b>log₂ b⁴ = 12</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">log₂ b = 3</div>
-</details>
-
-<div class="quiz-variant">Вариант 4.2</div>
-<div style="margin-bottom: 0.3rem;">Найдите <b>log₃ b</b>, если <b>log₃ b² = 8</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">log₃ b = 4</div>
-</details>
-
-<div class="quiz-variant">Вариант 4.3</div>
-<div style="margin-bottom: 0.3rem;">Найдите <b>log₄ b</b>, если <b>log₄ b³ = 15</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">log₄ b = 5</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 5 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №5 — Арифметическое выражение</div>
-
-<div class="quiz-variant">Вариант 5.1</div>
-<div style="margin-bottom: 0.3rem;">Вычислите: <b>16^{3/2} − 0,5</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">63,5</div>
-</details>
-
-<div class="quiz-variant">Вариант 5.2</div>
-<div style="margin-bottom: 0.3rem;">Вычислите: <b>9^{5/2} + 1,25</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">244,25</div>
-</details>
-
-<div class="quiz-variant">Вариант 5.3</div>
-<div style="margin-bottom: 0.3rem;">Вычислите: <b>4^{7/2} − 2,75</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">125,25</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 6 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №6 — Тригонометрическое выражение</div>
-
-<div class="quiz-variant">Вариант 6.1</div>
-<div style="margin-bottom: 0.3rem;">Упростите: <b>sin²(π/2 − α) + cos²(3π/2 − α) − cos²α</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">sin²α</div>
-</details>
-
-<div class="quiz-variant">Вариант 6.2</div>
-<div style="margin-bottom: 0.3rem;">Упростите: <b>cos²(π + α) + sin²(π/2 + α) − sin²α</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">2cos²α − sin²α</div>
-</details>
-
-<div class="quiz-variant">Вариант 6.3</div>
-<div style="margin-bottom: 0.3rem;">Упростите: <b>sin²(π − α) + cos²(π/2 + α) − sin²α</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">sin²α</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 7 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №7 — Угол наклона боковой грани пирамиды</div>
-
-<div class="quiz-variant">Вариант 7.1</div>
-<div style="margin-bottom: 0.3rem;">В правильной четырёхугольной пирамиде сторона основания равна 6, высота равна 3. Найдите угол наклона боковой грани к плоскости основания.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">45°</div>
-</details>
-
-<div class="quiz-variant">Вариант 7.2</div>
-<div style="margin-bottom: 0.3rem;">В правильной четырёхугольной пирамиде сторона основания равна 8, высота равна 4. Найдите угол наклона боковой грани к плоскости основания.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">45°</div>
-</details>
-
-<div class="quiz-variant">Вариант 7.3</div>
-<div style="margin-bottom: 0.3rem;">В правильной четырёхугольной пирамиде сторона основания равна 10, высота равна 5. Найдите угол наклона боковой грани к плоскости основания.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">45°</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 8 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №8 — Площадь поверхности шара</div>
-
-<div class="quiz-variant">Вариант 8.1</div>
-<div style="margin-bottom: 0.3rem;">На поверхности шара даны точки <b>A</b>, <b>B</b>, <b>C</b>: <b>AB = 6</b>, <b>BC = 8</b>, <b>AC = 10</b>. Расстояние от центра шара до плоскости треугольника равно 2. Найдите площадь поверхности шара.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">116π</div>
-</details>
-
-<div class="quiz-variant">Вариант 8.2</div>
-<div style="margin-bottom: 0.3rem;">На поверхности шара даны точки <b>C</b>, <b>D</b>, <b>E</b>: <b>CD = 5</b>, <b>DE = 12</b>, <b>CE = 13</b>. Расстояние от центра шара до плоскости треугольника равно 3. Найдите площадь поверхности шара.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">205π</div>
-</details>
-
-<div class="quiz-variant">Вариант 8.3</div>
-<div style="margin-bottom: 0.3rem;">На поверхности шара даны точки <b>M</b>, <b>N</b>, <b>P</b>: <b>MN = 9</b>, <b>NP = 12</b>, <b>MP = 15</b>. Расстояние от центра шара до плоскости треугольника равно 4. Найдите площадь поверхности шара.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">289π</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 9 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №9 — Задача на смеси (растворы)</div>
-
-<div class="quiz-variant">Вариант 9.1</div>
-<div style="margin-bottom: 0.3rem;">Первый раствор содержит 20% соли, второй — 40%. Смешали 300 кг 35% раствора. На сколько кг масса первого меньше массы второго?</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">150 кг</div>
-</details>
-
-<div class="quiz-variant">Вариант 9.2</div>
-<div style="margin-bottom: 0.3rem;">Первый раствор содержит 15% соли, второй — 25%. Смешали 400 кг 22% раствора. На сколько кг масса первого меньше массы второго?</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">160 кг</div>
-</details>
-
-<div class="quiz-variant">Вариант 9.3</div>
-<div style="margin-bottom: 0.3rem;">Первый раствор содержит 10% соли, второй — 20%. Смешали 500 кг 18% раствора. На сколько кг масса первого меньше массы второго?</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">300 кг</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 11 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №11 — Тригонометрическое уравнение</div>
-
-<div class="quiz-variant">Вариант 11.1</div>
-<div style="margin-bottom: 0.3rem;">Решите уравнение: <b>sin 2x · ctg x + 1 = 3 cos x</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">x = 2πn, ±π/3 + 2πn, n ∈ ℤ</div>
-</details>
-
-<div class="quiz-variant">Вариант 11.2</div>
-<div style="margin-bottom: 0.3rem;">Решите уравнение: <b>cos 2x · tg x + 1 = 2 sin x</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">x = (−1)ⁿ·π/6 + πn, n ∈ ℤ</div>
-</details>
-
-<div class="quiz-variant">Вариант 11.3</div>
-<div style="margin-bottom: 0.3rem;">Решите уравнение: <b>sin 2x · tg x + 2 = 4 sin x</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">x = π/2 + 2πn, n ∈ ℤ</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 12 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №12 — Неравенство с параметром</div>
-
-<div class="quiz-variant">Вариант 12.1</div>
-<div style="margin-bottom: 0.3rem;">Найдите наибольшее целое решение неравенства: <b>16/(x²−2x) ≥ x²−2x</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">4</div>
-</details>
-
-<div class="quiz-variant">Вариант 12.2</div>
-<div style="margin-bottom: 0.3rem;">Найдите наименьшее целое решение неравенства: <b>9/(x²+x) ≤ x²+x</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">-3</div>
-</details>
-
-<div class="quiz-variant">Вариант 12.3</div>
-<div style="margin-bottom: 0.3rem;">Найдите наибольшее целое решение неравенства: <b>36/(x²−4x) ≥ x²−4x</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">5</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 13 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №13 — Тригонометрическое уравнение (наименьший корень)</div>
-
-<div class="quiz-variant">Вариант 13.1</div>
-<div style="margin-bottom: 0.3rem;">Найдите наименьший положительный корень уравнения: <b>√2·cos x − sin x = 1</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">45°</div>
-</details>
-
-<div class="quiz-variant">Вариант 13.2</div>
-<div style="margin-bottom: 0.3rem;">Найдите наименьший положительный корень уравнения: <b>cos x − √3·sin x = 1</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">60°</div>
-</details>
-
-<div class="quiz-variant">Вариант 13.3</div>
-<div style="margin-bottom: 0.3rem;">Найдите наименьший положительный корень уравнения: <b>2·cos x − 2·sin x = 1</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">15°</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 14 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №14 — Область определения логарифма</div>
-
-<div class="quiz-variant">Вариант 14.1</div>
-<div style="margin-bottom: 0.3rem;">Найдите наибольшее целое число в области определения: <b>y = ln(20 − |2x−5|)</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">12</div>
-</details>
-
-<div class="quiz-variant">Вариант 14.2</div>
-<div style="margin-bottom: 0.3rem;">Найдите наибольшее целое число в области определения: <b>y = ln(15 − |4x+3|)</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">2</div>
-</details>
-
-<div class="quiz-variant">Вариант 14.3</div>
-<div style="margin-bottom: 0.3rem;">Найдите наименьшее целое число в области определения: <b>y = ln(25 − |5x−10|)</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">-2</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 15 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №15 — Наибольший общий делитель (НОД)</div>
-
-<div class="quiz-variant">Вариант 15.1</div>
-<div style="margin-bottom: 0.3rem;">Найдите НОД чисел 324 и 486.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">162</div>
-</details>
-
-<div class="quiz-variant">Вариант 15.2</div>
-<div style="margin-bottom: 0.3rem;">Найдите НОД чисел 360 и 840.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">120</div>
-</details>
-
-<div class="quiz-variant">Вариант 15.3</div>
-<div style="margin-bottom: 0.3rem;">Найдите НОД чисел 512 и 640.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">128</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 16 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №16 — Наименьшее общее кратное (НОК)</div>
-
-<div class="quiz-variant">Вариант 16.1</div>
-<div style="margin-bottom: 0.3rem;">Найдите НОК чисел 48, 72 и 90.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">720</div>
-</details>
-
-<div class="quiz-variant">Вариант 16.2</div>
-<div style="margin-bottom: 0.3rem;">Найдите НОК чисел 36, 54 и 81.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">324</div>
-</details>
-
-<div class="quiz-variant">Вариант 16.3</div>
-<div style="margin-bottom: 0.3rem;">Найдите НОК чисел 42, 56 и 63.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">504</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 17 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №17 — Обои (периметр комнаты)</div>
-
-<div class="quiz-variant">Вариант 17.1</div>
-<div style="margin-bottom: 0.3rem;">Одного рулона обоев хватает на полосу шириной 1,2 м. Сколько рулонов нужно для комнаты 3,0 × 4,5 м?</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">13</div>
-</details>
-
-<div class="quiz-variant">Вариант 17.2</div>
-<div style="margin-bottom: 0.3rem;">Одного рулона обоев хватает на полосу шириной 1,0 м. Сколько рулонов нужно для комнаты 2,8 × 3,6 м?</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">13</div>
-</details>
-
-<div class="quiz-variant">Вариант 17.3</div>
-<div style="margin-bottom: 0.3rem;">Одного рулона обоев хватает на полосу шириной 0,8 м. Сколько рулонов нужно для комнаты 4,2 × 5,4 м?</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">24</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 20 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №20 — Сумма корней уравнения</div>
-
-<div class="quiz-variant">Вариант 20.1</div>
-<div style="margin-bottom: 0.3rem;">Найдите сумму корней уравнения: <b>(2x² − 3x − 2)/(x − 2) = x² + 4x + 1</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">4</div>
-</details>
-
-<div class="quiz-variant">Вариант 20.2</div>
-<div style="margin-bottom: 0.3rem;">Найдите сумму корней уравнения: <b>(3x² + 5x − 2)/(x + 2) = x² − 3x + 1</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">-2</div>
-</details>
-
-<div class="quiz-variant">Вариант 20.3</div>
-<div style="margin-bottom: 0.3rem;">Найдите сумму корней уравнения: <b>(x² − 4x + 3)/(x − 1) = x² + 2x − 5</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">0</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 22 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №22 — Число корней тригонометрического уравнения</div>
-
-<div class="quiz-variant">Вариант 22.1</div>
-<div style="margin-bottom: 0.3rem;">Сколько корней имеет уравнение <b>ctg 3x · sin 6x − cos 6x − sin 2x = 0</b> на промежутке <b>[0; 2π]</b>?</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">2</div>
-</details>
-
-<div class="quiz-variant">Вариант 22.2</div>
-<div style="margin-bottom: 0.3rem;">Сколько корней имеет уравнение <b>ctg x · sin 2x − cos 2x − sin x = 0</b> на промежутке <b>[0; π]</b>?</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">1</div>
-</details>
-
-<div class="quiz-variant">Вариант 22.3</div>
-<div style="margin-bottom: 0.3rem;">Сколько корней имеет уравнение <b>ctg 4x · sin 8x − cos 8x − sin 4x = 0</b> на промежутке <b>[0; π]</b>?</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">2</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 23 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №23 — Неравенство с дробью</div>
-
-<div class="quiz-variant">Вариант 23.1</div>
-<div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(x²−6x+9)/((x−3)(x+2)) ≥ −1</b> на промежутке <b>[-3; 5]</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">6</div>
-</details>
-
-<div class="quiz-variant">Вариант 23.2</div>
-<div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(x²−2x+1)/((x−1)(x+3)) ≥ −1</b> на промежутке <b>[-4; 4]</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">7</div>
-</details>
-
-<div class="quiz-variant">Вариант 23.3</div>
-<div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(x²−8x+16)/((x−4)(x+1)) ≥ −1</b> на промежутке <b>[-2; 6]</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">6</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- ЗАДАЧА 24 -->
-<!-- ============================================================ -->
-<div class="quiz-title">📌 Задача №24 — Дробно-рациональное неравенство</div>
-
-<div class="quiz-variant">Вариант 24.1</div>
-<div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(5x+2)/((x²+2x+1)(x²−x−2)) ≥ 1/(x²−x−2)</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">3</div>
-</details>
-
-<div class="quiz-variant">Вариант 24.2</div>
-<div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(7x+1)/((x²+4x+4)(x²+x−6)) ≥ 1/(x²−x−6)</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">4</div>
-</details>
-
-<div class="quiz-variant">Вариант 24.3</div>
-<div style="margin-bottom: 0.3rem;">Найдите число целых решений неравенства <b>(6x+5)/((x²+6x+9)(x²+2x−8)) ≥ 1/(x²+2x−8)</b>.</div>
-<details class="quiz-block">
-    <summary>📌 Показать ответ</summary>
-    <div class="answer">3</div>
-</details>
-
-<!-- ============================================================ -->
-<!-- КОНЕЦ БЛОКА ЗАДАЧ ДЛЯ САМОПРОВЕРКИ -->
-<!-- ============================================================ -->
 
 </div>
 </body>
