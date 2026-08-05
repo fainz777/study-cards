@@ -185,6 +185,7 @@
     </div>
 
     <div class="row">
+        <!-- колонка решения -->
         <div class="col-solution">
             <div class="step">
                 <span class="label">Шаг 1.</span> 
@@ -206,7 +207,7 @@
                 <b>K</b> — середина <b>AO</b> (по условию), поэтому<br>
                 <span class="math-block">AK = ½ · AO = ½ · [½ (a + d)] = ¼ (a + d)</span>
                 <div style="margin-top: 0.2rem; font-size: 0.95rem; color: #1f3a7a;">
-                    <span class="tag">фиксировано</span> K — именно середина AO, это задаёт единственное положение.
+                    <span class="badge">фиксировано</span> K — именно середина AO, это задаёт единственное положение.
                 </div>
             </div>
 
@@ -226,8 +227,16 @@
                     (вариант №2)
                 </span>
             </div>
+
+            <div class="footnote">
+                <i>❓ Почему именно середина AO?</i> 
+                — Это <b>дано</b> в условии. Если бы K была серединой другого отрезка, 
+                ответ изменился бы. Задача построена так, чтобы получить 
+                единственный вариант среди предложенных.
+            </div>
         </div>
 
+        <!-- рисунок SVG -->
         <div class="col-figure">
             <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px;">
                 <defs>
@@ -281,14 +290,131 @@
         </div>
     </div>
 
-    <div class="apparat" style="margin-top: 1rem;">
-        <div class="apparat-title">🧠 Математический аппарат (задача №1)</div>
+    <!-- ====== МАКСИМАЛЬНО ПОДРОБНЫЙ АППАРАТ (БЕЗ ТЕХНИЧЕСКИХ \overrightarrow) ====== -->
+    <div class="apparat">
+        <h3>🧠 Всё, что нужно знать о векторах для этой задачи</h3>
+
+        <!-- ======== БЛОК: ПОЧЕМУ AC = AB + AD ======== -->
+        <div class="highlight-box" style="background: #dce6fa; border-left: 6px solid #0037b3;">
+            <h4 style="margin-top:0.2rem; color:#0037b3;">⭐ Почему диагональ AC = AB + AD ?</h4>
+            <p><strong>Геометрический смысл:</strong> 
+            Вектор <span class="vec">AB</span> — это шаг из точки A в точку B. 
+            Вектор <span class="vec">AD</span> — это шаг из A в D. 
+            Чтобы попасть из A в C по <strong>правилу параллелограмма</strong>, мы сначала идём из A в B (вектор <span class="vec">AB</span>), 
+            а затем из B в C. Но в параллелограмме <strong>BC = AD</strong> (противоположные стороны равны и параллельны). 
+            Значит, путь A → B → C — это <span class="vec">AB</span> + <span class="vec">BC</span> = <span class="vec">AB</span> + <span class="vec">AD</span>.
+            </p>
+            <p><strong>Правило параллелограмма для сложения векторов:</strong> 
+            Если отложить два вектора <b>a</b> и <b>b</b> из одной точки, то их сумма — это диагональ параллелограмма, построенного на этих векторах. 
+            В нашем случае <b>a</b> = <span class="vec">AB</span>, <b>b</b> = <span class="vec">AD</span>, а диагональ — это <span class="vec">AC</span>. 
+            Поэтому <span class="formula">AC = AB + AD</span> — это не просто формула, а прямое следствие определения параллелограмма.
+            </p>
+            <div class="example-box" style="margin-top:0.4rem;">
+                <strong>🧭 Аналогия:</strong> Представьте, что вы идёте из точки A в B (1 км на восток), а затем из B в C (1 км на север). 
+                В параллелограмме это то же самое, что сразу пойти из A в C по диагонали. 
+                Вектор <span class="vec">AC</span> — это и есть ваш итоговый путь, равный сумме двух «шагов».
+            </div>
+        </div>
+
+        <h4>1. Что такое вектор?</h4>
+        <p><span class="term">Вектор</span> — это направленный отрезок. У него есть <strong>длина</strong> (модуль) и <strong>направление</strong>. 
+        На рисунке вектор обозначают стрелкой. Например, <span class="vec">AB</span> — это вектор, который начинается в точке A и заканчивается в точке B.</p>
+        <div class="example-box">
+            <strong>Важно:</strong> вектор можно <strong>переносить</strong> параллельно самому себе — он не изменится. 
+            Поэтому мы можем работать с векторами, «откладывая» их от любой точки.
+        </div>
+
+        <h4>2. Операции с векторами (правила)</h4>
         <ul>
-            <li><span class="term">Правило параллелограмма:</span> диагональ AC = AB + AD.</li>
-            <li><span class="term">Свойство середины:</span> если M — середина XY, то XM = ½ · XY.</li>
-            <li><span class="term">Вычитание векторов:</span> DK = AK − AD.</li>
-            <li><span class="term">Линейность:</span> ¼(a + d) − d = ¼a − ¾d.</li>
+            <li>
+                <span class="term">Сложение векторов (правило треугольника)</span>: 
+                чтобы сложить <b>a</b> и <b>b</b>, нужно к концу первого приложить начало второго. 
+                Вектор-сумма — от начала первого к концу второго. <br>
+                <span class="formula">a + b</span> (геометрически).
+            </li>
+            <li>
+                <span class="term">Сложение векторов (правило параллелограмма)</span>: 
+                если отложить <b>a</b> и <b>b</b> из одной точки, то их сумма — диагональ параллелограмма, построенного на этих векторах. 
+                Именно это правило мы используем: <span class="formula">AC = AB + AD</span>.
+            </li>
+            <li>
+                <span class="term">Вычитание векторов</span>: 
+                <span class="formula">a − b</span> — это <b>a</b> + (−<b>b</b>), где −<b>b</b> — вектор, противоположный <b>b</b> (такой же длины, но направлен в другую сторону). 
+                Геометрически: <span class="formula">DK = AK − AD</span> означает, что мы откладываем <b>AD</b> в обратную сторону.
+            </li>
+            <li>
+                <span class="term">Умножение вектора на число</span>: 
+                если умножить вектор на число <i>k</i>, его длина изменится в |<i>k</i>| раз, а направление:
+                <ul style="margin-top:0.2rem;">
+                    <li>при <i>k</i> > 0 — направление сохраняется;</li>
+                    <li>при <i>k</i> < 0 — направление меняется на противоположное.</li>
+                </ul>
+                Например, <span class="formula">½ · AO</span> — это вектор в ту же сторону, но вдвое короче.
+            </li>
         </ul>
+
+        <h4>3. Середина отрезка в векторной записи</h4>
+        <p>
+            Если точка <b>M</b> — середина отрезка <b>XY</b>, то вектор из <b>X</b> в <b>M</b> равен <strong>половине</strong> вектора из <b>X</b> в <b>Y</b>:
+        </p>
+        <div class="math-block" style="font-size:1.2rem;">
+            XM = ½ · XY
+        </div>
+        <p style="margin-top:0.3rem;">
+            <strong>Как это понять?</strong> Идём от X к Y. Если M ровно посередине, то мы прошли <strong>половину</strong> всего пути. 
+            Вектор <span class="vec">XM</span> — это половинка вектора <span class="vec">XY</span>. 
+            Поэтому мы пишем <span class="formula">½ · XY</span>. 
+            В нашей задаче мы используем это дважды:
+            <br> • <span class="formula">AO = ½ · AC</span>  (O — середина AC),
+            <br> • <span class="formula">AK = ½ · AO</span>  (K — середина AO).
+        </p>
+
+        <h4>4. Свойство диагоналей параллелограмма</h4>
+        <p>
+            В любом параллелограмме диагонали <strong>пересекаются и точкой пересечения делятся пополам</strong>. 
+            Поэтому O — середина <b>AC</b> (и одновременно середина <b>BD</b>). 
+            Это даёт нам <span class="formula">AO = ½ · AC</span>.
+        </p>
+
+        <h4>5. Как мы выражаем всё через базисные векторы</h4>
+        <p>
+            В задаче мы выбираем два «основных» вектора: <span class="vec">AB</span> и <span class="vec">AD</span>. 
+            Все остальные векторы (диагонали, отрезки до середин) мы выражаем через них, потому что они <strong>линейно независимы</strong> 
+            и задают всю плоскость. Это как система координат, только векторная.
+        </p>
+
+        <h4>6. Последовательность действий (алгоритм для таких задач)</h4>
+        <ul>
+            <li><strong>Шаг 1.</strong> Записать, чему равна диагональ: <span class="formula">AC = AB + AD</span> (правило параллелограмма).</li>
+            <li><strong>Шаг 2.</strong> Использовать свойство середины: <span class="formula">AO = ½ · AC</span>.</li>
+            <li><strong>Шаг 3.</strong> Если дана ещё одна середина (K), снова взять половину: <span class="formula">AK = ½ · AO</span>.</li>
+            <li><strong>Шаг 4.</strong> Выразить искомый вектор через разность: <span class="formula">DK = AK − AD</span> (или через сумму, если удобнее).</li>
+            <li><strong>Шаг 5.</strong> Подставить и привести подобные (раскрыть скобки, сложить коэффициенты).</li>
+        </ul>
+        <div style="margin-top:0.6rem; background: #e3edfc; border-radius: 40px; padding: 0.1rem 1.2rem; display: inline-block;">
+            📘 <strong>Главный принцип:</strong> положение точек (K, O) всегда строго по условию — мы не меняем их произвольно.
+        </div>
+
+        <h4 style="margin-top: 1.2rem;">7. Почему в ответе получилось <span class="formula">¼·AB − ¾·AD</span>?</h4>
+        <p>
+            Мы получили <span class="formula">¼·(a + d) − d</span>. 
+            Раскрываем скобки: <span class="formula">¼a + ¼d − d</span>. 
+            Так как <span class="formula">¼d − d = ¼d − ⁴⁄₄d = −¾d</span>, остаётся <span class="formula">¼a − ¾d</span>. 
+            Это и есть ответ: вектор <span class="vec">DK</span> «состоит» из ¼ вектора <span class="vec">AB</span> и <strong>минус</strong> ¾ вектора <span class="vec">AD</span> 
+            (то есть направлен в сторону, противоположную <span class="vec">AD</span>, но на ¾ длины).
+        </p>
+    </div>
+
+    <div style="margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; background: #f8fbff; border-radius: 40px; padding: 0.2rem 1.5rem; border: 1px solid #dce6f5;">
+        <span style="font-weight: 400; color: #142d5a;">✔️ Среди предложенных вариантов ответ:</span>
+        <span style="font-family: 'Times New Roman', serif; font-size: 1.3rem; background: #d7e4fc; padding: 0.1rem 1.2rem; border-radius: 40px; font-weight: 600;">
+            ¼·AB − ¾·AD
+        </span>
+        <span style="color: #1a3d77;">(вариант №2)</span>
+    </div>
+    <div style="margin-top: 0.8rem; font-size: 0.95rem; color: #2f4b7a; background: #f3f7ff; padding: 0.4rem 1.5rem; border-radius: 40px;">
+        ⚡ <b>Ключевой нюанс:</b> K — <i>строго</i> середина AO, это фиксировано в условии. 
+        Поэтому мы не рассматриваем другие положения K.
     </div>
 
     <!-- ============================================================ -->
