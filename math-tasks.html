@@ -175,17 +175,13 @@
     <!-- ЗАДАЧА 1 (векторная) — УЖЕ БЫЛА -->
     <!-- ============================================================ -->
     <div style="margin-bottom: 1.5rem;">
-        <div class="task-title">📐 Векторы в параллелограмме · полный разбор</div>
+        <div class="task-title">📌 Задача №1 — Векторное выражение в параллелограмме</div>
         <div class="problem-box">
-            <span style="font-weight: 500;">Условие:</span> 
-        В параллелограмме <b>ABCD</b> точка <b>O</b> — пересечение диагоналей, <br>
-        точка <b>K</b> — середина отрезка <b>AO</b>. 
-        Выразите вектор <b>DK</b> через <b>AB</b> и <b>AD</b>.
+            <strong>Условие:</strong> В параллелограмме <b>ABCD</b> точка <b>O</b> — пересечение диагоналей, точка <b>K</b> — середина отрезка <b>AO</b>. Выразите вектор <b>DK</b> через <b>AB</b> и <b>AD</b>.
         </div>
     </div>
 
     <div class="row">
-        <!-- колонка решения -->
         <div class="col-solution">
             <div class="step">
                 <span class="label">Шаг 1.</span> 
@@ -207,7 +203,7 @@
                 <b>K</b> — середина <b>AO</b> (по условию), поэтому<br>
                 <span class="math-block">AK = ½ · AO = ½ · [½ (a + d)] = ¼ (a + d)</span>
                 <div style="margin-top: 0.2rem; font-size: 0.95rem; color: #1f3a7a;">
-                    <span class="badge">фиксировано</span> K — именно середина AO, это задаёт единственное положение.
+                    <span class="tag">фиксировано</span> K — именно середина AO, это задаёт единственное положение.
                 </div>
             </div>
 
@@ -227,16 +223,8 @@
                     (вариант №2)
                 </span>
             </div>
-
-            <div class="footnote">
-                <i>❓ Почему именно середина AO?</i> 
-                — Это <b>дано</b> в условии. Если бы K была серединой другого отрезка, 
-                ответ изменился бы. Задача построена так, чтобы получить 
-                единственный вариант среди предложенных.
-            </div>
         </div>
 
-        <!-- рисунок SVG -->
         <div class="col-figure">
             <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px;">
                 <defs>
@@ -290,131 +278,14 @@
         </div>
     </div>
 
-    <!-- ====== МАКСИМАЛЬНО ПОДРОБНЫЙ АППАРАТ (БЕЗ ТЕХНИЧЕСКИХ \overrightarrow) ====== -->
-    <div class="apparat">
-        <h3>🧠 Всё, что нужно знать о векторах для этой задачи</h3>
-
-        <!-- ======== БЛОК: ПОЧЕМУ AC = AB + AD ======== -->
-        <div class="highlight-box" style="background: #dce6fa; border-left: 6px solid #0037b3;">
-            <h4 style="margin-top:0.2rem; color:#0037b3;">⭐ Почему диагональ AC = AB + AD ?</h4>
-            <p><strong>Геометрический смысл:</strong> 
-            Вектор <span class="vec">AB</span> — это шаг из точки A в точку B. 
-            Вектор <span class="vec">AD</span> — это шаг из A в D. 
-            Чтобы попасть из A в C по <strong>правилу параллелограмма</strong>, мы сначала идём из A в B (вектор <span class="vec">AB</span>), 
-            а затем из B в C. Но в параллелограмме <strong>BC = AD</strong> (противоположные стороны равны и параллельны). 
-            Значит, путь A → B → C — это <span class="vec">AB</span> + <span class="vec">BC</span> = <span class="vec">AB</span> + <span class="vec">AD</span>.
-            </p>
-            <p><strong>Правило параллелограмма для сложения векторов:</strong> 
-            Если отложить два вектора <b>a</b> и <b>b</b> из одной точки, то их сумма — это диагональ параллелограмма, построенного на этих векторах. 
-            В нашем случае <b>a</b> = <span class="vec">AB</span>, <b>b</b> = <span class="vec">AD</span>, а диагональ — это <span class="vec">AC</span>. 
-            Поэтому <span class="formula">AC = AB + AD</span> — это не просто формула, а прямое следствие определения параллелограмма.
-            </p>
-            <div class="example-box" style="margin-top:0.4rem;">
-                <strong>🧭 Аналогия:</strong> Представьте, что вы идёте из точки A в B (1 км на восток), а затем из B в C (1 км на север). 
-                В параллелограмме это то же самое, что сразу пойти из A в C по диагонали. 
-                Вектор <span class="vec">AC</span> — это и есть ваш итоговый путь, равный сумме двух «шагов».
-            </div>
-        </div>
-
-        <h4>1. Что такое вектор?</h4>
-        <p><span class="term">Вектор</span> — это направленный отрезок. У него есть <strong>длина</strong> (модуль) и <strong>направление</strong>. 
-        На рисунке вектор обозначают стрелкой. Например, <span class="vec">AB</span> — это вектор, который начинается в точке A и заканчивается в точке B.</p>
-        <div class="example-box">
-            <strong>Важно:</strong> вектор можно <strong>переносить</strong> параллельно самому себе — он не изменится. 
-            Поэтому мы можем работать с векторами, «откладывая» их от любой точки.
-        </div>
-
-        <h4>2. Операции с векторами (правила)</h4>
+    <div class="apparat" style="margin-top: 1rem;">
+        <div class="apparat-title">🧠 Математический аппарат (задача №1)</div>
         <ul>
-            <li>
-                <span class="term">Сложение векторов (правило треугольника)</span>: 
-                чтобы сложить <b>a</b> и <b>b</b>, нужно к концу первого приложить начало второго. 
-                Вектор-сумма — от начала первого к концу второго. <br>
-                <span class="formula">a + b</span> (геометрически).
-            </li>
-            <li>
-                <span class="term">Сложение векторов (правило параллелограмма)</span>: 
-                если отложить <b>a</b> и <b>b</b> из одной точки, то их сумма — диагональ параллелограмма, построенного на этих векторах. 
-                Именно это правило мы используем: <span class="formula">AC = AB + AD</span>.
-            </li>
-            <li>
-                <span class="term">Вычитание векторов</span>: 
-                <span class="formula">a − b</span> — это <b>a</b> + (−<b>b</b>), где −<b>b</b> — вектор, противоположный <b>b</b> (такой же длины, но направлен в другую сторону). 
-                Геометрически: <span class="formula">DK = AK − AD</span> означает, что мы откладываем <b>AD</b> в обратную сторону.
-            </li>
-            <li>
-                <span class="term">Умножение вектора на число</span>: 
-                если умножить вектор на число <i>k</i>, его длина изменится в |<i>k</i>| раз, а направление:
-                <ul style="margin-top:0.2rem;">
-                    <li>при <i>k</i> > 0 — направление сохраняется;</li>
-                    <li>при <i>k</i> < 0 — направление меняется на противоположное.</li>
-                </ul>
-                Например, <span class="formula">½ · AO</span> — это вектор в ту же сторону, но вдвое короче.
-            </li>
+            <li><span class="term">Правило параллелограмма:</span> диагональ AC = AB + AD.</li>
+            <li><span class="term">Свойство середины:</span> если M — середина XY, то XM = ½ · XY.</li>
+            <li><span class="term">Вычитание векторов:</span> DK = AK − AD.</li>
+            <li><span class="term">Линейность:</span> ¼(a + d) − d = ¼a − ¾d.</li>
         </ul>
-
-        <h4>3. Середина отрезка в векторной записи</h4>
-        <p>
-            Если точка <b>M</b> — середина отрезка <b>XY</b>, то вектор из <b>X</b> в <b>M</b> равен <strong>половине</strong> вектора из <b>X</b> в <b>Y</b>:
-        </p>
-        <div class="math-block" style="font-size:1.2rem;">
-            XM = ½ · XY
-        </div>
-        <p style="margin-top:0.3rem;">
-            <strong>Как это понять?</strong> Идём от X к Y. Если M ровно посередине, то мы прошли <strong>половину</strong> всего пути. 
-            Вектор <span class="vec">XM</span> — это половинка вектора <span class="vec">XY</span>. 
-            Поэтому мы пишем <span class="formula">½ · XY</span>. 
-            В нашей задаче мы используем это дважды:
-            <br> • <span class="formula">AO = ½ · AC</span>  (O — середина AC),
-            <br> • <span class="formula">AK = ½ · AO</span>  (K — середина AO).
-        </p>
-
-        <h4>4. Свойство диагоналей параллелограмма</h4>
-        <p>
-            В любом параллелограмме диагонали <strong>пересекаются и точкой пересечения делятся пополам</strong>. 
-            Поэтому O — середина <b>AC</b> (и одновременно середина <b>BD</b>). 
-            Это даёт нам <span class="formula">AO = ½ · AC</span>.
-        </p>
-
-        <h4>5. Как мы выражаем всё через базисные векторы</h4>
-        <p>
-            В задаче мы выбираем два «основных» вектора: <span class="vec">AB</span> и <span class="vec">AD</span>. 
-            Все остальные векторы (диагонали, отрезки до середин) мы выражаем через них, потому что они <strong>линейно независимы</strong> 
-            и задают всю плоскость. Это как система координат, только векторная.
-        </p>
-
-        <h4>6. Последовательность действий (алгоритм для таких задач)</h4>
-        <ul>
-            <li><strong>Шаг 1.</strong> Записать, чему равна диагональ: <span class="formula">AC = AB + AD</span> (правило параллелограмма).</li>
-            <li><strong>Шаг 2.</strong> Использовать свойство середины: <span class="formula">AO = ½ · AC</span>.</li>
-            <li><strong>Шаг 3.</strong> Если дана ещё одна середина (K), снова взять половину: <span class="formula">AK = ½ · AO</span>.</li>
-            <li><strong>Шаг 4.</strong> Выразить искомый вектор через разность: <span class="formula">DK = AK − AD</span> (или через сумму, если удобнее).</li>
-            <li><strong>Шаг 5.</strong> Подставить и привести подобные (раскрыть скобки, сложить коэффициенты).</li>
-        </ul>
-        <div style="margin-top:0.6rem; background: #e3edfc; border-radius: 40px; padding: 0.1rem 1.2rem; display: inline-block;">
-            📘 <strong>Главный принцип:</strong> положение точек (K, O) всегда строго по условию — мы не меняем их произвольно.
-        </div>
-
-        <h4 style="margin-top: 1.2rem;">7. Почему в ответе получилось <span class="formula">¼·AB − ¾·AD</span>?</h4>
-        <p>
-            Мы получили <span class="formula">¼·(a + d) − d</span>. 
-            Раскрываем скобки: <span class="formula">¼a + ¼d − d</span>. 
-            Так как <span class="formula">¼d − d = ¼d − ⁴⁄₄d = −¾d</span>, остаётся <span class="formula">¼a − ¾d</span>. 
-            Это и есть ответ: вектор <span class="vec">DK</span> «состоит» из ¼ вектора <span class="vec">AB</span> и <strong>минус</strong> ¾ вектора <span class="vec">AD</span> 
-            (то есть направлен в сторону, противоположную <span class="vec">AD</span>, но на ¾ длины).
-        </p>
-    </div>
-
-    <div style="margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; background: #f8fbff; border-radius: 40px; padding: 0.2rem 1.5rem; border: 1px solid #dce6f5;">
-        <span style="font-weight: 400; color: #142d5a;">✔️ Среди предложенных вариантов ответ:</span>
-        <span style="font-family: 'Times New Roman', serif; font-size: 1.3rem; background: #d7e4fc; padding: 0.1rem 1.2rem; border-radius: 40px; font-weight: 600;">
-            ¼·AB − ¾·AD
-        </span>
-        <span style="color: #1a3d77;">(вариант №2)</span>
-    </div>
-    <div style="margin-top: 0.8rem; font-size: 0.95rem; color: #2f4b7a; background: #f3f7ff; padding: 0.4rem 1.5rem; border-radius: 40px;">
-        ⚡ <b>Ключевой нюанс:</b> K — <i>строго</i> середина AO, это фиксировано в условии. 
-        Поэтому мы не рассматриваем другие положения K.
     </div>
 
     <!-- ============================================================ -->
@@ -433,110 +304,106 @@
         </div>
     </div>
 
-        <div class="row">
-        <!-- колонка решения -->
+    <div class="row">
         <div class="col-solution">
             <div class="step">
                 <span class="label">Шаг 1.</span> 
-                Диагональ <span class="vec">AC</span> = 
-                <span class="math">AB + AD</span> = 
-                <span class="math">a + d</span> <br>
-                <span style="font-size:0.9rem; color:#1f3a7a;">(правило параллелограмма для диагонали)</span>
+                Угол A = углу C → треугольник <b>равнобедренный</b> с основанием AC.  
+                Значит, стороны, лежащие напротив равных углов, равны:  
+                <span class="math-block">AB = BC</span>
             </div>
 
             <div class="step">
                 <span class="label">Шаг 2.</span> 
-                Точка <b>O</b> — середина <span class="vec">AC</span>, значит<br>
-                <span class="math-block">AO = ½ · AC = ½ (a + d)</span>
-                <span style="font-size:0.9rem; color:#1f3a7a; margin-left:0.5rem;">(диагонали точкой пересечения делятся пополам)</span>
+                Высота AD делит BC пополам → D — середина BC.  
+                Значит, <span class="math-block">BD = DC = 7,8 см</span>  
+                Тогда <span class="math-block">BC = BD + DC = 7,8 + 7,8 = 15,6 см</span>
             </div>
 
             <div class="step">
                 <span class="label">Шаг 3.</span> 
-                <b>K</b> — середина <b>AO</b> (по условию), поэтому<br>
-                <span class="math-block">AK = ½ · AO = ½ · [½ (a + d)] = ¼ (a + d)</span>
-                <div style="margin-top: 0.2rem; font-size: 0.95rem; color: #1f3a7a;">
-                    <span class="badge">фиксировано</span> K — именно середина AO, это задаёт единственное положение.
-                </div>
+                Из шага 1: <span class="math-block">AB = BC = 15,6 см</span>
             </div>
 
             <div class="step">
                 <span class="label">Шаг 4.</span> 
-                Вектор <span class="vec">DK</span> = <span class="vec">AK</span> − <span class="vec">AD</span> <br>
-                <span class="math-block">DK = ¼(a + d) − d = ¼a + ¼d − d = ¼a − ¾d</span>
-                <span style="font-size:0.9rem; color:#1f3a7a; margin-left:0.5rem;">(правило вычитания векторов)</span>
+                В треугольнике ABD (он прямоугольный, так как AD — высота):  
+                <span class="math-block">AB² = AD² + BD²</span>  
+                <span class="math-block">15,6² = AD² + 7,8²</span>  
+                <span class="math-block">243,36 = AD² + 60,84</span>  
+                <span class="math-block">AD² = 182,52</span>
+            </div>
+
+            <div class="step">
+                <span class="label">Шаг 5.</span> 
+                В треугольнике ADC (тоже прямоугольный):  
+                <span class="math-block">AC² = AD² + DC²</span>  
+                <span class="math-block">AC² = 182,52 + 60,84 = 243,36</span>  
+                <span class="math-block">AC = √243,36 = 15,6 см</span>
             </div>
 
             <div class="step" style="border-left: 4px solid #2f6aff; background: #e8f0fe;">
                 <span class="label">✅ Ответ:</span> 
-                <span class="math" style="font-size: 1.3rem; background: #d4e2fc;">
-                    DK = ¼·AB − ¾·AD
-                </span>
+                <span class="answer-box">AC = 15,6 см</span>
                 <span style="margin-left: 1rem; font-weight: 400; color: #1f3a7a;">
-                    (вариант №2)
+                    (вариант №4)
                 </span>
             </div>
 
-            <div class="footnote">
-                <i>❓ Почему именно середина AO?</i> 
-                — Это <b>дано</b> в условии. Если бы K была серединой другого отрезка, 
-                ответ изменился бы. Задача построена так, чтобы получить 
-                единственный вариант среди предложенных.
+            <div class="footnote" style="margin-top: 1rem;">
+                <strong>🧠 Важное наблюдение:</strong>  
+                Мы получили AB = BC = AC = 15,6 см → треугольник <b>равносторонний</b>.  
+                В равностороннем треугольнике все углы по 60°, значит угол A = углу C = 60° — условие выполняется.  
+                Поэтому ответ 15,6 см — единственно верный.
             </div>
         </div>
 
-        <!-- рисунок SVG -->
         <div class="col-figure">
             <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 20px;">
                 <defs>
-                    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                         <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f3a7a" />
                     </marker>
-                    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#b22234" />
-                    </marker>
-                    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#1b7e3a" />
-                    </marker>
                 </defs>
-                <circle cx="40" cy="220" r="5" fill="#0b1e3a" />
-                <text x="20" y="245" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">A</text>
-                <circle cx="240" cy="220" r="5" fill="#0b1e3a" />
-                <text x="248" y="245" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">B</text>
-                <circle cx="290" cy="80" r="5" fill="#0b1e3a" />
-                <text x="298" y="75" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">C</text>
-                <circle cx="90" cy="80" r="5" fill="#0b1e3a" />
-                <text x="70" y="65" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">D</text>
+                <polygon points="170,40 40,250 300,250" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
+                <line x1="170" y1="40" x2="170" y2="250" stroke="#b22234" stroke-width="2.5" stroke-dasharray="6 4" />
+                <text x="178" y="150" font-family="Segoe UI, sans-serif" font-weight="500" font-size="16" fill="#b22234">AD (высота)</text>
+                
+                <circle cx="170" cy="40" r="5" fill="#0b1e3a" />
+                <text x="178" y="30" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">A</text>
+                <circle cx="40" cy="250" r="5" fill="#0b1e3a" />
+                <text x="10" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">B</text>
+                <circle cx="300" cy="250" r="5" fill="#0b1e3a" />
+                <text x="308" y="275" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#0b1e3a">C</text>
+                <circle cx="170" cy="250" r="5" fill="#1b7e3a" />
+                <text x="178" y="268" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#1b7e3a">D</text>
+                
+                <line x1="40" y1="250" x2="170" y2="250" stroke="#2f6aff" stroke-width="2" marker-end="url(#arrow2)" />
+                <text x="80" y="240" font-family="Segoe UI, sans-serif" font-weight="500" font-size="15" fill="#2f6aff">BD = 7,8</text>
+                <line x1="170" y1="250" x2="300" y2="250" stroke="#2f6aff" stroke-width="2" marker-end="url(#arrow2)" />
+                <text x="210" y="240" font-family="Segoe UI, sans-serif" font-weight="500" font-size="15" fill="#2f6aff">DC = 7,8</text>
 
-                <polygon points="40,220 240,220 290,80 90,80" fill="#f0f6ff" stroke="#1f3a7a" stroke-width="2.5" />
-                <line x1="40" y1="220" x2="290" y2="80" stroke="#4a6fa5" stroke-width="1.8" stroke-dasharray="8 5" />
-                <line x1="240" y1="220" x2="90" y2="80" stroke="#4a6fa5" stroke-width="1.8" stroke-dasharray="8 5" />
-
-                <circle cx="165" cy="150" r="5" fill="#b22234" />
-                <text x="172" y="142" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#b22234">O</text>
-                <circle cx="102" cy="185" r="5" fill="#1b7e3a" />
-                <text x="108" y="178" font-family="Segoe UI, sans-serif" font-weight="600" font-size="18" fill="#1b7e3a">K</text>
-
-                <line x1="90" y1="80" x2="102" y2="185" stroke="#b22234" stroke-width="3" marker-end="url(#arrow-red)" />
-                <text x="105" y="120" font-family="Segoe UI, sans-serif" font-weight="600" font-size="17" fill="#b22234" transform="rotate(8, 105,120)">DK</text>
-
-                <line x1="40" y1="220" x2="240" y2="220" stroke="#1f3a7a" stroke-width="2.5" marker-end="url(#arrow)" />
-                <text x="120" y="208" font-family="Segoe UI, sans-serif" font-weight="600" font-size="17" fill="#1f3a7a">AB</text>
-                <line x1="40" y1="220" x2="90" y2="80" stroke="#1b7e3a" stroke-width="2.5" marker-end="url(#arrow-green)" />
-                <text x="48" y="140" font-family="Segoe UI, sans-serif" font-weight="600" font-size="17" fill="#1b7e3a">AD</text>
-
-                <line x1="40" y1="220" x2="165" y2="150" stroke="#a0b8e0" stroke-width="1.5" stroke-dasharray="4 4" />
-                <text x="80" y="170" font-size="15" fill="#4a6fa5" font-weight="500">AO</text>
-                <line x1="40" y1="220" x2="102" y2="185" stroke="#7ba37b" stroke-width="1.5" stroke-dasharray="4 4" />
-                <text x="48" y="192" font-size="15" fill="#1b7e3a" font-weight="500">AK</text>
-
-                <rect x="10" y="260" width="165" height="28" rx="12" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
-                <text x="24" y="280" font-size="13" fill="#0b1e3a">● K — середина AO (по усл.)</text>
+                <text x="175" y="115" font-family="Segoe UI, sans-serif" font-weight="600" font-size="17" fill="#b22234">AC = ?</text>
+                <rect x="155" y="230" width="14" height="14" fill="none" stroke="#b22234" stroke-width="1.5" />
+                <rect x="155" y="40" width="14" height="14" fill="none" stroke="#b22234" stroke-width="1.5" />
+                
+                <rect x="10" y="10" width="130" height="60" rx="10" fill="#f0f6ff" stroke="#cddbf5" stroke-width="1" />
+                <text x="20" y="32" font-size="13" fill="#0b1e3a">● Равнобедренный</text>
+                <text x="20" y="52" font-size="13" fill="#0b1e3a">● AD — высота и медиана</text>
             </svg>
             <div style="text-align: center; font-size: 0.9rem; color: #1f3a7a; padding: 0.3rem 0 0.2rem 0; border-top: 1px solid #e6edf8; margin-top: 0.3rem;">
-                <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">DK = ¼·AB − ¾·AD</span>
+                <span style="background: #eef3fd; padding: 0.1rem 0.8rem; border-radius: 30px;">AC = 15,6 см</span>
             </div>
         </div>
+    </div>
+
+    <div class="apparat" style="margin-top: 1rem;">
+        <div class="apparat-title">🧠 Математический аппарат (задача №2)</div>
+        <ul>
+            <li><span class="term">Признак равнобедренного треугольника:</span> если два угла равны, то треугольник равнобедренный, и стороны напротив равных углов равны.</li>
+            <li><span class="term">Свойство высоты:</span> в данном случае высота является медианой (делит сторону пополам).</li>
+            <li><span class="term">Теорема Пифагора:</span> в прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов.</li>
+        </ul>
     </div>
 
     <!-- ============================================================ -->
