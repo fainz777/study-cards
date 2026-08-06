@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Справочник по математике · Векторы и основы</title>
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async>
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8fafc;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            padding: 2rem 1rem;
+            color: #0b1e33;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem 2.5rem;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0, 20, 40, 0.25);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            border-bottom: 4px solid #2563eb;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #475569;
+            margin-left: 12px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 2.4rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .badge {
+            background: #2563eb;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.1rem 0.9rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.6rem 0 0.6rem 0;
+            color: #1e293b;
+        }
+
+        .section-intro {
+            background: #f1f5f9;
+            padding: 1rem 1.6rem;
+            border-radius: 20px;
+            margin: 0.8rem 0 1.4rem 0;
+            border-left: 6px solid #2563eb;
+            font-size: 1.05rem;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.2rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.2rem 1.6rem;
+            border: 1px solid #e9edf2;
+            transition: 0.1s ease;
+        }
+
+        .card:hover {
+            border-color: #94a3b8;
+            background: #f1f5f9;
+        }
+
+        .card strong {
+            color: #0b2b4a;
+            font-weight: 600;
+        }
+
+        .formula-block {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 0.8rem 1.6rem;
+            margin: 0.8rem 0;
+            border: 1px solid #dbe0e8;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            overflow-x: auto;
+        }
+
+        .formula-block .math {
+            font-size: 1.2rem;
+        }
+
+        .badge-rule {
+            background: #dbeafe;
+            color: #1e4a7a;
+            font-weight: 500;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 0.85rem;
+            margin-right: 6px;
+        }
+
+        .warning-note {
+            background: #fef9e7;
+            border-left: 6px solid #f59e0b;
+            padding: 0.8rem 1.6rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+        }
+
+        .warning-note strong {
+            color: #b45309;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        th {
+            background: #eef2f6;
+            font-weight: 600;
+            padding: 12px 16px;
+            text-align: left;
+            color: #0b2b4a;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e9edf2;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 2px dashed #cbd5e1;
+            color: #475569;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        /* === Стили для SVG-иллюстраций === */
+        .illustration {
+            background: white;
+            border-radius: 16px;
+            padding: 0.3rem;
+            margin: 0.3rem 0;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .illustration svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .illustration figcaption {
+            font-size: 0.85rem;
+            color: #475569;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        .flex-diagrams {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin: 0.5rem 0;
+        }
+
+        .flex-diagrams .illustration {
+            flex: 1 1 180px;
+            min-width: 150px;
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 1.2rem; }
+            .grid-2col { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; flex-wrap: wrap; }
+            .flex-diagrams .illustration { flex: 1 1 100%; }
+        }
+
+        @keyframes pulse-arrow {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        .animated-arrow {
+            animation: pulse-arrow 1.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>
+        📐 Справочник по математике
+        <small>векторы · алгебра · геометрия</small>
+    </h1>
+
+    <!-- ================================================== -->
+    <!--  РАЗДЕЛ 1 — ВЕКТОРЫ                                 -->
+    <!-- ================================================== -->
+    <h2>
+        <span class="badge">Ⅰ</span> Векторы
+    </h2>
+
+    <div class="section-intro">
+        <strong>Базовые определения:</strong> вектор — направленный отрезок, у которого есть длина и направление. 
+        Обозначается <strong>$\vec{AB}$</strong> (начало A, конец B) или <strong>$\mathbf{a}$</strong>.
+    </div>
+
+    <!-- === ИЛЛЮСТРАЦИЯ: что такое вектор === -->
+    <div class="illustration" style="max-width: 400px; margin: 0 auto;">
+        <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb" />
+                </marker>
+                <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a" />
+                </marker>
+            </defs>
+            
+            <circle cx="60" cy="50" r="5" fill="#2563eb" />
+            <text x="50" y="40" font-size="14" font-weight="bold" fill="#1e293b">A</text>
+            
+            <circle cx="300" cy="50" r="5" fill="#2563eb" />
+            <text x="305" y="40" font-size="14" font-weight="bold" fill="#1e293b">B</text>
+            
+            <line x1="60" y1="50" x2="300" y2="50" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowhead)" />
+            <text x="160" y="40" font-size="17" font-weight="bold" fill="#2563eb">$\vec{AB}$</text>
+            
+            <text x="50" y="95" font-size="13" fill="#475569">начало</text>
+            <text x="290" y="95" font-size="13" fill="#475569">конец</text>
+            
+            <line x1="60" y1="105" x2="300" y2="105" stroke="#16a34a" stroke-width="2" stroke-dasharray="4,4" />
+            <text x="150" y="118" font-size="13" fill="#16a34a">длина (модуль)</text>
+        </svg>
+        <figcaption>Рис. 1 — Вектор $\vec{AB}$: направление от A к B, длина — расстояние между точками</figcaption>
+    </div>
+
+    <!-- 1.1 основные операции -->
+    <h3>⚡ Операции с векторами</h3>
+    
+    <!-- === ИЛЛЮСТРАЦИЯ: сложение === -->
+    <div class="flex-diagrams">
+        <div class="illustration">
+            <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#dc2626" />
+                    </marker>
+                    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#2563eb" />
+                    </marker>
+                    <marker id="arr-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#16a34a" />
+                    </marker>
+                </defs>
+                
+                <line x1="25" y1="80" x2="110" y2="35" stroke="#dc2626" stroke-width="3" marker-end="url(#arr-red)" />
+                <text x="55" y="50" font-size="15" font-weight="bold" fill="#dc2626">$\vec{a}$</text>
+                
+                <line x1="110" y1="35" x2="200" y2="80" stroke="#2563eb" stroke-width="3" marker-end="url(#arr-blue)" />
+                <text x="140" y="50" font-size="15" font-weight="bold" fill="#2563eb">$\vec{b}$</text>
+                
+                <line x1="25" y1="80" x2="200" y2="80" stroke="#16a34a" stroke-width="3.5" marker-end="url(#arr-green)" />
+                <text x="90" y="73" font-size="16" font-weight="bold" fill="#16a34a">$\vec{a}+\vec{b}$</text>
+                
+                <text x="80" y="120" font-size="12" fill="#475569">Правило треугольника</text>
+            </svg>
+            <figcaption>Рис. 2 — $\vec{a}+\vec{b}$ по правилу треугольника</figcaption>
+        </div>
+        
+        <div class="illustration">
+            <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arr2-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#dc2626" />
+                    </marker>
+                    <marker id="arr2-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#2563eb" />
+                    </marker>
+                    <marker id="arr2-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#16a34a" />
+                    </marker>
+                </defs>
+                
+                <!-- a и b из одной точки -->
+                <line x1="35" y1="90" x2="120" y2="35" stroke="#dc2626" stroke-width="3" marker-end="url(#arr2-red)" />
+                <text x="65" y="50" font-size="15" font-weight="bold" fill="#dc2626">$\vec{a}$</text>
+                
+                <line x1="35" y1="90" x2="175" y2="90" stroke="#2563eb" stroke-width="3" marker-end="url(#arr2-blue)" />
+                <text x="95" y="82" font-size="15" font-weight="bold" fill="#2563eb">$\vec{b}$</text>
+                
+                <!-- Стороны параллелограмма (пунктир) -->
+                <line x1="120" y1="35" x2="260" y2="90" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+                <line x1="175" y1="90" x2="260" y2="90" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+                
+                <!-- Диагональ (результат) -->
+                <line x1="35" y1="90" x2="260" y2="90" stroke="#16a34a" stroke-width="3.5" marker-end="url(#arr2-green)" />
+                <text x="125" y="120" font-size="16" font-weight="bold" fill="#16a34a">$\vec{a}+\vec{b}$</text>
+                
+                <text x="90" y="128" font-size="12" fill="#475569">Правило параллелограмма</text>
+            </svg>
+            <figcaption>Рис. 3 — $\vec{a}+\vec{b}$ по правилу параллелограмма</figcaption>
+        </div>
+    </div>
+
+    <!-- === ИЛЛЮСТРАЦИЯ: вычитание === -->
+    <div class="illustration" style="max-width: 460px; margin: 0 auto;">
+        <svg viewBox="0 0 460 160" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <marker id="arr-out" markerWidth="9" markerHeight="6" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 9 3, 0 6" fill="#2563eb" />
+                </marker>
+                <marker id="arr-out-red" markerWidth="9" markerHeight="6" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 9 3, 0 6" fill="#dc2626" />
+                </marker>
+                <marker id="arr-out-green" markerWidth="9" markerHeight="6" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 9 3, 0 6" fill="#16a34a" />
+                </marker>
+                <marker id="arr-out-orange" markerWidth="9" markerHeight="6" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 9 3, 0 6" fill="#ea580c" />
+                </marker>
+            </defs>
+            
+            <!-- Точки -->
+            <circle cx="70" cy="110" r="4" fill="#1e293b" />
+            <text x="60" y="100" font-size="13" font-weight="bold" fill="#1e293b">A</text>
+            
+            <circle cx="180" cy="45" r="4" fill="#1e293b" />
+            <text x="175" y="35" font-size="13" font-weight="bold" fill="#1e293b">K</text>
+            
+            <circle cx="110" cy="140" r="4" fill="#1e293b" />
+            <text x="100" y="155" font-size="13" font-weight="bold" fill="#1e293b">D</text>
+            
+            <!-- Вектор AK (синий) -->
+            <line x1="70" y1="110" x2="180" y2="45" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-out)" />
+            <text x="115" y="65" font-size="15" font-weight="bold" fill="#2563eb">$\vec{AK}$</text>
+            
+            <!-- Вектор AD (красный) -->
+            <line x1="70" y1="110" x2="110" y2="140" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-out-red)" />
+            <text x="80" y="130" font-size="15" font-weight="bold" fill="#dc2626">$\vec{AD}$</text>
+            
+            <!-- Вектор -AD (оранжевый, противоположный AD) -->
+            <line x1="110" y1="140" x2="70" y2="110" stroke="#ea580c" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arr-out-orange)" />
+            <text x="70" y="152" font-size="13" font-weight="bold" fill="#ea580c">$-\vec{AD}$</text>
+            
+            <!-- Вектор DK (зелёный) = AK + (-AD) по правилу треугольника -->
+            <line x1="110" y1="140" x2="180" y2="45" stroke="#16a34a" stroke-width="3" marker-end="url(#arr-out-green)" />
+            <text x="130" y="100" font-size="16" font-weight="bold" fill="#16a34a">$\vec{DK}$</text>
+            
+            <text x="150" y="158" font-size="12" fill="#475569">$\vec{DK} = \vec{AK} + (-\vec{AD})$</text>
+        </svg>
+        <figcaption>Рис. 4 — Вычитание: $\vec{DK} = \vec{AK} - \vec{AD} = \vec{AK} + (-\vec{AD})$</figcaption>
+    </div>
+
+    <div class="grid-2col">
+        <div class="card">
+            <strong>➕ Сложение</strong>
+            <div class="formula-block">
+                <span class="badge-rule">правило треугольника</span>
+                <span class="math">$\vec{AB} + \vec{BC} = \vec{AC}$</span>
+            </div>
+            <div class="formula-block">
+                <span class="badge-rule">правило параллелограмма</span>
+                <span class="math">$\vec{a} + \vec{b}$</span> — диагональ
+            </div>
+            <div style="margin-top: 6px; font-size:0.95rem; color:#334155;">
+                ✅ <strong>Важно:</strong> конец первого = начало второго.
+            </div>
+        </div>
+
+        <div class="card">
+            <strong>➖ Вычитание</strong>
+            <div class="formula-block">
+                <span class="math">$\vec{a} - \vec{b} = \vec{a} + (-\vec{b})$</span>
+            </div>
+            <div class="formula-block">
+                <span class="badge-rule">золотое правило</span>
+                <span class="math">$\vec{XY} = \vec{AY} - \vec{AX}$</span>
+                <div style="font-size:0.9rem; color:#1e4a7a; margin-top:4px;">(из конца вычитаем начало)</div>
+            </div>
+            <div style="margin-top: 6px; font-size:0.95rem; color:#334155;">
+                📍 Пример: $\vec{DK} = \vec{AK} - \vec{AD}$
+            </div>
+        </div>
+
+        <div class="card">
+            <strong>✖️ Умножение на число</strong>
+            <div class="formula-block">
+                <span class="math">$k \cdot \vec{a}$</span>
+            </div>
+            <ul style="margin-top: 6px; padding-left: 1.2rem; color: #1e293b;">
+                <li>$k > 0$ — направление сохраняется</li>
+                <li>$k < 0$ — направление меняется на противоположное</li>
+                <li>длина умножается на $|k|$</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <strong>📏 Длина (модуль)</strong>
+            <div class="formula-block">
+                <span class="math">$|\vec{AB}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$</span>
+            </div>
+            <div class="formula-block">
+                <span class="math">$|\vec{AB}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}$</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1.2 середина отрезка -->
+    <h3>🎯 Середина отрезка (векторная форма)</h3>
+    
+    <div class="illustration" style="max-width: 360px; margin: 0 auto;">
+        <svg viewBox="0 0 360 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <marker id="arr-mid" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#2563eb" />
+                </marker>
+            </defs>
+            
+            <circle cx="45" cy="40" r="4" fill="#1e293b" />
+            <text x="30" y="32" font-size="13" font-weight="bold" fill="#1e293b">A</text>
+            
+            <circle cx="180" cy="40" r="4" fill="#dc2626" />
+            <text x="175" y="32" font-size="13" font-weight="bold" fill="#dc2626">M</text>
+            
+            <circle cx="315" cy="40" r="4" fill="#1e293b" />
+            <text x="310" y="32" font-size="13" font-weight="bold" fill="#1e293b">B</text>
+            
+            <line x1="45" y1="40" x2="180" y2="40" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-mid)" />
+            <text x="95" y="28" font-size="14" font-weight="bold" fill="#2563eb">$\frac{1}{2}\vec{AB}$</text>
+            
+            <line x1="45" y1="58" x2="315" y2="58" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4" />
+            <text x="160" y="75" font-size="12" fill="#64748b">$\vec{AB}$</text>
+            
+            <text x="175" y="55" font-size="11" fill="#dc2626" font-weight="bold">середина</text>
+        </svg>
+        <figcaption>Рис. 5 — Если M — середина AB, то $\vec{AM} = \frac{1}{2}\vec{AB}$</figcaption>
+    </div>
+
+    <div class="grid-2col">
+        <div class="card">
+            <strong>Если M — середина AB</strong>
+            <div class="formula-block">
+                <span class="math">$\vec{AM} = \frac{1}{2}\vec{AB}$</span>
+            </div>
+            <div class="formula-block">
+                <span class="math">$\vec{OM} = \frac{\vec{OA} + \vec{OB}}{2}$</span> (для любой O)
+            </div>
+        </div>
+        <div class="card">
+            <strong>Частый приём в задачах</strong>
+            <div style="background:#eef2ff; padding:0.6rem 1rem; border-radius:14px; margin-top:6px;">
+                Если K — середина BO, то <span class="math">$\vec{BK} = \frac{1}{2}\vec{BO}$</span>
+            </div>
+            <div style="background:#eef2ff; padding:0.6rem 1rem; border-radius:14px; margin-top:6px;">
+                <span class="math">$\vec{AK} = \vec{AB} + \vec{BK}$</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1.3 Параллелограмм -->
+    <h3>▱ Параллелограмм (векторные соотношения)</h3>
+    
+    <div class="illustration" style="max-width: 440px; margin: 0 auto;">
+        <svg viewBox="0 0 440 170" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <marker id="arr-par" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#2563eb" />
+                </marker>
+                <marker id="arr-par-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#dc2626" />
+                </marker>
+                <marker id="arr-par-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#16a34a" />
+                </marker>
+            </defs>
+            
+            <polygon points="50,130 160,25 350,25 240,130" fill="#f0f4ff" stroke="#1e293b" stroke-width="1.5" />
+            
+            <circle cx="50" cy="130" r="4" fill="#1e293b" />
+            <text x="35" y="148" font-size="14" font-weight="bold" fill="#1e293b">A</text>
+            
+            <circle cx="160" cy="25" r="4" fill="#1e293b" />
+            <text x="150" y="15" font-size="14" font-weight="bold" fill="#1e293b">B</text>
+            
+            <circle cx="350" cy="25" r="4" fill="#1e293b" />
+            <text x="345" y="15" font-size="14" font-weight="bold" fill="#1e293b">C</text>
+            
+            <circle cx="240" cy="130" r="4" fill="#1e293b" />
+            <text x="230" y="148" font-size="14" font-weight="bold" fill="#1e293b">D</text>
+            
+            <circle cx="200" cy="77" r="3.5" fill="#dc2626" />
+            <text x="205" y="73" font-size="12" font-weight="bold" fill="#dc2626">O</text>
+            
+            <line x1="50" y1="130" x2="160" y2="25" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-par)" />
+            <text x="85" y="70" font-size="14" font-weight="bold" fill="#2563eb">$\vec{AB}$</text>
+            
+            <line x1="50" y1="130" x2="240" y2="130" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-par-red)" />
+            <text x="120" y="125" font-size="14" font-weight="bold" fill="#dc2626">$\vec{AD}$</text>
+            
+            <line x1="50" y1="130" x2="350" y2="25" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="5,4" marker-end="url(#arr-par-green)" />
+            <text x="175" y="55" font-size="14" font-weight="bold" fill="#16a34a">$\vec{AC} = \vec{AB} + \vec{AD}$</text>
+        </svg>
+        <figcaption>Рис. 6 — В параллелограмме: $\vec{AC} = \vec{AB} + \vec{AD}$</figcaption>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr><th>Свойство</th><th>Формула</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Диагональ AC</td><td>$\vec{AC} = \vec{AB} + \vec{AD}$</td></tr>
+                <tr><td>Диагональ BD</td><td>$\vec{BD} = \vec{AD} - \vec{AB}$</td></tr>
+                <tr><td>Центр O (половина диагонали)</td><td>$\vec{AO} = \frac{1}{2}\vec{AC}$</td></tr>
+                <tr><td>Сумма диагоналей</td><td>$\vec{AC} + \vec{BD} = 2\vec{AD}$</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 1.4 Координаты -->
+    <h3>📌 Координаты векторов</h3>
+    <div class="grid-2col">
+        <div class="card">
+            <strong>Координаты $\vec{AB}$</strong>
+            <div class="formula-block">
+                <span class="math">$\vec{AB} = (x_B - x_A;\; y_B - y_A)$</span>
+            </div>
+            <div style="margin-top: 6px; color: #1e4a7a;">
+                <span class="badge-rule">правило</span> из конца вычитаем начало
+            </div>
+        </div>
+        <div class="card">
+            <strong>Операции в координатах</strong>
+            <div class="formula-block">
+                <span class="math">$\vec{a} \pm \vec{b} = (x_a \pm x_b;\; y_a \pm y_b)$</span>
+            </div>
+            <div class="formula-block">
+                <span class="math">$k\cdot\vec{a} = (k x_a;\; k y_a)$</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1.5 Таблица частых выражений -->
+    <h3>📋 Популярные выражения (параллелограмм ABCD)</h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Вектор</th><th>Выражение через $\vec{AB}$ и $\vec{AD}$</th></tr></thead>
+            <tbody>
+                <tr><td>$\vec{AC}$</td><td>$\vec{AB} + \vec{AD}$</td></tr>
+                <tr><td>$\vec{BD}$</td><td>$\vec{AD} - \vec{AB}$</td></tr>
+                <tr><td>$\vec{AO}$ (O — центр)</td><td>$\frac{1}{2}(\vec{AB} + \vec{AD})$</td></tr>
+                <tr><td>$\vec{BO}$ (O — центр)</td><td>$\frac{1}{2}(\vec{AD} - \vec{AB})$</td></tr>
+                <tr><td>$\vec{AK}$ (K — середина AO)</td><td>$\frac{1}{4}\vec{AB} + \frac{1}{4}\vec{AD}$</td></tr>
+                <tr><td>$\vec{AK}$ (K — середина BO)</td><td>$\frac{3}{4}\vec{AB} + \frac{1}{4}\vec{AD}$</td></tr>
+                <tr><td>$\vec{DK}$ (K — середина AO)</td><td>$\frac{1}{4}\vec{AB} - \frac{3}{4}\vec{AD}$</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 1.6 Важные предостережения -->
+    <div class="warning-note">
+        <strong>⚠️ Типичные ошибки:</strong>
+        <ul style="margin: 8px 0 0 20px; list-style-type: '• '; line-height: 1.6;">
+            <li><strong>Нельзя</strong> писать $\vec{AK} = \vec{AB} + \vec{AO}$ — концы и начала не совпадают (нужно $\vec{AB} + \vec{BK}$).</li>
+            <li><strong>Не путать</strong> $\vec{DK}$ и $\vec{KD}$ — это противоположные векторы: $\vec{DK} = -\vec{KD}$.</li>
+            <li>Если K — середина AO, то $\vec{AK} = \frac{1}{2}\vec{AO}$, <strong>а не</strong> $\vec{AO}$.</li>
+        </ul>
+    </div>
+
+    <!-- ================================================== -->
+    <!--  РАЗДЕЛ 2 — АЛГЕБРА                                 -->
+    <!-- ================================================== -->
+    <h2>
+        <span class="badge">Ⅱ</span> Алгебра
+    </h2>
+
+    <div class="grid-2col">
+        <div class="card">
+            <strong>📌 Степени</strong>
+            <div class="formula-block">$a^{m/n} = (\sqrt[n]{a})^m$</div>
+            <div class="formula-block">$a^m \cdot a^n = a^{m+n}$</div>
+        </div>
+        <div class="card">
+            <strong>📌 Логарифмы</strong>
+            <div class="formula-block">$\log_a b^n = n \log_a b$</div>
+            <div class="formula-block">$\log_a (bc) = \log_a b + \log_a c$</div>
+        </div>
+        <div class="card">
+            <strong>📌 Квадратное уравнение</strong>
+            <div class="formula-block">$ax^2 + bx + c = 0$</div>
+            <div class="formula-block">$D = b^2 - 4ac$</div>
+            <div class="formula-block">$x = \frac{-b \pm \sqrt{D}}{2a}$</div>
+        </div>
+        <div class="card">
+            <strong>📌 Свойства модуля</strong>
+            <div class="formula-block">$|a| < b \;\Leftrightarrow\; -b < a < b$</div>
+            <div class="formula-block">$|a| \ge 0$</div>
+        </div>
+    </div>
+
+    <!-- ================================================== -->
+    <!--  РАЗДЕЛ 3 — ГЕОМЕТРИЯ                              -->
+    <!-- ================================================== -->
+    <h2>
+        <span class="badge">Ⅲ</span> Геометрия
+    </h2>
+
+    <div class="grid-2col">
+        <div class="card">
+            <strong>📐 Треугольник</strong>
+            <div class="formula-block">Сумма углов: $180^\circ$</div>
+            <div class="formula-block">Теорема Пифагора: $c^2 = a^2 + b^2$</div>
+            <div class="formula-block">Формула Герона: $S = \sqrt{p(p-a)(p-b)(p-c)}$</div>
+        </div>
+        <div class="card">
+            <strong>⚪ Окружность / шар</strong>
+            <div class="formula-block">Площадь сферы: $S = 4\pi R^2$</div>
+            <div class="formula-block">Радиус описанной окружности: $R = \frac{abc}{4S}$</div>
+        </div>
+        <div class="card">
+            <strong>📦 Пирамида</strong>
+            <div class="formula-block">Апофема $l = \sqrt{h^2 + r^2}$</div>
+            <div class="formula-block">Угол наклона грани: $\cos \alpha = \frac{r}{l}$</div>
+        </div>
+        <div class="card">
+            <strong>📏 Периметр</strong>
+            <div class="formula-block">Прямоугольник: $P = 2(a+b)$</div>
+        </div>
+    </div>
+
+    <!-- ================================================== -->
+    <!--  РАЗДЕЛ 4 — ТРИГОНОМЕТРИЯ                         -->
+    <!-- ================================================== -->
+    <h2>
+        <span class="badge">Ⅳ</span> Тригонометрия
+    </h2>
+    <div class="grid-2col">
+        <div class="card">
+            <strong>Основные тождества</strong>
+            <div class="formula-block">$\sin^2 \alpha + \cos^2 \alpha = 1$</div>
+            <div class="formula-block">$\sin 2\alpha = 2\sin\alpha\cos\alpha$</div>
+            <div class="formula-block">$\cos 2\alpha = \cos^2\alpha - \sin^2\alpha$</div>
+        </div>
+        <div class="card">
+            <strong>Формулы приведения</strong>
+            <div class="formula-block">$\cos(\frac{\pi}{2} - \alpha) = \sin\alpha$</div>
+            <div class="formula-block">$\sin(\frac{3\pi}{2} - \alpha) = -\cos\alpha$</div>
+            <div class="formula-block">$\sin(\pi - \alpha) = \sin\alpha$</div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <span>🧠 Справочник обновлён 2026 · все формулы с визуальными пояснениями</span>
+        <span style="color:#64748b;">MathJax + SVG-иллюстрации</span>
+    </div>
+
+</div>
+</body>
+</html>
